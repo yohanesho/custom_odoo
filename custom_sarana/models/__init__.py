@@ -3,3 +3,4 @@
 import company
 import res_config
 import account_invoice
+import stock_picking

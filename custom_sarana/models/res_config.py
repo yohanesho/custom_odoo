@@ -3,7 +3,7 @@
 from odoo import models, fields, api
 
 class AccountConfigSettings(models.TransientModel):
-    _inherit = 'account.config.settings'
+    _inherit = ['account.config.settings']
 
     rounding_account_id = fields.Many2one(
         string='Default Rounding Account',

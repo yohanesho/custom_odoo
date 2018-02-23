@@ -1,12 +1,25 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "Addon Account",
+    'name': "Custom Addon",
 
     'summary': """
-        Addon Custom for module Accounting & Invoicing""",
+        Customization Module for PT. Sarana""",
 
     'description': """
-        Addon Custom for module Accounting & Invoicing
+This customization implements on module
+=======================================
+
+Accounting & Finance
+
+Purchase Management
+
+CRM
+
+Sales Management
+
+Inventory Management
+
+Manufacturing
     """,
 
     'author': "Yohanes Ho",
@@ -22,12 +35,14 @@
     'depends': [
         'base', 
         'account',
-        'sale'
+        'sale',
+        'stock',
     ],
 
     # always loaded
     'data': [
         'views/res_config_view.xml',
+        'views/stock_picking_validator.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

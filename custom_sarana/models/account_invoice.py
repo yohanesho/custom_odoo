@@ -21,7 +21,7 @@ class AccountInvoice(models.Model):
         self.amount_total_company_signed = amount_total_company_signed * sign
         self.amount_total_signed = self.amount_total * sign
         self.amount_untaxed_signed = amount_untaxed_signed * sign
-    
+        
     def _prepare_tax_line_vals(self, line, tax):
         """ Prepare values to create an account.invoice.tax line
 
@@ -78,7 +78,7 @@ class AccountInvoice(models.Model):
         return move_lines
 
 class AccountInvoiceLine(models.Model):
-    _inherit = 'account.invoice.line'
+    _inherit = ['account.invoice.line']
 
     @api.one
     @api.depends('price_unit', 'discount', 'invoice_line_tax_ids', 'quantity',

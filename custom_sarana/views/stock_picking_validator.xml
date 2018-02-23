@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="stock_picking_validator_wizard" model="ir.ui.view">
+        <field name="name">stock.picking.validator.wizard</field>
+        <field name="model">stock.picking.validator</field>
+        <field name="arch" type="xml">
+            <form string="Confirm Validation">
+                <group>
+                    <p>
+                        Odoo cannot process this stock operation cause some of quantity processed (done) is greather than quantity to do.
+                    </p>
+                </group>
+                <field name="line_ids" string="Validator Lines" >
+                    <tree readonly="1" create="0" delete="0" edit="0">
+                        <field name="product_id"/>
+                        <field name="product_qty"/>
+                        <field name="qty_done"/>
+                        <field name="msg_validation"/>
+                    </tree>
+                </field>
+                <footer>
+                    <field name='picking_type_code' invisible="1"/>
+                    <button name="notif_purchase" string="_Send Notif to Purchasing" type="object" class="btn-primary" attrs="{'invisible': [('picking_type_code','=','outgoing')]}"/>
+                    <button string="_Cancel" class="btn-default" special="cancel" />
+                </footer>
+            </form>
+        </field>
+    </record>
+</odoo>
