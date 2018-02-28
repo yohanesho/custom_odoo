@@ -13,4 +13,14 @@
             </field>
         </field>
     </record>
+    <record id="custom_view_sale_config_settings" model="ir.ui.view">
+        <field name="name">Sale Settings</field>
+        <field name="model">sale.config.settings</field>
+        <field name="inherit_id" ref="sale.view_sales_config"/>
+        <field name="arch" type="xml">
+            <field name="sale_note" position="before">
+                <field name="user_approval_order" options="{'no_create': True}" widget="many2many_tags"/>
+            </field>
+        </field>
+    </record>
 </odoo>

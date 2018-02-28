@@ -1,8 +1,7 @@
 from odoo import api, fields, models, _
 
 class Picking(models.Model):
-    _name = 'stock.picking'
-    _inherit = ['stock.picking', 'mail.mail']
+    _inherit = ['stock.picking']
 
     @api.multi
     def do_new_transfer(self):
@@ -42,30 +41,31 @@ class Picking(models.Model):
                      'target': 'new',
                      'res_id': wiz_id.id,
                 }
-
+        print 'is_valid: ', is_valid 
         if is_valid:
             super(Picking, self).do_new_transfer()
 
     def _push_msg_validator(self, lines):
         body = """
             <div>
-                <h2><span style="color: #ff0000;">Receiving Item Failed</span></h2>
-                <p>Receiving item: %s for Order: %s, failed because some of quantity processed (done) is greather than quantity to do.</p>
-            </div>
-            <table>
+                <h3 style="color: inherit; font-size: 16px; font-family: inherit; margin: 18px 0 9px 0"><span style="color: #ff0000;">Receiving Item Failed</span></h2>
+                <p style="font-size: 13px; font-family: &quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif; margin: 0px 0px 9px 0px"><font style="font-size: 13px">Receiving item: %s for Order: %s, failed because some of quantity processed (done) is greather than quantity to do.</font></p>
+            </div>""" % (self.name, self.group_id.name)
+        body += """
+            <table style="max-width: 100%; width: 100%; margin: 0 0 18px 0; background-color: transparent; border-collapse: collapse" border="1px" cellpadding="8px">
                 <thead>
                     <tr>
-                        <th>Item No - Desc </th>
-                        <th style="text-align: right;">Qty To Do</th>
-                        <th style="text-align: right;">Receiving Qty</th>
+                        <td style="padding: 8px"><font style="font-size: 12px; font-family: &quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;"><b>Item No - Desc</b></font></td>
+                        <td style="padding: 8px; text-align: right"><font style="font-size: 12px; font-family: &quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;"><b>Qty To Do</b></font></td>
+                        <td style="padding: 8px; text-align: right"><font style="font-size: 12px; font-family: &quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;"><b>Receiving Qty</b></font></td>
                     </tr>
-                </thead>""" % (self.name, self.group_id.name)
+                </thead>"""
         body_td = ""
         for line in lines:
             body_td += """<tr>
-                        <td>%s</td>
-                        <td style="text-align: right;">%s</td>
-                        <td style="text-align: right;">%s</td>
+                        <td style="padding: 8px"><font style="font-size: 12px; font-family: &quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;">%s</font></td>
+                        <td style="padding: 8px; text-align: right"><font style="font-size: 12px; font-family: &quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;">%s</font></td>
+                        <td style="padding: 8px; text-align: right"><font style="font-size: 12px; font-family: &quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;">%s</font></td>
                     </tr>
                     """ % (line.product_id.display_name, line.product_qty, line.qty_done)
         body += """

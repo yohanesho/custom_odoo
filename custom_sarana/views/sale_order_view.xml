@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="custom_sale_order_form" model="ir.ui.view">
+        <field name="name">custom.sale.order.form</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="priority" eval="5"/>
+        <field name="arch" type="xml">
+            <xpath expr="//button[@name='action_confirm' and @states='sent']" position="replace">
+                <button name="action_confirm" states="sent" string="Confirm Sale" group="sales_team.group_sale_manager" class="btn-primary o_sale_confirm" type="object"/>
+            </xpath>
+            <xpath expr="//button[@name='action_confirm' and @states='draft']" position="replace">
+                <button name="action_confirm" states="draft" string="Confirm Sale" class="o_sale_confirm" type="object" group="sales_team.group_sale_manager"/>
+            </xpath>
+
+            <field name="user_id" position="after">
+                <field name="approved_user_id" options="{'no_create': True}"/>
+            </field>
+        </field>
+    </record>
+
+    <!-- decoration-danger="state =='sale' and min_date &lt; current_date" -->
+</odoo>

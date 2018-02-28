@@ -10,6 +10,7 @@ class AccountConfigSettings(models.TransientModel):
         comodel_name='account.account',
         ondelete='cascade',
         help="Account used when invoicing journal entry not balance")
+    
 
     @api.onchange('company_id')
     def onchange_company_id(self):
@@ -22,4 +23,8 @@ class AccountConfigSettings(models.TransientModel):
     def set_rounding_account_id(self):
         if self.rounding_account_id and self.rounding_account_id != self.company_id.rounding_account_id:
             self.company_id.write({'rounding_account_id': self.rounding_account_id.id})
-        
+
+class SaleConfigSettings(models.TransientModel):
+    
+    _inherit = ['sale.config.settings']
+    user_approval_order = fields.Many2many(related='company_id.user_approval_order',)

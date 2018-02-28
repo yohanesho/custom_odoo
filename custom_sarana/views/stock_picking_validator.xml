@@ -20,8 +20,8 @@
                 </field>
                 <footer>
                     <field name='picking_type_code' invisible="1"/>
-                    <button name="notif_purchase" string="_Send Notif to Purchasing" type="object" class="btn-primary" attrs="{'invisible': [('picking_type_code','=','outgoing')]}"/>
-                    <button string="_Cancel" class="btn-default" special="cancel" />
+                    <button name="notif_purchase" string="_Send Notification to Purchasing" type="object" class="btn-primary" attrs="{'invisible': [('picking_type_code','=','outgoing')]}"/>
+                    <button string="_Close" class="btn-default" special="cancel" />
                 </footer>
             </form>
         </field>
