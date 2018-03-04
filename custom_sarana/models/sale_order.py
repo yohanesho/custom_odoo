@@ -1,4 +1,7 @@
 from odoo import models, fields, api
+from odoo.exceptions import ValidationError, UserError
+
+from datetime import datetime
 
 class SaleOrder(models.Model):
     
@@ -10,32 +13,28 @@ class SaleOrder(models.Model):
         ondelete='set null',
         domain=lambda self: [('id', 'in', self.env.user.company_id.user_approval_order.ids)]
     )
-    picking_state = fields.Selection(
-        string=u'Picking Status',
-        selection=[('no', 'Not yet Deliver'), ('to deliver', 'To Deliver'), ('delivered', 'Fully Delivered')],
-        compute='_get_picking_state',
-        store=True,
-    )
     
-    @api.depends('state', 'picking_ids','order_line.qty_delivered')
-    def _get_picking_state(self):
-        for order in self:
-            picking_ids = order.mapped('picking_ids')
-            picking_status = [pick.state for pick in picking_ids]
-
-            if order.state not in ('sale', 'done'):
-                picking_state = 'no'
-            elif any(picking_state in ['draft', 'assigned', 'confirmed'] for picking_state in picking_status):
-                picking_state = 'to deliver'
-            elif any(picking_state == 'done' for picking_state in picking_status):
-                picking_state = 'delivered'
-            else:
-                picking_state = 'no'
-
-            order.update({'picking_state': picking_state})
-            
     _sql_constraints = [
         ('client_order_ref_unique',
          'UNIQUE(client_order_ref)',
          "Customer reference must be unique"),
     ]
+
+class SaleOrderLine(models.Model):
+    
+    _inherit = ['sale.order.line']
+
+    @api.constrains('price_unit', 'price_total')
+    def _check_something(self):
+        for record in self:
+            sale_history = self.env['sale.history'].search([
+                ('partner_id', '=', record.order_id.partner_id.id),
+                ('product_id', '=', record.product_id.id),
+            ])
+
+            if sale_history:
+                last_sale_price = (sale_history[0].price_total / sale_history[0].product_uom_qty)
+                current_sale_price = (record.price_total / record.product_uom_qty)
+                if last_sale_price > current_sale_price:
+                    raise ValidationError("Current sale price is smaller than last sale price {:,}!".format(last_sale_price))
+    

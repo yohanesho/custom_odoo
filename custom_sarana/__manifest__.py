@@ -45,6 +45,7 @@ Manufacturing
         'views/res_config_view.xml',
         'views/stock_picking_validator.xml',
         'views/sale_order_view.xml',
+        'views/sale_history_view.xml',
         'wizard/account_report_product_ledger_view.xml',
         'data/ir_cron.xml'
     ],

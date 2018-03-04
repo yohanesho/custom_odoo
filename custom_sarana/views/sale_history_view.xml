@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_sale_history_report_tree" model="ir.ui.view">
+        <field name="name">Sale Value At Date</field>
+        <field name="model">sale.history</field>
+        <field name="arch" type="xml">
+            <tree string="Sale Value" create="0" delete="0" update="0">
+                <field name="partner_id" />
+                <field name="order_id" />
+                <field name="date_order" />
+                <field name="currency_id"  invisible="1" />
+                <field name="product_id" />
+                <field name="product_uom_qty" />
+                <field name="price_unit" widget="monetary" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_sale_history_search" model="ir.ui.view">
+        <field name="name">sale.history.search</field>
+        <field name="model">sale.history</field>
+        <field name="arch" type="xml">
+            <search string="Sale History">
+                <field name="product_id"/>
+                <field name="partner_id" />
+                <group expand="1" string="Group By">
+                    <filter string="Product" context="{'group_by':'product_id'}" name='group_by_product'/>
+                    <filter string="Partner" context="{'group_by':'partner_id'}"/>
+                 </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_sale_history" model="ir.actions.act_window">
+        <field name="name">Sale History</field>
+        <field name="res_model">sale.history</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="view_type">form</field>
+        <field name="view_id" ref="view_sale_history_report_tree"/>
+        <field name="search_view_id" ref="view_sale_history_search" />
+    </record>
+
+    <menuitem id="menu_sale_history" action="action_sale_history" parent="sales_team.menu_sales" sequence="99" />
+</odoo>

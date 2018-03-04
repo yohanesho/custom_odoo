@@ -19,5 +19,25 @@
         </field>
     </record>
 
-    <!-- decoration-danger="state =='sale' and min_date &lt; current_date" -->
+    
+    <record id="custom_sale_order_tree" model="ir.ui.view">
+        <field name="name">custom.sale.order.tree</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_quotation_tree" />
+        <field name="arch" type="xml">
+            <xpath expr="/tree" position="replace">
+                <tree string="Quotation" class="o_sale_order" decoration-bf="message_needaction==True" decoration-muted="state=='cancel'" decoration-danger="state in ['draft','sent'] and confirmation_date &lt; current_date">
+                    <field name="message_needaction" invisible="1"/>
+                    <field name="name" string="Quotation Number"/>
+                    <field name="date_order"/>
+                    <field name="partner_id"/>
+                    <field name="user_id"/>
+                    <field name="amount_total" sum="Total Tax Included" widget="monetary"/>
+                    <field name="currency_id" invisible="1"/>
+                    <field name="confirmation_date" invisible="1"/>
+                    <field name="state"/>
+                </tree>    
+            </xpath>
+        </field>
+    </record>
 </odoo>
