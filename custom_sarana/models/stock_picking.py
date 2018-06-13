@@ -41,7 +41,6 @@ class Picking(models.Model):
                      'target': 'new',
                      'res_id': wiz_id.id,
                 }
-        print 'is_valid: ', is_valid 
         if is_valid:
             super(Picking, self).do_new_transfer()
 
@@ -73,8 +72,6 @@ class Picking(models.Model):
                     %s
                 </tbody>    
             </table>""" % (body_td)
-
-        print 'body: ', body
 
         user_purchase_manager = self.env.ref('purchase.group_purchase_manager').users
         followers = [x.partner_id.id for x in user_purchase_manager]

@@ -38,6 +38,7 @@ Manufacturing
         'sale',
         'stock',
         'purchase',
+        'sales_team',
     ],
 
     # always loaded
@@ -47,7 +48,8 @@ Manufacturing
         'views/sale_order_view.xml',
         'views/sale_history_view.xml',
         'wizard/account_report_product_ledger_view.xml',
-        'data/ir_cron.xml'
+        'data/ir_cron.xml',
+        'security/ir.model.access.csv'
     ],
     # only loaded in demonstration mode
     'demo': [

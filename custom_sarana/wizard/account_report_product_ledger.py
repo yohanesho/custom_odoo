@@ -23,6 +23,4 @@ class AccountReportProductLedger(models.TransientModel):
         if data['form'].get('initial_balance') and not data['form'].get('date_from'):
             raise UserError(_("You must define a Start Date"))
         records = self.env[data['model']].browse(data.get('ids', []))
-        print records
-        print data
         return self.env['report'].with_context(landscape=True).get_action(records, 'custom_sarana.report_productledger', data=data)

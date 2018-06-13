@@ -13,6 +13,21 @@ class SaleOrder(models.Model):
         ondelete='set null',
         domain=lambda self: [('id', 'in', self.env.user.company_id.user_approval_order.ids)]
     )
+    expired_delivery = fields.Boolean(
+        string=u'Expired Delivery',
+        compute='_get_expired_delivery',
+        default=False,
+    )
+    
+    @api.depends('order_line.procurement_ids')
+    def _get_expired_delivery(self):
+        for record in self:
+            for line in record.order_line:
+                expired_delivery = line.mapped('procurement_ids').search([('sale_line_id', '=', line.id), ('date_planned', '<', fields.Datetime.now()), ('state', '!=', 'done')])
+                print 'expired_delivery', expired_delivery
+                if len(expired_delivery) > 0:
+                    record.expired_delivery = True
+                    break
     
     _sql_constraints = [
         ('client_order_ref_unique',
@@ -25,7 +40,7 @@ class SaleOrderLine(models.Model):
     _inherit = ['sale.order.line']
 
     @api.constrains('price_unit', 'price_total')
-    def _check_something(self):
+    def _validate_last_sale_price(self):
         for record in self:
             sale_history = self.env['sale.history'].search([
                 ('partner_id', '=', record.order_id.partner_id.id),

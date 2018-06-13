@@ -8,9 +8,9 @@ class AccountInvoice(models.Model):
     @api.depends('invoice_line_ids.price_subtotal', 'tax_line_ids.amount', 'currency_id', 'company_id', 'date_invoice', 'type')
     def _compute_amount(self):
         round_curr = self.currency_id.round
-        self.amount_untaxed = sum(line.price_subtotal for line in self.invoice_line_ids)
-        self.amount_tax = sum(round_curr(line.amount) for line in self.tax_line_ids)
-        self.amount_total = round(self.amount_untaxed + self.amount_tax)
+        self.amount_untaxed = math.ceil(sum(line.price_subtotal for line in self.invoice_line_ids))
+        self.amount_tax = math.floor(sum(round_curr(line.amount) for line in self.tax_line_ids))
+        self.amount_total = self.amount_untaxed + self.amount_tax
         amount_total_company_signed = self.amount_total
         amount_untaxed_signed = self.amount_untaxed
         if self.currency_id and self.company_id and self.currency_id != self.company_id.currency_id:
@@ -90,7 +90,7 @@ class AccountInvoiceLine(models.Model):
         taxes = False
         if self.invoice_line_tax_ids:
             taxes = self.invoice_line_tax_ids.compute_all(price, currency, self.quantity, product=self.product_id, partner=self.invoice_id.partner_id)
-        self.price_subtotal = price_subtotal_signed = round(taxes['total_excluded']) if taxes else round(self.quantity * price)
+        self.price_subtotal = price_subtotal_signed = math.ceil(taxes['total_excluded']) if taxes else math.ceil(self.quantity * price)
         if self.invoice_id.currency_id and self.invoice_id.company_id and self.invoice_id.currency_id != self.invoice_id.company_id.currency_id:
             price_subtotal_signed = self.invoice_id.currency_id.with_context(date=self.invoice_id._get_currency_rate_date()).compute(price_subtotal_signed, self.invoice_id.company_id.currency_id)
         sign = self.invoice_id.type in ['in_refund', 'out_refund'] and -1 or 1
