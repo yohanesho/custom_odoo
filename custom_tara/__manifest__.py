@@ -1,34 +1,51 @@
-# -*- coding: utf-8 -*-
 {
-    'name': "custom_tara",
-
+    'name': "Addons Tarakusuma",
     'summary': """
-        Short (1 phrase/line) summary of the module's purpose, used as
-        subtitle on modules listing or apps.openerp.com""",
+        Customization for Tarakusuma""",
 
-    'description': """
-        Long description of module's purpose
+    'description': """\
+
+Customization for Tarakusuma
+============================
+
+* Credit limit each customer
+* Customization address for shipping and delivery
+* Discount header level on form sales order and invoices
+* Customization for e-faktur to get discount level
+* Bank transfer selection on invoice
+* Approval selection on invoice
+* Update format delivery slip
+* Update format invoice slip
     """,
 
-    'author': "My Company",
-    'website': "http://www.yourcompany.com",
-
-    # Categories can be used to filter modules in modules listing
-    # Check https://github.com/odoo/odoo/blob/master/odoo/addons/base/module/module_data.xml
-    # for the full list
-    'category': 'Uncategorized',
+    'author': "Yohanes Ho",
+    'website': "",
+    'category': 'Tarakusuma Addon',
     'version': '0.1',
 
-    # any module necessary for this one to work correctly
-    'depends': ['base'],
+    'depends': [
+        'base', 
+        'account', 
+        'sale',
+        'stock',
+        'vit_efaktur',
+    ],
 
-    # always loaded
     'data': [
-        # 'security/ir.model.access.csv',
+        'security/custom_security.xml',
         'views/partner_view.xml',
+        'views/sale_view.xml',
+        'views/account_invoice_view.xml',
+        'views/res_bank_view.xml',
+        'views/stock_view.xml',
+        'reports/report_deliveryslip.xml',
+        'reports/report_invoice.xml',
+        'reports/custom_paper.xml',
     ],
-    # only loaded in demonstration mode
+
     'demo': [
-        'demo/demo.xml',
     ],
+    "application": True,
+	"installable": True,
+    "auto_install": False,
 }

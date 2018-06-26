@@ -1,0 +1,41 @@
+<odoo>
+    <data>
+        <record id="account_invoice_view_inherit" model="ir.ui.view">
+            <field name="name">Invoice Form Customize</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_form" />
+            <field name="arch" type="xml">
+                <field name="amount_untaxed" position="before">
+                    <!-- <field class="o_form_input o_form_field o_form_field_number" name="amount_subtotal" widget="monetary" options="{'currency_field': 'currency_id'}"/> -->
+                    <field class="o_form_input o_form_field o_form_field_number" name="amount_discount" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                </field>
+                <field name="partner_bank_id" position="attributes">
+                    <attribute name="invisible">False</attribute>
+                    <attribute name="domain">[('name', '=', name)]</attribute>
+                </field>
+                <field name="partner_bank_id" position="after">
+                    <field name="payment_terms" readonly="1"/>
+                </field>
+                <xpath expr="///page[@name='other_info']/group/group/field[@name='name']" position="after">
+                    <field name="approval_user_id" required="1" attrs="{'readonly': [('state','not in',('draft'))]}"/>
+                </xpath>
+            </field>
+        </record>
+        
+        <record id="account_invoice_tree_inherit" model="ir.ui.view">
+            <field name="name">Invoice Tree Customize</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_tree" />
+            <field name="arch" type="xml">
+                <xpath expr="/tree" position="attributes">
+                    <attribute name="decoration-info">state == 'open'</attribute>
+                    <attribute name="decoration-success">state == 'paid'</attribute>
+                    <attribute name="decoration-danger">overdue_status == 1</attribute>
+                </xpath>
+                <field name='state' position="after">
+                    <field name='overdue_status' invisible="1"/>
+                </field>
+            </field>
+        </record>
+    </data>
+</odoo>

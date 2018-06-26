@@ -1,0 +1,3313 @@
+id,name,kota_id
+kec_206,Sunggal,Deli Serdang
+kec_207,Pancur Batu,Deli Serdang
+kec_208,Kutalimbaru,Deli Serdang
+kec_209,Deli Tua,Deli Serdang
+kec_210,Namo Rambe,Deli Serdang
+kec_211,Sibolangit,Deli Serdang
+kec_212,Biru-Biru,Deli Serdang
+kec_213,Patumbak,Deli Serdang
+kec_214,Tanjung Morawa,Deli Serdang
+kec_215,Sinembah Tanjung Muda Hilir,Deli Serdang
+kec_216,Percut Sei Tuan,Deli Serdang
+kec_217,Batang Kuis,Deli Serdang
+kec_218,Labuhan Deli,Deli Serdang
+kec_219,Hamparan Perak,Deli Serdang
+kec_220,Medan Belawan Kota,Medan
+kec_221,Lubuk Pakam,Deli Serdang
+kec_222,Pagar Merbau,Deli Serdang
+kec_223,Beringin,Deli Serdang
+kec_224,Pantai Labu,Deli Serdang
+kec_225,Bangun Purba,Deli Serdang
+kec_226,Sinembah Tanjung Muda Hulu,Deli Serdang
+kec_227,Gunung Meriah,Deli Serdang
+kec_228,Galang,Deli Serdang
+kec_229,Bajenis,Tebing Tinggi
+kec_230,Rambutan,Tebing Tinggi
+kec_231,Tebing Tinggi Kota,Tebing Tinggi
+kec_232,Padang Hulu,Tebing Tinggi
+kec_233,Padang Hilir,Tebing Tinggi
+kec_234,Binjai Kota,Binjai
+kec_235,Binjai Barat,Binjai
+kec_236,Binjai Selatan,Binjai
+kec_237,Binjai Timur,Binjai
+kec_238,Binjai Utara,Binjai
+kec_239,Binjai,Langkat
+kec_240,Selesai,Langkat
+kec_241,Sei Binge (Bingai),Langkat
+kec_242,Sirapit (Serapit),Langkat
+kec_243,Kuala,Langkat
+kec_244,Salapian,Langkat
+kec_245,Sei Lepan,Langkat
+kec_246,Kutambaru,Langkat
+kec_247,Bahorok,Langkat
+kec_248,Sawit Seberang,Langkat
+kec_249,Stabat,Langkat
+kec_250,Wampu,Langkat
+kec_251,Padang Tualang,Langkat
+kec_252,Batang Serangan,Langkat
+kec_253,Tanjungpura,Langkat
+kec_254,Hinai,Langkat
+kec_255,Secanggang,Langkat
+kec_256,Gebang,Langkat
+kec_257,Babalan,Langkat
+kec_258,Pangkalan Susu,Langkat
+kec_259,Pematang Jaya,Langkat
+kec_260,Besitang,Langkat
+kec_261,Brandan Barat,Langkat
+kec_262,Kotarih,Serdang Bedagai
+kec_263,Bintang Bayu,Serdang Bedagai
+kec_264,Silinda,Serdang Bedagai
+kec_265,Perbaungan,Serdang Bedagai
+kec_266,Pegajahan,Serdang Bedagai
+kec_267,Pantai Cermin,Serdang Bedagai
+kec_268,Dolok Masihul,Serdang Bedagai
+kec_269,Serba Jadi,Serdang Bedagai
+kec_270,Sipispis,Serdang Bedagai
+kec_271,Dolok Merawan,Serdang Bedagai
+kec_272,Bandar Khalifah,Serdang Bedagai
+kec_273,Sei Bamban,Serdang Bedagai
+kec_274,Sei Rampah,Serdang Bedagai
+kec_275,Tanjung Beringin,Serdang Bedagai
+kec_276,Teluk Mengkudu,Serdang Bedagai
+kec_277,Tebing Tinggi,Serdang Bedagai
+kec_278,Tebing Syahbandar,Serdang Bedagai
+kec_279,Siantar Barat,Pematang Siantar
+kec_280,Siantar Selatan,Pematang Siantar
+kec_281,Siantar Marimbun,Pematang Siantar
+kec_282,Siantar Marihat,Pematang Siantar
+kec_283,Siantar Timur,Pematang Siantar
+kec_284,Siantar Sitalasari,Pematang Siantar
+kec_285,Siantar Martoba,Pematang Siantar
+kec_286,Siantar Utara,Pematang Siantar
+kec_287,Siantar,Simalungun
+kec_288,Jawa Maraja Bah Jambi,Simalungun
+kec_289,Tapian Dolok,Simalungun
+kec_290,Dolok Batu Nanggar,Simalungun
+kec_291,Raya Kahean,Simalungun
+kec_292,Silou Kahean,Simalungun
+kec_293,Panei,Simalungun
+kec_294,Raya,Simalungun
+kec_295,Bandar,Simalungun
+kec_296,Dolok Pardamean,Simalungun
+kec_297,Panombeian Panei,Simalungun
+kec_298,Purba,Simalungun
+kec_299,Silimakuta,Simalungun
+kec_300,Pematang Silima Huta,Simalungun
+kec_301,Dolok Silau,Simalungun
+kec_302,Sidamanik,Simalungun
+kec_303,Jorlang Hataran,Simalungun
+kec_304,Dolok Panribuan,Simalungun
+kec_305,Gunung Maligas,Simalungun
+kec_306,Gunung Malela,Simalungun
+kec_307,Hatonduhan,Simalungun
+kec_308,Girsang Sipangan Bolon,Simalungun
+kec_309,Haranggaol Horison,Simalungun
+kec_310,Tanah Jawa,Simalungun
+kec_311,Huta Bayu Raja,Simalungun
+kec_312,Bosar Maligas,Simalungun
+kec_313,Bandar Huluan,Simalungun
+kec_314,Bandar Masilam,Simalungun
+kec_315,Pematang Sidamanik,Simalungun
+kec_316,Pematang Bandar,Simalungun
+kec_317,Ujung Padang,Simalungun
+kec_318,Kisaran Barat Kota,Asahan
+kec_319,Kisaran Timur Kota,Asahan
+kec_320,Sei Balai,Batu Bara
+kec_321,Tanjung Tiram,Batu Bara
+kec_322,Talawi,Batu Bara
+kec_323,Limapuluh,Batu Bara
+kec_324,Air Putih,Batu Bara
+kec_325,Sei Suka,Batu Bara
+kec_326,Medang Deras,Batu Bara
+kec_327,Buntu Pane,Asahan
+kec_328,Setia Janji,Asahan
+kec_329,Tinggi Raja,Asahan
+kec_330,Bandar Pasir Mandoge,Asahan
+kec_331,Air Joman,Asahan
+kec_332,Silau Laut,Asahan
+kec_333,Meranti,Asahan
+kec_334,Pulo Bandring,Asahan
+kec_335,Rawang Panca Arga,Asahan
+kec_336,Teluk Dalam,Asahan
+kec_337,Simpang Empat,Asahan
+kec_338,Air Batu,Asahan
+kec_339,Sei Dadap,Asahan
+kec_340,Aek Ledong,Asahan
+kec_341,Aek Kuasan,Asahan
+kec_342,Pulau Rakyat,Asahan
+kec_343,Aek Songsongan,Asahan
+kec_344,Bandar Pulau,Asahan
+kec_345,Rahuning,Asahan
+kec_346,Tanjung Balai Selatan,Tanjung Balai
+kec_347,Tanjung Balai Utara,Tanjung Balai
+kec_348,Teluk Nibung,Tanjung Balai
+kec_349,Sei Tualang Raso,Tanjung Balai
+kec_350,Tanjung Balai,Asahan
+kec_351,Datuk Bandar,Tanjung Balai
+kec_352,Datuk Bandar Timur,Tanjung Balai
+kec_353,Sei Kepayang,Asahan
+kec_354,Sei Kepayang Timur,Asahan
+kec_355,Sei Kepayang Barat,Asahan
+kec_356,Bilah Barat,Labuhan Batu
+kec_357,Rantau Utara,Labuhan Batu
+kec_358,Rantau Selatan,Labuhan Batu
+kec_359,Bilah Hulu,Labuhan Batu
+kec_360,Marbau,Labuhan Batu Utara
+kec_361,Na IX-X,Labuhan Batu Utara
+kec_362,Aek Natas,Labuhan Batu Utara
+kec_363,Aek Kuo,Labuhan Batu Utara
+kec_364,Kualuh Hulu,Labuhan Batu Utara
+kec_365,Kualuh Selatan,Labuhan Batu Utara
+kec_366,Silangkitang,Labuhan Batu Selatan
+kec_367,Pangkatan,Labuhan Batu
+kec_368,Kampung Rakyat,Labuhan Batu Selatan
+kec_369,Torgamba,Labuhan Batu Selatan
+kec_370,Kota Pinang,Labuhan Batu Selatan
+kec_371,Sei/Sungai Kanan,Labuhan Batu Selatan
+kec_372,Panai Hulu,Labuhan Batu
+kec_373,Bilah Hilir,Labuhan Batu
+kec_374,Panai Tengah,Labuhan Batu
+kec_375,Panai Hilir,Labuhan Batu
+kec_376,Kualuh Hilir,Labuhan Batu Utara
+kec_377,Kuala Ledong (Kualuh Leidong),Labuhan Batu Utara
+kec_378,Kabanjahe,Karo
+kec_379,Brastagi (Berastagi),Karo
+kec_380,Simpang Empat,Karo
+kec_381,Nama Teran,Karo
+kec_382,Merdeka,Karo
+kec_383,Payung,Karo
+kec_384,Tiganderket,Karo
+kec_385,Kuta Buluh,Karo
+kec_386,Munte,Karo
+kec_387,Tiga Binanga,Karo
+kec_388,Juhar,Karo
+kec_389,Laubaleng,Karo
+kec_390,Mardinding,Karo
+kec_391,Tiga Panah,Karo
+kec_392,Dolat Rayat,Karo
+kec_393,Barus Jahe,Karo
+kec_394,Merek,Karo
+kec_395,Sidikalang,Dairi
+kec_396,Sitinjo,Dairi
+kec_397,Berampu (Brampu),Dairi
+kec_398,Gunung Sitember,Dairi
+kec_399,Tiga Lingga,Dairi
+kec_400,Tanah Pinem,Dairi
+kec_401,Siempat Nempu Hulu,Dairi
+kec_402,Siempat Nempu,Dairi
+kec_403,Silima Pungga-Pungga,Dairi
+kec_404,Siempat Nempu Hilir,Dairi
+kec_405,Pergetteng Getteng Sengkut,Pakpak Bharat
+kec_406,Kerajaan,Pakpak Bharat
+kec_407,Pagindar,Pakpak Bharat
+kec_408,Sitellu Tali Urang Jehe,Pakpak Bharat
+kec_409,Salak,Pakpak Bharat
+kec_410,Tinada,Pakpak Bharat
+kec_411,Sitellu Tali Urang Julu,Pakpak Bharat
+kec_412,Siempat Rube,Pakpak Bharat
+kec_413,Lae Parira,Dairi
+kec_414,Sumbul,Dairi
+kec_415,Silahi Sabungan,Dairi
+kec_416,Parbuluan,Dairi
+kec_417,Pegagan Hilir,Dairi
+kec_418,Balige,Toba Samosir
+kec_419,Tampahan,Toba Samosir
+kec_420,Laguboti,Toba Samosir
+kec_421,Sigumpar,Toba Samosir
+kec_422,Silaen,Toba Samosir
+kec_423,Habinsaran,Toba Samosir
+kec_424,Bor-Bor,Toba Samosir
+kec_425,Nassau,Toba Samosir
+kec_426,Pintu Pohan Meranti,Toba Samosir
+kec_427,Porsea,Toba Samosir
+kec_428,Parmaksian,Toba Samosir
+kec_429,Siantar Narumonda,Toba Samosir
+kec_430,Uluan,Toba Samosir
+kec_431,Lumban Julu,Toba Samosir
+kec_432,Bonatua Lunasi,Toba Samosir
+kec_433,Ajibata,Toba Samosir
+kec_434,Harian,Samosir
+kec_435,Onan Runggu,Samosir
+kec_436,Pangururan,Samosir
+kec_437,Ronggur Nihuta,Samosir
+kec_438,Palipi,Samosir
+kec_439,Nainggolan,Samosir
+kec_440,Simanindo,Samosir
+kec_441,Sitio-Tio,Samosir
+kec_442,Sianjur Mula-Mula,Samosir
+kec_443,Tarutung,Tapanuli Utara
+kec_444,Siatas Barita,Tapanuli Utara
+kec_445,Sipoholon,Tapanuli Utara
+kec_446,Parmonangan,Tapanuli Utara
+kec_447,Onan Ganjang,Humbang Hasundutan
+kec_448,Pakkat,Humbang Hasundutan
+kec_449,Parlilitan,Humbang Hasundutan
+kec_450,Tara Bintang,Humbang Hasundutan
+kec_451,Dolok Sanggul,Humbang Hasundutan
+kec_452,Pollung,Humbang Hasundutan
+kec_453,Sijama Polang,Humbang Hasundutan
+kec_454,Bakti Raja,Humbang Hasundutan
+kec_455,Pagaran,Tapanuli Utara
+kec_456,Adian Koting,Tapanuli Utara
+kec_457,Pahae Julu,Tapanuli Utara
+kec_458,Purbatua,Tapanuli Utara
+kec_459,Pahae Jae,Tapanuli Utara
+kec_460,Simangumban,Tapanuli Utara
+kec_461,Sipahutar,Tapanuli Utara
+kec_462,Pangaribuan,Tapanuli Utara
+kec_463,Garoga,Tapanuli Utara
+kec_464,Siborong-Borong,Tapanuli Utara
+kec_465,Lintong Nihuta,Humbang Hasundutan
+kec_466,Paranginan,Humbang Hasundutan
+kec_467,Muara,Tapanuli Utara
+kec_468,Sibolga Utara,Sibolga
+kec_469,Sibolga Kota,Sibolga
+kec_470,Sibolga Sambas,Sibolga
+kec_471,Sibolga Selatan,Sibolga
+kec_472,Kolang,Tapanuli Tengah
+kec_473,Pasaribu Tobing,Tapanuli Tengah
+kec_474,Sorkam Barat,Tapanuli Tengah
+kec_475,Sorkam,Tapanuli Tengah
+kec_476,Barus,Tapanuli Tengah
+kec_477,Sosor Gadong,Tapanuli Tengah
+kec_478,Barus Utara,Tapanuli Tengah
+kec_479,Sirandorung,Tapanuli Tengah
+kec_480,Manduamas,Tapanuli Tengah
+kec_481,Sitahuis,Tapanuli Tengah
+kec_482,Pandan,Tapanuli Tengah
+kec_483,Sarudik,Tapanuli Tengah
+kec_484,Tukka,Tapanuli Tengah
+kec_485,Tapian Nauli,Tapanuli Tengah
+kec_486,Andam Dewi,Tapanuli Tengah
+kec_487,Lumut,Tapanuli Tengah
+kec_488,Badiri,Tapanuli Tengah
+kec_489,Sibabangun,Tapanuli Tengah
+kec_490,Pinangsori,Tapanuli Tengah
+kec_491,Suka Bangun,Tapanuli Tengah
+kec_492,Padang Sidempuan Utara (Padangsidimpuan),Padang Sidempuan
+kec_493,Padang Sidempuan Selatan,Padang Sidempuan
+kec_494,Angkola Selatan (Siais),Tapanuli Selatan
+kec_495,Padang Sidempuan Batunadua,Padang Sidempuan
+kec_496,Hulu Sihapas,Padang Lawas Utara
+kec_497,Angkola Timur (Padang Sidempuan),Tapanuli Selatan
+kec_498,Padang Sidempuan Angkola Julu,Padang Sidempuan
+kec_499,Padang Sidempuan Tenggara,Padang Sidempuan
+kec_500,Angkola Barat (Padang Sidempuan),Tapanuli Selatan
+kec_501,Angkola Sangkunur,Tapanuli Selatan
+kec_502,Marancar,Tapanuli Selatan
+kec_503,Batang Toru,Tapanuli Selatan
+kec_504,Muara Batang Toru,Tapanuli Selatan
+kec_505,Portibi,Padang Lawas Utara
+kec_506,Sipirok,Tapanuli Selatan
+kec_507,Batang Lubu Sutam,Padang Lawas
+kec_508,Huristak,Padang Lawas
+kec_509,Simangambat,Padang Lawas Utara
+kec_510,Arse,Tapanuli Selatan
+kec_511,Padang Bolak Julu,Padang Lawas Utara
+kec_512,Padang Bolak,Padang Lawas Utara
+kec_513,Halongonan,Padang Lawas Utara
+kec_514,Padang Sidempuan Hutaimbaru,Padang Sidempuan
+kec_515,Aek Nabara Barumun,Padang Lawas
+kec_516,Sihapas Barumun,Padang Lawas
+kec_517,Barumun Tengah,Padang Lawas
+kec_518,Dolok,Padang Lawas Utara
+kec_519,Dolok Sigompulon,Padang Lawas Utara
+kec_520,Aek Bilah,Tapanuli Selatan
+kec_521,Saipar Dolok Hole,Tapanuli Selatan
+kec_522,Sosopan,Padang Lawas
+kec_523,Batang Onang,Padang Lawas Utara
+kec_524,Lubuk Barumun,Padang Lawas
+kec_525,Ulu Barumun,Padang Lawas
+kec_526,Barumun,Padang Lawas
+kec_527,Barumun Selatan,Padang Lawas
+kec_528,Sosa,Padang Lawas
+kec_529,Batang Angkola,Tapanuli Selatan
+kec_530,Sayur Matinggi,Tapanuli Selatan
+kec_531,Tano Tombangan Angkola,Tapanuli Selatan
+kec_532,Huta Raja Tinggi,Padang Lawas
+kec_533,Gunungsitoli,Gunungsitoli
+kec_534,Gunungsitoli Barat,Gunungsitoli
+kec_535,Mandrehe Barat,Nias Barat
+kec_536,Mandrehe Utara,Nias Barat
+kec_537,Alasa Talumuzoi,Nias Utara
+kec_538,Botomuzoi,Nias
+kec_539,Namohalu Esiwa,Nias Utara
+kec_540,Gunungsitoli Utara,Gunungsitoli
+kec_541,Hili Serangkai (Hilisaranggu),Nias
+kec_542,Lotu,Nias Utara
+kec_543,Bawolato,Nias
+kec_544,Gunungsitoli Alo'oa,Gunungsitoli
+kec_545,Gunungsitoli Selatan,Gunungsitoli
+kec_546,Afulu,Nias Utara
+kec_547,Hiliduho,Nias
+kec_548,Lahewa Timur,Nias Utara
+kec_549,Tuhemberua,Nias Utara
+kec_550,Ma'u,Nias
+kec_551,Sitolu Ori,Nias Utara
+kec_552,Sawo,Nias Utara
+kec_553,Lahewa,Nias Utara
+kec_554,Alasa,Nias Utara
+kec_555,Tugala Oyo,Nias Utara
+kec_556,Ulugawo,Nias
+kec_557,Ulu Moro'o (Ulu Narwo),Nias Barat
+kec_558,Mandrehe,Nias Barat
+kec_559,Moro'o,Nias Barat
+kec_560,Sirombu,Nias Barat
+kec_561,Lolowau,Nias Selatan
+kec_562,Hilisalawa'ahe (Hilisalawaahe),Nias Selatan
+kec_563,O'o'u (Oou),Nias Selatan
+kec_564,Hilimegai,Nias Selatan
+kec_565,Lahomi (Gahori),Nias Barat
+kec_566,Onohazumba,Nias Selatan
+kec_567,Teluk Dalam,Nias Selatan
+kec_568,Fanayama,Nias Selatan
+kec_569,Toma,Nias Selatan
+kec_570,Maniamolo,Nias Selatan
+kec_571,Mazino,Nias Selatan
+kec_572,Amandraya,Nias Selatan
+kec_573,Ulususua,Nias Selatan
+kec_574,Aramo,Nias Selatan
+kec_575,Ulunoyo,Nias Selatan
+kec_576,Huruna,Nias Selatan
+kec_577,Lolomatua,Nias Selatan
+kec_578,Gido,Nias
+kec_579,Gunungsitoli Idanoi,Gunungsitoli
+kec_580,Sogae Adu (Sogaeadu),Nias
+kec_581,Somolo-Molo (Samolo),Nias
+kec_582,Idano Gawo,Nias
+kec_583,Umbunasi,Nias Selatan
+kec_584,Gomo,Nias Selatan
+kec_585,Boronadu,Nias Selatan
+kec_586,Susua,Nias Selatan
+kec_587,Mazo,Nias Selatan
+kec_588,Lahusa,Nias Selatan
+kec_589,Somambawa,Nias Selatan
+kec_590,Sidua'ori,Nias Selatan
+kec_591,Lolofitu Moi,Nias Barat
+kec_592,Pulau-Pulau Batu Timur,Nias Selatan
+kec_593,Pulau-Pulau Batu Utara,Nias Selatan
+kec_594,Pulau-Pulau Batu,Nias Selatan
+kec_595,Tanah Masa,Nias Selatan
+kec_596,Hibala,Nias Selatan
+kec_597,Pulau-Pulau Batu Barat,Nias Selatan
+kec_598,Simuk,Nias Selatan
+kec_599,Panyabungan Barat,Mandailing Natal
+kec_600,Panyabungan Kota,Mandailing Natal
+kec_601,Panyabungan Timur,Mandailing Natal
+kec_602,Panyabungan Selatan,Mandailing Natal
+kec_603,Siabu,Mandailing Natal
+kec_604,Bukit Malintang,Mandailing Natal
+kec_605,Naga Juang,Mandailing Natal
+kec_606,Huta Bargot,Mandailing Natal
+kec_607,Panyabungan Utara,Mandailing Natal
+kec_608,Langga Bayu (Lingga Bayu),Mandailing Natal
+kec_609,Batang Natal,Mandailing Natal
+kec_610,Ranto Baek/Baik,Mandailing Natal
+kec_611,Natal,Mandailing Natal
+kec_612,Sinunukan,Mandailing Natal
+kec_613,Batahan,Mandailing Natal
+kec_614,Muara Batang Gadis,Mandailing Natal
+kec_615,Lembah Sorik Merapi,Mandailing Natal
+kec_616,Tambangan,Mandailing Natal
+kec_617,Kotanopan,Mandailing Natal
+kec_618,Puncak Sorik Marapi/Merapi,Mandailing Natal
+kec_619,Ulu Pungkut,Mandailing Natal
+kec_620,Muara Sipongi,Mandailing Natal
+kec_621,Pakantan,Mandailing Natal
+kec_622,Syiah Kuala,Banda Aceh
+kec_623,Ulee Kareng,Banda Aceh
+kec_624,Kuta Alam,Banda Aceh
+kec_625,Kuta Raja,Banda Aceh
+kec_626,Jaya Baru,Banda Aceh
+kec_627,Meuraxa,Banda Aceh
+kec_628,Banda Raya,Banda Aceh
+kec_629,Baiturrahman,Banda Aceh
+kec_630,Lueng Bata,Banda Aceh
+kec_631,Peukan Bada,Aceh Besar
+kec_632,Darul Imarah,Aceh Besar
+kec_633,Darul Kamal,Aceh Besar
+kec_634,Lhoknga (Lho'nga),Aceh Besar
+kec_635,Leupung,Aceh Besar
+kec_636,Lhoong,Aceh Besar
+kec_637,Suka Makmur,Aceh Besar
+kec_638,Mantasiek (Montasik),Aceh Besar
+kec_639,Blank Bintang,Aceh Besar
+kec_640,Indrapuri,Aceh Besar
+kec_641,Kota Cot Glie (Kuta Cot Glie),Aceh Besar
+kec_642,Kota Malaka (Kuta Malaka),Aceh Besar
+kec_643,Ingin Jaya,Aceh Besar
+kec_644,Simpang Tiga,Aceh Besar
+kec_645,Krueng Barona Jaya,Aceh Besar
+kec_646,Kuta Baro,Aceh Besar
+kec_647,Darussalam,Aceh Besar
+kec_648,Baitussalam,Aceh Besar
+kec_649,Mesjid Raya,Aceh Besar
+kec_650,Pulo Aceh,Aceh Besar
+kec_651,Sukakarya,Sabang
+kec_652,Sukajaya,Sabang
+kec_653,Johan Pahlawan,Aceh Barat
+kec_654,Meureubo,Aceh Barat
+kec_655,Arongan Lambalek,Aceh Barat
+kec_656,Bubon,Aceh Barat
+kec_657,Samatiga,Aceh Barat
+kec_658,Keude Panga,Aceh Jaya
+kec_659,Teunom,Aceh Jaya
+kec_660,Pasie Raya,Aceh Jaya
+kec_661,Woyla,Aceh Barat
+kec_662,Krueng Sabee,Aceh Jaya
+kec_663,Setia Bakti,Aceh Jaya
+kec_664,Darul Hikmah,Aceh Jaya
+kec_665,Sampoiniet,Aceh Jaya
+kec_666,Indra Jaya,Aceh Jaya
+kec_667,Jaya,Aceh Jaya
+kec_668,Tadu Raya,Nagan Raya
+kec_669,Kuala,Nagan Raya
+kec_670,Kuala Pesisir,Nagan Raya
+kec_671,Darul Makmur,Nagan Raya
+kec_672,Tripa Makmur,Nagan Raya
+kec_673,Seunagan,Nagan Raya
+kec_674,Suka Makmue,Nagan Raya
+kec_675,Seunagan Timur,Nagan Raya
+kec_676,Beutong,Nagan Raya
+kec_677,Beutong Ateuh Banggalang,Nagan Raya
+kec_678,Pante Ceureumen (Pantai Ceuremen),Aceh Barat
+kec_679,Kaway XVI,Aceh Barat
+kec_680,Panton Reu,Aceh Barat
+kec_681,Sungai Mas,Aceh Barat
+kec_682,Woyla Timur,Aceh Barat
+kec_683,Woyla Barat,Aceh Barat
+kec_684,Tapak Tuan,Aceh Selatan
+kec_685,Sama Dua,Aceh Selatan
+kec_686,Sawang,Aceh Selatan
+kec_687,Meukek,Aceh Selatan
+kec_688,Pasie Raja,Aceh Selatan
+kec_689,Labuhan Haji Barat,Aceh Selatan
+kec_690,Labuhan Haji Timur,Aceh Selatan
+kec_691,Labuhan Haji,Aceh Selatan
+kec_692,Manggeng,Aceh Barat Daya
+kec_693,Lembah Sabil,Aceh Barat Daya
+kec_694,Tangan-Tangan,Aceh Barat Daya
+kec_695,Setia,Aceh Barat Daya
+kec_696,Blang Pidie,Aceh Barat Daya
+kec_697,Jeumpa,Aceh Barat Daya
+kec_698,Susoh,Aceh Barat Daya
+kec_699,Kuala Batee,Aceh Barat Daya
+kec_700,Babah Rot,Aceh Barat Daya
+kec_701,Kluet Utara,Aceh Selatan
+kec_702,Kluet Timur,Aceh Selatan
+kec_703,Kluet Tengah,Aceh Selatan
+kec_704,Kluet Selatan,Aceh Selatan
+kec_705,Kota Bahagia,Aceh Selatan
+kec_706,Bakongan,Aceh Selatan
+kec_707,Bakongan Timur,Aceh Selatan
+kec_708,Trumon Timur,Aceh Selatan
+kec_709,Trumon Tengah,Aceh Selatan
+kec_710,Trumon,Aceh Selatan
+kec_711,Teupah Tengah,Simeulue
+kec_712,Simeuleu Timur,Simeulue
+kec_713,Teupah Selatan,Simeulue
+kec_714,Teluk Dalam,Simeulue
+kec_715,Simeuleu Barat,Simeulue
+kec_716,Teupah Barat,Simeulue
+kec_717,Salang,Simeulue
+kec_718,Alapan (Alafan),Simeulue
+kec_719,Simeulue Cut,Simeulue
+kec_720,Simeuleu Tengah,Simeulue
+kec_721,Kota Jantho,Aceh Besar
+kec_722,Seulimeum,Aceh Besar
+kec_723,Lembah Seulawah,Aceh Besar
+kec_724,Kota Sigli,Pidie
+kec_725,Pidie,Pidie
+kec_726,Batee,Pidie
+kec_727,Grong Grong,Pidie
+kec_728,Muara Tiga,Pidie
+kec_729,Padang Tiji,Pidie
+kec_730,Delima,Pidie
+kec_731,Mila,Pidie
+kec_732,Sakti,Pidie
+kec_733,Titeue,Pidie
+kec_734,Keumala,Pidie
+kec_735,Tangse,Pidie
+kec_736,Geumpang,Pidie
+kec_737,Kembang Tanjong (Tanjung),Pidie
+kec_738,Indrajaya,Pidie
+kec_739,Peukan Baro,Pidie
+kec_740,Mutiara Timur,Pidie
+kec_741,Mutiara,Pidie
+kec_742,Tiro/Truseb,Pidie
+kec_743,Simpang Tiga,Pidie
+kec_744,Glumpang Tiga (Geulumpang Tiga),Pidie
+kec_745,Glumpang Baro,Pidie
+kec_746,Bandar Baru,Pidie Jaya
+kec_747,Trienggadeng,Pidie Jaya
+kec_748,Panteraja,Pidie Jaya
+kec_749,Meureudu,Pidie Jaya
+kec_750,Meurah Dua,Pidie Jaya
+kec_751,Mane,Pidie
+kec_752,Jangka Buya,Pidie Jaya
+kec_753,Ulim,Pidie Jaya
+kec_754,Bandar Dua,Pidie Jaya
+kec_755,Juli,Bireuen
+kec_756,Jeumpa,Bireuen
+kec_757,Simpang Mamplam,Bireuen
+kec_758,Kota Juang,Bireuen
+kec_759,Jangka,Bireuen
+kec_760,Peusangan,Bireuen
+kec_761,Peusangan Siblah Krueng,Bireuen
+kec_762,Kuala,Bireuen
+kec_763,Peusangan Selatan,Bireuen
+kec_764,Peudada,Bireuen
+kec_765,Pandrah,Bireuen
+kec_766,Jeunieb,Bireuen
+kec_767,Peulimbang (Plimbang),Bireuen
+kec_768,Samalanga,Bireuen
+kec_769,Banda Sakti,Lhokseumawe
+kec_770,Simpang Kramat (Keramat),Aceh Utara
+kec_771,Muara Dua,Lhokseumawe
+kec_772,Cot Girek,Aceh Utara
+kec_773,Muara Satu,Lhokseumawe
+kec_774,Dewantara,Aceh Utara
+kec_775,Muara Batu,Aceh Utara
+kec_776,Ganda Pura,Bireuen
+kec_777,Kuta Blang,Bireuen
+kec_778,Makmur,Bireuen
+kec_779,Kuta Makmur,Aceh Utara
+kec_780,Meurah Mulia,Aceh Utara
+kec_781,Syamtalira Bayu,Aceh Utara
+kec_782,Geuredong Pase,Aceh Utara
+kec_783,Samudera,Aceh Utara
+kec_784,Blang Mangat,Lhokseumawe
+kec_785,Nisam,Aceh Utara
+kec_786,Banda Baro,Aceh Utara
+kec_787,Nisam Antara,Aceh Utara
+kec_788,Sawang,Aceh Utara
+kec_789,Syamtalira Aron,Aceh Utara
+kec_790,Lhoksukon,Aceh Utara
+kec_791,Nibong,Aceh Utara
+kec_792,Tanah Luas,Aceh Utara
+kec_793,Paya Bakong,Aceh Utara
+kec_794,Pirak Timur,Aceh Utara
+kec_795,Matangkuli,Aceh Utara
+kec_796,Tanah Pasir,Aceh Utara
+kec_797,Lapang,Aceh Utara
+kec_798,Baktiya,Aceh Utara
+kec_799,Baktiya Barat,Aceh Utara
+kec_800,Seunuddon (Seunudon),Aceh Utara
+kec_801,Langkahan,Aceh Utara
+kec_802,Tanah Jambo Aye,Aceh Utara
+kec_803,Langsa Kota,Langsa
+kec_804,Langsa Barat,Langsa
+kec_805,Langsa Timur,Langsa
+kec_806,Langsa Lama,Langsa
+kec_807,Langsa Baro,Langsa
+kec_808,Birem Bayeun,Aceh Timur
+kec_809,Rantau Selamat,Aceh Timur
+kec_810,Ranto Peureulak,Aceh Timur
+kec_811,Peureulak Timur,Aceh Timur
+kec_812,Peureulak Barat,Aceh Timur
+kec_813,Peureulak,Aceh Timur
+kec_814,Peudawa,Aceh Timur
+kec_815,Idi Rayeuk,Aceh Timur
+kec_816,Idi Tunong,Aceh Timur
+kec_817,Darul Falah,Aceh Timur
+kec_818,Darul Aman,Aceh Timur
+kec_819,Darul Iksan (Ihsan),Aceh Timur
+kec_820,Nurussalam,Aceh Timur
+kec_821,Idi Timur,Aceh Timur
+kec_822,Julok,Aceh Timur
+kec_823,Indra Makmur,Aceh Timur
+kec_824,Madat,Aceh Timur
+kec_825,Simpang Ulim,Aceh Timur
+kec_826,Pante Bidari (Beudari),Aceh Timur
+kec_827,Sungai Raya,Aceh Timur
+kec_828,Simpang Jernih,Aceh Timur
+kec_829,Banda Alam,Aceh Timur
+kec_830,Serba Jadi,Aceh Timur
+kec_831,Peunaron,Aceh Timur
+kec_832,Manyak Payed,Aceh Tamiang
+kec_833,Bendahara,Aceh Tamiang
+kec_834,Banda Mulia,Aceh Tamiang
+kec_835,Seruway,Aceh Tamiang
+kec_836,Rantau,Aceh Tamiang
+kec_837,Kota Kuala Simpang,Aceh Tamiang
+kec_838,Karang Baru,Aceh Tamiang
+kec_839,Sekerak,Aceh Tamiang
+kec_840,Kejuruan Muda,Aceh Tamiang
+kec_841,Tenggulun,Aceh Tamiang
+kec_842,Bandar Pusaka,Aceh Tamiang
+kec_843,Tamiang Hulu,Aceh Tamiang
+kec_844,Lut Tawar,Aceh Tengah
+kec_845,Kebayakan,Aceh Tengah
+kec_846,Bebesen,Aceh Tengah
+kec_847,Gajah Putih,Bener Meriah
+kec_848,Pintu Rime Gayo,Bener Meriah
+kec_849,Timang Gajah,Bener Meriah
+kec_850,Pegasing,Aceh Tengah
+kec_851,Bies,Aceh Tengah
+kec_852,Celala,Aceh Tengah
+kec_853,Silih Nara,Aceh Tengah
+kec_854,Rusip Antara,Aceh Tengah
+kec_855,Ketol,Aceh Tengah
+kec_856,Linge,Aceh Tengah
+kec_857,Atu Lintang,Aceh Tengah
+kec_858,Jagong Jeget,Aceh Tengah
+kec_859,Kute Panang,Aceh Tengah
+kec_860,Bintang,Aceh Tengah
+kec_861,Bukit,Bener Meriah
+kec_862,Wih Pesam,Bener Meriah
+kec_863,Mesidah,Bener Meriah
+kec_864,Permata,Bener Meriah
+kec_865,Bandar,Bener Meriah
+kec_866,Bener Kelipah,Bener Meriah
+kec_867,Syiah Utama,Bener Meriah
+kec_868,Babussalam,Aceh Tenggara
+kec_869,Lawe Bulan,Aceh Tenggara
+kec_870,Deleng Pokhisen,Aceh Tenggara
+kec_871,Bambel,Aceh Tenggara
+kec_872,Ketambe,Aceh Tenggara
+kec_873,Badar,Aceh Tenggara
+kec_874,Blang Pegayon,Gayo Lues
+kec_875,Dabun Gelang (Debun Gelang),Gayo Lues
+kec_876,Darul Hasanah,Aceh Tenggara
+kec_877,Pantan Cuaca,Gayo Lues
+kec_878,Rikit Gaib,Gayo Lues
+kec_879,Blang Kejeren,Gayo Lues
+kec_880,Blang Jerango,Gayo Lues
+kec_881,Kuta Panjang,Gayo Lues
+kec_882,Pining (Pinding),Gayo Lues
+kec_883,Putri Betung,Gayo Lues
+kec_884,Terangun (Terangon),Gayo Lues
+kec_885,Teripe/Tripe Jaya,Gayo Lues
+kec_886,Tanah Alas,Aceh Tenggara
+kec_887,Lawe Alas,Aceh Tenggara
+kec_888,Bukit Tusam,Aceh Tenggara
+kec_889,Lawe Sumur,Aceh Tenggara
+kec_890,Leuser,Aceh Tenggara
+kec_891,Babul Rahmah,Aceh Tenggara
+kec_892,Lawe Sigala-Gala,Aceh Tenggara
+kec_893,Babul Makmur,Aceh Tenggara
+kec_894,Semadam,Aceh Tenggara
+kec_895,Longkib,Subulussalam
+kec_896,Sultan Daulat,Subulussalam
+kec_897,Simpang Kiri,Subulussalam
+kec_898,Penanggalan,Subulussalam
+kec_899,Simpang Kanan,Aceh Singkil
+kec_900,Suro Makmur,Aceh Singkil
+kec_901,Danau Paris,Aceh Singkil
+kec_902,Gunung Meriah (Mariah),Aceh Singkil
+kec_903,Kota Baharu,Aceh Singkil
+kec_904,Kuala Baru,Aceh Singkil
+kec_905,Singkohor,Aceh Singkil
+kec_906,Singkil Utara,Aceh Singkil
+kec_907,Singkil,Aceh Singkil
+kec_908,Rundeng,Subulussalam
+kec_909,Pulau Banyak Barat,Aceh Singkil
+kec_910,Pulau Banyak,Aceh Singkil
+kec_911,Padang Barat,Padang
+kec_912,Padang Timur,Padang
+kec_913,Padang Utara,Padang
+kec_914,Nanggalo,Padang
+kec_915,Kuranji,Padang
+kec_916,Pauh,Padang
+kec_917,Koto Tangah,Padang
+kec_918,Padang Selatan,Padang
+kec_919,Lubuk Begalung,Padang
+kec_920,Lubuk Kilangan,Padang
+kec_921,Bungus Teluk Kabung,Padang
+kec_922,Pagai Utara,Kepulauan Mentawai
+kec_923,Pagai Selatan,Kepulauan Mentawai
+kec_924,Sikakap,Kepulauan Mentawai
+kec_925,Sipora Selatan,Kepulauan Mentawai
+kec_926,Sipora Utara,Kepulauan Mentawai
+kec_927,Siberut Barat Daya,Kepulauan Mentawai
+kec_928,Siberut Selatan,Kepulauan Mentawai
+kec_929,Siberut Tengah,Kepulauan Mentawai
+kec_930,Siberut Utara,Kepulauan Mentawai
+kec_931,Siberut Barat,Kepulauan Mentawai
+kec_932,Pariaman Tengah,Pariaman
+kec_933,Pariaman Timur,Pariaman
+kec_934,Pariaman Utara,Pariaman
+kec_935,Pariaman Selatan,Pariaman
+kec_936,V Koto Kampung Dalam,Padang Pariaman
+kec_937,Sungai Limau,Padang Pariaman
+kec_938,Sungai Geringging/Garingging,Padang Pariaman
+kec_939,Batang Gasan,Padang Pariaman
+kec_940,IV Koto Aur Malintang,Padang Pariaman
+kec_941,Nan Sabaris,Padang Pariaman
+kec_942,Ulakan Tapakih/Tapakis,Padang Pariaman
+kec_943,VII Koto Sungai Sarik,Padang Pariaman
+kec_944,Padang Sago,Padang Pariaman
+kec_945,V Koto Timur,Padang Pariaman
+kec_946,Patamuan,Padang Pariaman
+kec_947,Lubuk Alung,Padang Pariaman
+kec_948,Sintuk/Sintuak Toboh Gadang,Padang Pariaman
+kec_949,2 X 11 Kayu Tanam,Padang Pariaman
+kec_950,Enam Lingkung,Padang Pariaman
+kec_951,2 X 11 Enam Lingkung,Padang Pariaman
+kec_952,Batang Anai,Padang Pariaman
+kec_953,IV Jurai,Pesisir Selatan
+kec_954,Bayang,Pesisir Selatan
+kec_955,IV Nagari Bayang Utara,Pesisir Selatan
+kec_956,Koto XI Tarusan,Pesisir Selatan
+kec_957,Batang Kapas,Pesisir Selatan
+kec_958,Sutera,Pesisir Selatan
+kec_959,Lengayang,Pesisir Selatan
+kec_960,Ranah Pesisir,Pesisir Selatan
+kec_961,Linggo Sari Baganti,Pesisir Selatan
+kec_962,Basa Ampek Balai Tapan,Pesisir Selatan
+kec_963,Ranah Ampek Hulu Tapan,Pesisir Selatan
+kec_964,Airpura,Pesisir Selatan
+kec_965,Pancung Soal,Pesisir Selatan
+kec_966,Silaut,Pesisir Selatan
+kec_967,Lunang,Pesisir Selatan
+kec_968,Guguk Panjang (Guguak Panjang),Bukittinggi
+kec_969,Mandiangin Koto Selayan,Bukittinggi
+kec_970,Aur Birugo Tigo Baleh,Bukittinggi
+kec_971,Palupuh,Agam
+kec_972,Tilatang Kamang,Agam
+kec_973,Kamang Magek,Agam
+kec_974,IV Koto (Ampek Koto),Agam
+kec_975,Ampek Nagari (IV Nagari ),Agam
+kec_976,Malakak,Agam
+kec_977,Matur,Agam
+kec_978,Palembayan,Agam
+kec_979,Sungai Pua (Puar),Agam
+kec_980,Banuhampu,Agam
+kec_981,IV Angkat Candung (Ampek Angkek),Agam
+kec_982,Candung,Agam
+kec_983,Baso,Agam
+kec_984,Payakumbuh Utara,Payakumbuh
+kec_985,Lamposi Tigo Nagari,Payakumbuh
+kec_986,Payakumbuh Barat,Payakumbuh
+kec_987,Payakumbuh Selatan,Payakumbuh
+kec_988,Payakumbuh Timur,Payakumbuh
+kec_989,Payakumbuh,Lima Puluh Koto/Kota
+kec_990,Akabiluru,Lima Puluh Koto/Kota
+kec_991,Situjuah Limo/Lima Nagari,Lima Puluh Koto/Kota
+kec_992,Guguak (Gugu),Lima Puluh Koto/Kota
+kec_993,Mungka,Lima Puluh Koto/Kota
+kec_994,Suliki,Lima Puluh Koto/Kota
+kec_995,Gunuang Omeh (Gunung Mas),Lima Puluh Koto/Kota
+kec_996,Bukik Barisan,Lima Puluh Koto/Kota
+kec_997,Luak (Luhak),Lima Puluh Koto/Kota
+kec_998,Lareh Sago Halaban,Lima Puluh Koto/Kota
+kec_999,Harau,Lima Puluh Koto/Kota
+kec_1000,Pangkalan Koto Baru,Lima Puluh Koto/Kota
+kec_1001,Kapur IX/Sembilan,Lima Puluh Koto/Kota
+kec_1002,Duo Koto (II Koto),Pasaman
+kec_1003,Lubuk Sikaping,Pasaman
+kec_1004,Padang Gelugur,Pasaman
+kec_1005,Panti,Pasaman
+kec_1006,Tigo Nagari (III Nagari),Pasaman
+kec_1007,Rao Utara,Pasaman
+kec_1008,Rao Selatan,Pasaman
+kec_1009,Mapat Tunggul,Pasaman
+kec_1010,Mapat Tunggul Selatan,Pasaman
+kec_1011,Rao,Pasaman
+kec_1012,Ranah Batahan,Pasaman Barat
+kec_1013,Sasak Ranah Pasisir/Pesisie,Pasaman Barat
+kec_1014,Simpang Alahan Mati,Pasaman
+kec_1015,Bonjol,Pasaman
+kec_1016,Lubuk Basung,Agam
+kec_1017,Tanjung Raya,Agam
+kec_1018,Tanjung Mutiara,Agam
+kec_1019,Talamau,Pasaman Barat
+kec_1020,Pasaman,Pasaman Barat
+kec_1021,Luhak Nan Duo,Pasaman Barat
+kec_1022,Kinali,Pasaman Barat
+kec_1023,Gunung Tuleh,Pasaman Barat
+kec_1024,Koto Balingka,Pasaman Barat
+kec_1025,Lembah Melintang,Pasaman Barat
+kec_1026,Sei Beremas,Pasaman Barat
+kec_1027,Sungai Aur,Pasaman Barat
+kec_1028,Padang Panjang Barat,Padang Panjang
+kec_1029,Padang Panjang Timur,Padang Panjang
+kec_1030,Sepuluh Koto (X Koto),Tanah Datar
+kec_1031,Lima Kaum,Tanah Datar
+kec_1032,Sungai Tarab,Tanah Datar
+kec_1033,Salimpaung,Tanah Datar
+kec_1034,Pariangan,Tanah Datar
+kec_1035,Batipuh,Tanah Datar
+kec_1036,Batipuh Selatan,Tanah Datar
+kec_1037,Rambatan,Tanah Datar
+kec_1038,Tanjung Baru,Tanah Datar
+kec_1039,Tanjung Emas,Tanah Datar
+kec_1040,Padang Ganting,Tanah Datar
+kec_1041,Lintau Buo Utara,Tanah Datar
+kec_1042,Lintau Buo,Tanah Datar
+kec_1043,Sungayang,Tanah Datar
+kec_1044,Lubuk Sikarah,Solok
+kec_1045,Tanjung Harapan,Solok
+kec_1046,X Koto Diatas,Solok
+kec_1047,X Koto Singkarak,Solok
+kec_1048,Kubung,Solok
+kec_1049,Gunung Talang,Solok
+kec_1050,Lembah Gumanti,Solok
+kec_1051,Tigo Lurah,Solok
+kec_1052,Hiliran Gumanti,Solok
+kec_1053,Pantai Cermin,Solok
+kec_1054,Bukit Sundi,Solok
+kec_1055,Lembang Jaya,Solok
+kec_1056,Danau Kembar,Solok
+kec_1057,Payung Sekaki,Solok
+kec_1058,IX Koto Sei Lasi,Solok
+kec_1059,Junjung Sirih,Solok
+kec_1060,Lembah Segar,Sawah Lunto
+kec_1061,Barangin,Sawah Lunto
+kec_1062,Silungkang,Sawah Lunto
+kec_1063,Talawi,Sawah Lunto
+kec_1064,Sijunjung,Sijunjung (Sawah Lunto Sijunjung)
+kec_1065,Lubuak Tarok,Sijunjung (Sawah Lunto Sijunjung)
+kec_1066,IV Nagari,Sijunjung (Sawah Lunto Sijunjung)
+kec_1067,Koto VII,Sijunjung (Sawah Lunto Sijunjung)
+kec_1068,Sumpur Kudus,Sijunjung (Sawah Lunto Sijunjung)
+kec_1069,Kupitan,Sijunjung (Sawah Lunto Sijunjung)
+kec_1070,Tanjung Gadang,Sijunjung (Sawah Lunto Sijunjung)
+kec_1071,Kamang Baru,Sijunjung (Sawah Lunto Sijunjung)
+kec_1072,Pulau Punjung,Dharmasraya
+kec_1073,Sitiung,Dharmasraya
+kec_1074,Timpeh,Dharmasraya
+kec_1075,Koto Baru,Dharmasraya
+kec_1076,Koto Salak,Dharmasraya
+kec_1077,Sembilan Koto (IX Koto),Dharmasraya
+kec_1078,Padang Laweh,Dharmasraya
+kec_1079,Tiumang,Dharmasraya
+kec_1080,Koto Besar,Dharmasraya
+kec_1081,Asam Jujuhan,Dharmasraya
+kec_1082,Sungai Rumbai,Dharmasraya
+kec_1083,Koto Parik Gadang Diateh,Solok Selatan
+kec_1084,Pauh Duo,Solok Selatan
+kec_1085,Sungai Pagu,Solok Selatan
+kec_1086,Sangir Jujuan,Solok Selatan
+kec_1087,Sangir Balai Janggo,Solok Selatan
+kec_1088,Sangir,Solok Selatan
+kec_1089,Sangir Batang Hari,Solok Selatan
+kec_1090,Pekanbaru Kota,Pekanbaru
+kec_1091,Sukajadi,Pekanbaru
+kec_1092,Marpoyan Damai,Pekanbaru
+kec_1093,Sail,Pekanbaru
+kec_1094,Lima Puluh,Pekanbaru
+kec_1095,Senapelan,Pekanbaru
+kec_1096,Rumbai Pesisir,Pekanbaru
+kec_1097,Rumbai,Pekanbaru
+kec_1098,Tenayan Raya,Pekanbaru
+kec_1099,Bukit Raya,Pekanbaru
+kec_1100,Tampan,Pekanbaru
+kec_1101,Payung Sekaki,Pekanbaru
+kec_1102,Kerumutan,Pelalawan
+kec_1103,Pelalawan,Pelalawan
+kec_1104,Teluk Meranti,Pelalawan
+kec_1105,Pangkalan Kerinci,Pelalawan
+kec_1106,Langgam,Pelalawan
+kec_1107,Ukui,Pelalawan
+kec_1108,Pangkalan Kuras,Pelalawan
+kec_1109,Pangkalan Lesung,Pelalawan
+kec_1110,Bunut,Pelalawan
+kec_1111,Bandar Sei Kijang,Pelalawan
+kec_1112,Bandar Petalangan,Pelalawan
+kec_1113,Kuala Kampar,Pelalawan
+kec_1114,Bangkinang,Kampar
+kec_1115,Salo,Kampar
+kec_1116,Siak Hulu,Kampar
+kec_1117,XIII Koto Kampar,Kampar
+kec_1118,Koto Kampar Hulu,Kampar
+kec_1119,Rumbio Jaya,Kampar
+kec_1120,Kampar,Kampar
+kec_1121,Kampar Timur,Kampar
+kec_1122,Kampar Utara,Kampar
+kec_1123,Tambang,Kampar
+kec_1124,Perhentian Raja,Kampar
+kec_1125,Kuok (Bangkinang Barat),Kampar
+kec_1126,Bangkinang Seberang,Kampar
+kec_1127,Tapung,Kampar
+kec_1128,Tapung Hilir,Kampar
+kec_1129,Tapung Hulu,Kampar
+kec_1130,Kampar Kiri Hulu,Kampar
+kec_1131,Kampar Kiri Hilir,Kampar
+kec_1132,Kampar Kiri Tengah,Kampar
+kec_1133,Kampar Kiri,Kampar
+kec_1134,Gunung Sahilan,Kampar
+kec_1135,Kabun,Rokan Hulu
+kec_1136,Tandun,Rokan Hulu
+kec_1137,Ujung Batu,Rokan Hulu
+kec_1138,Pendalian IV Koto,Rokan Hulu
+kec_1139,Rokan IV Koto,Rokan Hulu
+kec_1140,Kunto Darussalam,Rokan Hulu
+kec_1141,Pagaran Tapah Darussalam,Rokan Hulu
+kec_1142,Rambah,Rokan Hulu
+kec_1143,Bangun Purba,Rokan Hulu
+kec_1144,Rambah Hilir,Rokan Hulu
+kec_1145,Tambusai Utara,Rokan Hulu
+kec_1146,Tambusai,Rokan Hulu
+kec_1147,Bonai Darussalam,Rokan Hulu
+kec_1148,Kepenuhan Hulu,Rokan Hulu
+kec_1149,Kepenuhan,Rokan Hulu
+kec_1150,Rambah Samo,Rokan Hulu
+kec_1151,Kerinci Kanan,Siak
+kec_1152,Lubuk Dalam,Siak
+kec_1153,Sungai Apit,Siak
+kec_1154,Dayun,Siak
+kec_1155,Sungai Mandau,Siak
+kec_1156,Siak,Siak
+kec_1157,Koto Gasib,Siak
+kec_1158,Sabak Auh,Siak
+kec_1159,Minas,Siak
+kec_1160,Kandis,Siak
+kec_1161,Bengkalis,Bengkalis
+kec_1162,Merbau,Kepulauan Meranti
+kec_1163,Tasik Putri Puyu,Kepulauan Meranti
+kec_1164,Pulaumerbau,Kepulauan Meranti
+kec_1165,Tebing Tinggi,Kepulauan Meranti
+kec_1166,Tebing Tinggi Barat,Kepulauan Meranti
+kec_1167,Tebing Tinggi Timur,Kepulauan Meranti
+kec_1168,Bantan,Bengkalis
+kec_1169,Rangsang Barat,Kepulauan Meranti
+kec_1170,Rangsang Pesisir,Kepulauan Meranti
+kec_1171,Rangsang,Kepulauan Meranti
+kec_1172,Bukit Batu,Bengkalis
+kec_1173,Pusako,Siak
+kec_1174,Bunga Raya,Siak
+kec_1175,Siak Kecil,Bengkalis
+kec_1176,Tualang,Siak
+kec_1177,Mempura,Siak
+kec_1178,Rupat,Bengkalis
+kec_1179,Rupat Utara,Bengkalis
+kec_1180,Mandau,Bengkalis
+kec_1181,Pinggir,Bengkalis
+kec_1182,Dumai Timur,Dumai
+kec_1183,Dumai Kota,Dumai
+kec_1184,Dumai Selatan,Dumai
+kec_1185,Dumai Barat,Dumai
+kec_1186,Medang Kampai,Dumai
+kec_1187,Sungai Sembilan,Dumai
+kec_1188,Bukit Kapur,Dumai
+kec_1189,Bangko,Rokan Hilir
+kec_1190,Batu Hampar,Rokan Hilir
+kec_1191,Sinaboi (Senaboi),Rokan Hilir
+kec_1192,Pekaitan,Rokan Hilir
+kec_1193,Rimba Melintang,Rokan Hilir
+kec_1194,Pujud,Rokan Hilir
+kec_1195,Rantau Kopar,Rokan Hilir
+kec_1196,Bangko Pusaka (Pusako),Rokan Hilir
+kec_1197,Tanah Putih,Rokan Hilir
+kec_1198,Tanah Putih Tanjung Melawan,Rokan Hilir
+kec_1199,Kubu Babussalam,Rokan Hilir
+kec_1200,Pasir Limau Kapas,Rokan Hilir
+kec_1201,Kubu,Rokan Hilir
+kec_1202,Bagan Sinembah,Rokan Hilir
+kec_1203,Simpang Kanan,Rokan Hilir
+kec_1204,Tanjung Pinang Barat,Tanjung Pinang
+kec_1205,Tanjung Pinang Kota,Tanjung Pinang
+kec_1206,Tanjung Pinang Timur,Tanjung Pinang
+kec_1207,Bukit Bestari,Tanjung Pinang
+kec_1208,Teluk Bintan,Bintan
+kec_1209,Bintan Pesisir,Bintan
+kec_1210,Mantang,Bintan
+kec_1211,Gunung Kijang,Bintan
+kec_1212,Bintan Timur,Bintan
+kec_1213,Toapaya,Bintan
+kec_1214,Teluk Sebong,Bintan
+kec_1215,Seri/Sri Kuala Lobam,Bintan
+kec_1216,Bintan Utara,Bintan
+kec_1217,Tambelan,Bintan
+kec_1218,Tembilahan,Indragiri Hilir
+kec_1219,Tembilahan Hulu,Indragiri Hilir
+kec_1220,Batang Tuaka,Indragiri Hilir
+kec_1221,Gaung Anak Serka,Indragiri Hilir
+kec_1222,Mandah,Indragiri Hilir
+kec_1223,Kateman,Indragiri Hilir
+kec_1224,Pelangiran,Indragiri Hilir
+kec_1225,Teluk Belengkong,Indragiri Hilir
+kec_1226,Pulau Burung,Indragiri Hilir
+kec_1227,Kempas,Indragiri Hilir
+kec_1228,Tempuling,Indragiri Hilir
+kec_1229,Tanah Merah,Indragiri Hilir
+kec_1230,Enok,Indragiri Hilir
+kec_1231,Sungai Batang,Indragiri Hilir
+kec_1232,Reteh,Indragiri Hilir
+kec_1233,Kemuning,Indragiri Hilir
+kec_1234,Keritang,Indragiri Hilir
+kec_1235,Concong,Indragiri Hilir
+kec_1236,Kuala Indragiri,Indragiri Hilir
+kec_1237,Gaung,Indragiri Hilir
+kec_1238,Rengat,Indragiri Hulu
+kec_1239,Kuala Cenaku,Indragiri Hulu
+kec_1240,Rengat Barat,Indragiri Hulu
+kec_1241,Pasir Penyu,Indragiri Hulu
+kec_1242,Lubuk Batu Jaya,Indragiri Hulu
+kec_1243,Rakit Kulim,Indragiri Hulu
+kec_1244,Kelayang,Indragiri Hulu
+kec_1245,Lirik,Indragiri Hulu
+kec_1246,Peranap,Indragiri Hulu
+kec_1247,Batang Peranap,Indragiri Hulu
+kec_1248,Batang Cenaku,Indragiri Hulu
+kec_1249,Batang Gansal,Indragiri Hulu
+kec_1250,Sungai Lala,Indragiri Hulu
+kec_1251,Seberida,Indragiri Hulu
+kec_1252,Belakang Padang,Batam
+kec_1253,Batu Aji,Batam
+kec_1254,Sekupang,Batam
+kec_1255,Batam Kota,Batam
+kec_1256,Lubuk Baja,Batam
+kec_1257,Bengkong,Batam
+kec_1258,Sei/Sungai Beduk,Batam
+kec_1259,Sagulung,Batam
+kec_1260,Batu Ampar,Batam
+kec_1261,Nongsa,Batam
+kec_1262,Bulang,Batam
+kec_1263,Galang,Batam
+kec_1264,Kuantan Tengah,Kuantan Singingi
+kec_1265,Pangean,Kuantan Singingi
+kec_1266,Cerenti,Kuantan Singingi
+kec_1267,Logas Tanah Darat,Kuantan Singingi
+kec_1268,Kuantan Hilir,Kuantan Singingi
+kec_1269,Kuantan Hilir Seberang,Kuantan Singingi
+kec_1270,Singingi,Kuantan Singingi
+kec_1271,Singingi Hilir,Kuantan Singingi
+kec_1272,Kuantan Mudik,Kuantan Singingi
+kec_1273,Pucuk Rantau,Kuantan Singingi
+kec_1274,Inuman,Kuantan Singingi
+kec_1275,Gunung Toar,Kuantan Singingi
+kec_1276,Hulu Kuantan,Kuantan Singingi
+kec_1277,Benai,Kuantan Singingi
+kec_1278,Sentajo Raya,Kuantan Singingi
+kec_1279,Karimun,Karimun
+kec_1280,Ungar,Karimun
+kec_1281,Belat,Karimun
+kec_1282,Kundur,Karimun
+kec_1283,Kundur Barat,Karimun
+kec_1284,Kundur Utara,Karimun
+kec_1285,Moro,Karimun
+kec_1286,Tebing,Karimun
+kec_1287,Meral,Karimun
+kec_1288,Buru,Karimun
+kec_1289,Meral Barat,Karimun
+kec_1290,Durai,Karimun
+kec_1291,Serasan Timur,Natuna
+kec_1292,Serasan,Natuna
+kec_1293,Subi,Natuna
+kec_1294,Bunguran Barat,Natuna
+kec_1295,Siantan Tengah,Kepulauan Anambas
+kec_1296,Bunguran Tengah,Natuna
+kec_1297,Pulau Laut,Natuna
+kec_1298,Bunguran Timur,Natuna
+kec_1299,Palmatak,Kepulauan Anambas
+kec_1300,Bunguran Utara,Natuna
+kec_1301,Bunguran Selatan,Natuna
+kec_1302,Bunguran Timur Laut,Natuna
+kec_1303,Pulau Tiga,Natuna
+kec_1304,Midai,Natuna
+kec_1305,Siantan Selatan,Kepulauan Anambas
+kec_1306,Siantan Timur,Kepulauan Anambas
+kec_1307,Siantan,Kepulauan Anambas
+kec_1308,Jemaja,Kepulauan Anambas
+kec_1309,Jemaja Timur,Kepulauan Anambas
+kec_1310,Singkep,Lingga
+kec_1311,Singkep Pesisir,Lingga
+kec_1312,Lingga Timur,Lingga
+kec_1313,Lingga,Lingga
+kec_1314,Selayar,Lingga
+kec_1315,Senayang,Lingga
+kec_1316,Lingga Utara,Lingga
+kec_1317,Singkep Barat,Lingga
+kec_1318,Ilir Timur II,Palembang
+kec_1319,Kalidoni,Palembang
+kec_1320,Ilir Timur I,Palembang
+kec_1321,Kemuning,Palembang
+kec_1322,Bukit Kecil,Palembang
+kec_1323,Ilir Barat I,Palembang
+kec_1324,Ilir Barat II,Palembang
+kec_1325,Gandus,Palembang
+kec_1326,Sukarami,Palembang
+kec_1327,Alang-Alang Lebar,Palembang
+kec_1328,Sematang Borang,Palembang
+kec_1329,Sako,Palembang
+kec_1330,Seberang Ulu I,Palembang
+kec_1331,Kertapati,Palembang
+kec_1332,Seberang Ulu II,Palembang
+kec_1333,Plaju,Palembang
+kec_1334,Kayu Agung,Ogan Komering Ilir
+kec_1335,Jejawi,Ogan Komering Ilir
+kec_1336,Sirah Pulau Padang,Ogan Komering Ilir
+kec_1337,Pemulutan Barat,Ogan Ilir
+kec_1338,Pemulutan,Ogan Ilir
+kec_1339,Pemulutan Selatan,Ogan Ilir
+kec_1340,Pampangan,Ogan Komering Ilir
+kec_1341,Tulung Selapan,Ogan Komering Ilir
+kec_1342,Air Sugihan,Ogan Komering Ilir
+kec_1343,Lempuing,Ogan Komering Ilir
+kec_1344,Lempuing Jaya,Ogan Komering Ilir
+kec_1345,Cengal,Ogan Komering Ilir
+kec_1346,Pangkalan Lampam,Ogan Komering Ilir
+kec_1347,Rantau Panjang,Ogan Ilir
+kec_1348,Tanjung Raja,Ogan Ilir
+kec_1349,Sungai Pinang,Ogan Ilir
+kec_1350,Tanjung Batu,Ogan Ilir
+kec_1351,Payaraman,Ogan Ilir
+kec_1352,Tanjung Lubuk,Ogan Komering Ilir
+kec_1353,Pedamaran,Ogan Komering Ilir
+kec_1354,Pedamaran Timur,Ogan Komering Ilir
+kec_1355,Teluk Gelam,Ogan Komering Ilir
+kec_1356,Mesuji Raya,Ogan Komering Ilir
+kec_1357,Mesuji Makmur,Ogan Komering Ilir
+kec_1358,Sungai Menang,Ogan Komering Ilir
+kec_1359,Mesuji,Ogan Komering Ilir
+kec_1360,Sekayu,Musi Banyuasin
+kec_1361,Babat Toman,Musi Banyuasin
+kec_1362,Lawang Wetan,Musi Banyuasin
+kec_1363,Keluang,Musi Banyuasin
+kec_1364,Babat Supat,Musi Banyuasin
+kec_1365,Sungai Lilin,Musi Banyuasin
+kec_1366,Batanghari Leko,Musi Banyuasin
+kec_1367,Tungkal Jaya,Musi Banyuasin
+kec_1368,Bayung Lencir,Musi Banyuasin
+kec_1369,Sungai Keruh,Musi Banyuasin
+kec_1370,Lais,Musi Banyuasin
+kec_1371,Lalan (Sungai Lalan),Musi Banyuasin
+kec_1372,Plakat Tinggi (Pelakat Tinggi),Musi Banyuasin
+kec_1373,Sanga Desa,Musi Banyuasin
+kec_1374,STL Ulu Terawas,Musi Rawas
+kec_1375,Sumber Harta,Musi Rawas
+kec_1376,Indralaya Utara,Ogan Ilir
+kec_1377,Indralaya,Ogan Ilir
+kec_1378,Indralaya Selatan,Ogan Ilir
+kec_1379,Muara Kuang,Ogan Ilir
+kec_1380,Rantau Alai,Ogan Ilir
+kec_1381,Kandis,Ogan Ilir
+kec_1382,Lubuk Keliat,Ogan Ilir
+kec_1383,Rambang Kuang,Ogan Ilir
+kec_1384,Banyuasin III,Banyuasin
+kec_1385,Sembawa,Banyuasin
+kec_1386,Suak Tapeh,Banyuasin
+kec_1387,Betung,Banyuasin
+kec_1388,Pulau Rimau,Banyuasin
+kec_1389,Tungkal Ilir,Banyuasin
+kec_1390,Talang Kelapa,Banyuasin
+kec_1391,Tanjung Lago,Banyuasin
+kec_1392,Air Kumbang,Banyuasin
+kec_1393,Banyuasin I,Banyuasin
+kec_1394,Rambutan,Banyuasin
+kec_1395,Rantau Bayur,Banyuasin
+kec_1396,Banyuasin II,Banyuasin
+kec_1397,Makarti Jaya,Banyuasin
+kec_1398,Air Salek,Banyuasin
+kec_1399,Sumber Marga Telang,Banyuasin
+kec_1400,Muara Telang,Banyuasin
+kec_1401,Muara Padang,Banyuasin
+kec_1402,Muara Sugihan,Banyuasin
+kec_1403,Prabumulih Timur,Prabumulih
+kec_1404,Prabumulih Selatan,Prabumulih
+kec_1405,Prabumulih Utara,Prabumulih
+kec_1406,Prabumulih Barat,Prabumulih
+kec_1407,Rambang Kapak Tengah,Prabumulih
+kec_1408,Cambai,Prabumulih
+kec_1409,Lembak,Muara Enim
+kec_1410,Muara Belida,Muara Enim
+kec_1411,Gelumbang,Muara Enim
+kec_1412,Kelekar,Muara Enim
+kec_1413,Rambang Dangku,Muara Enim
+kec_1414,Rambang,Muara Enim
+kec_1415,Lubai,Muara Enim
+kec_1416,Talang Ubi,Muara Enim
+kec_1417,Muara Enim,Muara Enim
+kec_1418,Tanah Abang,Muara Enim
+kec_1419,Penukal (Penukal Abab),Muara Enim
+kec_1420,Abab,Muara Enim
+kec_1421,Penukal Utara,Muara Enim
+kec_1422,Ujan Mas,Muara Enim
+kec_1423,Gunung Megang,Muara Enim
+kec_1424,Semendo Darat Ulu,Muara Enim
+kec_1425,Tanjung Agung,Muara Enim
+kec_1426,Pajar Bulan,Lahat
+kec_1427,Semendo Darat Laut,Muara Enim
+kec_1428,Semendo Darat Tengah,Muara Enim
+kec_1429,Sukamerindu,Lahat
+kec_1430,Sungai Rotan,Muara Enim
+kec_1431,Lahat,Lahat
+kec_1432,Pseksu,Lahat
+kec_1433,Gumay Talang,Lahat
+kec_1434,Kikim Barat,Lahat
+kec_1435,Kikim Timur,Lahat
+kec_1436,Kikim Selatan,Lahat
+kec_1437,Kikim Tengah,Lahat
+kec_1438,Mulak Ulu,Lahat
+kec_1439,Tebing Tinggi,Empat Lawang
+kec_1440,Saling,Empat Lawang
+kec_1441,Tanjung Tebat,Lahat
+kec_1442,Pagar Gunung,Lahat
+kec_1443,Pulau Pinang,Lahat
+kec_1444,Gumay Ulu,Lahat
+kec_1445,Kota Agung,Lahat
+kec_1446,Merapi Timur,Lahat
+kec_1447,Merapi Selatan,Lahat
+kec_1448,Merapi Barat,Lahat
+kec_1449,Pagar Alam Utara,Pagar Alam
+kec_1450,Dempo Utara,Pagar Alam
+kec_1451,Dempo Selatan,Pagar Alam
+kec_1452,Dempo Tengah,Pagar Alam
+kec_1453,Pagar Alam Selatan,Pagar Alam
+kec_1454,Tanjung Sakti Pumu,Lahat
+kec_1455,Tanjung Sakti Pumi,Lahat
+kec_1456,Jarai,Lahat
+kec_1457,Muarapayang,Lahat
+kec_1458,Muara Pinang,Empat Lawang
+kec_1459,Pendopo Barat,Empat Lawang
+kec_1460,Lintang Kanan,Empat Lawang
+kec_1461,Pendopo,Empat Lawang
+kec_1462,Ulu Musi,Empat Lawang
+kec_1463,Sikap Dalam,Empat Lawang
+kec_1464,Pasemah Air Keruh,Empat Lawang
+kec_1465,Talang Padang,Empat Lawang
+kec_1466,Lubuk Linggau Barat Dua (II),Lubuk Linggau
+kec_1467,Lubuk Linggau Barat Satu (I),Lubuk Linggau
+kec_1468,Lubuk Linggau Utara Dua (II),Lubuk Linggau
+kec_1469,Lubuk Linggau Utara Satu (I),Lubuk Linggau
+kec_1470,Lubuk Linggau Timur Dua (II),Lubuk Linggau
+kec_1471,Selangit,Musi Rawas
+kec_1472,Lubuk Linggau Timur Satu (I),Lubuk Linggau
+kec_1473,Lubuk Linggau Selatan Satu (I),Lubuk Linggau
+kec_1474,Benakat,Muara Enim
+kec_1475,Lubuk Linggau Selatan Dua (II),Lubuk Linggau
+kec_1476,Batukuning Lakitan Ulu (BTS)/Cecar,Musi Rawas
+kec_1477,Rupit,Musi Rawas
+kec_1478,Karang Jaya,Musi Rawas
+kec_1479,Rawas Ilir,Musi Rawas
+kec_1480,Rawas Ulu,Musi Rawas
+kec_1481,Megang Sakti,Musi Rawas
+kec_1482,Karang Dapo,Musi Rawas
+kec_1483,Muara Beliti,Musi Rawas
+kec_1484,Tiang Pumpung Kepungut,Musi Rawas
+kec_1485,Tugumulyo,Musi Rawas
+kec_1486,Tuah Negeri,Musi Rawas
+kec_1487,Muara Kelingi,Musi Rawas
+kec_1488,Sukakarya,Musi Rawas
+kec_1489,Jaya Loka,Musi Rawas
+kec_1490,Muara Lakitan,Musi Rawas
+kec_1491,Nibung,Musi Rawas
+kec_1492,Purwodadi,Musi Rawas
+kec_1493,Ulu Rawas,Musi Rawas
+kec_1494,Lawang Kidul,Muara Enim
+kec_1495,Baturaja Timur,Ogan Komering Ulu
+kec_1496,Baturaja Barat,Ogan Komering Ulu
+kec_1497,Sosoh Buay Rayap,Ogan Komering Ulu
+kec_1498,Lubuk Raja,Ogan Komering Ulu
+kec_1499,Pengandonan,Ogan Komering Ulu
+kec_1500,Muara Jaya,Ogan Komering Ulu
+kec_1501,Semidang Aji,Ogan Komering Ulu
+kec_1502,Ulu Ogan,Ogan Komering Ulu
+kec_1503,Lengkiti,Ogan Komering Ulu
+kec_1504,Sinar Peninjauan,Ogan Komering Ulu
+kec_1505,Semendawai Barat,Ogan Komering Ulu Timur
+kec_1506,Semendawai Timur,Ogan Komering Ulu Timur
+kec_1507,Peninjauan,Ogan Komering Ulu
+kec_1508,Lubuk Batang,Ogan Komering Ulu
+kec_1509,Buay Rawan,Ogan Komering Ulu Selatan
+kec_1510,Muaradua,Ogan Komering Ulu Selatan
+kec_1511,Buana Pemaca,Ogan Komering Ulu Selatan
+kec_1512,Simpang,Ogan Komering Ulu Selatan
+kec_1513,Buay Pemaca,Ogan Komering Ulu Selatan
+kec_1514,Muaradua Kisam,Ogan Komering Ulu Selatan
+kec_1515,Kisam Ilir,Ogan Komering Ulu Selatan
+kec_1516,Pulau Beringin,Ogan Komering Ulu Selatan
+kec_1517,Sungai Are,Ogan Komering Ulu Selatan
+kec_1518,Sindang Danau,Ogan Komering Ulu Selatan
+kec_1519,Banding Agung,Ogan Komering Ulu Selatan
+kec_1520,Warkuk Ranau Selatan,Ogan Komering Ulu Selatan
+kec_1521,Buay Pematang Ribu Ranau Tengah,Ogan Komering Ulu Selatan
+kec_1522,Mekakau Ilir,Ogan Komering Ulu Selatan
+kec_1523,Buay Sandang Aji,Ogan Komering Ulu Selatan
+kec_1524,Tiga Dihaji,Ogan Komering Ulu Selatan
+kec_1525,Runjung Agung,Ogan Komering Ulu Selatan
+kec_1526,Buay Runjung,Ogan Komering Ulu Selatan
+kec_1527,Kisam Tinggi,Ogan Komering Ulu Selatan
+kec_1528,Martapura,Ogan Komering Ulu Timur
+kec_1529,Buay Madang,Ogan Komering Ulu Timur
+kec_1530,Buay Pemuka Bangsa Raja,Ogan Komering Ulu Timur
+kec_1531,Buay Madang Timur,Ogan Komering Ulu Timur
+kec_1532,Madang Suku I,Ogan Komering Ulu Timur
+kec_1533,Belitang Madang Raya,Ogan Komering Ulu Timur
+kec_1534,Madang Suku II,Ogan Komering Ulu Timur
+kec_1535,Madang Suku III,Ogan Komering Ulu Timur
+kec_1536,Buay Pemuka Beliung / Peliung,Ogan Komering Ulu Timur
+kec_1537,Bunga Mayang,Ogan Komering Ulu Timur
+kec_1538,Jayapura,Ogan Komering Ulu Timur
+kec_1539,Belitang Jaya,Ogan Komering Ulu Timur
+kec_1540,Belitang,Ogan Komering Ulu Timur
+kec_1541,Belitang II,Ogan Komering Ulu Timur
+kec_1542,Belitang Mulya,Ogan Komering Ulu Timur
+kec_1543,Cempaka,Ogan Komering Ulu Timur
+kec_1544,Belitang III,Ogan Komering Ulu Timur
+kec_1545,Semendawai Suku III,Ogan Komering Ulu Timur
+kec_1546,Gabek,Pangkal Pinang
+kec_1547,Pangkal Balam,Pangkal Pinang
+kec_1548,Taman Sari,Pangkal Pinang
+kec_1549,Gerunggang,Pangkal Pinang
+kec_1550,Rangkui,Pangkal Pinang
+kec_1551,Girimaya,Pangkal Pinang
+kec_1552,Bukit Intan,Pangkal Pinang
+kec_1553,Merawang,Bangka
+kec_1554,Mendo Barat,Bangka
+kec_1555,Puding Besar,Bangka
+kec_1556,Sungai Liat,Bangka
+kec_1557,Pemali,Bangka
+kec_1558,Bakam,Bangka
+kec_1559,Belinyu,Bangka
+kec_1560,Riau Silip,Bangka
+kec_1561,Mentok (Muntok),Bangka Barat
+kec_1562,Parittiga,Bangka Barat
+kec_1563,Jebus,Bangka Barat
+kec_1564,Kelapa,Bangka Barat
+kec_1565,Tempilang,Bangka Barat
+kec_1566,Simpang Teritip,Bangka Barat
+kec_1567,Tanjung Pandan,Belitung
+kec_1568,Sijuk,Belitung
+kec_1569,Badau,Belitung
+kec_1570,Membalong,Belitung
+kec_1571,Selat Nasik,Belitung
+kec_1572,Manggar,Belitung Timur
+kec_1573,Damar,Belitung Timur
+kec_1574,Dendang,Belitung Timur
+kec_1575,Simpang Pesak,Belitung Timur
+kec_1576,Simpang Renggiang,Belitung Timur
+kec_1577,Gantung,Belitung Timur
+kec_1578,Kelapa Kampit,Belitung Timur
+kec_1579,Simpang Katis,Bangka Tengah
+kec_1580,Sungai Selan,Bangka Tengah
+kec_1581,Koba,Bangka Tengah
+kec_1582,Namang,Bangka Tengah
+kec_1583,Lubuk Besar,Bangka Tengah
+kec_1584,Pangkalan Baru,Bangka Tengah
+kec_1585,Simpang Rimba,Bangka Selatan
+kec_1586,Pulau Besar,Bangka Selatan
+kec_1587,Payung,Bangka Selatan
+kec_1588,Air Gegas,Bangka Selatan
+kec_1589,Toboali,Bangka Selatan
+kec_1590,Tukak Sadai,Bangka Selatan
+kec_1591,Kepulauan Pongok,Bangka Selatan
+kec_1592,Lepar Pongok,Bangka Selatan
+kec_1593,Metro Pusat,Metro
+kec_1594,Metro Timur,Metro
+kec_1595,Metro Barat,Metro
+kec_1596,Metro Utara,Metro
+kec_1597,Metro Selatan,Metro
+kec_1598,Punggur,Lampung Tengah
+kec_1599,Kota Gajah,Lampung Tengah
+kec_1600,Seputih Raman,Lampung Tengah
+kec_1601,Seputih Banyak,Lampung Tengah
+kec_1602,Rumbia,Lampung Tengah
+kec_1603,Putra Rumbia,Lampung Tengah
+kec_1604,Seputih Surabaya,Lampung Tengah
+kec_1605,Bandar Surabaya,Lampung Tengah
+kec_1606,Gunung Sugih,Lampung Tengah
+kec_1607,Bumi Ratu Nuban,Lampung Tengah
+kec_1608,Anak Tuha,Lampung Tengah
+kec_1609,Bekri,Lampung Tengah
+kec_1610,Terbanggi Besar,Lampung Tengah
+kec_1611,Seputih Mataram,Lampung Tengah
+kec_1612,Seputih Agung,Lampung Tengah
+kec_1613,Terusan Nunyai,Lampung Tengah
+kec_1614,Bumi Nabung,Lampung Tengah
+kec_1615,Bandar Mataram,Lampung Tengah
+kec_1616,Trimurjo,Lampung Tengah
+kec_1617,Bangunrejo,Lampung Tengah
+kec_1618,Kalirejo,Lampung Tengah
+kec_1619,Sendang Agung,Lampung Tengah
+kec_1620,Padang Ratu,Lampung Tengah
+kec_1621,Selagai Lingga,Lampung Tengah
+kec_1622,Pubian,Lampung Tengah
+kec_1623,Way Seputih,Lampung Tengah
+kec_1624,Bumi Agung,Lampung Timur
+kec_1625,Purbolinggo,Lampung Timur
+kec_1626,Sukadana,Lampung Timur
+kec_1627,Braja Slebah,Lampung Timur
+kec_1628,Labuhan Maringgai,Lampung Timur
+kec_1629,Mataram Baru,Lampung Timur
+kec_1630,Metro Kibang,Lampung Timur
+kec_1631,Raman Utara,Lampung Timur
+kec_1632,Batanghari Nuban,Lampung Timur
+kec_1633,Way Bungur (Purbolinggo Utara),Lampung Timur
+kec_1634,Labuhan Ratu,Lampung Timur
+kec_1635,Waway Karya,Lampung Timur
+kec_1636,Melinting,Lampung Timur
+kec_1637,Batanghari,Lampung Timur
+kec_1638,Sekampung,Lampung Timur
+kec_1639,Jabung,Lampung Timur
+kec_1640,Marga Sekampung,Lampung Timur
+kec_1641,Sekampung Udik,Lampung Timur
+kec_1642,Margatiga,Lampung Timur
+kec_1643,Pasir Sakti,Lampung Timur
+kec_1644,Way Kenanga,Tulang Bawang Barat
+kec_1645,Lambu Kibang,Tulang Bawang Barat
+kec_1646,Gunung Pelindung,Lampung Timur
+kec_1647,Bandar Sribawono,Lampung Timur
+kec_1648,Pekalongan,Lampung Timur
+kec_1649,Way Jepara,Lampung Timur
+kec_1650,Kotabumi Selatan,Lampung Utara
+kec_1651,Kotabumi Utara,Lampung Utara
+kec_1652,Kotabumi,Lampung Utara
+kec_1653,Sungkai Selatan,Lampung Utara
+kec_1654,Sungkai Jaya,Lampung Utara
+kec_1655,Sungkai Barat,Lampung Utara
+kec_1656,Sungkai Utara,Lampung Utara
+kec_1657,Sungkai Tengah,Lampung Utara
+kec_1658,Hulu Sungkai,Lampung Utara
+kec_1659,Bunga Mayang,Lampung Utara
+kec_1660,Bukit Kemuning,Lampung Utara
+kec_1661,Abung Tinggi,Lampung Utara
+kec_1662,Tanjung Raja,Lampung Utara
+kec_1663,Abung Kunang,Lampung Utara
+kec_1664,Abung Barat,Lampung Utara
+kec_1665,Muara Sungkai,Lampung Utara
+kec_1666,Abung Selatan,Lampung Utara
+kec_1667,Abung Surakarta,Lampung Utara
+kec_1668,Blambangan Pagar,Lampung Utara
+kec_1669,Abung Semuli,Lampung Utara
+kec_1670,Abung Pekurun,Lampung Utara
+kec_1671,Abung Tengah,Lampung Utara
+kec_1672,Abung Timur,Lampung Utara
+kec_1673,Tumijajar,Tulang Bawang Barat
+kec_1674,Rawa Pitu,Tulang Bawang
+kec_1675,Gedung Aji Baru,Tulang Bawang
+kec_1676,Penawar Tama,Tulang Bawang
+kec_1677,Penawar Aji,Tulang Bawang
+kec_1678,Gedung Meneng,Tulang Bawang
+kec_1679,Dente Teladas,Tulang Bawang
+kec_1680,Rawajitu Timur,Tulang Bawang
+kec_1681,Rawajitu Selatan,Tulang Bawang
+kec_1682,Tanjung Raya,Mesuji
+kec_1683,Menggala,Tulang Bawang
+kec_1684,Menggala Timur,Tulang Bawang
+kec_1685,Gedung Aji,Tulang Bawang
+kec_1686,Meraksa Aji,Tulang Bawang
+kec_1687,Banjar Margo,Tulang Bawang
+kec_1688,Banjar Baru,Tulang Bawang
+kec_1689,Banjar Agung,Tulang Bawang
+kec_1690,Gunung Agung,Tulang Bawang Barat
+kec_1691,Gunung Terang,Tulang Bawang Barat
+kec_1692,Way Serdang,Mesuji
+kec_1693,Tulang Bawang Udik,Tulang Bawang Barat
+kec_1694,Tulang Bawang Tengah,Tulang Bawang Barat
+kec_1695,Pagar Dewa,Tulang Bawang Barat
+kec_1696,Rawa Jitu Utara,Mesuji
+kec_1697,Mesuji Timur,Mesuji
+kec_1698,Mesuji,Mesuji
+kec_1699,Panca Jaya,Mesuji
+kec_1700,Simpang Pematang,Mesuji
+kec_1701,Baradatu,Way Kanan
+kec_1702,Pakuan Ratu,Way Kanan
+kec_1703,Bahuga,Way Kanan
+kec_1704,Bumi Agung,Way Kanan
+kec_1705,Blambangan Umpu,Way Kanan
+kec_1706,Kasui,Way Kanan
+kec_1707,Banjit,Way Kanan
+kec_1708,Rebang Tangkas,Way Kanan
+kec_1709,Way Tuba,Way Kanan
+kec_1710,Buay Bahuga,Way Kanan
+kec_1711,Gunung Labuhan,Way Kanan
+kec_1712,Negara Batin,Way Kanan
+kec_1713,Negeri Agung,Way Kanan
+kec_1714,Negeri Besar,Way Kanan
+kec_1715,Balik Bukit,Lampung Barat
+kec_1716,Kebun Tebu,Lampung Barat
+kec_1717,Gedung Surian,Lampung Barat
+kec_1718,Sumber Jaya,Lampung Barat
+kec_1719,Pesisir Selatan,Pesisir Barat
+kec_1720,Batu Ketulis,Lampung Barat
+kec_1721,Belalau,Lampung Barat
+kec_1722,Krui Selatan,Pesisir Barat
+kec_1723,Way Krui,Pesisir Barat
+kec_1724,Pesisir Tengah,Pesisir Barat
+kec_1725,Pesisir Utara,Pesisir Barat
+kec_1726,Pulau Pisang,Pesisir Barat
+kec_1727,Air Hitam,Lampung Barat
+kec_1728,Lemong,Pesisir Barat
+kec_1729,Karya Penggawa,Pesisir Barat
+kec_1730,Sukau,Lampung Barat
+kec_1731,Lumbok Seminung,Lampung Barat
+kec_1732,Batu Brak,Lampung Barat
+kec_1733,Bandar Negeri Suoh,Lampung Barat
+kec_1734,Suoh,Lampung Barat
+kec_1735,Bengkunat Belimbing,Pesisir Barat
+kec_1736,Bengkunat,Pesisir Barat
+kec_1737,Ngambur,Pesisir Barat
+kec_1738,Way Tenong,Lampung Barat
+kec_1739,Pagar Dewa,Lampung Barat
+kec_1740,Sekincau,Lampung Barat
+kec_1741,Enggal,Bandar Lampung
+kec_1742,Tanjung Karang Pusat,Bandar Lampung
+kec_1743,Kedaton,Bandar Lampung
+kec_1744,Tanjung Karang Timur,Bandar Lampung
+kec_1745,Kedamaian,Bandar Lampung
+kec_1746,Sukabumi,Bandar Lampung
+kec_1747,Way Halim,Bandar Lampung
+kec_1748,Sukarame,Bandar Lampung
+kec_1749,Tanjung Senang,Bandar Lampung
+kec_1750,Labuhan Ratu,Bandar Lampung
+kec_1751,Rajabasa,Bandar Lampung
+kec_1752,Tanjung Karang Barat,Bandar Lampung
+kec_1753,Langkapura,Bandar Lampung
+kec_1754,Kemiling,Bandar Lampung
+kec_1755,Telukbetung Selatan,Bandar Lampung
+kec_1756,Telukbetung Utara,Bandar Lampung
+kec_1757,Way Pangubuan (Pengubuan),Lampung Tengah
+kec_1758,Bumi Waras,Bandar Lampung
+kec_1759,Telukbetung Timur,Bandar Lampung
+kec_1760,Telukbetung Barat,Bandar Lampung
+kec_1761,Panjang,Bandar Lampung
+kec_1762,Way Panji,Lampung Selatan
+kec_1763,Sidomulyo,Lampung Selatan
+kec_1764,Negeri Katon,Pesawaran
+kec_1765,Candipuro,Lampung Selatan
+kec_1766,Merbau Mataram,Lampung Selatan
+kec_1767,Tanjung Sari,Lampung Selatan
+kec_1768,Tanjung Bintang,Lampung Selatan
+kec_1769,Natar,Lampung Selatan
+kec_1770,Tegineneng,Pesawaran
+kec_1771,Jati Agung,Lampung Selatan
+kec_1772,Gedong Tataan (Gedung Tataan),Pesawaran
+kec_1773,Way Lima,Pesawaran
+kec_1774,Kedondong,Pesawaran
+kec_1775,Way Khilau,Pesawaran
+kec_1776,Gading Rejo,Pringsewu
+kec_1777,Banyumas,Pringsewu
+kec_1778,Pringsewu,Pringsewu
+kec_1779,Sumberejo,Tanggamus
+kec_1780,Pagelaran,Pringsewu
+kec_1781,Ambarawa,Pringsewu
+kec_1782,Pagelaran Utara,Pringsewu
+kec_1783,Ulubelu,Tanggamus
+kec_1784,Talang Padang,Tanggamus
+kec_1785,Gisting,Tanggamus
+kec_1786,Gunung Alip,Tanggamus
+kec_1787,Kelumbayan Barat,Tanggamus
+kec_1788,Kelumbayan,Tanggamus
+kec_1789,Pematang Sawa,Tanggamus
+kec_1790,Kota Agung (Kota Agung Pusat),Tanggamus
+kec_1791,Kota Agung Barat,Tanggamus
+kec_1792,Kota Agung Timur,Tanggamus
+kec_1793,Semaka,Tanggamus
+kec_1794,Padang Cermin,Pesawaran
+kec_1795,Katibung,Lampung Selatan
+kec_1796,Way Sulan,Lampung Selatan
+kec_1797,Punduh Pidada (Pedada),Pesawaran
+kec_1798,Marga Punduh,Pesawaran
+kec_1799,Anak Ratu Aji,Lampung Tengah
+kec_1800,Kalianda,Lampung Selatan
+kec_1801,Rajabasa,Lampung Selatan
+kec_1802,Bakauheni,Lampung Selatan
+kec_1803,Penengahan,Lampung Selatan
+kec_1804,Palas,Lampung Selatan
+kec_1805,Ketapang,Lampung Selatan
+kec_1806,Sragi,Lampung Selatan
+kec_1807,Limau,Tanggamus
+kec_1808,Adi Luwih,Pringsewu
+kec_1809,Sukoharjo,Pringsewu
+kec_1810,Pugung,Tanggamus
+kec_1811,Pulau Panggung,Tanggamus
+kec_1812,Air Naningan,Tanggamus
+kec_1813,Bulok,Tanggamus
+kec_1814,Pardasuka,Pringsewu
+kec_1815,Cukuh Balak,Tanggamus
+kec_1816,Bandar Negeri Semuong,Tanggamus
+kec_1817,Wonosobo,Tanggamus
+kec_1818,Pasar Jambi,Jambi
+kec_1819,Telanaipura,Jambi
+kec_1820,Kota Baru,Jambi
+kec_1821,Jambi Selatan,Jambi
+kec_1822,Jelutung,Jambi
+kec_1823,Jambi Timur,Jambi
+kec_1824,Pelayangan,Jambi
+kec_1825,Danau Teluk,Jambi
+kec_1826,Jambi Luar Kota,Muaro Jambi
+kec_1827,Mestong,Muaro Jambi
+kec_1828,Sungai Gelam,Muaro Jambi
+kec_1829,Bahar Selatan,Muaro Jambi
+kec_1830,Bahar Utara,Muaro Jambi
+kec_1831,Sungai Bahar,Muaro Jambi
+kec_1832,Kumpeh,Muaro Jambi
+kec_1833,Taman Rajo / Rejo,Muaro Jambi
+kec_1834,Kumpeh Ulu,Muaro Jambi
+kec_1835,Sekernan,Muaro Jambi
+kec_1836,Maro Sebo,Muaro Jambi
+kec_1837,Seberang Kota,Tanjung Jabung Barat
+kec_1838,Bram Itam,Tanjung Jabung Barat
+kec_1839,Tebing Tinggi,Tanjung Jabung Barat
+kec_1840,Tungkal Ulu,Tanjung Jabung Barat
+kec_1841,Batang Asam,Tanjung Jabung Barat
+kec_1842,Pengabuan,Tanjung Jabung Barat
+kec_1843,Senyerang,Tanjung Jabung Barat
+kec_1844,Merlung,Tanjung Jabung Barat
+kec_1845,Renah Mendaluh,Tanjung Jabung Barat
+kec_1846,Muara Papalik,Tanjung Jabung Barat
+kec_1847,Kuala Betara,Tanjung Jabung Barat
+kec_1848,Betara,Tanjung Jabung Barat
+kec_1849,Tungkal Ilir,Tanjung Jabung Barat
+kec_1850,Berbak,Tanjung Jabung Timur
+kec_1851,Muara Bulian,Batang Hari
+kec_1852,Bajubang,Batang Hari
+kec_1853,Muara Tembesi,Batang Hari
+kec_1854,Mersam,Batang Hari
+kec_1855,Maro Sebo Ulu,Batang Hari
+kec_1856,Maro Sebo Ilir,Batang Hari
+kec_1857,Batin XXIV,Batang Hari
+kec_1858,Pemayung,Batang Hari
+kec_1859,Muara Sabak Timur,Tanjung Jabung Timur
+kec_1860,Kuala Jambi,Tanjung Jabung Timur
+kec_1861,Muara Sabak Barat,Tanjung Jabung Timur
+kec_1862,Dendang,Tanjung Jabung Timur
+kec_1863,Mendahara,Tanjung Jabung Timur
+kec_1864,Mendahara Ulu,Tanjung Jabung Timur
+kec_1865,Geragai,Tanjung Jabung Timur
+kec_1866,Nipah Panjang,Tanjung Jabung Timur
+kec_1867,Rantau Rasau,Tanjung Jabung Timur
+kec_1868,Sadu,Tanjung Jabung Timur
+kec_1869,Kumun Debai,Sungaipenuh
+kec_1870,Sungai Penuh,Sungaipenuh
+kec_1871,Pondok Tinggi,Sungaipenuh
+kec_1872,Pesisir Bukit,Sungaipenuh
+kec_1873,Sungai Bungkal,Sungaipenuh
+kec_1874,Koto Baru,Sungaipenuh
+kec_1875,Hamparan Rawang,Sungaipenuh
+kec_1876,Air Hangat Timur,Kerinci
+kec_1877,Air Hangat Barat,Kerinci
+kec_1878,Air Hangat,Kerinci
+kec_1879,Depati Tujuh,Kerinci
+kec_1880,Gunung Kerinci,Kerinci
+kec_1881,Siulak,Kerinci
+kec_1882,Siulak Mukai,Kerinci
+kec_1883,Kayu Aro,Kerinci
+kec_1884,Kayu Aro Barat,Kerinci
+kec_1885,Gunung Tujuh,Kerinci
+kec_1886,Sitinjau Laut,Kerinci
+kec_1887,Tanah Kampung,Sungaipenuh
+kec_1888,Danau Kerinci,Kerinci
+kec_1889,Keliling Danau,Kerinci
+kec_1890,Gunung Raya,Kerinci
+kec_1891,Bukitkerman,Kerinci
+kec_1892,Batang Merangin,Kerinci
+kec_1893,Bathin III,Bungo
+kec_1894,Bathin II Babeko,Bungo
+kec_1895,Limbur Lubuk Mengkuang,Bungo
+kec_1896,Pasar Muara Bungo,Bungo
+kec_1897,Rimbo Tengah,Bungo
+kec_1898,Bungo Dani,Bungo
+kec_1899,Muko-Muko Batin VII,Bungo
+kec_1900,Pelepat Ilir,Bungo
+kec_1901,Tanah Tumbuh,Bungo
+kec_1902,Bathin II Pelayang,Bungo
+kec_1903,Jujuhan Ilir,Bungo
+kec_1904,Jujuhan,Bungo
+kec_1905,VII Koto,Tebo
+kec_1906,VII Koto Ilir,Tebo
+kec_1907,Bathin III Ulu,Bungo
+kec_1908,Rantau Pandan,Bungo
+kec_1909,Pelepat,Bungo
+kec_1910,Tanah Sepenggal,Bungo
+kec_1911,Tanah Sepenggal Lintas,Bungo
+kec_1912,Nalo Tantan,Merangin
+kec_1913,Bangko Barat,Merangin
+kec_1914,Batang Masumai,Merangin
+kec_1915,Bangko,Merangin
+kec_1916,Renah Pemenang,Merangin
+kec_1917,Pamenang,Merangin
+kec_1918,Pamenang Barat,Merangin
+kec_1919,Pamenang Selatan,Merangin
+kec_1920,Tabir Ilir,Merangin
+kec_1921,Tabir,Merangin
+kec_1922,Tabir Timur,Merangin
+kec_1923,Tabir Lintas,Merangin
+kec_1924,Margo Tabir,Merangin
+kec_1925,Tiang Pumpung,Merangin
+kec_1926,Tabir Selatan,Merangin
+kec_1927,Tabir Barat,Merangin
+kec_1928,Tabir Ulu,Merangin
+kec_1929,Renah Pembarap,Merangin
+kec_1930,Pangkalan Jambu,Merangin
+kec_1931,Sungai Manau,Merangin
+kec_1932,Muara Siau,Merangin
+kec_1933,Sungai Tenang,Merangin
+kec_1934,Lembah Masurai,Merangin
+kec_1935,Jangkat,Merangin
+kec_1936,Limun,Sarolangun
+kec_1937,Cermin Nan Gadang,Sarolangun
+kec_1938,Sarolangun,Sarolangun
+kec_1939,Bathin VIII (Batin VIII),Sarolangun
+kec_1940,Singkut,Sarolangun
+kec_1941,Pelawan,Sarolangun
+kec_1942,Batang Asai,Sarolangun
+kec_1943,Pauh,Sarolangun
+kec_1944,Air Hitam,Sarolangun
+kec_1945,Mandiangin,Sarolangun
+kec_1946,Rimbo Ilir,Tebo
+kec_1947,Rimbo Bujang,Tebo
+kec_1948,Rimbo Ulu,Tebo
+kec_1949,Serai Serumpun,Tebo
+kec_1950,Tebo Ulu,Tebo
+kec_1951,Tebo Tengah,Tebo
+kec_1952,Muara Tabir,Tebo
+kec_1953,Tebo Ilir,Tebo
+kec_1954,Tengah Ilir,Tebo
+kec_1955,Sumay,Tebo
+kec_1956,Teluk Segara,Bengkulu
+kec_1957,Sungai Serut,Bengkulu
+kec_1958,Muara Bangka Hulu,Bengkulu
+kec_1959,Selebar,Bengkulu
+kec_1960,Kampung Melayu,Bengkulu
+kec_1961,Ratu Samban,Bengkulu
+kec_1962,Gading Cempaka,Bengkulu
+kec_1963,Singaran Pati,Bengkulu
+kec_1964,Ratu Agung,Bengkulu
+kec_1965,Putri Hijau,Bengkulu Utara
+kec_1966,Ketahun,Bengkulu Utara
+kec_1967,Ulok Kupai,Bengkulu Utara
+kec_1968,Napal Putih,Bengkulu Utara
+kec_1969,Pondok Kelapa,Bengkulu Tengah
+kec_1970,Pematang Tiga,Bengkulu Tengah
+kec_1971,Bang Haji,Bengkulu Tengah
+kec_1972,Air Napal,Bengkulu Utara
+kec_1973,Tanjung Agung Palik,Bengkulu Utara
+kec_1974,Hulu Palik,Bengkulu Utara
+kec_1975,Kerkap,Bengkulu Utara
+kec_1976,Pondok Kubang,Bengkulu Tengah
+kec_1977,Karang Tinggi,Bengkulu Tengah
+kec_1978,Pagar Jati,Bengkulu Tengah
+kec_1979,Merigi Sakti,Bengkulu Tengah
+kec_1980,Talang Empat,Bengkulu Tengah
+kec_1981,Merigi Kelindang,Bengkulu Tengah
+kec_1982,Taba Penanjung,Bengkulu Tengah
+kec_1983,Enggano,Bengkulu Utara
+kec_1984,Kota Manna,Bengkulu Selatan
+kec_1985,Bunga Mas,Bengkulu Selatan
+kec_1986,Manna,Bengkulu Selatan
+kec_1987,Pasar Manna,Bengkulu Selatan
+kec_1988,Seginim,Bengkulu Selatan
+kec_1989,Kedurang Ilir,Bengkulu Selatan
+kec_1990,Kedurang,Bengkulu Selatan
+kec_1991,Pinoraya,Bengkulu Selatan
+kec_1992,Ulu Manna,Bengkulu Selatan
+kec_1993,Pino,Bengkulu Selatan
+kec_1994,Air Nipis,Bengkulu Selatan
+kec_1995,Air Besi,Bengkulu Utara
+kec_1996,Arma Jaya,Bengkulu Utara
+kec_1997,Arga Makmur,Bengkulu Utara
+kec_1998,Lais,Bengkulu Utara
+kec_1999,Air Padang,Bengkulu Utara
+kec_2000,Giri Mulia,Bengkulu Utara
+kec_2001,Batik Nau,Bengkulu Utara
+kec_2002,Padang Jaya,Bengkulu Utara
+kec_2003,Kota Mukomuko (Mukomuko Utara),Muko Muko
+kec_2004,Ipuh (Muko-Muko Selatan),Muko Muko
+kec_2005,Air Rami,Muko Muko
+kec_2006,Malin Deman,Muko Muko
+kec_2007,Air Dikit,Muko Muko
+kec_2008,XIV Koto,Muko Muko
+kec_2009,Pondok Suguh,Muko Muko
+kec_2010,Teramang Jaya,Muko Muko
+kec_2011,Sungai Rumbai,Muko Muko
+kec_2012,Air Majunto,Muko Muko
+kec_2013,Lubuk Pinang,Muko Muko
+kec_2014,V Koto,Muko Muko
+kec_2015,Teras Terunjam,Muko Muko
+kec_2016,Penarik,Muko Muko
+kec_2017,Selagan Raya,Muko Muko
+kec_2018,Semidang Alas,Seluma
+kec_2019,Talo,Seluma
+kec_2020,Semidang Alas Maras,Seluma
+kec_2021,Seluma,Seluma
+kec_2022,Sukaraja,Seluma
+kec_2023,Seluma Selatan,Seluma
+kec_2024,Air Periukan,Seluma
+kec_2025,Lubuk Sandi,Seluma
+kec_2026,Seluma Barat,Seluma
+kec_2027,Seluma Utara,Seluma
+kec_2028,Seluma Timur,Seluma
+kec_2029,Ulu Talo,Seluma
+kec_2030,Ilir Talo,Seluma
+kec_2031,Talo Kecil,Seluma
+kec_2032,Tanjung Kemuning,Kaur
+kec_2033,Kelam Tengah,Kaur
+kec_2034,Padang Guci Hilir,Kaur
+kec_2035,Lungkang Kule,Kaur
+kec_2036,Kaur Utara,Kaur
+kec_2037,Padang Guci Hulu,Kaur
+kec_2038,Luas,Kaur
+kec_2039,Muara Sahung,Kaur
+kec_2040,Kaur Tengah,Kaur
+kec_2041,Semidang Gumai (Gumay),Kaur
+kec_2042,Kinal,Kaur
+kec_2043,Kaur Selatan,Kaur
+kec_2044,Tetap (Muara Tetap),Kaur
+kec_2045,Nasal,Kaur
+kec_2046,Maje,Kaur
+kec_2047,Curup,Rejang Lebong
+kec_2048,Curup Selatan,Rejang Lebong
+kec_2049,Curup Tengah,Rejang Lebong
+kec_2050,Curup Timur,Rejang Lebong
+kec_2051,Curup Utara,Rejang Lebong
+kec_2052,Bermani Ulu Raya,Rejang Lebong
+kec_2053,Bermani Ulu,Rejang Lebong
+kec_2054,Sindang Kelingi,Rejang Lebong
+kec_2055,Selupu Rejang,Rejang Lebong
+kec_2056,Sindang Daratan,Rejang Lebong
+kec_2057,Binduriang,Rejang Lebong
+kec_2058,Padang Ulak Tanding,Rejang Lebong
+kec_2059,Sindang Beliti Ulu,Rejang Lebong
+kec_2060,Sindang Beliti Ilir,Rejang Lebong
+kec_2061,Kota Padang,Rejang Lebong
+kec_2062,Rimbo Pengadang,Lebong
+kec_2063,Topos,Lebong
+kec_2064,Bingin Kuning,Lebong
+kec_2065,Lebong Selatan,Lebong
+kec_2066,Lebong Tengah,Lebong
+kec_2067,Amen,Lebong
+kec_2068,Lebong Utara,Lebong
+kec_2069,Lebong Atas,Lebong
+kec_2070,Pelabai,Lebong
+kec_2071,Lebong Sakti,Lebong
+kec_2072,Uram Jaya,Lebong
+kec_2073,Pinang Belapis,Lebong
+kec_2074,Ujan Mas,Kepahiang
+kec_2075,Merigi,Kepahiang
+kec_2076,Kebawetan (Kabawetan),Kepahiang
+kec_2077,Kepahiang,Kepahiang
+kec_2078,Seberang Musi,Kepahiang
+kec_2079,Tebat Karai,Kepahiang
+kec_2080,Muara Kemumu,Kepahiang
+kec_2081,Bermani Ilir,Kepahiang
+kec_4037,Banjarmasin Tengah,Banjarmasin
+kec_4038,Banjarmasin Barat,Banjarmasin
+kec_4039,Banjarmasin Utara,Banjarmasin
+kec_4040,Banjarmasin Timur,Banjarmasin
+kec_4041,Banjarmasin Selatan,Banjarmasin
+kec_4042,Marabahan,Barito Kuala
+kec_4043,Bakumpai,Barito Kuala
+kec_4044,Kuripan,Barito Kuala
+kec_4045,Tabukan,Barito Kuala
+kec_4046,Rantau Badauh,Barito Kuala
+kec_4047,Wanaraya,Barito Kuala
+kec_4048,Barambai,Barito Kuala
+kec_4049,Belawang,Barito Kuala
+kec_4050,Anjir Muara,Barito Kuala
+kec_4051,Anjir Pasar,Barito Kuala
+kec_4052,Tamban,Barito Kuala
+kec_4053,Tabunganen,Barito Kuala
+kec_4054,Mekar Sari,Barito Kuala
+kec_4055,Cerbon,Barito Kuala
+kec_4056,Mandastana,Barito Kuala
+kec_4057,Jejangkit,Barito Kuala
+kec_4058,Alalak,Barito Kuala
+kec_4059,Martapura Kota,Banjar
+kec_4060,Martapura Timur,Banjar
+kec_4061,Martapura Barat,Banjar
+kec_4062,Gambut,Banjar
+kec_4063,Sei/Sungai Tabuk,Banjar
+kec_4064,Simpang Empat,Banjar
+kec_4065,Tatah Makmur,Banjar
+kec_4066,Kertak Hanyar,Banjar
+kec_4067,Aluh-Aluh,Banjar
+kec_4068,Beruntung Baru,Banjar
+kec_4069,Karang Intan,Banjar
+kec_4070,Aranio,Banjar
+kec_4071,Astambul,Banjar
+kec_4072,Mataraman,Banjar
+kec_4073,Telaga Bauntung,Banjar
+kec_4074,Pengaron,Banjar
+kec_4075,Sambung Makmur,Banjar
+kec_4076,Peramasan,Banjar
+kec_4077,Sei/Sungai Pinang,Banjar
+kec_4078,Banjar Baru Selatan,Banjarbaru
+kec_4079,Banjar Baru Utara,Banjarbaru
+kec_4080,Landasan Ulin,Banjarbaru
+kec_4081,Liang Anggang,Banjarbaru
+kec_4082,Cempaka,Banjarbaru
+kec_4083,Pelaihari,Tanah Laut
+kec_4084,Bajuin,Tanah Laut
+kec_4085,Bati-Bati,Tanah Laut
+kec_4086,Kurau,Tanah Laut
+kec_4087,Bumi Makmur,Tanah Laut
+kec_4088,Tambang Ulang,Tanah Laut
+kec_4089,Takisung,Tanah Laut
+kec_4090,Panyipatan,Tanah Laut
+kec_4091,Jorong,Tanah Laut
+kec_4092,Batu Ampar,Tanah Laut
+kec_4093,Kintap,Tanah Laut
+kec_4094,Tapin Utara,Tapin
+kec_4095,Bakarangan,Tapin
+kec_4096,Bungur,Tapin
+kec_4097,Lokpaikat,Tapin
+kec_4098,Tapin Tengah,Tapin
+kec_4099,Candi Laras Selatan,Tapin
+kec_4100,Candi Laras Utara,Tapin
+kec_4101,Tapin Selatan,Tapin
+kec_4102,Binuang,Tapin
+kec_4103,Hatungun,Tapin
+kec_4104,Salam Babaris,Tapin
+kec_4105,Piani,Tapin
+kec_4106,Kandangan,Hulu Sungai Selatan
+kec_4107,Daha Barat,Hulu Sungai Selatan
+kec_4108,Daha Selatan,Hulu Sungai Selatan
+kec_4109,Daha Utara,Hulu Sungai Selatan
+kec_4110,Simpur,Hulu Sungai Selatan
+kec_4111,Kalumpang (Kelumpang),Hulu Sungai Selatan
+kec_4112,Sungai Raya,Hulu Sungai Selatan
+kec_4113,Padang Batung,Hulu Sungai Selatan
+kec_4114,Loksado,Hulu Sungai Selatan
+kec_4115,Angkinang,Hulu Sungai Selatan
+kec_4116,Telaga Langsat,Hulu Sungai Selatan
+kec_4117,Barabai,Hulu Sungai Tengah
+kec_4118,Pandawan,Hulu Sungai Tengah
+kec_4119,Labuan Amas Selatan,Hulu Sungai Tengah
+kec_4120,Labuan Amas Utara,Hulu Sungai Tengah
+kec_4121,Haruyan,Hulu Sungai Tengah
+kec_4122,Batu Benawa,Hulu Sungai Tengah
+kec_4123,Hantakan,Hulu Sungai Tengah
+kec_4124,Batang Alai Selatan,Hulu Sungai Tengah
+kec_4125,Batang Alai Timur,Hulu Sungai Tengah
+kec_4126,Limpasu,Hulu Sungai Tengah
+kec_4127,Batang Alai Utara,Hulu Sungai Tengah
+kec_4128,Amuntai Tengah,Hulu Sungai Utara
+kec_4129,Banjang,Hulu Sungai Utara
+kec_4130,Amuntai Selatan,Hulu Sungai Utara
+kec_4131,Paminggir,Hulu Sungai Utara
+kec_4132,Danau Panggang,Hulu Sungai Utara
+kec_4133,Babirik,Hulu Sungai Utara
+kec_4134,Sungai Tabukan,Hulu Sungai Utara
+kec_4135,Sungai Pandan,Hulu Sungai Utara
+kec_4136,Amuntai Utara,Hulu Sungai Utara
+kec_4137,Haur Gading,Hulu Sungai Utara
+kec_4138,Tanjung,Tabalong
+kec_4139,Kelua (Klua),Tabalong
+kec_4140,Banua Lawas,Tabalong
+kec_4141,Pugaan,Tabalong
+kec_4142,Muara Harus,Tabalong
+kec_4143,Tanta,Tabalong
+kec_4144,Murung Pudak,Tabalong
+kec_4145,Bintang Ara,Tabalong
+kec_4146,Haruai,Tabalong
+kec_4147,Muara Uya,Tabalong
+kec_4148,Jaro,Tabalong
+kec_4149,Upau,Tabalong
+kec_4150,Paringin,Balangan
+kec_4151,Paringin Selatan,Balangan
+kec_4152,Lampihong,Balangan
+kec_4153,Batu Mandi,Balangan
+kec_4154,Tebing Tinggi,Balangan
+kec_4155,Awayan,Balangan
+kec_4156,Juai,Balangan
+kec_4157,Halong,Balangan
+kec_4158,Pulau Laut Utara,Kotabaru
+kec_4159,Pulau Laut Timur,Kotabaru
+kec_4160,Pulau Laut Tanjung Selayar,Kotabaru
+kec_4161,Pulau Laut Barat,Kotabaru
+kec_4162,Pulau Laut Selatan,Kotabaru
+kec_4163,Pulau Laut Kepulauan,Kotabaru
+kec_4164,Pulau Sebuku,Kotabaru
+kec_4165,Pulau Laut Tengah,Kotabaru
+kec_4166,Kelumpang Selatan,Kotabaru
+kec_4167,Kelumpang Hilir,Kotabaru
+kec_4168,Kelumpang Hulu,Kotabaru
+kec_4169,Hampang,Kotabaru
+kec_4170,Kelumpang Barat,Kotabaru
+kec_4171,Kelumpang Tengah,Kotabaru
+kec_4172,Kelumpang Utara,Kotabaru
+kec_4173,Sampanahan,Kotabaru
+kec_4174,Sungai Durian,Kotabaru
+kec_4175,Pamukan Selatan,Kotabaru
+kec_4176,Pamukan Utara,Kotabaru
+kec_4177,Pamukan Barat,Kotabaru
+kec_4178,Pulau Sembilan,Kotabaru
+kec_4179,Karang Bintang,Tanah Bumbu
+kec_4180,Mantewe,Tanah Bumbu
+kec_4181,Simpang Empat,Tanah Bumbu
+kec_4182,Batulicin,Tanah Bumbu
+kec_4183,Kusan Hulu,Tanah Bumbu
+kec_4184,Kuranji,Tanah Bumbu
+kec_4185,Kusan Hilir,Tanah Bumbu
+kec_4186,Sungai Loban,Tanah Bumbu
+kec_4187,Satui,Tanah Bumbu
+kec_4188,Angsana,Tanah Bumbu
+kec_4189,Pahandut,Palangka Raya
+kec_4190,Jekan Raya,Palangka Raya
+kec_4191,Sebangau,Palangka Raya
+kec_4192,Bukit Batu,Palangka Raya
+kec_4193,Rakumpit,Palangka Raya
+kec_4194,Bataguh,Kapuas
+kec_4195,Selat,Kapuas
+kec_4196,Kapuas Hilir,Kapuas
+kec_4197,Kapuas Barat,Kapuas
+kec_4198,Mantangai,Kapuas
+kec_4199,Timpah,Kapuas
+kec_4200,Kapuas Tengah,Kapuas
+kec_4201,Pasak Talawang,Kapuas
+kec_4202,Mandau Talawang,Kapuas
+kec_4203,Basarang,Kapuas
+kec_4204,Kapuas Timur,Kapuas
+kec_4205,Tamban Catur,Kapuas
+kec_4206,Kapuas Kuala,Kapuas
+kec_4207,Pulau Petak,Kapuas
+kec_4208,Kapuas Murung,Kapuas
+kec_4209,Dadahup,Kapuas
+kec_4210,Dusun Timur,Barito Timur
+kec_4211,Paju Epat,Barito Timur
+kec_4212,Dusun Tengah,Barito Timur
+kec_4213,Paku,Barito Timur
+kec_4214,Raren Batuah,Barito Timur
+kec_4215,Karusen Janang,Barito Timur
+kec_4216,Pematang Karau,Barito Timur
+kec_4217,Benua Lima,Barito Timur
+kec_4218,Patangkep Tutui,Barito Timur
+kec_4219,Awang,Barito Timur
+kec_4220,Dusun Selatan,Barito Selatan
+kec_4221,Dusun Utara,Barito Selatan
+kec_4222,Gunung Bintang Awai,Barito Selatan
+kec_4223,Karau Kuala,Barito Selatan
+kec_4224,Dusun Hilir,Barito Selatan
+kec_4225,Jenamas,Barito Selatan
+kec_4226,Teweh Tengah,Barito Utara
+kec_4227,Teweh Baru,Barito Utara
+kec_4228,Teweh Selatan,Barito Utara
+kec_4229,Lahei Barat,Barito Utara
+kec_4230,Lahei,Barito Utara
+kec_4231,Montallat (Montalat),Barito Utara
+kec_4232,Gunung Timang,Barito Utara
+kec_4233,Gunung Purei,Barito Utara
+kec_4234,Teweh Timur,Barito Utara
+kec_4235,Murung,Murung Raya
+kec_4236,Tanah Siang,Murung Raya
+kec_4237,Tanah Siang Selatan,Murung Raya
+kec_4238,Permata Intan,Murung Raya
+kec_4239,Sungai Babuat,Murung Raya
+kec_4240,Sumber Barito,Murung Raya
+kec_4241,Uut Murung,Murung Raya
+kec_4242,Seribu Riam,Murung Raya
+kec_4243,Laung Tuhup,Murung Raya
+kec_4244,Barito Tuhup Raya,Murung Raya
+kec_4245,Arut Selatan,Kotawaringin Barat
+kec_4246,Arut Utara,Kotawaringin Barat
+kec_4247,Kotawaringin Lama,Kotawaringin Barat
+kec_4248,Bulik,Lamandau
+kec_4249,Menthobi Raya,Lamandau
+kec_4250,Sematu Jaya,Lamandau
+kec_4251,Bulik Timur,Lamandau
+kec_4252,Jelai,Sukamara
+kec_4253,Pantai Lunci,Sukamara
+kec_4254,Sukamara,Sukamara
+kec_4255,Balai Riam,Sukamara
+kec_4256,Permata Kecubung,Sukamara
+kec_4257,Kumai,Kotawaringin Barat
+kec_4258,Pangkalan Banteng,Kotawaringin Barat
+kec_4259,Pangkalan Lada,Kotawaringin Barat
+kec_4260,Seruyan Hilir,Seruyan
+kec_4261,Seruyan Hilir Timur,Seruyan
+kec_4262,Seruyan Raya,Seruyan
+kec_4263,Danau Sembuluh,Seruyan
+kec_4264,Danau Seluluk,Seruyan
+kec_4265,Hanau,Seruyan
+kec_4266,Seruyan Tengah,Seruyan
+kec_4267,Batu Ampar,Seruyan
+kec_4268,Seruyan Hulu,Seruyan
+kec_4269,Suling Tambun,Seruyan
+kec_4270,Baamang,Kotawaringin Timur
+kec_4271,Seranau,Kotawaringin Timur
+kec_4272,Mentawa Baru (Ketapang),Kotawaringin Timur
+kec_4273,Telaga Antang,Kotawaringin Timur
+kec_4274,Antang Kalang,Kotawaringin Timur
+kec_4275,Kota Besi,Kotawaringin Timur
+kec_4276,Telawang,Kotawaringin Timur
+kec_4277,Cempaga Hulu,Kotawaringin Timur
+kec_4278,Cempaga,Kotawaringin Timur
+kec_4279,Parenggean,Kotawaringin Timur
+kec_4280,Tualan Hulu,Kotawaringin Timur
+kec_4281,Mentaya Hulu,Kotawaringin Timur
+kec_4282,Bukit Santuei,Kotawaringin Timur
+kec_4283,Mentaya Hilir Utara,Kotawaringin Timur
+kec_4284,Pulau Hanaut,Kotawaringin Timur
+kec_4285,Teluk Sampit,Kotawaringin Timur
+kec_4286,Mentaya Hilir Selatan,Kotawaringin Timur
+kec_4287,Katingan Hilir,Katingan
+kec_4288,Tewang Sanggalang Garing (Sangalang),Katingan
+kec_4289,Pulau Malan,Katingan
+kec_4290,Katingan Tengah,Katingan
+kec_4291,Petak Malai,Katingan
+kec_4292,Sanaman Mantikei (Senamang Mantikei),Katingan
+kec_4293,Marikit,Katingan
+kec_4294,Katingan Hulu,Katingan
+kec_4295,Bukit Raya,Katingan
+kec_4296,Tasik Payawan,Katingan
+kec_4297,Kamipang,Katingan
+kec_4298,Katingan Kuala,Katingan
+kec_4299,Mendawai,Katingan
+kec_4300,Kurun,Gunung Mas
+kec_4301,Tewah,Gunung Mas
+kec_4302,Kahayan Hulu Utara,Gunung Mas
+kec_4303,Miri Manasa,Gunung Mas
+kec_4304,Damang Batu,Gunung Mas
+kec_4305,Rungan Hulu,Gunung Mas
+kec_4306,Rungan,Gunung Mas
+kec_4307,Rungan Barat,Gunung Mas
+kec_4308,Manuhing,Gunung Mas
+kec_4309,Manuhing Raya,Gunung Mas
+kec_4310,Mihing Raya,Gunung Mas
+kec_4311,Sepang (Sepang Simin),Gunung Mas
+kec_4312,Kapuas Hulu,Kapuas
+kec_4313,Lamandau,Lamandau
+kec_4314,Belantikan Raya,Lamandau
+kec_4315,Batangkawa,Lamandau
+kec_4316,Delang,Lamandau
+kec_4317,Kahayan Hilir,Pulang Pisau
+kec_4318,Jabiren Raya,Pulang Pisau
+kec_4319,Kahayan Tengah,Pulang Pisau
+kec_4320,Banama Tingang,Pulang Pisau
+kec_4321,Pandih Batu,Pulang Pisau
+kec_4322,Kahayan Kuala,Pulang Pisau
+kec_4323,Maliku,Pulang Pisau
+kec_4324,Sebangau Kuala,Pulang Pisau
+kec_4325,Samarinda Kota,Samarinda
+kec_4326,Sambutan,Samarinda
+kec_4327,Samarinda Ilir,Samarinda
+kec_4328,Sungai Pinang,Samarinda
+kec_4329,Samarinda Utara,Samarinda
+kec_4330,Samarinda Ulu,Samarinda
+kec_4331,Sungai Kunjang,Samarinda
+kec_4332,Samarinda Seberang,Samarinda
+kec_4333,Loa Janan Ilir,Samarinda
+kec_4334,Palaran,Samarinda
+kec_4335,Sanga-Sanga,Kutai Kartanegara
+kec_4336,Muara Jawa,Kutai Kartanegara
+kec_4337,Samboja (Semboja),Kutai Kartanegara
+kec_4338,Bontang Utara,Bontang
+kec_4339,Bontang Barat,Bontang
+kec_4340,Bontang Selatan,Bontang
+kec_4341,Anggana,Kutai Kartanegara
+kec_4342,Muara Badak,Kutai Kartanegara
+kec_4343,Marang Kayu,Kutai Kartanegara
+kec_4344,Loa Janan,Kutai Kartanegara
+kec_4345,Tenggarong,Kutai Kartanegara
+kec_4346,Sebulu,Kutai Kartanegara
+kec_4347,Muara Kaman,Kutai Kartanegara
+kec_4348,Telen,Kutai Timur
+kec_4349,Kongbeng,Kutai Timur
+kec_4350,Muara Ancalong,Kutai Timur
+kec_4351,Busang,Kutai Timur
+kec_4352,Kembang Janggut,Kutai Kartanegara
+kec_4353,Tabang,Kutai Kartanegara
+kec_4354,Muara Wis,Kutai Kartanegara
+kec_4355,Kota Bangun,Kutai Kartanegara
+kec_4356,Muara Muntai,Kutai Kartanegara
+kec_4357,Kenohan,Kutai Kartanegara
+kec_4358,Loa Kulu,Kutai Kartanegara
+kec_4359,Tenggarong Seberang,Kutai Kartanegara
+kec_4360,Linggang Bigung,Kutai Barat
+kec_4361,Kaliorang,Kutai Timur
+kec_4362,Bengalon,Kutai Timur
+kec_4363,Kaubun,Kutai Timur
+kec_4364,Muara Bengkal,Kutai Timur
+kec_4365,Batu Ampar,Kutai Timur
+kec_4366,Long Mesangat (Mesengat),Kutai Timur
+kec_4367,Muara Wahau,Kutai Timur
+kec_4368,Teluk Pandan,Kutai Timur
+kec_4369,Rantau Pulung,Kutai Timur
+kec_4370,Sangatta Selatan,Kutai Timur
+kec_4371,Sangatta Utara,Kutai Timur
+kec_4372,Karangan,Kutai Timur
+kec_4373,Sangkulirang,Kutai Timur
+kec_4374,Sandaran,Kutai Timur
+kec_4375,Penyinggahan,Kutai Barat
+kec_4376,Melak,Kutai Barat
+kec_4377,Manor Bulatin (Mook Manaar Bulatn),Kutai Barat
+kec_4378,Sekolaq Darat,Kutai Barat
+kec_4379,Long Iram,Kutai Barat
+kec_4380,Tering,Kutai Barat
+kec_4381,Long Bagun,Kutai Barat
+kec_4382,Long Pahangai,Kutai Barat
+kec_4383,Long Apari,Kutai Barat
+kec_4384,Bongan,Kutai Barat
+kec_4385,Jempang,Kutai Barat
+kec_4386,Siluq Ngurai,Kutai Barat
+kec_4387,Muara Pahu,Kutai Barat
+kec_4388,Muara Lawa,Kutai Barat
+kec_4389,Barong Tongkok,Kutai Barat
+kec_4390,Nyuatan,Kutai Barat
+kec_4391,Damai,Kutai Barat
+kec_4392,Bentian Besar,Kutai Barat
+kec_4393,Laham,Kutai Barat
+kec_4394,Long Hubung,Kutai Barat
+kec_4395,Balikpapan Kota,Balikpapan
+kec_4396,Balikpapan Selatan,Balikpapan
+kec_4397,Balikpapan Timur,Balikpapan
+kec_4398,Balikpapan Tengah,Balikpapan
+kec_4399,Balikpapan Utara,Balikpapan
+kec_4400,Balikpapan Barat,Balikpapan
+kec_4401,Penajam,Penajam Paser Utara
+kec_4402,Sepaku,Penajam Paser Utara
+kec_4403,Tanah Grogot,Paser
+kec_4404,Batu Sopang,Paser
+kec_4405,Muara Samu,Paser
+kec_4406,Muara Komam,Paser
+kec_4407,Batu Engau,Paser
+kec_4408,Tanjung Harapan,Paser
+kec_4409,Pasir Belengkong,Paser
+kec_4410,Kuaro,Paser
+kec_4411,Long Ikis,Paser
+kec_4412,Long Kali,Paser
+kec_4413,Waru,Penajam Paser Utara
+kec_4414,Babulu,Penajam Paser Utara
+kec_4415,Tarakan Barat,Tarakan
+kec_4416,Tarakan Tengah,Tarakan
+kec_4417,Tarakan Timur,Tarakan
+kec_4418,Tarakan Utara,Tarakan
+kec_4419,Sesayap Hilir,Tana Tidung
+kec_4420,Betayau,Tana Tidung
+kec_4421,Sesayap,Tana Tidung
+kec_4422,Mentarang Hulu,Malinau
+kec_4423,Tanjung Palas,Bulungan (Bulongan)
+kec_4424,Tanjung Selor,Bulungan (Bulongan)
+kec_4425,Tanjung Palas Utara,Bulungan (Bulongan)
+kec_4426,Tanjung Palas Timur,Bulungan (Bulongan)
+kec_4427,Tanjung Palas Tengah,Bulungan (Bulongan)
+kec_4428,Tanjung Palas Barat,Bulungan (Bulongan)
+kec_4429,Peso,Bulungan (Bulongan)
+kec_4430,Peso Hilir/Ilir,Bulungan (Bulongan)
+kec_4431,Sekatak,Bulungan (Bulongan)
+kec_4432,Pulau Bunyu,Bulungan (Bulongan)
+kec_4433,Tanjung Redeb,Berau
+kec_4434,Teluk Bayur,Berau
+kec_4435,Gunung Tabur,Berau
+kec_4436,Segah,Berau
+kec_4437,Kelay,Berau
+kec_4438,Sambaliung,Berau
+kec_4439,Biatan,Berau
+kec_4440,Talisayan,Berau
+kec_4441,Tabalar,Berau
+kec_4442,Batu Putih,Berau
+kec_4443,Biduk-Biduk,Berau
+kec_4444,Derawan (Pulau Derawan),Berau
+kec_4445,Maratua,Berau
+kec_4446,Sembakung,Nunukan
+kec_4447,Tana Lia (Tanah Lia),Tana Tidung
+kec_4448,Krayan Selatan,Nunukan
+kec_4449,Krayan,Nunukan
+kec_4450,Lumbis Ogong,Nunukan
+kec_4451,Lumbis,Nunukan
+kec_4452,Sebuku,Nunukan
+kec_4453,Nunukan,Nunukan
+kec_4454,Tulin Onsoi,Nunukan
+kec_4455,Nunukan Selatan,Nunukan
+kec_4456,Sei Menggaris,Nunukan
+kec_4457,Sebatik Tengah,Nunukan
+kec_4458,Sebatik,Nunukan
+kec_4459,Sebatik Barat,Nunukan
+kec_4460,Sebatik Timur,Nunukan
+kec_4461,Sebatik Utara,Nunukan
+kec_4462,Malinau Selatan Hilir,Malinau
+kec_4463,Malinau Kota,Malinau
+kec_4464,Malinau Utara,Malinau
+kec_4465,Malinau Selatan,Malinau
+kec_4466,Malinau Selatan Hulu,Malinau
+kec_4467,Malinau Barat,Malinau
+kec_4468,Mentarang,Malinau
+kec_4469,Sungai Tubu,Malinau
+kec_4470,Bahau Hulu,Malinau
+kec_4471,Pujungan,Malinau
+kec_4472,Kayan Hilir,Malinau
+kec_4473,Kayan Hulu,Malinau
+kec_4474,Sungai Boh,Malinau
+kec_4475,Kayan Selatan,Malinau
+kec_4476,Pontianak Kota,Pontianak
+kec_4477,Pontianak Barat,Pontianak
+kec_4478,Pontianak Selatan,Pontianak
+kec_4479,Pontianak Tenggara,Pontianak
+kec_4480,Pontianak Timur,Pontianak
+kec_4481,Sei/Sungai Raya,Kubu Raya
+kec_4482,Pontianak Utara,Pontianak
+kec_4483,Siantan,Pontianak
+kec_4484,Segedong,Pontianak
+kec_4485,Anjongan,Pontianak
+kec_4486,Sei/Sungai Pinyuh,Pontianak
+kec_4487,Kuala Mandor-B,Kubu Raya
+kec_4488,Sadaniang,Pontianak
+kec_4489,Toho,Pontianak
+kec_4490,Sei/Sungai Kunyit,Pontianak
+kec_4491,Sei/Sungai Kakap,Kubu Raya
+kec_4492,Rasau Jaya,Kubu Raya
+kec_4493,Teluk/Telok Pakedai,Kubu Raya
+kec_4494,Kubu,Kubu Raya
+kec_4495,Batu Ampar,Kubu Raya
+kec_4496,Terentang,Kubu Raya
+kec_4497,Sei/Sungai Ambawang,Kubu Raya
+kec_4498,Kapuas (Sanggau Kapuas),Sanggau
+kec_4499,Bonti,Sanggau
+kec_4500,Kembayan,Sanggau
+kec_4501,Noyan,Sanggau
+kec_4502,Beduai (Beduwai),Sanggau
+kec_4503,Sekayam,Sanggau
+kec_4504,Entikong,Sanggau
+kec_4505,Parindu,Sanggau
+kec_4506,Tayan Hulu,Sanggau
+kec_4507,Balai,Sanggau
+kec_4508,Tayan Hilir,Sanggau
+kec_4509,Meliau,Sanggau
+kec_4510,Toba,Sanggau
+kec_4511,Mukok,Sanggau
+kec_4512,Jangkang,Sanggau
+kec_4513,Sintang,Sintang
+kec_4514,Ketungau Hilir,Sintang
+kec_4515,Ketungau Tengah,Sintang
+kec_4516,Ketungau Hulu,Sintang
+kec_4517,Sungai Tebelian,Sintang
+kec_4518,Kelam Permai,Sintang
+kec_4519,Tempunak,Sintang
+kec_4520,Sepauk,Sintang
+kec_4521,Binjai Hulu,Sintang
+kec_4522,Serawai (Nanga Serawai),Sintang
+kec_4523,Ambalau,Sintang
+kec_4524,Dedai,Sintang
+kec_4525,Kayan Hilir,Sintang
+kec_4526,Kayan Hulu,Sintang
+kec_4527,Putussibau Selatan,Kapuas Hulu
+kec_4528,Putussibau Utara,Kapuas Hulu
+kec_4529,Bika,Kapuas Hulu
+kec_4530,Embaloh Hilir,Kapuas Hulu
+kec_4531,Embaloh Hulu,Kapuas Hulu
+kec_4532,Kalis,Kapuas Hulu
+kec_4533,Mentebah,Kapuas Hulu
+kec_4534,Boyan Tanjung,Kapuas Hulu
+kec_4535,Pengkadan (Batu Datu),Kapuas Hulu
+kec_4536,Bunut Hilir,Kapuas Hulu
+kec_4537,Bunut Hulu,Kapuas Hulu
+kec_4538,Jongkong (Jengkong),Kapuas Hulu
+kec_4539,Hulu Gurung,Kapuas Hulu
+kec_4540,Selimbau,Kapuas Hulu
+kec_4541,Batang Lupar,Kapuas Hulu
+kec_4542,Badau,Kapuas Hulu
+kec_4543,Empanang,Kapuas Hulu
+kec_4544,Puring Kencana,Kapuas Hulu
+kec_4545,Semitau,Kapuas Hulu
+kec_4546,Seberuang,Kapuas Hulu
+kec_4547,Silat Hilir,Kapuas Hulu
+kec_4548,Silat Hulu,Kapuas Hulu
+kec_4549,Suhaid,Kapuas Hulu
+kec_4550,Delta Pawan,Ketapang
+kec_4551,Matan Hilir Utara,Ketapang
+kec_4552,Muara Pawan,Ketapang
+kec_4553,Benua Kayong,Ketapang
+kec_4554,Matan Hilir Selatan,Ketapang
+kec_4555,Sukadana,Kayong Utara
+kec_4556,Simpang Hilir,Kayong Utara
+kec_4557,Simpang Hulu,Ketapang
+kec_4558,Simpang Dua,Ketapang
+kec_4559,Kepulauan Karimata,Kayong Utara
+kec_4560,Pulau Maya (Pulau Maya Karimata),Kayong Utara
+kec_4561,Teluk Batang,Kayong Utara
+kec_4562,Seponti,Kayong Utara
+kec_4563,Kendawangan,Ketapang
+kec_4564,Air Upas,Ketapang
+kec_4565,Marau,Ketapang
+kec_4566,Singkup,Ketapang
+kec_4567,Manis Mata,Ketapang
+kec_4568,Sandai,Ketapang
+kec_4569,Hulu Sungai,Ketapang
+kec_4570,Sungai Laur,Ketapang
+kec_4571,Nanga Tayap,Ketapang
+kec_4572,Tumbang Titi,Ketapang
+kec_4573,Sungai Melayu Rayak,Ketapang
+kec_4574,Pemahan,Ketapang
+kec_4575,Jelai Hulu,Ketapang
+kec_4576,Mempawah Hilir,Pontianak
+kec_4577,Mempawah Timur,Pontianak
+kec_4578,Singkawang Tengah,Singkawang
+kec_4579,Singkawang Barat,Singkawang
+kec_4580,Singkawang Utara,Singkawang
+kec_4581,Jawai Selatan,Sambas
+kec_4582,Singkawang Selatan,Singkawang
+kec_4583,Monterado,Bengkayang
+kec_4584,Bengkayang,Bengkayang
+kec_4585,Sungai Betung,Bengkayang
+kec_4586,Teriak,Bengkayang
+kec_4587,Singkawang Timur,Singkawang
+kec_4588,Tujuh Belas,Bengkayang
+kec_4589,Capkala,Bengkayang
+kec_4590,Sungai Raya Kepulauan,Bengkayang
+kec_4591,Sungai Raya,Bengkayang
+kec_4592,Samalantan,Bengkayang
+kec_4593,Lembah Bawang,Bengkayang
+kec_4594,Lumar,Bengkayang
+kec_4595,Suti Semarang,Bengkayang
+kec_4596,Ledo,Bengkayang
+kec_4597,Sanggau Ledo,Bengkayang
+kec_4598,Seluas,Bengkayang
+kec_4599,Jagoi Babang,Bengkayang
+kec_4600,Siding,Bengkayang
+kec_4601,Mandor,Landak
+kec_4602,Sengah Temila,Landak
+kec_4603,Ngabang,Landak
+kec_4604,Jelimpo,Landak
+kec_4605,Sebangki,Landak
+kec_4606,Menjalin,Landak
+kec_4607,Sompak,Landak
+kec_4608,Mempawah Hulu,Landak
+kec_4609,Menyuke,Landak
+kec_4610,Banyuke Hulu,Landak
+kec_4611,Air Besar,Landak
+kec_4612,Meranti,Landak
+kec_4613,Kuala Behe,Landak
+kec_4614,Subah,Sambas
+kec_4615,Selakau,Sambas
+kec_4616,Selakau Timur,Sambas
+kec_4617,Galing,Sambas
+kec_4618,Pemangkat,Sambas
+kec_4619,Salatiga,Sambas
+kec_4620,Semparuk,Sambas
+kec_4621,Jawai,Sambas
+kec_4622,Tebas,Sambas
+kec_4623,Sajad,Sambas
+kec_4624,Sambas,Sambas
+kec_4625,Sebawi,Sambas
+kec_4626,Sejangkung,Sambas
+kec_4627,Tangaran,Sambas
+kec_4628,Teluk Keramat,Sambas
+kec_4629,Tekarang,Sambas
+kec_4630,Paloh,Sambas
+kec_4631,Sajingan Besar,Sambas
+kec_4632,Sekadau Hilir,Sekadau
+kec_4633,Sekadau Hulu,Sekadau
+kec_4634,Nanga Taman,Sekadau
+kec_4635,Nanga Mahap,Sekadau
+kec_4636,Belitang Hilir,Sekadau
+kec_4637,Belitang Hulu,Sekadau
+kec_4638,Belitang,Sekadau
+kec_4639,Belimbing,Melawi
+kec_4640,Belimbing Hulu,Melawi
+kec_4641,Nanga Pinoh,Melawi
+kec_4642,Pinoh Selatan,Melawi
+kec_4643,Pinoh Utara,Melawi
+kec_4644,Sayan,Melawi
+kec_4645,Tanah Pinoh,Melawi
+kec_4646,Tanah Pinoh Barat,Melawi
+kec_4647,Sokan,Melawi
+kec_4648,Ella Hilir,Melawi
+kec_4649,Menukung,Melawi
+kec_4650,Denpasar Utara,Denpasar
+kec_4651,Denpasar Barat,Denpasar
+kec_4652,Denpasar Selatan,Denpasar
+kec_4653,Denpasar Timur,Denpasar
+kec_4654,Mengwi,Badung
+kec_4655,Abiansemal,Badung
+kec_4656,Petang,Badung
+kec_4657,Kuta Selatan,Badung
+kec_4658,Kuta Utara,Badung
+kec_4659,Kuta,Badung
+kec_4660,Gianyar,Gianyar
+kec_4661,Tampak Siring,Gianyar
+kec_4662,Tegallalang,Gianyar
+kec_4663,Ubud,Gianyar
+kec_4664,Payangan,Gianyar
+kec_4665,Belah Batuh (Blahbatuh),Gianyar
+kec_4666,Sukawati,Gianyar
+kec_4667,Bangli,Bangli
+kec_4668,Kintamani,Bangli
+kec_4669,Susut,Bangli
+kec_4670,Tembuku,Bangli
+kec_4671,Klungkung,Klungkung
+kec_4672,Banjarangkan,Klungkung
+kec_4673,Dawan,Klungkung
+kec_4674,Nusapenida,Klungkung
+kec_4675,Karang Asem,Karangasem
+kec_4676,Abang,Karangasem
+kec_4677,Kubu,Karangasem
+kec_4678,Bebandem,Karangasem
+kec_4679,Selat,Karangasem
+kec_4680,Rendang,Karangasem
+kec_4681,Sidemen,Karangasem
+kec_4682,Manggis,Karangasem
+kec_4683,Buleleng,Buleleng
+kec_4684,Banjar,Buleleng
+kec_4685,Seririt,Buleleng
+kec_4686,Busungbiu,Buleleng
+kec_4687,Gerokgak,Buleleng
+kec_4688,Sukasada,Buleleng
+kec_4689,Sawan,Buleleng
+kec_4690,Kubutambahan,Buleleng
+kec_4691,Tejakula,Buleleng
+kec_4692,Tabanan,Tabanan
+kec_4693,Kediri,Tabanan
+kec_4694,Penebel,Tabanan
+kec_4695,Kerambitan,Tabanan
+kec_4696,Selemadeg / Salemadeg Barat,Tabanan
+kec_4697,Selemadeg,Tabanan
+kec_4698,Selemadeg / Salamadeg Timur,Tabanan
+kec_4699,Pupuan,Tabanan
+kec_4700,Marga,Tabanan
+kec_4701,Baturiti,Tabanan
+kec_4702,Jembrana,Jembrana
+kec_4703,Negara,Jembrana
+kec_4704,Melaya,Jembrana
+kec_4705,Mendoyo,Jembrana
+kec_4706,Pekutatan,Jembrana
+kec_4707,Ampenan,Mataram
+kec_4708,Sekarbela,Mataram
+kec_4709,Mataram,Mataram
+kec_4710,Selaparang (Selaprang),Mataram
+kec_4711,Sandubaya (Sandujaya),Mataram
+kec_4712,Cakranegara,Mataram
+kec_4713,Gunungsari,Lombok Barat
+kec_4714,Pemenang,Lombok Utara
+kec_4715,Tanjung,Lombok Utara
+kec_4716,Gangga,Lombok Utara
+kec_4717,Kayangan,Lombok Utara
+kec_4718,Bayan,Lombok Utara
+kec_4719,Batu Layar,Lombok Barat
+kec_4720,Labuapi,Lombok Barat
+kec_4721,Kediri,Lombok Barat
+kec_4722,Kuripan,Lombok Barat
+kec_4723,Gerung,Lombok Barat
+kec_4724,Lembar,Lombok Barat
+kec_4725,Sekotong,Lombok Barat
+kec_4726,Narmada,Lombok Barat
+kec_4727,Lingsar,Lombok Barat
+kec_4728,Praya,Lombok Tengah
+kec_4729,Praya Tengah,Lombok Tengah
+kec_4730,Batukliang Utara,Lombok Tengah
+kec_4731,Batukliang,Lombok Tengah
+kec_4732,Kopang,Lombok Tengah
+kec_4733,Janapria,Lombok Tengah
+kec_4734,Jonggat,Lombok Tengah
+kec_4735,Pringgarata,Lombok Tengah
+kec_4736,Praya Barat Daya,Lombok Tengah
+kec_4737,Praya Barat,Lombok Tengah
+kec_4738,Pujut,Lombok Tengah
+kec_4739,Praya Timur,Lombok Tengah
+kec_4740,Selong,Lombok Timur
+kec_4741,Labuhan Haji,Lombok Timur
+kec_4742,Suralaga,Lombok Timur
+kec_4743,Sukamulia,Lombok Timur
+kec_4744,Aikmel,Lombok Timur
+kec_4745,Wanasaba,Lombok Timur
+kec_4746,Pringgabaya,Lombok Timur
+kec_4747,Suela (Suwela),Lombok Timur
+kec_4748,Sambalia (Sambelia),Lombok Timur
+kec_4749,Sembalun,Lombok Timur
+kec_4750,Pringgasela,Lombok Timur
+kec_4751,Masbagik,Lombok Timur
+kec_4752,Sikur,Lombok Timur
+kec_4753,Terara,Lombok Timur
+kec_4754,Montong Gading,Lombok Timur
+kec_4755,Sakra Barat,Lombok Timur
+kec_4756,Sakra Timur,Lombok Timur
+kec_4757,Sakra,Lombok Timur
+kec_4758,Keruak,Lombok Timur
+kec_4759,Jerowaru,Lombok Timur
+kec_4760,Madapangga,Bima
+kec_4761,Mpunda,Bima
+kec_4762,Rasanae Barat,Bima
+kec_4763,Raba,Bima
+kec_4764,Rasanae Timur,Bima
+kec_4765,Asakota,Bima
+kec_4766,Wera,Bima
+kec_4767,Ambalawi,Bima
+kec_4768,Bolo,Bima
+kec_4769,Soromandi,Bima
+kec_4770,Donggo,Bima
+kec_4771,Woha,Bima
+kec_4772,Monta,Bima
+kec_4773,Parado,Bima
+kec_4774,Palibelo,Bima
+kec_4775,Belo,Bima
+kec_4776,Langgudu,Bima
+kec_4777,Lambitu,Bima
+kec_4778,Wawo,Bima
+kec_4779,Sape,Bima
+kec_4780,Lambu,Bima
+kec_4781,Sanggar,Bima
+kec_4782,Tambora,Bima
+kec_4783,Dompu,Dompu
+kec_4784,Woja,Dompu
+kec_4785,Kilo,Dompu
+kec_4786,Menggelewa (Manggelewa),Dompu
+kec_4787,Pekat,Dompu
+kec_4788,Kempo,Dompu
+kec_4789,Hu'u,Dompu
+kec_4790,Pajo,Dompu
+kec_4791,Sumbawa,Sumbawa
+kec_4792,Labuhan Badas,Sumbawa
+kec_4793,Unter Iwes (Unterwiris),Sumbawa
+kec_4794,Utan,Sumbawa
+kec_4795,Rhee,Sumbawa
+kec_4796,Alas,Sumbawa
+kec_4797,Buer,Sumbawa
+kec_4798,Alas Barat,Sumbawa
+kec_4799,Batulanteh,Sumbawa
+kec_4800,Moyo Hulu,Sumbawa
+kec_4801,Lantung,Sumbawa
+kec_4802,Ropang,Sumbawa
+kec_4803,Lenangguar,Sumbawa
+kec_4804,Lunyuk,Sumbawa
+kec_4805,Orong Telu,Sumbawa
+kec_4806,Moyo Utara,Sumbawa
+kec_4807,Moyo Hilir,Sumbawa
+kec_4808,Lopok,Sumbawa
+kec_4809,Lape (Lape Lopok),Sumbawa
+kec_4810,Plampang,Sumbawa
+kec_4811,Labangka,Sumbawa
+kec_4812,Maronge,Sumbawa
+kec_4813,Tarano,Sumbawa
+kec_4814,Empang,Sumbawa
+kec_4815,Sateluk (Seteluk),Sumbawa Barat
+kec_4816,Poto Tano,Sumbawa Barat
+kec_4817,Taliwang,Sumbawa Barat
+kec_4818,Brang Ene,Sumbawa Barat
+kec_4819,Jereweh,Sumbawa Barat
+kec_4820,Maluk,Sumbawa Barat
+kec_4821,Sekongkang,Sumbawa Barat
+kec_4822,Brang Rea,Sumbawa Barat
+kec_4823,Oebobo,Kupang
+kec_4824,Kota Raja,Kupang
+kec_4825,Maulafa,Kupang
+kec_4826,Kota Lama,Kupang
+kec_4827,Fatuleu Barat,Kupang
+kec_4828,Fatuleu Tengah,Kupang
+kec_4829,Kelapa Lima,Kupang
+kec_4830,Alak,Kupang
+kec_4831,Kupang Barat,Kupang
+kec_4832,Semau Selatan,Kupang
+kec_4833,Semau,Kupang
+kec_4834,Taebenu,Kupang
+kec_4835,Kupang Tengah,Kupang
+kec_4836,Kupang Timur,Kupang
+kec_4837,Amabi Oefeto,Kupang
+kec_4838,Fatuleu,Kupang
+kec_4839,Amabi Oefeto Timur,Kupang
+kec_4840,Amfoang Tengah,Kupang
+kec_4841,Amfoang Barat Daya,Kupang
+kec_4842,Amfoang Selatan,Kupang
+kec_4843,Amfoang Barat Laut,Kupang
+kec_4844,Amfoang Timur,Kupang
+kec_4845,Amfoang Utara,Kupang
+kec_4846,Amarasi,Kupang
+kec_4847,Amarasi Selatan,Kupang
+kec_4848,Amarasi Timur,Kupang
+kec_4849,Amarasi Barat,Kupang
+kec_4850,Sulamu,Kupang
+kec_4851,Takari,Kupang
+kec_4852,Nekamese,Kupang
+kec_4853,Hawu Mehara,Sabu Raijua
+kec_4854,Sabu Liae,Sabu Raijua
+kec_4855,Sabu Barat,Sabu Raijua
+kec_4856,Sabu Tengah,Sabu Raijua
+kec_4857,Sabu Timur,Sabu Raijua
+kec_4858,Raijua,Sabu Raijua
+kec_4859,Kota Soe,Timor Tengah Selatan
+kec_4860,Amanuban Barat,Timor Tengah Selatan
+kec_4861,Kuatnana,Timor Tengah Selatan
+kec_4862,Mollo Utara,Timor Tengah Selatan
+kec_4863,Tobu,Timor Tengah Selatan
+kec_4864,Polen,Timor Tengah Selatan
+kec_4865,Mollo Barat,Timor Tengah Selatan
+kec_4866,Mollo Selatan,Timor Tengah Selatan
+kec_4867,Mollo Tengah,Timor Tengah Selatan
+kec_4868,Fatumnasi,Timor Tengah Selatan
+kec_4869,Nunbena,Timor Tengah Selatan
+kec_4870,Amanuban Selatan,Timor Tengah Selatan
+kec_4871,Batu Putih,Timor Tengah Selatan
+kec_4872,Noebeba,Timor Tengah Selatan
+kec_4873,Kualin,Timor Tengah Selatan
+kec_4874,Kolbano,Timor Tengah Selatan
+kec_4875,Kuanfatu,Timor Tengah Selatan
+kec_4876,Amanuban Tengah,Timor Tengah Selatan
+kec_4877,Oenino,Timor Tengah Selatan
+kec_4878,Fautmolo,Timor Tengah Selatan
+kec_4879,Fatukopa,Timor Tengah Selatan
+kec_4880,Amanuban Timur,Timor Tengah Selatan
+kec_4881,Amanatun Selatan,Timor Tengah Selatan
+kec_4882,Boking,Timor Tengah Selatan
+kec_4883,Nunkolo,Timor Tengah Selatan
+kec_4884,Noebana,Timor Tengah Selatan
+kec_4885,Santian,Timor Tengah Selatan
+kec_4886,Kok Baun,Timor Tengah Selatan
+kec_4887,Toianas,Timor Tengah Selatan
+kec_4888,Amanatun Utara,Timor Tengah Selatan
+kec_4889,Kie (Ki'e),Timor Tengah Selatan
+kec_4890,Kot Olin,Timor Tengah Selatan
+kec_4891,Kota Kefamenanu,Timor Tengah Utara
+kec_4892,Biboki Anleu,Timor Tengah Utara
+kec_4893,Bikomi Selatan,Timor Tengah Utara
+kec_4894,Miomaffo Timur,Timor Tengah Utara
+kec_4895,Bikomi Utara,Timor Tengah Utara
+kec_4896,Naibenu,Timor Tengah Utara
+kec_4897,Bikomi Tengah,Timor Tengah Utara
+kec_4898,Bikomi Nilulat,Timor Tengah Utara
+kec_4899,Musi,Timor Tengah Utara
+kec_4900,Miomaffo Tengah,Timor Tengah Utara
+kec_4901,Noemuti,Timor Tengah Utara
+kec_4902,Miomaffo Barat,Timor Tengah Utara
+kec_4903,Noemuti Timur,Timor Tengah Utara
+kec_4904,Mutis,Timor Tengah Utara
+kec_4905,Insana,Timor Tengah Utara
+kec_4906,Insana Barat,Timor Tengah Utara
+kec_4907,Insana Fafinesu,Timor Tengah Utara
+kec_4908,Insana Utara,Timor Tengah Utara
+kec_4909,Insana Tengah,Timor Tengah Utara
+kec_4910,Biboki Moenleu,Timor Tengah Utara
+kec_4911,Biboki Tan Pah,Timor Tengah Utara
+kec_4912,Biboki Selatan,Timor Tengah Utara
+kec_4913,Biboki Utara,Timor Tengah Utara
+kec_4914,Biboki Feotleu,Timor Tengah Utara
+kec_4915,Atambua Kota,Belu
+kec_4916,Tasifeto Timur,Belu
+kec_4917,Atambua Barat,Belu
+kec_4918,Atambua Selatan,Belu
+kec_4919,Laen Manen,Belu
+kec_4920,Tasifeto Barat,Belu
+kec_4921,Kakuluk Mesak,Belu
+kec_4922,Nanaet Duabesi,Belu
+kec_4923,Malaka Timur,Belu
+kec_4924,Raimanuk,Belu
+kec_4925,Malaka Tengah,Belu
+kec_4926,Wewiku,Belu
+kec_4927,Weliman,Belu
+kec_4928,Malaka Barat,Belu
+kec_4929,Rinhat,Belu
+kec_4930,Sasitamean,Belu
+kec_4931,Botin Leo Bele,Belu
+kec_4932,Io Kufeu,Belu
+kec_4933,Kobalima Timur,Belu
+kec_4934,Kobalima,Belu
+kec_4935,Lasiolat,Belu
+kec_4936,Lamaknen Selatan,Belu
+kec_4937,Lamaknen,Belu
+kec_4938,Raihat,Belu
+kec_4939,Teluk Mutiara,Alor
+kec_4940,Kabola,Alor
+kec_4941,Alor Barat Laut,Alor
+kec_4942,Pulau Pura,Alor
+kec_4943,Alor Barat Daya,Alor
+kec_4944,Mataru,Alor
+kec_4945,Alor Tengah Utara,Alor
+kec_4946,Alor Selatan,Alor
+kec_4947,Lembur,Alor
+kec_4948,Alor Timur Laut,Alor
+kec_4949,Alor Timur,Alor
+kec_4950,Pureman,Alor
+kec_4951,Pantar Barat Laut,Alor
+kec_4952,Pantar Tengah,Alor
+kec_4953,Pantar,Alor
+kec_4954,Pantar Barat,Alor
+kec_4955,Pantar Timur,Alor
+kec_4956,Lobalain,Rote Ndao
+kec_4957,Rote Selatan,Rote Ndao
+kec_4958,Rote Tengah,Rote Ndao
+kec_4959,Pantai Baru,Rote Ndao
+kec_4960,Landu Leko,Rote Ndao
+kec_4961,Rote Timur,Rote Ndao
+kec_4962,Rote Barat Laut,Rote Ndao
+kec_4963,Rote Barat,Rote Ndao
+kec_4964,Rote Barat Daya,Rote Ndao
+kec_4965,Ndao Nuse,Rote Ndao
+kec_4966,Alok Timur,Sikka
+kec_4967,Kotabaru,Ende
+kec_4968,Palue,Sikka
+kec_4969,Alok,Sikka
+kec_4970,Mego,Sikka
+kec_4971,Alok Barat,Sikka
+kec_4972,Koting,Sikka
+kec_4973,Nelle (Maumerei),Sikka
+kec_4974,Nita,Sikka
+kec_4975,Magepanda,Sikka
+kec_4976,Tana Wawo,Sikka
+kec_4977,Paga,Sikka
+kec_4978,Lela,Sikka
+kec_4979,Bola,Sikka
+kec_4980,Mapitara,Sikka
+kec_4981,Doreng,Sikka
+kec_4982,Hewokloang,Sikka
+kec_4983,Kangae,Sikka
+kec_4984,Kewapante,Sikka
+kec_4985,Waigete,Sikka
+kec_4986,Talibura,Sikka
+kec_4987,Waiblama,Sikka
+kec_4988,Ile Mandiri,Flores Timur
+kec_4989,Larantuka,Flores Timur
+kec_4990,Demon Pagong,Flores Timur
+kec_4991,Tanjung Bunga,Flores Timur
+kec_4992,Lewolema,Flores Timur
+kec_4993,Titehena,Flores Timur
+kec_4994,Ile Boleng,Flores Timur
+kec_4995,Wulanggitang,Flores Timur
+kec_4996,Ile Bura,Flores Timur
+kec_4997,Wotan Ulumado,Flores Timur
+kec_4998,Adonara Timur,Flores Timur
+kec_4999,Kelubagolit (Klubagolit),Flores Timur
+kec_5000,Adonara,Flores Timur
+kec_5001,Witihama (Watihama),Flores Timur
+kec_5002,Adonara Tengah,Flores Timur
+kec_5003,Adonara Barat,Flores Timur
+kec_5004,Solor Selatan,Flores Timur
+kec_5005,Solor Timur,Flores Timur
+kec_5006,Solor Barat,Flores Timur
+kec_5007,Ende Tengah,Ende
+kec_5008,Ende Selatan,Ende
+kec_5009,Ende Timur,Ende
+kec_5010,Kelimutu,Ende
+kec_5011,Ende Utara,Ende
+kec_5012,Ende,Ende
+kec_5013,Nangapanda,Ende
+kec_5014,Maukaro,Ende
+kec_5015,Wewaria,Ende
+kec_5016,Lio Timur,Ende
+kec_5017,Ndona Timur,Ende
+kec_5018,Ndona,Ende
+kec_5019,Pulau Ende,Ende
+kec_5020,Detukeli,Ende
+kec_5021,Detusoko,Ende
+kec_5022,Ndori,Ende
+kec_5023,Wolowaru,Ende
+kec_5024,Lepembusu Kelisoke,Ende
+kec_5025,Maurole,Ende
+kec_5026,Wolojita,Ende
+kec_5027,Bajawa,Ngada
+kec_5028,Bajawa Utara,Ngada
+kec_5029,Riung Barat,Ngada
+kec_5030,Riung,Ngada
+kec_5031,Soa,Ngada
+kec_5032,Wolomeze (Riung Selatan),Ngada
+kec_5033,Aimere,Ngada
+kec_5034,Jerebuu,Ngada
+kec_5035,Inerie,Ngada
+kec_5036,Golewa Selatan,Ngada
+kec_5037,Golewa Barat,Ngada
+kec_5038,Golewa,Ngada
+kec_5039,Boawae,Nagekeo
+kec_5040,Mauponggo,Nagekeo
+kec_5041,Nangaroro,Nagekeo
+kec_5042,Keo Tengah,Nagekeo
+kec_5043,Aesesa,Nagekeo
+kec_5044,Wolowae,Nagekeo
+kec_5045,Aesesa Selatan,Nagekeo
+kec_5046,Langke Rembong,Manggarai
+kec_5047,Rahong Utara,Manggarai
+kec_5048,Lelak,Manggarai
+kec_5049,Ruteng,Manggarai
+kec_5050,Satar Mese Barat,Manggarai
+kec_5051,Satar Mese,Manggarai
+kec_5052,Rana Mese,Manggarai Timur
+kec_5053,Borong,Manggarai Timur
+kec_5054,Kota Komba,Manggarai Timur
+kec_5055,Elar Selatan,Manggarai Timur
+kec_5056,Elar,Manggarai Timur
+kec_5057,Lamba Leda,Manggarai Timur
+kec_5058,Poco Ranaka Timur,Manggarai Timur
+kec_5059,Poco Ranaka,Manggarai Timur
+kec_5060,Sambi Rampas,Manggarai Timur
+kec_5061,Cibal Barat,Manggarai
+kec_5062,Wae Rii,Manggarai
+kec_5063,Cibal,Manggarai
+kec_5064,Reok,Manggarai
+kec_5065,Reok Barat,Manggarai
+kec_5066,Nubatukan,Lembata
+kec_5067,Lebatukan,Lembata
+kec_5068,Ile Ape,Lembata
+kec_5069,Ile Ape Timur,Lembata
+kec_5070,Nagawutung,Lembata
+kec_5071,Wulandoni (Wulandioni),Lembata
+kec_5072,Atadei,Lembata
+kec_5073,Omesuri,Lembata
+kec_5074,Buyasuri (Buyasari),Lembata
+kec_5075,Kuwus,Manggarai Barat
+kec_5076,Ndoso,Manggarai Barat
+kec_5077,Lembor Selatan,Manggarai Barat
+kec_5078,Lembor,Manggarai Barat
+kec_5079,Welak,Manggarai Barat
+kec_5080,Komodo,Manggarai Barat
+kec_5081,Boleng,Manggarai Barat
+kec_5082,Macang Pacar,Manggarai Barat
+kec_5083,Mbeliling,Manggarai Barat
+kec_5084,Sano Nggoang,Manggarai Barat
+kec_5085,Kota Waingapu,Sumba Timur
+kec_5086,Kambera,Sumba Timur
+kec_5087,Kambata Mapambuhang,Sumba Timur
+kec_5088,Lewa,Sumba Timur
+kec_5089,Lewa Tidahu,Sumba Timur
+kec_5090,Nggaha Oriangu,Sumba Timur
+kec_5091,Katala Hamu Lingu,Sumba Timur
+kec_5092,Kanatang,Sumba Timur
+kec_5093,Haharu,Sumba Timur
+kec_5094,Tabundung,Sumba Timur
+kec_5095,Pinupahar (Pirapahar),Sumba Timur
+kec_5096,Mahu,Sumba Timur
+kec_5097,Pandawai,Sumba Timur
+kec_5098,Kahaunguweti (Kahaungu Eti),Sumba Timur
+kec_5099,Paberiwai,Sumba Timur
+kec_5100,Matawai Lappau (La Pawu),Sumba Timur
+kec_5101,Karera,Sumba Timur
+kec_5102,Ngadu Ngala,Sumba Timur
+kec_5103,Rindi,Sumba Timur
+kec_5104,Umalulu,Sumba Timur
+kec_5105,Wula Waijelu,Sumba Timur
+kec_5106,Pahunga Lodu,Sumba Timur
+kec_5107,Kota Waikabubak,Sumba Barat
+kec_5108,Wewewa Tengah (Wewera Tengah),Sumba Barat Daya
+kec_5109,Wewewa Timur,Sumba Barat Daya
+kec_5110,Wewewa Utara,Sumba Barat Daya
+kec_5111,Wewewa Barat,Sumba Barat Daya
+kec_5112,Loura (Laura),Sumba Barat Daya
+kec_5113,Kota Tambolaka,Sumba Barat Daya
+kec_5114,Tana Righu,Sumba Barat
+kec_5115,Mamboro,Sumba Tengah
+kec_5116,Kodi,Sumba Barat Daya
+kec_5117,Kodi Utara,Sumba Barat Daya
+kec_5118,Kodi Bangedo,Sumba Barat Daya
+kec_5119,Kodi Balaghar,Sumba Barat Daya
+kec_5120,Wewewa Selatan,Sumba Barat Daya
+kec_5121,Lamboya,Sumba Barat
+kec_5122,Lamboya Barat,Sumba Barat
+kec_5123,Wanokaka,Sumba Barat
+kec_5124,Umbu Ratu Nggay Barat,Sumba Tengah
+kec_5125,Katikutana,Sumba Tengah
+kec_5126,Katikutana Selatan,Sumba Tengah
+kec_5127,Umbu Ratu Nggay,Sumba Tengah
+kec_5128,Loli,Sumba Barat
+kec_5129,Ujung Pandang,Makassar
+kec_5130,Mariso,Makassar
+kec_5131,Mamajang,Makassar
+kec_5132,Makassar,Makassar
+kec_5133,Bontoala,Makassar
+kec_5134,Ujung Tanah,Makassar
+kec_5135,Wajo,Makassar
+kec_5136,Tallo,Makassar
+kec_5137,Rappocini,Makassar
+kec_5138,Tamalate,Makassar
+kec_5139,Barombong,Gowa
+kec_5140,Barebbo,Bone
+kec_5141,Panakkukang,Makassar
+kec_5142,Manggala,Makassar
+kec_5143,Biring Kanaya,Makassar
+kec_5144,Tamalanrea,Makassar
+kec_5145,Biringbulu,Gowa
+kec_5146,Turikale,Maros
+kec_5147,Maros Baru,Maros
+kec_5148,Lau,Maros
+kec_5149,Marusu,Maros
+kec_5150,Mandai,Maros
+kec_5151,Tanralili,Maros
+kec_5152,Bontoa (Maros Utara),Maros
+kec_5153,Bantimurung,Maros
+kec_5154,Tondong Tallasa,Pangkajene Kepulauan
+kec_5155,Tompu Bulu,Maros
+kec_5156,Simbang,Maros
+kec_5157,Camba,Maros
+kec_5158,Moncongloe,Maros
+kec_5159,Mallawa,Maros
+kec_5160,Pangkajene,Pangkajene Kepulauan
+kec_5161,Minasa Tene,Pangkajene Kepulauan
+kec_5162,Bungoro,Pangkajene Kepulauan
+kec_5163,Labakkang,Pangkajene Kepulauan
+kec_5164,Marang (Ma Rang),Pangkajene Kepulauan
+kec_5165,Segeri,Pangkajene Kepulauan
+kec_5166,Mandalle,Pangkajene Kepulauan
+kec_5167,Balocci,Pangkajene Kepulauan
+kec_5168,Liukang Tupabbiring,Pangkajene Kepulauan
+kec_5169,Liukang Tupabbiring Utara,Pangkajene Kepulauan
+kec_5170,Liukang Kalmas (Kalukuang Masalima),Pangkajene Kepulauan
+kec_5171,Liukang Tangaya,Pangkajene Kepulauan
+kec_5172,Barru,Barru
+kec_5173,Tanete Rilau,Barru
+kec_5174,Mallusetasi,Barru
+kec_5175,Soppeng Riaja,Barru
+kec_5176,Pujananting,Barru
+kec_5177,Balusu,Barru
+kec_5178,Tanete Riaja,Barru
+kec_5179,Lalabata,Soppeng
+kec_5180,Mario Riawa,Soppeng
+kec_5181,Donri-Donri,Soppeng
+kec_5182,Liliraja (Lili Riaja),Soppeng
+kec_5183,Ganra,Soppeng
+kec_5184,Citta,Soppeng
+kec_5185,Mario Riwawo,Soppeng
+kec_5186,Lili Rilau,Soppeng
+kec_5187,Tempe,Wajo
+kec_5188,Belawa,Wajo
+kec_5189,Tana Sitolo,Wajo
+kec_5190,Maniang Pajo,Wajo
+kec_5191,Gilireng,Wajo
+kec_5192,Sabbang Paru,Wajo
+kec_5193,Pammana,Wajo
+kec_5194,Takkalalla,Wajo
+kec_5195,Sajoanging,Wajo
+kec_5196,Penrang,Wajo
+kec_5197,Bola,Wajo
+kec_5198,Majauleng,Wajo
+kec_5199,Pitumpanua,Wajo
+kec_5200,Keera,Wajo
+kec_5201,Ujung,Parepare
+kec_5202,Bacukiki Barat,Parepare
+kec_5203,Bacukiki,Parepare
+kec_5204,Soreang,Parepare
+kec_5205,Watang Sawitto,Pinrang
+kec_5206,Paleteang,Pinrang
+kec_5207,Patampanua,Pinrang
+kec_5208,Duampanua,Pinrang
+kec_5209,Batulappa,Pinrang
+kec_5210,Lembang,Pinrang
+kec_5211,Tiroang,Pinrang
+kec_5212,Mattiro Sompe,Pinrang
+kec_5213,Cempa,Pinrang
+kec_5214,Mattiro Bulu,Pinrang
+kec_5215,Lanrisang,Pinrang
+kec_5216,Suppa,Pinrang
+kec_5217,Binuang,Polewali Mandar
+kec_5218,Polewali,Polewali Mandar
+kec_5219,Anreapi,Polewali Mandar
+kec_5220,Tapalang Barat,Mamuju
+kec_5221,Wonomulyo,Polewali Mandar
+kec_5222,Matangnga,Polewali Mandar
+kec_5223,Tapango,Polewali Mandar
+kec_5224,Matakali,Polewali Mandar
+kec_5225,Tapalang,Mamuju
+kec_5226,Luyo,Polewali Mandar
+kec_5227,Mapilli,Polewali Mandar
+kec_5228,Campalagian,Polewali Mandar
+kec_5229,Bulo,Polewali Mandar
+kec_5230,Balanipa,Polewali Mandar
+kec_5231,Tinambung,Polewali Mandar
+kec_5232,Tubbi Taramanu (Tutar/Tutallu),Polewali Mandar
+kec_5233,Sumarorong,Mamasa
+kec_5234,Messawa,Mamasa
+kec_5235,Mamasa,Mamasa
+kec_5236,Nosu,Mamasa
+kec_5237,Pana,Mamasa
+kec_5238,Tabang,Mamasa
+kec_5239,Tawalian,Mamasa
+kec_5240,Sesena Padang,Mamasa
+kec_5241,Balla,Mamasa
+kec_5242,Tanduk Kalua,Mamasa
+kec_5243,Bambang,Mamasa
+kec_5244,Rantebulahan Timur,Mamasa
+kec_5245,Mehalaan,Mamasa
+kec_5246,Mambi,Mamasa
+kec_5247,Tabulahan,Mamasa
+kec_5248,Aralle (Arrale),Mamasa
+kec_5249,Buntumalangka,Mamasa
+kec_5250,Banggae,Majene
+kec_5251,Banggae Timur,Majene
+kec_5252,Limboro,Polewali Mandar
+kec_5253,Pamboang,Majene
+kec_5254,Tammeredo Sendana,Majene
+kec_5255,Sendana,Majene
+kec_5256,Tubo (Tubo Sendana),Majene
+kec_5257,Malunda,Majene
+kec_5258,Ulumunda,Majene
+kec_5259,Mamuju,Mamuju
+kec_5260,Kep. Bala Balakang,Mamuju
+kec_5261,Dapurang,Mamuju Utara
+kec_5262,Simboro dan Kepulauan,Mamuju
+kec_5263,Karossa,Mamuju
+kec_5264,Kalukku,Mamuju
+kec_5265,Bonehau,Mamuju
+kec_5266,Kalumpang,Mamuju
+kec_5267,Tommo,Mamuju
+kec_5268,Budong-Budong,Mamuju
+kec_5269,Tobadak,Mamuju
+kec_5270,Topoyo,Mamuju
+kec_5271,Papalang,Mamuju
+kec_5272,Sampaga,Mamuju
+kec_5273,Pangale,Mamuju
+kec_5274,Pasangkayu,Mamuju Utara
+kec_5275,Pedongga,Mamuju Utara
+kec_5276,Tikke Raya,Mamuju Utara
+kec_5277,Lariang,Mamuju Utara
+kec_5278,Baras,Mamuju Utara
+kec_5279,Bulu Taba,Mamuju Utara
+kec_5280,Sarudu,Mamuju Utara
+kec_5281,Duripoku,Mamuju Utara
+kec_5282,Bambaira,Mamuju Utara
+kec_5283,Bambalamotu,Mamuju Utara
+kec_5284,Sarjo,Mamuju Utara
+kec_5285,Maritengngae,Sidenreng Rappang/Rapang
+kec_5286,Wattang Sidenreng (Watang Sidenreng),Sidenreng Rappang/Rapang
+kec_5287,Panca Rijang,Sidenreng Rappang/Rapang
+kec_5288,Baranti,Sidenreng Rappang/Rapang
+kec_5289,Kulo,Sidenreng Rappang/Rapang
+kec_5290,Watang Pulu,Sidenreng Rappang/Rapang
+kec_5291,Tellu Limpoe,Sidenreng Rappang/Rapang
+kec_5292,Tellu Limpoe,Bone
+kec_5293,Tellu Limpoe,Sinjai
+kec_5294,Panca Lautan (Lautang),Sidenreng Rappang/Rapang
+kec_5295,Dua Pitue,Sidenreng Rappang/Rapang
+kec_5296,Pitu Riawa,Sidenreng Rappang/Rapang
+kec_5297,Pitu Raise/Riase,Sidenreng Rappang/Rapang
+kec_5298,Enrekang,Enrekang
+kec_5299,Cendana,Enrekang
+kec_5300,Anggeraja,Enrekang
+kec_5301,Malua,Enrekang
+kec_5302,Baraka,Enrekang
+kec_5303,Buntu Batu,Enrekang
+kec_5304,Baroko,Enrekang
+kec_5305,Masalle,Enrekang
+kec_5306,Alla,Enrekang
+kec_5307,Curio,Enrekang
+kec_5308,Maiwa,Enrekang
+kec_5309,Bungin,Enrekang
+kec_5310,Makale,Tana Toraja
+kec_5311,Makale Utara,Tana Toraja
+kec_5312,Makale Selatan,Tana Toraja
+kec_5313,Rantepao,Toraja Utara
+kec_5314,Tallunglipu,Toraja Utara
+kec_5315,Tikala,Toraja Utara
+kec_5316,Kesu,Toraja Utara
+kec_5317,Sanggalangi,Toraja Utara
+kec_5318,Sopai,Toraja Utara
+kec_5319,Bangkelekila,Toraja Utara
+kec_5320,Rantebua,Toraja Utara
+kec_5321,Sesean,Toraja Utara
+kec_5322,Buntao,Toraja Utara
+kec_5323,Sesean Suloara,Toraja Utara
+kec_5324,Sa'dan,Toraja Utara
+kec_5325,Rindingallo,Toraja Utara
+kec_5326,Awan Rante Karua,Toraja Utara
+kec_5327,Baruppu,Toraja Utara
+kec_5328,Buntu Pepasan,Toraja Utara
+kec_5329,Masanda,Tana Toraja
+kec_5330,Kapalla Pitu (Kapala Pitu),Toraja Utara
+kec_5331,Limbong,Luwu Utara
+kec_5332,Balusu,Toraja Utara
+kec_5333,Nanggala,Toraja Utara
+kec_5334,Tondon,Toraja Utara
+kec_5335,Bittuang,Tana Toraja
+kec_5336,Malimbong Balepe,Tana Toraja
+kec_5337,Rembon,Tana Toraja
+kec_5338,Saluputti,Tana Toraja
+kec_5339,Kurra,Tana Toraja
+kec_5340,Dende' Piongan Napo,Toraja Utara
+kec_5341,Rantetayo,Tana Toraja
+kec_5342,Gandang Batu Sillanan,Tana Toraja
+kec_5343,Mengkendek,Tana Toraja
+kec_5344,Bonggakaradeng,Tana Toraja
+kec_5345,Rano,Tana Toraja
+kec_5346,Mappak,Tana Toraja
+kec_5347,Simbuang,Tana Toraja
+kec_5348,Sangalla Selatan,Tana Toraja
+kec_5349,Sangalla Utara,Tana Toraja
+kec_5350,Sangalla (Sanggala),Tana Toraja
+kec_5351,Wara Utara,Palopo
+kec_5352,Bara,Palopo
+kec_5353,Wara Barat,Palopo
+kec_5354,Wara Timur,Palopo
+kec_5355,Latimojong,Luwu
+kec_5356,Wara,Palopo
+kec_5357,Mungkajang,Palopo
+kec_5358,Sendana,Palopo
+kec_5359,Wara Selatan,Palopo
+kec_5360,Walenrang,Luwu
+kec_5361,Lamasi Timur,Luwu
+kec_5362,Walenrang Barat,Luwu
+kec_5363,Walenrang Timur,Luwu
+kec_5364,Lamasi,Luwu
+kec_5365,Walenrang Utara,Luwu
+kec_5366,Telluwanua,Palopo
+kec_5367,Bone-Bone,Luwu Utara
+kec_5368,Tana Lili,Luwu Utara
+kec_5369,Malili,Luwu Timur
+kec_5370,Bua,Luwu
+kec_5371,Bassesang Tempe (Bastem),Luwu
+kec_5372,Basse Sangtempe Utara,Luwu
+kec_5373,Bua Ponrang (Bupon),Luwu
+kec_5374,Belopa,Luwu
+kec_5375,Kamanre,Luwu
+kec_5376,Belopa Utara,Luwu
+kec_5377,Bajo,Luwu
+kec_5378,Bajo Barat,Luwu
+kec_5379,Suli,Luwu
+kec_5380,Suli Barat,Luwu
+kec_5381,Larompong,Luwu
+kec_5382,Larompong Selatan,Luwu
+kec_5383,Ponrang Selatan,Luwu
+kec_5384,Ponrang,Luwu
+kec_5385,Somba Opu (Upu),Gowa
+kec_5386,Bajeng,Gowa
+kec_5387,Bajeng Barat,Gowa
+kec_5388,Bontonompo,Gowa
+kec_5389,Bontonompo Selatan,Gowa
+kec_5390,Pallangga,Gowa
+kec_5391,Tombolo Pao,Gowa
+kec_5392,Bontomarannu,Gowa
+kec_5393,Pattallassang,Gowa
+kec_5394,Parangloe,Gowa
+kec_5395,Manuju,Gowa
+kec_5396,Parigi,Gowa
+kec_5397,Tinggimoncong,Gowa
+kec_5398,Tompobulu,Gowa
+kec_5399,Bungaya,Gowa
+kec_5400,Bontolempangang,Gowa
+kec_5401,Patallassang,Takalar
+kec_5402,Polombangkeng Utara (Polobangkeng),Takalar
+kec_5403,Sanrobone,Takalar
+kec_5404,Mappakasunggu,Takalar
+kec_5405,Polombangkeng Selatan (Polobangkeng),Takalar
+kec_5406,Galesong Selatan,Takalar
+kec_5407,Galesong,Takalar
+kec_5408,Galesong Utara,Takalar
+kec_5409,Mangara Bombang,Takalar
+kec_5410,Binamu,Jeneponto
+kec_5411,Turatea,Jeneponto
+kec_5412,Rumbia,Jeneponto
+kec_5413,Bontoramba,Jeneponto
+kec_5414,Tamalatea,Jeneponto
+kec_5415,Bangkala Barat,Jeneponto
+kec_5416,Bangkala,Jeneponto
+kec_5417,Tarowang,Jeneponto
+kec_5418,Arungkeke,Jeneponto
+kec_5419,Batang,Jeneponto
+kec_5420,Kelara,Jeneponto
+kec_5421,Bantaeng,Bantaeng
+kec_5422,Eremerasa,Bantaeng
+kec_5423,Bissappu,Bantaeng
+kec_5424,Sinoa,Bantaeng
+kec_5425,Uluere,Bantaeng
+kec_5426,Gantarang Keke (Gantareng Keke),Bantaeng
+kec_5427,Tompobulu,Bantaeng
+kec_5428,Pajukukang,Bantaeng
+kec_5429,Ujung Bulu,Bulukumba
+kec_5430,Kindang,Bulukumba
+kec_5431,Rilau Ale,Bulukumba
+kec_5432,Bulukumba (Bulukumpa),Bulukumba
+kec_5433,Gantorang/Gantarang (Gangking),Bulukumba
+kec_5434,Bonto Bahari,Bulukumba
+kec_5435,Bontotiro,Bulukumba
+kec_5436,Hero Lange-Lange (Herlang),Bulukumba
+kec_5437,Kajang,Bulukumba
+kec_5438,Sinjai Utara,Sinjai
+kec_5439,Pulau Sembilan,Sinjai
+kec_5440,Sinjai Tengah,Sinjai
+kec_5441,Sinjai Barat,Sinjai
+kec_5442,Bulupoddo,Sinjai
+kec_5443,Sinjai Selatan,Sinjai
+kec_5444,Ujung Loe,Bulukumba
+kec_5445,Sinjai Borong,Sinjai
+kec_5446,Sinjai Timur,Sinjai
+kec_5447,Tanete Riattang,Bone
+kec_5448,Kahu,Bone
+kec_5449,Tanete Riattang Timur,Bone
+kec_5450,Tanete Riattang Barat,Bone
+kec_5451,Tellu Siattinge,Bone
+kec_5452,Dua Boccoe,Bone
+kec_5453,Cenrana,Bone
+kec_5454,Cenrana,Maros
+kec_5455,Amali,Bone
+kec_5456,Ajangale,Bone
+kec_5457,Palakka,Bone
+kec_5458,Ulaweng,Bone
+kec_5459,Bengo,Bone
+kec_5460,Lappariaja,Bone
+kec_5461,Lamuru,Bone
+kec_5462,Ponre,Bone
+kec_5463,Libureng,Bone
+kec_5464,Bontocani,Bone
+kec_5465,Patimpeng,Bone
+kec_5466,Cina,Bone
+kec_5467,Mare,Bone
+kec_5468,Tonra,Bone
+kec_5469,Salomekko,Bone
+kec_5470,Awangpone,Bone
+kec_5471,Kajuara,Bone
+kec_5472,Sibulue,Bone

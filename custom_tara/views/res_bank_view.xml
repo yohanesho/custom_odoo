@@ -1,0 +1,17 @@
+<odoo>
+    <data>
+        <record id="res_bank_view_inherit" model="ir.ui.view">
+            <field name="name">Customize Bank View</field>
+            <field name="model">res.partner.bank</field>
+            <field name="inherit_id" ref="base.view_partner_bank_form" />
+            <field name="arch" type="xml">
+                <field name="partner_id" position="before">
+                    <field name="related_company"/>
+                </field>
+                <field name="bank_id" colspan="2" position="after">
+                    <field name="payment_term" attrs="{'invisible': [('related_company','=',False)]}"/>
+                </field>
+            </field>
+        </record>
+    </data>
+</odoo>

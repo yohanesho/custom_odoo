@@ -1,2 +1,0 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_custom_tara_custom_tara,custom_tara.custom_tara,model_custom_tara_custom_tara,,1,0,0,0

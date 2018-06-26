@@ -1,0 +1,14 @@
+<odoo>
+    <data>
+        <record id="sale_order_view_inherit" model="ir.ui.view">
+            <field name="name">Sale Order Discount</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form" />
+            <field name="arch" type="xml">
+                <field name="amount_untaxed" position="before">
+                    <field class="o_form_input o_form_field o_form_field_number" name="amount_discount" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                </field>
+            </field>
+        </record>
+    </data>
+</odoo>
