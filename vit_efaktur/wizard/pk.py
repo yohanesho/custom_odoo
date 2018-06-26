@@ -185,9 +185,21 @@ class efaktur_pk_wizard(models.TransientModel):
         csvwriter.writerow([data[v] for v in headers])
 
     def baris6(self, headers, csvwriter, line):
+        currency = line.invoice_id and line.invoice_id.currency_id or None
         harga_total = line.price_unit * line.quantity
-        dpp = harga_total
-        ppn = dpp*0.1 #TODO ambil dari Tax many2many
+        amount_discount = line.amount_discount or 0
+        dpp = harga_total - amount_discount
+        ppn = 0.0
+        price = dpp / line.quantity
+        taxes = False
+
+        if line.invoice_line_tax_ids:
+            taxes = line.invoice_line_tax_ids.compute_all(price, currency, line.quantity, product=line.product_id, partner=line.invoice_id.partner_id)
+        
+        dpp = taxes['total_excluded'] if taxes else self.quantity * price
+        ppn = taxes['total_included'] - taxes['total_excluded'] if taxes else 0.0
+
+        # ppn = dpp*0.1 #TODO ambil dari Tax many2many
 
         data = {
             'FK': 'OF',
@@ -196,7 +208,7 @@ class efaktur_pk_wizard(models.TransientModel):
             'NOMOR_FAKTUR': line.price_unit,
             'MASA_PAJAK': line.quantity ,
             'TAHUN_PAJAK': harga_total,
-            'TANGGAL_FAKTUR': line.amount_discount or 0,
+            'TANGGAL_FAKTUR': amount_discount,
             'NPWP': dpp,
             'NAMA': ppn,
             'ALAMAT_LENGKAP': '0',
