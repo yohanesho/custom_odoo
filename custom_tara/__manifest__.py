@@ -38,9 +38,11 @@ Customization for Tarakusuma
         'views/account_invoice_view.xml',
         'views/res_bank_view.xml',
         'views/stock_view.xml',
+        'views/currency_view.xml',
         'reports/report_deliveryslip.xml',
         'reports/report_invoice.xml',
         'reports/custom_paper.xml',
+        'reports/report_external_header.xml',
     ],
 
     'demo': [

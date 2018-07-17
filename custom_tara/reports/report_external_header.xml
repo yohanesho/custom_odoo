@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="report_external_header_inherit" inherit_id="report.external_layout_header">
+        <div name="company_address" position="replace">
+            <div class="col-xs-6" name="company_address">
+                <div>
+                    <span t-field="company.partner_id" 
+                        t-field-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;address&quot;, &quot;name&quot;], &quot;no_marker&quot;: true}" 
+                        style="border-bottom: 1px solid black; display:inline-block;"/>
+                </div>
+                <div t-if="company.vat">
+                    <span>
+                        <span t-field="company.vat" />
+                    </span>
+                </div>
+            </div>
+        </div>
+    </template>
+</odoo>

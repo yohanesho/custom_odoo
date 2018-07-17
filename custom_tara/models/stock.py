@@ -7,9 +7,9 @@ class stock_picking(models.Model):
     _inherit = 'stock.picking'
 
     order_id = fields.Many2one('sale.order', compute='_get_sale_order', string='Sale Order', readonly=True)
-    force_credit_limit = fields.Boolean(string=u'Force Credit Limit',default=False,)
-    force_uid = fields.Many2one(string=u'Forced Credit Limit By',comodel_name='res.users',ondelete='cascade',)
-    force_date = fields.Datetime(string=u'Force Date',)
+    force_credit_limit = fields.Boolean(string=u'Force Credit Limit',default=False, track_visibility='onchange')
+    force_uid = fields.Many2one(string=u'Forced Credit Limit By',comodel_name='res.users',ondelete='cascade', track_visibility='onchange')
+    force_date = fields.Datetime(string=u'Force Date', track_visibility='onchange')
     credit_limit_state = fields.Selection(string=u'Credit Limit Status',
         selection=[('open', 'Open'), ('over', 'Over Limit'), ('confirmed', 'Forced Credit Limit')],
         compute='_get_credit_limit_state',
@@ -41,22 +41,15 @@ class stock_picking(models.Model):
     def do_new_transfer(self):
         for pick in self:
             pick._get_credit_limit_state()
-            print 'pick.credit_limit_state: ', pick.credit_limit_state
-            print 'stock.group_stock_manager: ', self.user_has_groups('stock.group_stock_manager')
-            print 'sales_team.group_sale_manager: ', self.user_has_groups('sales_team.group_sale_manager')
             
-            if pick.credit_limit_state == 'over':
-                if not (self.user_has_groups('stock.group_stock_manager') or self.user_has_groups('sales_team.group_sale_manager')):
-                    raise UserError(_('You can not validate deliver order cause partner reach credit limit! Partner credit limit is {:,}, remaining limit {:,}. Please contact your Stock Manager or Sales Manager to Validate.'.format(partner_limit, partner_limit - inv.partner_id.credit)))
-                else:
+            if pick.credit_limit_state == 'over' and not self.force_credit_limit:
+                if self.user_has_groups('stock.group_stock_manager') or self.user_has_groups('sales_team.group_sale_manager'):
                     pick.update({
                         'force_credit_limit': True,
                         'force_uid': self.env.user.id,
                         'force_date': datetime.now()
                     })
-
-                    print 'pick.force_credit_limit: ', pick.force_credit_limit
-                    print 'pick.force_uid: ', pick.force_uid
-                    print 'pick.force_date: ', pick.force_date
+                else:
+                    raise UserError(_('You can not validate deliver order cause partner reach credit limit! Partner credit limit is {:,}, remaining limit {:,}. Please contact your Stock Manager or Sales Manager to Validate.'.format(partner_limit, partner_limit - inv.partner_id.credit)))
         
         return super(stock_picking, self).do_new_transfer()

@@ -7,8 +7,7 @@
             <field name="model">res.partner</field>
             <field name="inherit_id" ref="base.view_partner_form"/>
             <field name="arch" type="xml">
-
-                <notebook position="inside">
+                <xpath expr="//notebook[@colspan='4']" position="inside">
                     <page string="E-Faktur">
                         <group>
                             <group>
@@ -29,7 +28,7 @@
 
                         </group>
                     </page>
-                </notebook>
+                </xpath>
             </field>
         </record>
 

@@ -14,12 +14,19 @@
                         <span><strong>Kepada Yth:</strong></span>
                     </div>
                     <div t-if="o.move_lines and o.move_lines[0].partner_id" name="partner_header">
-                        <div t-field="o.move_lines[0].partner_id"
-                            t-options='{"widget": "contact", "fields": ["address", "name", "phone", "fax"], "no_marker": True}'/>
-                    </div>
-                    <div t-if="not (o.move_lines and o.move_lines[0].partner_id) and o.partner_id" name="partner_header">
-                        <div t-field="o.partner_id"
-                            t-options='{"widget": "contact", "fields": ["address", "name", "phone", "fax"], "no_marker": True}'/>
+                        <div t-field="o.move_lines[0].partner_id" />
+                        <div t-field="o.move_lines[0].partner_id.street" />
+                        <div t-field="o.move_lines[0].partner_id.street2" />
+                        <span> 
+                            <span t-field="o.move_lines[0].partner_id.city" /> - 
+                            <span t-field="o.move_lines[0].partner_id.state_id" /> -
+                            <span t-field="o.move_lines[0].partner_id.zip" />
+                        </span>
+                        <div>   
+                            <span t-if="o.move_lines[0].partner_id.phone" style="padding-right: 0"><i class="fa fa-phone"></i> <span t-field="o.move_lines[0].partner_id.phone"/></span>
+                            <span t-if="o.move_lines[0].partner_id.mobile" style="padding-right: 0"><i class="fa fa-mobile"></i> <span t-field="o.move_lines[0].partner_id.mobile" /></span>
+                            <span t-if="o.move_lines[0].partner_id.fax" style="padding-right: 0"><i class="fa fa-fax"></i> <span t-field="o.move_lines[0].partner_id.fax" /></span>
+                        </div>
                     </div>
                 </div>
                 <div class="col-xs-5 col-xs-offset-1" t-if="o.picking_type_id.code == 'outgoing'">
@@ -35,6 +42,11 @@
                             <span t-field="o.move_lines[0].partner_id.delivery_state_id" /> -
                             <span t-field="o.move_lines[0].partner_id.delivery_zip" />
                         </span>
+                        <div>   
+                            <span t-if="o.move_lines[0].partner_id.delivery_phone" style="padding-right: 0"><i class="fa fa-phone"></i> <span t-field="o.move_lines[0].partner_id.delivery_phone"/></span>
+                            <span t-if="o.move_lines[0].partner_id.delivery_mobile" style="padding-right: 0"><i class="fa fa-mobile"></i> <span t-field="o.move_lines[0].partner_id.delivery_mobile" /></span>
+                            <span t-if="o.move_lines[0].partner_id.delivery_fax" style="padding-right: 0"><i class="fa fa-fax"></i> <span t-field="o.move_lines[0].partner_id.delivery_fax" /></span>
+                        </div>
                     </div>
                 </div>
 
@@ -50,9 +62,9 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td><span t-field="o.date_done"/></td>
+                            <td><span t-field="o.date_done" t-field-options='{"format": "d-MMM-y"}'/></td>
                             <td><span t-field="o.order_id"/></td>
-                            <td><span t-field="o.order_id.date_order"/></td>
+                            <td><span t-field="o.order_id.date_order" t-field-options='{"format": "d-MMM-y"}'/></td>
                             <td><span t-field="o.order_id.client_order_ref"/></td>
                             <td></td>
                         </tr>
@@ -61,61 +73,47 @@
                 
                 <table class="table table-condensed mt48" t-if="o.pack_operation_ids">
                     <t t-set="has_serial_number" t-value="o.pack_operation_ids.filtered('pack_lot_ids')" groups="stock.group_production_lot"/>
+                    <t t-set="total_qty_sold" t-value="0"/>
                     <thead>
-                        <tr>
+                        <tr style="border-top: 1px solid black;">
                             <th><strong>Kode Barang</strong></th>
                             <th><strong>Nama Barang</strong></th>
-                            <th name="lot_serial" t-if="has_serial_number">
-                                <span class="pull-left">Lot/Serial Number</span>
-                            </th>
                             <th class="text-center"><strong>Jumlah Pengiriman</strong></th>
                             <th class="text-center"><strong>Jumlah Pieces</strong></th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr t-foreach="o.pack_operation_ids" t-as="pack_operation">
-                            <td>
-                                <span t-field="pack_operation.product_id.default_code"/>
-                            </td>
-                            <td>
-                                <span t-field="pack_operation.product_id.name"/>
-                                <t t-if="not pack_operation.product_id and pack_operation.package_id">
-                                    <span  t-field="pack_operation.package_id"/>
-                                </t>
-                            </td>
-                            
-                            <t t-if="has_serial_number">
-                                <td t-if="pack_operation.pack_lot_ids">
-                                    <table class="table table-condensed" t-if="pack_operation.pack_lot_ids">
-                                        <tr t-foreach="pack_operation.pack_lot_ids" t-as="packlot">
-                                            <td>
-                                                <span t-field="packlot.lot_id"/>
-                                                <t t-if="not packlot.lot_id">
-                                                    <span t-field="packlot.lot_name"/>
-                                                </t>
-                                            </td>
-                                            <td name="lot_qty">
-                                                <span t-field="packlot.qty"/>
-                                            </td>
-                                        </tr>
-                                    </table>
+                    <tr>
+                        <t t-foreach="o.pack_operation_ids" t-as="pack_operation">
+                            <tr>
+                                <td>
+                                    <span t-field="pack_operation.product_id.default_code"/>
                                 </td>
-                                <td t-if="not pack_operation.pack_lot_ids"/>
-                            </t>
+                                <td>
+                                    <span t-field="pack_operation.product_id.name"/>
+                                    <t t-if="not pack_operation.product_id and pack_operation.package_id">
+                                        <span  t-field="pack_operation.package_id"/>
+                                    </t>
+                                </td>
+                                <td class="text-center">
+                                    <span t-foreach="pack_operation.linked_move_operation_ids[0]" t-as="linked_move">
+                                        <span t-field="linked_move.move_id.product_uom_qty"></span>
+                                        <span t-field="linked_move.move_id.product_uom"></span>
+                                    </span>
+                                </td>
 
-                            <td class="text-center">
-                                <span t-foreach="pack_operation.linked_move_operation_ids" t-as="linked_move">
-                                    <span t-field="linked_move.move_id.product_uom_qty"></span>
-                                    <span t-field="linked_move.move_id.product_uom"></span>
-                                </span>
-                            </td>
-
-                            <td class="text-center">
-                                <span t-field="pack_operation.qty_done"></span>
-                                <span t-field="pack_operation.product_uom_id"></span>
-                            </td>
-                        </tr>
-                    </tbody>    
+                                <td class="text-center">
+                                    <span t-field="pack_operation.qty_done"></span>
+                                    <span t-field="pack_operation.product_uom_id"></span>
+                                </td>
+                                <t t-if="pack_operation.product_id.type != 'service'" t-set="total_qty_sold" t-value="total_qty_sold + pack_operation['qty_done']"/>
+                            </tr>
+                        </t>
+                    </tr>
+                    <tr style="font-weight:bold;border-top-style:double;border-top-width:1px;">
+                        <td colspan="3">
+                        </td>
+                        <td class="text-center"><span t-esc="'{:,.0f}'.format(total_qty_sold)"></span></td>
+                    </tr>
                 </table>
             </div>
 

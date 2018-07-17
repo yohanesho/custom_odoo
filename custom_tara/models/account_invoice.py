@@ -36,7 +36,7 @@ class account_invoice(models.Model):
     def get_amount_discount_total(self):
         self.amount_discount_total = sum([x.amount_discount for x in self.invoice_line_ids])
         self.amount_subtotal = sum([x.price_unit * x.quantity for x in self.invoice_line_ids])
-        self.amount_downpayment = 0.0
+        self.amount_downpayment = sum([((x.price_unit * x.quantity) if x.product_id.type == 'service' and x.price_subtotal < 0 else 0) for x in self.invoice_line_ids])
         if self.currency_id:
             self.amount_text = self.currency_id.amount_to_text(self.amount_total, 'id')[0]
 

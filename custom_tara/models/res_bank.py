@@ -8,12 +8,12 @@ class res_bank(models.Model):
     payment_term = fields.Text(string=u'Payment Description',)
 
     @api.multi
-    @api.depends('name', 'bank_id')
+    @api.depends('acc_number', 'bank_name')
     def name_get(self):
         result = []
         for acc in self:
             if acc.bank_id:
-                name = '%s - %s' % (acc.bank_id.name, acc.acc_number)
+                name = '%s - %s' % (acc.bank_name, acc.acc_number)
             else:
                 name = '%s' % (acc.acc_number)
 

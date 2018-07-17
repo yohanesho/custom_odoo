@@ -19,14 +19,14 @@ class res_currency(models.Model):
     @api.one
     def amount_to_text(self, amount, lang):
         amount = '%.2f' % amount
-        units_name = ' ' + self.currency_name if self.currency_name else self.name + ' '
+        units_name = self.currency_name if self.currency_name else self.name + ' '
         lis = str(amount).split('.')
         start_word = self.english_amount(int(lis[0]), lang)
         end_word = self.english_amount(int(lis[1]), lang)
         cents_amount = int(lis[1])
         cents_name = (cents_amount > 1) and 'Sen' or 'sen'
         final_result_sen = start_word + units_name + end_word +' '+cents_name
-        final_result = start_word + units_name
+        final_result = start_word + " " + units_name
         if end_word == 'Nol' or end_word == 'Zero':
             final_result = final_result
         else:
