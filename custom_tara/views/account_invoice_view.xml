@@ -18,6 +18,9 @@
                 <xpath expr="///page[@name='other_info']/group/group/field[@name='name']" position="after">
                     <field name="approval_user_id" required="1" attrs="{'readonly': [('state','not in',('draft'))]}"/>
                 </xpath>
+                <xpath expr="//field[@name='price_unit']" position="before">
+                    <field name="price_unit_pcs" />
+                </xpath>
             </field>
         </record>
         

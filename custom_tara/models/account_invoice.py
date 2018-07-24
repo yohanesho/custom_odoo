@@ -1,6 +1,7 @@
 from odoo import models, fields, api, _
 from odoo.exceptions import UserError
 from datetime import date, datetime
+import odoo.addons.decimal_precision as dp
 
 class account_invoice(models.Model):
     _inherit = 'account.invoice'
@@ -94,6 +95,7 @@ class account_invoice_line(models.Model):
     _inherit = ['account.invoice.line']
 
     amount_discount = fields.Float(string=u'Discount Amount', compute='_compute_price', default='0.0', readonly=True, store=True)
+    price_unit_pcs = fields.Float(string='Unit Price Pcs', digits=dp.get_precision('Product Price'), store=True, readonly=True, compute='_compute_price')
     stock_move_ids = fields.Many2many(
         string=u'Stock Move',
         comodel_name='stock.move',
@@ -125,7 +127,8 @@ class account_invoice_line(models.Model):
         if inv_amount_disc > 0 and inv_amount_untaxed > 0:
             amount_discount = (subtotal / inv_amount_untaxed) * inv_amount_disc
             subtotal = subtotal - amount_discount
-            price = subtotal / self.quantity
+            if self.quantity and self.quantity > 0:
+                price = subtotal / self.quantity
             amount_discount = amount_discount + ((self.price_unit * (self.discount / 100)) * self.quantity)
 
         if self.invoice_line_tax_ids:
@@ -137,6 +140,9 @@ class account_invoice_line(models.Model):
         self.price_subtotal_signed = price_subtotal_signed * sign
         self.amount_discount = amount_discount
 
-    
-            
-
+        if self.uom_id.id == self.product_id.uom_id.id:
+            self.price_unit_pcs = self.price_unit
+        else:
+            if self.quantity and self.quantity > 0:
+                product_qty = self.uom_id._compute_quantity(self.quantity, self.product_id.uom_id)
+                self.price_unit_pcs = self.price_unit / product_qty

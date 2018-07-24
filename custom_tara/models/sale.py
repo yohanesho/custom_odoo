@@ -48,7 +48,8 @@ class sale_order_line(models.Model):
             if order_amount_disc > 0 and order_amount_untaxed > 0:
                 amount_discount = (subtotal / order_amount_untaxed) * order_amount_disc
                 subtotal = subtotal - amount_discount
-                price = subtotal / line.product_uom_qty
+                if line.product_uom_qty > 0:
+                    price = subtotal / line.product_uom_qty
                 amount_discount = amount_discount + ((line.price_unit * (line.discount / 100)) * line.product_uom_qty)
 
             taxes = line.tax_id.compute_all(price, line.order_id.currency_id, line.product_uom_qty, product=line.product_id, partner=line.order_id.partner_shipping_id)

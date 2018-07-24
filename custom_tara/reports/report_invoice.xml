@@ -45,7 +45,7 @@
                         </div>
                         <div class="col-xs-4" t-if="o.partner_id.ref" style="padding-left: 0">
                             <strong>Customer Ref:</strong>
-                            <p t-field="o.partner_id.ref"/>
+                            <p t-field="o.name"/>
                         </div>
                         <div class="col-xs-5" style="padding-left: 0" t-if="o.picking_ids">
                             <strong>Surat Jalan:</strong>
