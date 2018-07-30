@@ -16,3 +16,12 @@ class res_company(models.Model):
         help="This field using for file pdf or any format to upload company's term and condiotions")
     
     filename = fields.Char()
+
+    @api.multi
+    def write(self, values):
+        if 'attachment_ids' in values and values['attachment_ids']:
+            template_id = self.env.ref('sale.email_template_edi_sale')
+            if template_id:
+                template_id.write({'attachment_ids': values['attachment_ids']})
+
+        result = super(res_company, self).write(values)
