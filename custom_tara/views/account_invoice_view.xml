@@ -21,6 +21,11 @@
                 <xpath expr="//field[@name='price_unit']" position="before">
                     <field name="price_unit_pcs" />
                 </xpath>
+                <field name="number" position="replace">
+                    <h1 class="mt0">
+                        <field name="invoice_number" />
+                    </h1>
+                </field>
             </field>
         </record>
         
@@ -36,6 +41,10 @@
                 </xpath>
                 <field name='state' position="after">
                     <field name='overdue_status' invisible="1"/>
+                </field>
+                <field name="number" position="replace">
+                    <field name="invoice_number"/>
+                    <field name="number" string="Journal Entry" />
                 </field>
             </field>
         </record>

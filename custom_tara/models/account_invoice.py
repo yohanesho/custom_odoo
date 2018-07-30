@@ -32,6 +32,15 @@ class account_invoice(models.Model):
         domain=_get_domain_user,
         states={'draft': [('readonly', False)]}
     )
+    invoice_number = fields.Char(string=u'Invoice Number', states={'draft': [('readonly', False)]}, copy=False, help='The name that will be used on account move')
+
+    @api.multi
+    def action_move_create(self):
+        super(account_invoice, self).action_move_create()
+        for inv in self:
+            inv.move_id.write({'ref': inv.invoice_number})
+
+        return True
 
     @api.one
     def get_amount_discount_total(self):
