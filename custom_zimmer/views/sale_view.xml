@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="custom_sale_form" model="ir.ui.view">
+            <field name="name">Customize Sales Order Form</field>
+            <field name="model">sale.order</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="sale.view_order_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//button[@name='action_quotation_send' and @states='draft']" position="replace">
+                    <button name="action_quotation_send" string="Send by Email" type="object" class="btn-primary" attrs="{'invisible': ['|', ('state','not in',('draft')), ('send_quotation', '=', False)]}"/>
+                </xpath>
+                <xpath expr="//button[@name='action_quotation_send' and @states='sent,sale']" position="replace">
+                    <button name="action_quotation_send" string="Send by Email" type="object" attrs="{'invisible': ['|',('state','not in',['sent','sale']), ('send_quotation', '=', False)]}"/>
+                </xpath>
+                <xpath expr="//button[@name='action_cancel']" position="before">
+                    <button name="action_create_task" string="Request Pro-Forma Invoice" type="object" states='sent,sale'/>
+                </xpath>
+                <field name="user_id" position="before">
+                    <field name="send_quotation"/>
+                </field>
+            </field>
+        </record>
+    </data>
+</odoo>

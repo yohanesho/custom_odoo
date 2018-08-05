@@ -19,12 +19,15 @@
     # any module necessary for this one to work correctly
     'depends': [
         'base', 
-        'sale'],
+        'sale',
+        'project',
+    ],
 
     # always loaded
     'data': [
         # 'security/ir.model.access.csv',
+        'data/data.xml',
         'views/company_view.xml',
-        'views/templates.xml',
+        'views/sale_view.xml',
     ],
 }

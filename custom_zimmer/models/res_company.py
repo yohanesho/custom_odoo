@@ -19,9 +19,15 @@ class res_company(models.Model):
 
     @api.multi
     def write(self, values):
-        if 'attachment_ids' in values and values['attachment_ids']:
+        if 'attachment_ids' in values and values['attachment_ids']\
+            or 'email' in values:
             template_id = self.env.ref('sale.email_template_edi_sale')
             if template_id:
-                template_id.write({'attachment_ids': values['attachment_ids']})
+                res = {}
+                if values.get('attachment_ids'):
+                    res['attachment_ids'] = values.get('attachment_ids')
+                if values.get('email'):
+                    res['email_from'] = values.get('email')
+                template_id.sudo().write(res)
 
         result = super(res_company, self).write(values)
