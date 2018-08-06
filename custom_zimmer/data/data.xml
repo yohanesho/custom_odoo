@@ -1,15 +1,111 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data noupdate="1">
+        <record id="sale.mail_template_data_notification_email_sale_order" model="mail.template">
+            <field name="name">Sale Order Notification Email</field>
+            <field name="subject">${object.subject}</field>
+            <field name="model_id" ref="mail.model_mail_message"/>
+            <field name="auto_delete" eval="True"/>
+            <field name="body_html"><![CDATA[<html>
+                <head></head>
+                % set record = ctx.get('record')
+                % set company = record and record.company_id or user.company_id
+                <body style="margin: 0; padding: 0;">
+                <table border="0" width="100%" cellpadding="0" bgcolor="white" style="padding: 20px; background-color: white; border-collapse:separate;" summary="o_mail_notification">
+                    <tbody>
+                      <!-- HEADER -->
+                      <tr>
+                        <td align="center" style="min-width: 590px;">
+                          <table width="590" border="0" cellpadding="0" bgcolor="#bcbbbb" style="min-width: 590px; background-color: #bcbbbb; border-collapse:separate;">
+                            <tr>
+                                <td colspan="2" style="height: 40px; background-color: #0e6031; vertical-align: top"/>
+                            </tr>
+                            <tr>
+                              <td valign="middle" style="padding-top:8px; padding-left:20px; padding-right:20px; padding-bottom:20px">
+                                  <span style="font-size:20px; color:white; font-weight: bold;">
+                                      <span style="color=black;font-size: 18px; font-weight:bold">
+                                        ${record.state in ('draft', 'sent') and 'Quotation' or 'Order'}
+                                        <br/>${record.name}
+                                        <br/>${record.client_order_ref}
+                                    </span>
+                                  </span>
+                              </td>
+                              <td valign="middle" align="right">
+                                  <img src="/logo.png?company=${company.id}" style="padding: 0px; margin: 0px; height: auto; width: 80px;" alt="${company.name}">
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+
+                      <!-- CONTENT -->
+                      <tr>
+                        <td align="center" style="min-width: 590px;">
+                          <table width="590" border="0" cellpadding="0" bgcolor="#dbdbda" style="min-width: 590px; background-color: #dbdbda; padding: 20px; border-collapse:separate;">
+                            <tbody>
+                              <td valign="top" style="font-family:Arial,Helvetica,sans-serif; font-size: 14px;">
+                                ${object.body | safe}
+                              </td>
+                            </tbody>
+                          </table>
+                        </td>
+                      </tr>
+
+                      <!-- FOOTER -->
+                      <tr>
+                        <td align="center" style="min-width: 590px;">
+                          <table width="590" border="0" cellpadding="0" bgcolor="#0e6031" style="min-width: 590px; background-color: #0e6031; padding: 20px; border-collapse:separate;">
+                            <tr>
+                              <td align="center">
+                                <a href="http://zimmer-rattan.com/" target="_blank">www.Zimmer-Rattan.com</a>.
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </tbody>
+                </table>
+                </body>
+                </html>
+            ]]></field>
+        </record>
+
         <record id="sale.email_template_edi_sale" model="mail.template">
-            <field name="body_html">
-                <![CDATA[
-    <p>% set record = ctx.get('record')
-    % set company = record and record.company_id or user.company_id
-    </p><div align="center" class="page" style="width: 100%; margin:0"><div style="width: 600px; height: auto; background: white;"><p></p><table width="600px" border="0" style="margin: 0px; padding: 0px; text-align: left;"><tbody><tr style="height: 70px; background-color: #bcbbbb"><td style="vertical-align: top"><div style="height: 30px; background-color: #0e6031; vertical-align: top; padding-left: 15px; padding-right: 15px"> </div><div class="col-xs-5"><span style="color=black;font-size: 18px; font-weight:bold">${object.state in ('draft', 'sent') and 'Quotation' or 'Order'}<br>${object.name}<br>${object.client_order_ref}</span></div><div class="col-xs-3 pull-right">
-    <img src="/logo.png?company=${company.id}" style="padding: 0px; margin: 0px; height: auto; width: 100%;" alt="${company.name}" data-original-title="" title="" class="padding-medium">
-    </div></td></tr><tr style="height: auto; background-color: #dbdbda"><td><div class="col-xs-12"><p></p><p></p><p><br></p><p> </p><p> Dear ${object.partner_id.display_name}&nbsp;<em>${object.partner_id.default_code},</em></p><p>Here is your Order&nbsp;<b style="font-family: inherit; font-size: initial; font-style: initial; font-variant-ligatures: initial; font-variant-caps: initial; background-color: rgb(188, 187, 187);"></b><span style="font-style: initial; font-variant-ligatures: initial; font-variant-caps: initial;"><b>${object.name}</b></span><span style="font-style: initial; font-variant-ligatures: initial; font-variant-caps: initial; font-weight: initial;">&nbsp;</span>(with reference: ${object.client_order_ref}), amounting in <b>${object.amount_total} IDR</b> from Zimmer Rattan Indonesia. </p><p>&nbsp;</p><p>Please remit payment at your earliest convenience. </p><p>Thank you. </p><p>&nbsp;</p><p style="text-align: justify; "> <font style="font-size: 11px;">PS: Get a monthly&nbsp;</font><font style="color: rgb(206, 0, 0); font-size: 11px;">Trending Furniture &amp; Decorating Tips</font><font style="font-size: 11px;"> directly&nbsp;from <b>Our Expert Consultant ${object.user_id}</b>, go to&nbsp;</font><a href="http://zimmer-rattan.com/" target="_blank" data-original-title="" title=""><font style="color: rgb(206, 0, 0);" data-original-title="" title="">Zimmer-Rattan.com</font></a>&nbsp;for FREE!</p><p><br></p><p><font style="font-size: 11px;">with ZIMMERing Regards,</font></p><p style="color: #0e6031; font-weight: bold">${object.user_id.display_name}</p><p style="color: #0e6031; font-weight: bold">Business Development Manager</p><p><font class="text-black"><br></font></p><p><font class="text-black">Mobile/Whatsapp: ${object.user_id.partner_id.mobile}<br></font></p><p><font class="text-black">E-mail: ${object.user_id.email}<br></font></p><p><font class="text-black">Website:&nbsp;</font><a href="http://zimmer-rattan.com/" target="_blank" data-original-title="" title=""><font class="text-black">www.zimmer-rattan.com</font></a><br></p><hr><p><b>ZIMMER RATTAN INDONESIA<br></b></p><p>${company.rml_header1}<br></p><p><br></p><p>${company.street}<br></p><p>${company.street2}, ${company.city}, ${company.state_id.name}, ${company.zip}<br></p><p>tel: ${company.phone}<br></p><p>fax: ${company.fax}<br></p><p>sms/wa info center: ${company.partner_id.mobile}<br></p><p>e-mail info center:&nbsp;<a href="mailto:sales@zimmer-rattan.com"><font class="text-black">sales@zimmer-rattan.com</font></a><br></p><p><br></p><p><b>ZIMMER RATTAN INDONESIA<br></b></p><p style="text-align: justify; ">Since 2011 becoming Partner of 2,800+ Projects, Trusted by 5<span style="color: rgb(34, 34, 34); font-family: arial, sans-serif; font-size: small;">★ Hotels, Apartment, Luxury Houses and Villas.</span><br></p><p style="text-align: justify;"><br></p><p style="text-align: justify; "><a href="http://zimmer-rattan.com/" style="background-color: rgb(219, 219, 218);"><font class="text-black">Zimmer-Rattan.com</font></a>&nbsp;is Indonesia's <font style="color: rgb(206, 0, 0);">Leading Manufacturer</font> for <font style="color: rgb(206, 0, 0);">Outdoor Furniture</font> and <font style="color: rgb(206, 0, 0);">Pioneer of Zimmer Smart Warranty</font> that is capable giving <font style="color: rgb(206, 0, 0);">10-YEAR Warranty</font>, founded by CEO Evan Hiumawan, B.Sc., achieved global exporting to more than 12 countries at the age 19.<br></p></div></td></tr><tr><td style="height: 50px; background-color: #0e6031; vertical-align: middle"><p style="text-align: center; "><a href="http://zimmer-rattan.com/" target="_blank" data-original-title="" title="">&nbsp;<font class="text-white" style="font-size: 18px;" data-original-title="" title=""><b>www.Zimmer-Rattan.com</b></font></a><font class="text-white" style="font-size: 18px;"><b>&nbsp;</b></font></p></td></tr></tbody></table></div></div><p></p>]]>
-            </field>
+            <field name="name">Sales Order - Send by Email</field>
+            <field name="email_from">${(object.user_id.email and '%s &lt;%s&gt;' % (object.user_id.name, object.user_id.email) or '')|safe}</field>
+            <field name="subject">${object.company_id.name} ${object.state in ('draft', 'sent') and 'Quotation' or 'Order'} (Ref ${object.name or 'n/a' })</field>
+            <field name="partner_to">${object.partner_id.id}</field>
+            <field name="model_id" ref="sale.model_sale_order"/>
+            <field name="auto_delete" eval="True"/>
+            <field name="report_template" ref="report_sale_order"/>
+            <field name="report_name">${(object.name or '').replace('/','_')}${object.state == 'draft' and '_draft' or ''}</field>
+            <field name="lang">${object.partner_id.lang}</field>
+            <field name="body_html"><![CDATA[
+% set company = record and record.company_id or user.company_id
+<p>Dear ${object.partner_id.display_name} <i>${object.partner_id.default_code}</i>,</p>
+<p>Here is your order <b>${object.name} </b>(with reference: ${object.client_order_ref}) amounting in <b>${object.amount_total} </b>from Zimmer Rattan Indonesia.</p>
+<p><br></p>
+<p>Please remit payment at your earliest convenience.</p>
+<p>Thank you.</p>
+<p><br></p>
+<p><font style="font-size: 11px;">PS: Get a monthly </font><font style="font-size: 11px;" class="text-gamma">Trending Furniture &amp; Decorating Tips</font><font style="font-size: 11px;"> directly from <b>Our Expert Consultant ${object.user_id.display_name}</b>, go to&nbsp;</font><a href="http://zimmer-rattan.com/" target="_blank">Zimmer-Rattan.com</a>&nbsp;for FREE!</p>
+<p><br></p>
+<p>with ZIMMERing regards,</p><p><b><font style="font-size: 14px;" class="text-delta">${object.user_id.display_name}</font></b></p>
+<p><b><font style="font-size: 12px;" class="text-delta">Business Development Manager</font></b></p>
+<p><font style="font-size: 12px;" class="text-black">Mobile/Whatsapp: ${object.user_id.partner_id.mobiile}</font></p>
+<p><font style="font-size: 12px;" class="text-black">E-mail: <a href="mailto:${object.user_id.partner_id.email}" target="_blank"></a></font></p>
+<p><font style="font-size: 12px;" class="text-black">Website:&nbsp;</font><a href="http://zimmer-rattan.com/" data-original-title="" title="">www.zimmer-rattan.com</a></p>
+<hr>
+<p><b>ZIMMER RATTAN INDONESIA</b></p>
+<p>${company.rml_header1}</p>
+<p>${company.street}</p><p>${company.street2}, ${company.city}, ${company.state_id.name}, ${company.zip}</p>
+<p>tel: ${company.phone}</p>
+<p>fax: ${company.fax}</p>
+<p>sms/wa info center: ${company.partner_id.mobile}</p>
+<p>e-mail info center:&nbsp;<a href="mailto:sales@zimmer-rattan.com">sales@zimmer-rattan.com</a></p>
+<p><a href="mailto:sales@zimmer-rattan.com"><br></a><b>ZIMMER RATTAN INDONESIA</b></p><p>Since 2011 becoming Partner of 2,800 Projects, Trusted by 5<span style="color: rgb(34, 34, 34); font-family: arial, sans-serif; font-size: small; font-style: initial; font-variant-ligatures: initial; font-variant-caps: initial; font-weight: initial;">★ Hotels, Apartments, Luxury Houses and Villas.</span><br><br></p>
+<p><a href="http://zimmer-rattan.com/"><font class="text-black">Zimmer-Rattan.com</font></a>&nbsp;is Indonesia's <font class="text-gamma"><b>Leading Manufacturer</b> </font><font class="text-black">for</font><font class="text-gamma"> <b>Outdoor Furniture</b> </font><font class="text-black">and </font><font class="text-gamma"><b>Pioneer of Zimmer Smart Warranty</b> </font><font class="text-black">that is capable giving </font><font class="text-gamma"><b>10-YEAR Warranty</b></font><font class="text-black">, founded by CEO Evan Hiumawan, B.Sc., achieved global exporting to more than 12 countries at the age of 19.</font><br></p>
+]]></field>
         </record>
 
         <record id="project_proforma_invoice" model="project.project">
