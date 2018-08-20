@@ -26,8 +26,6 @@ class res_company(models.Model):
                 res = {}
                 if values.get('attachment_ids'):
                     res['attachment_ids'] = values.get('attachment_ids')
-                if values.get('email'):
-                    res['email_from'] = values.get('email')
                 template_id.sudo().write(res)
 
         result = super(res_company, self).write(values)

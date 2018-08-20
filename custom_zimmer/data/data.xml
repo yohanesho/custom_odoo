@@ -2,10 +2,6 @@
 <odoo>
     <data noupdate="1">
         <record id="sale.mail_template_data_notification_email_sale_order" model="mail.template">
-            <field name="name">Sale Order Notification Email</field>
-            <field name="subject">${object.subject}</field>
-            <field name="model_id" ref="mail.model_mail_message"/>
-            <field name="auto_delete" eval="True"/>
             <field name="body_html"><![CDATA[<html>
                 <head></head>
                 % set record = ctx.get('record')
@@ -41,9 +37,9 @@
                       <!-- CONTENT -->
                       <tr>
                         <td align="center" style="min-width: 590px;">
-                          <table width="590" border="0" cellpadding="0" bgcolor="#dbdbda" style="min-width: 590px; background-color: #dbdbda; padding: 20px; border-collapse:separate;">
+                          <table width="590" border="0" cellpadding="0" bgcolor="#dbdbda" style="min-width: 590px; background-color: #dbdbda; border-collapse:separate;">
                             <tbody>
-                              <td valign="top" style="font-family:Arial,Helvetica,sans-serif; font-size: 14px;">
+                              <td valign="top" style="font-family:Arial,Helvetica,sans-serif; font-size: 14px; padding: 20px; ">
                                 ${object.body | safe}
                               </td>
                             </tbody>
@@ -71,15 +67,7 @@
         </record>
 
         <record id="sale.email_template_edi_sale" model="mail.template">
-            <field name="name">Sales Order - Send by Email</field>
-            <field name="email_from">${(object.user_id.email and '%s &lt;%s&gt;' % (object.user_id.name, object.user_id.email) or '')|safe}</field>
-            <field name="subject">${object.company_id.name} ${object.state in ('draft', 'sent') and 'Quotation' or 'Order'} (Ref ${object.name or 'n/a' })</field>
-            <field name="partner_to">${object.partner_id.id}</field>
-            <field name="model_id" ref="sale.model_sale_order"/>
-            <field name="auto_delete" eval="True"/>
-            <field name="report_template" ref="sale.report_sale_order"/>
-            <field name="report_name">${(object.name or '').replace('/','_')}${object.state == 'draft' and '_draft' or ''}</field>
-            <field name="lang">${object.partner_id.lang}</field>
+            <field name="partner_to">${object.partner_id.id},${object.company_id.partner_id.id}</field>
             <field name="body_html"><![CDATA[
 % set company = record and record.company_id or user.company_id
 <p>Dear ${object.partner_id.display_name} <i>${object.partner_id.default_code}</i>,</p>
@@ -108,12 +96,36 @@
 ]]></field>
         </record>
 
+        <record id="project_stage_0" model="project.task.type">
+            <field name="sequence">1</field>
+            <field name="name">To Do</field>
+            <field name="legend_blocked">Not validated</field>
+            <field name="legend_priority">Use the priority for tasks related to gold customers</field>
+        </record>
+        <record id="project_stage_1" model="project.task.type">
+            <field name="sequence">10</field>
+            <field name="name">In Progress</field>
+            <field name="legend_blocked">Need functional or technical help</field>
+            <field name="legend_done">Buzz or set as done</field>
+        </record>
+        <record id="project_stage_2" model="project.task.type">
+            <field name="sequence">20</field>
+            <field name="name">Done</field>
+            <field name="fold" eval="True"/>
+        </record>
+        <record id="project_stage_3" model="project.task.type">
+            <field name="sequence">30</field>
+            <field name="name">Cancelled</field>
+            <field name="legend_done">Ready to reopen</field>
+            <field name="fold" eval="True"/>
+        </record>
+
         <record id="project_proforma_invoice" model="project.project">
             <field name="sequence">10</field>
             <field name="name">Pro-forma Invoice</field>
             <field name="label_tasks">Tasks</field>
             <field name="alias_model">project.task</field>
-            <field name="type_ids" eval="[(4, ref('project.project_stage_0')), (4, ref('project.project_stage_1')), (4, ref('project.project_stage_2')),]"/>
+            <field name="type_ids" eval="[(4, ref('project_stage_0')), (4, ref('project_stage_1')), (4, ref('project_stage_2')),]"/>
             <field name="privacy_visibility">employees</field>
         </record>
     </data>
