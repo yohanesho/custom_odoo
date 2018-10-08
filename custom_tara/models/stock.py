@@ -7,6 +7,7 @@ class stock_picking(models.Model):
     _inherit = 'stock.picking'
 
     order_id = fields.Many2one('sale.order', compute='_get_sale_order', string='Sale Order', readonly=True)
+    lpp = fields.Boolean(string=u'LPP', related='order_id.lpp', readonly=True,)
     force_credit_limit = fields.Boolean(string=u'Force Credit Limit',default=False, track_visibility='onchange')
     force_uid = fields.Many2one(string=u'Forced Credit Limit By',comodel_name='res.users',ondelete='cascade', track_visibility='onchange')
     force_date = fields.Datetime(string=u'Force Date', track_visibility='onchange')

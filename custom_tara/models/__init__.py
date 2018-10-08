@@ -6,3 +6,4 @@ from . import account_invoice
 from . import res_bank
 from . import stock
 from . import res_currency
+from . import sale_config

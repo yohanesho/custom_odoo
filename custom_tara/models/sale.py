@@ -6,19 +6,8 @@ class sale_order(models.Model):
     
     amount_discount = fields.Float(string=u'Discount Amount', default='0.0',states={'draft': [('readonly', False)]})
     consignment_ref = fields.Char(string=u'Consignment Reference',)
+    lpp = fields.Boolean(string=u'LPP',default=False,)
 
-    # @api.multi
-    # def action_confirm(self):
-    #     for order in self:
-    #         if order.partner_id and order.partner_id.credit_limit > 0:
-    #             if order.amount_total:
-    #                 open_credit = order.partner_id.credit + order.amount_total
-    #                 partner_limit = order.partner_id.credit_limit
-    #                 if partner_limit < open_credit:
-    #                     raise UserError(_('You can not confirm sales order cause partner reach credit limit! Partner credit limit is {:,}, remaining limit {:,}.'.format(partner_limit, partner_limit - order.partner_id.credit)))
-
-    #         super(sale_order, self).action_confirm()
-    
     @api.multi
     def _prepare_invoice(self):
         self.ensure_one()

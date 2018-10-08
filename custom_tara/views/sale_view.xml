@@ -1,13 +1,84 @@
 <odoo>
     <data>
+        <record id="view_order_tree_inherit" model="ir.ui.view">
+            <field name="name">Sale Order Custom View</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_tree" />
+            <field name="arch" type="xml">
+                <field name="amount_total" position="replace">
+                </field>
+            </field>
+        </record>
+
         <record id="sale_order_view_inherit" model="ir.ui.view">
-            <field name="name">Sale Order Discount</field>
+            <field name="name">Sale Order Custom View</field>
             <field name="model">sale.order</field>
             <field name="inherit_id" ref="sale.view_order_form" />
+            <field name="priority" eval="99"/>
             <field name="arch" type="xml">
-                <field name="amount_untaxed" position="before">
-                    <field class="o_form_input o_form_field o_form_field_number" name="amount_discount" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                <xpath expr="//group[@name='sale_total']" position="attributes">
+                    <attribute name="groups">custom_tara.group_show_price</attribute>
+                </xpath>
+                <field name="payment_term_id" position="attributes">
+                    <attribute name="groups">custom_tara.group_show_price</attribute>
                 </field>
+                <field name="note" position="attributes">
+                    <attribute name="groups">custom_tara.group_show_price</attribute>
+                </field>
+                <xpath expr="//page/field[@name='order_line']/form/group/group/field[@name='price_unit']" position="attributes">
+                    <attribute name="groups">custom_tara.group_show_price</attribute>
+                </xpath>
+                <xpath expr="//page/field[@name='order_line']/form/group/group/field[@name='tax_id']" position="attributes">
+                    <attribute name="groups">custom_tara.group_show_price</attribute>
+                </xpath>
+                
+                <xpath expr="//page/field[@name='order_line']/tree/field[@name='price_unit']" position="attributes">
+                    <attribute name="groups">custom_tara.group_show_price</attribute>
+                </xpath>
+                <xpath expr="//page/field[@name='order_line']/tree/field[@name='tax_id']" position="attributes">
+                    <attribute name="groups">custom_tara.group_show_price</attribute>
+                </xpath>
+                
+                <xpath expr="//group[@name='sales_person']" position="replace">
+                </xpath>
+
+                <xpath expr="//group" position="inside">
+                    <group string="Shipping Information" name="sale_shipping">
+                        <field name="warehouse_id" options="{'no_create': True}" groups="stock.group_stock_multi_locations"/>
+                        <field name="incoterm" widget="selection" groups="base.group_user"/>
+                        <field name="picking_policy" required="True"/>
+                        <field name="requested_date" />
+                        <field name="commitment_date"/>
+                        <field name="effective_date"/>
+                    </group>
+                    <group string="Sales Information" name="sales_person">
+                        <field name="user_id"/>
+                        <field name="team_id" options="{'no_create': True}"/>
+                        <field name="client_order_ref"/>
+                        <field name="company_id" options="{'no_create': True}" groups="base.group_multi_company"/>
+                        <field name="project_id" attrs="{'invisible':[('state','=','sale')]}" context="{'default_partner_id':partner_invoice_id, 'default_name':name}" groups="analytic.group_analytic_accounting"/>
+                        <field name="related_project_id" attrs="{'readonly': ['|',('project_id','!=',False),('invoice_count','!=',0),('state','=','sale')],'invisible':[('state','!=','sale')]}" context="{'default_partner_id':partner_invoice_id, 'default_name':name}" groups="analytic.group_analytic_accounting"/>
+                    </group>
+                </xpath>
+
+                <!-- <field name="amount_untaxed" position="before">
+                    <field class="o_form_input o_form_field o_form_field_number" name="amount_discount" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                </field> -->
+            </field>
+        </record>
+
+        <record id="view_order_form_inherit_sale_stock_inherit" model="ir.ui.view">
+            <field name="name">Sale Order Stock Custom View</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale_stock.view_order_form_inherit_sale_stock" />
+            <field name="priority" eval="99"/>
+            <field name="arch" type="xml">
+                <xpath expr="//button[@name='action_view_delivery']" position="before">
+                    <field name="lpp" />
+                    <label for='lpp'/>
+                </xpath>
+                <group name="sale_shipping" position="replace">
+                </group>
             </field>
         </record>
     </data>

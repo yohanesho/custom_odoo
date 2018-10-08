@@ -8,6 +8,9 @@
                 <field name="partner_id" position="after">
                     <field name="credit_limit_state" attrs="{'invisible': [('picking_type_code','not in',('outgoing'))]}"/>
                 </field>
+                <field name="origin" position="after">
+                    <field name="lpp" />
+                </field>
             </field>
         </record>
         <record id="stock_view_picking_tree_inherit" model="ir.ui.view">

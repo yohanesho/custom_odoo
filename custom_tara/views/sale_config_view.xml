@@ -1,0 +1,14 @@
+<odoo>
+    <data>
+        <record id="view_sales_config_inherit" model="ir.ui.view">
+            <field name="name">Sale Settings</field>
+            <field name="model">sale.config.settings</field>
+            <field name="inherit_id" ref="sale.view_sales_config" />
+            <field name="arch" type="xml">
+                <xpath expr="//group[@name='quotations_sales']" position="inside">
+                    <field name="group_show_price" string="Show Price" class="oe_inline"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

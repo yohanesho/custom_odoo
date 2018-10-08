@@ -29,6 +29,8 @@ Customization for Tarakusuma
         'sale',
         'stock',
         'vit_efaktur',
+        'sale_stock',
+        'sale_order_dates',
     ],
 
     'data': [
@@ -39,6 +41,7 @@ Customization for Tarakusuma
         'views/res_bank_view.xml',
         'views/stock_view.xml',
         'views/currency_view.xml',
+        'views/sale_config_view.xml',
         'reports/report_deliveryslip.xml',
         'reports/report_invoice.xml',
         'reports/custom_paper.xml',
