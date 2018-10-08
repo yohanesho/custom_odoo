@@ -1,0 +1,274 @@
+<odoo>
+  <data>
+      <report
+        id="dev_39_seles_quotation_citi_menu"
+        model="sale.order"
+        string="Quotation Citi"
+        report_type="qweb-pdf"
+        name="dev_39_seles_quotation_citi.report_quotation"
+        file="dev_39_seles_quotation_citi.report_quotation"
+      />
+
+    <!-- Template print all -->
+      <template id="report_quotation">
+          <t t-set="var_count" t-value="1"/>
+          <t t-foreach="docs" t-as="o">
+              <span t-esc="var_count" t-if="var_count == '1'">
+              </span>
+              <t t-call="dev_39_seles_quotation_citi.report_quotation_document"></t>
+              <t t-set="var_count" t-value="var_count+1"/>
+          </t>
+      </template>
+
+      <template id="report_quotation_document">
+          <t t-set="o" t-value="o.with_context({'lang':o.partner_id.lang})"></t>
+          <div class="page">
+            <link rel="stylesheet" href="/dev_39_seles_quotation_citi/static/src/css/style.css"></link>
+            <div id="fak_template">
+                <div id="fak_header">
+                  <div id="company_desc" style="text-align: left;">
+                    <b><span t-field="o.company_id.name" style="font-size: 16pt;"/></b>
+                    <br/>Alamat<font color="#ffffff">....</font>: <span t-field="o.company_id.street"/><span t-field="o.company_id.street2"/>
+                    <span t-field="o.company_id.state_id"/>
+                    <br/>No. Telp. : <span t-field="o.company_id.phone"/>
+                    <br/>Email<font color="#ffffff">.......</font>: <span t-field="o.company_id.email"/>
+                    <br/>Website<font color="#ffffff">...</font>: <span t-field="o.company_id.website"/>
+                    <br/>
+                    <br/>
+                    <br/>
+                  </div>
+                  <div id="logo">
+                       <img t-if="o.company_id.logo" t-att-src="'data:image/png;base64,%s' % o.company_id.logo" style="width:130%; height:90px;"/>
+                  </div>
+                </div>
+
+
+                <div id="fak_body">
+
+                  <table style="float:right;">
+                      <tr>
+                        <td><span t-field="o.company_id.city"/>,<span t-field="o.date_order" t-field-options="{&quot;format&quot;: &quot;dd-MM-yyyy&quot;}"/></td>
+                      </tr>
+                        <tr>
+                          <td>No. :<span t-field="o.name"/></td>
+                        </tr>
+                        <tr>
+                          <td>Term Of Payment : <span t-field="o.payment_term_id.name"/></td>
+                        </tr>    
+                  </table>
+                
+
+                <table style="float:left;">
+                  <tr>
+                  <td>Kepada Yth,
+                        <br/><span t-field="o.partner_id.name"></span>
+                        <br/>Up.
+                        <!-- <span t-field="o.partner_id.child_ids.title"/> -->
+                        <span t-field="o.partner_id.name"/></td>
+                  </tr>
+                <tr>
+                    <td><span t-field="o.partner_id.street"/></td>
+                </tr>
+                <tr>
+                    <td><span t-field="o.partner_id.street2"/>
+                    <span t-field="o.partner_id.city"/>
+                    <span t-field="o.partner_id.zip"/></td>
+                </tr>
+
+                  <tr>
+                  <td>Phone      : <span t-field="o.partner_id.phone"/></td>
+                </tr>
+              </table>
+              <br/><br/><br/><br/><br/><br/>
+
+
+                <table class="table" style="border-right: 1px solid #000; margin-top: -10px;">
+                  <tr>
+                    <th style="text-align: center; border: 1px solid #000; background-color:#B0E0E6; width: 20px">NO.</th>
+                    <th style="text-align: center; border: 1px solid #000; background-color:#B0E0E6; width: 100px">PICTURE</th>
+                    <th style="text-align: center; border: 1px solid #000; background-color:#B0E0E6; width: 80px">CATEGORY</th>
+                    <th style="text-align: center; border: 1px solid #000; background-color:#B0E0E6; width: 120px">ITEM</th>
+                    <th style="text-align: center; border: 1px solid #000; background-color:#B0E0E6; width: 140px">DESCRIPTION</th>
+                    <th style="text-align: center; border: 1px solid #000; background-color:#B0E0E6; width: 50px">QTY</th>
+                    <th style="text-align: center; border: 1px solid #000; background-color:#B0E0E6; width: 120px">PRICE LIST</th>
+                    <th style="text-align: center; border: 1px solid #000; background-color:#B0E0E6; width: 50px">DISC</th>
+                    <th style="text-align: center; border: 1px solid #000; background-color:#B0E0E6; width: 160px">TOTAL</th>
+                  </tr>
+                    <t t-set="no_increment" t-value="1"/>
+                    <t t-set="total_price" t-value="0"/>
+                    <tr t-foreach="o.order_line" t-as="sp_detail">
+                        <t t-set="price" t-value="0"/>
+                            <td style="text-align: center; border-bottom: 1px solid #000;border-left: 1px solid #000; border-right: 1px solid #000;">
+                              
+                                <span t-esc="no_increment"/>
+                              
+                             
+                            </td>
+                            
+                            <td t-if="not sp_detail.oplos_template_id" style="border-bottom: 1px solid #000;border-left: 1px solid #000; border-right: 1px solid #000;">
+                              <img width="100" height="80"  t-if="sp_detail.product_id.image_medium" t-att-src="'data:image/png;base64,%s' % sp_detail.product_id.image_medium"/>
+                            </td>
+                            <td t-if="sp_detail.oplos_template_id" style="border-bottom: 1px solid #000;border-left: 1px solid #000; border-right: 1px solid #000;">
+                              <img width="100" height="80"  t-if="sp_detail.oplos_template_id.image_medium" t-att-src="'data:image/png;base64,%s' % sp_detail.oplos_template_id.image_medium"/>
+                            </td>
+
+
+
+                            <td style="border-bottom: 1px solid #000;border-left: 1px solid #000; border-right: 1px solid #000; text-align: center;">
+                              <span t-esc="sp_detail.product_id.categ_id.name"></span>
+                            </td>
+
+                            <td t-if="not sp_detail.oplos_template_id" style="border-bottom: 1px solid #000;border-left: 1px solid #000; border-right: 1px solid #000; text-align: center;">
+                              <span t-esc="sp_detail.product_id.default_code"></span>
+                            </td>
+                            <td t-if="sp_detail.oplos_template_id" style="border-bottom: 1px solid #000;border-left: 1px solid #000; border-right: 1px solid #000; text-align: center;">
+                              <span t-esc="sp_detail.oplos_template_id.default_code"></span>
+                            </td>
+
+
+                            <td style="border-bottom: 1px solid #000;border-left: 1px solid #000; border-right: 1px solid #000; text-align: center;">
+                              <span t-esc="sp_detail.name"></span>
+                            </td>
+
+                           <td t-if="not sp_detail.oplos_template_id" style="border-bottom: 1px solid #000;border-left: 1px solid #000; border-right: 1px solid #000; text-align: center">
+                              <span t-esc="int(float(sp_detail.product_uom_qty))"/>
+                              <span t-esc="sp_detail.product_uom.name"></span>
+                            </td>
+                             <td t-if="sp_detail.oplos_template_id" style="border-bottom: 1px solid #000;border-left: 1px solid #000; border-right: 1px solid #000; text-align: center">
+                              <span t-esc="int(float(sp_detail.product_uom_qty))"/>
+                              <span t-esc="sp_detail.oplos_template_id.uom_id.name"></span>
+                            </td>
+
+
+                            <td t-if="not sp_detail.oplos_template_id" style="border-bottom: 1px solid #000;border-left: 1px solid #000; border-right: 1px solid #000; text-align: right;">
+                              <span t-esc="sp_detail.product_id.currency_id.symbol"></span>
+                              <span t-esc="'{:,}'.format(int(float(sp_detail.price_unit)))"></span>
+                              <t t-set="total_price" t-value="total_price + sp_detail.price_subtotal"/>
+                            </td>
+                            <td t-if="sp_detail.oplos_template_id" style="border-bottom: 1px solid #000;border-left: 1px solid #000; border-right: 1px solid #000; text-align: right;">
+                              <span t-esc="sp_detail.product_id.currency_id.symbol"></span>
+                              <span t-esc="'{:,}'.format(int(float( sp_detail.oplos_template_id.list_price * sp_detail.product_uom_qty )))"></span>
+                              <t t-set="total_price" t-value="total_price + (sp_detail.oplos_template_id.list_price * sp_detail.product_uom_qty - sp_detail.discount) "/>
+                              <t t-set="price" t-value="sp_detail.oplos_template_id.list_price * sp_detail.product_uom_qty"/>
+                            </td>
+
+                            <td t-if="not sp_detail.oplos_template_id" style="border-bottom: 1px solid #000;border-left: 1px solid #000; border-right: 1px solid #000; text-align: center;">
+                              <span t-esc="'{:,}'.format(int(float( sum_discount(sp_detail.price_unit, sp_detail)  )))"/>
+                              <span>%</span>
+                               <!-- <span t-esc="sum_discount(sp_detail.discount, o)"/> -->
+                            </td>
+
+                            <td t-if="sp_detail.oplos_template_id" style="border-bottom: 1px solid #000;border-left: 1px solid #000; border-right: 1px solid #000; text-align: center;">
+                              <span t-esc="'{:,}'.format(int(float(sum_discount(sp_detail.oplos_template_id.list_price, sp_detail) ) ) )"/>
+                              <span>%</span>
+                            </td>
+
+
+                            <td t-if="not sp_detail.oplos_template_id" style="border-bottom: 1px solid #000;border-left: 1px solid #000; border-right: 1px solid #000; text-align: right;">
+                              <span t-esc="sp_detail.product_id.currency_id.symbol"></span>
+                              <span t-esc="'{:,}'.format(int(float(sp_detail.price_subtotal)))"></span>
+                            </td>
+                             <td t-if="sp_detail.oplos_template_id" style="border-bottom: 1px solid #000;border-left: 1px solid #000; border-right: 1px solid #000; text-align: right;">
+                              <span t-esc="sp_detail.product_id.currency_id.symbol"></span>
+                              <span t-esc="'{:,}'.format(int(float( price - sp_detail.discount )))"></span>
+                            </td>
+
+                            <t t-set="no_increment" t-value="no_increment+1"/>
+                      </tr>
+                      <tr>
+                    <td colspan="8" style="border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; background-color:#B0E0E6; text-align: right;">
+                      <span>SUBTOTAL</span>
+                    </td>
+                      <td style="border-bottom: 1px solid #000; border-top: 1px solid #000; text-align:right;">
+                      <span t-esc="o.company_id.currency_id.symbol"></span>
+                      <!-- <span t-esc="'{:,}'.format(int(float(o.amount_untaxed)))"/> -->
+                      <span t-esc="'{:,}'.format(int(float(total_price)))"/>
+                      
+                    </td>
+                  </tr>
+                  <tr>
+                    <td colspan="8" style="border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; background-color:#B0E0E6; text-align: right;">
+                      <span>PPN</span>
+                    </td>
+                      <td style="border-bottom: 1px solid #000; border-top: 1px solid #000; text-align:right;">
+                      <span t-esc="o.company_id.currency_id.symbol"></span>
+                      <span t-esc="'{:,}'.format(int(float(o.amount_tax)))"/>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td colspan="8" style="border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; background-color:#B0E0E6; text-align:right;">
+                      <span>TOTAL</span>
+                    </td>
+                    <td style="border-bottom: 1px solid #000; border-top: 1px solid #000; text-align:right;">
+                      <span t-esc="o.company_id.currency_id.symbol"></span>
+                      <!-- <span t-esc="'{:,}'.format(int(float(o.amount_total)))"/>   -->
+                      <span t-esc="'{:,}'.format(int(float(total_price + o.amount_tax)))"/>  
+                    </td>
+                  </tr>
+                </table>
+                </div>
+                <br/><br/><br/><br/><br/><br/><br/><br/><br/><div>Note:
+                  <br/><b>-Down Payment (DP) 50%</b>
+                  <br/>Pembayaran harap ditransfer ke rekening :
+                  <br/>Bank BCA Cab. Mall Ciputra - Jakarta
+                  <br/>A / C : 466-300 6226
+                  <br/>A / N : PT. CITI INTERIORINDO
+                  <br/>
+                  <br/>Demikian surat penawaran ini kami sampaikan atas perhatian dan kerjasamanya, kami ucapkan terima kasih.
+
+                </div>
+                <br/>
+                <div id="sign">
+                    <div id="sign-left">
+                        Hormat Kami,
+                        <br/><br/><br/><br/>
+                        <u><span t-field="o.user_id.name"/></u><br/>
+                    </div>
+                    <div id="sign-right">
+                        Disetujui,
+                        <br/><br/><br/><br/>
+                        (....................................)<br/>
+                    </div>
+                </div>
+                <br/><br/><div>NB. Setelah disetujui mohon tanda tangani dan fax balik ke No. <span t-field="o.company_id.fax"/> atau dapat di email ke <span t-field="o.company_id.email"/></div>
+            </div>
+          </div>
+      </template>
+
+      <!-- <record id="base.view_company_form_logo2" model="ir.ui.view">
+        <field name="name">base.view_company_form_logo2</field>
+        <field name="model">res.company</field>
+        <field name="inherit_id" ref="base.view_company_form"></field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+          <field name="logo" widget="image" class="oe_avatar" position="after">
+            <field name="logo2" widget="image" class="oe_avatar"/>
+          </field>
+        </field>
+      </record> -->
+
+          <!--create new paper format (A5) for this report-->
+        <record id="report_quotation_papperformat" model="report.paperformat">
+            <field name="name">Report Quotation Format</field>
+            <field name="default" eval="False"></field>
+            <field name="format">A4</field>
+            <field name="page_height">0</field>
+            <field name="page_width">0</field>
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">4</field>
+            <field name="margin_bottom">4</field>
+            <field name="margin_left">4</field>
+            <field name="margin_right">4</field>
+            <field name="header_line" eval="False"></field>
+            <field name="header_spacing">35</field>
+            <field name="dpi">90</field>
+        </record>
+
+        <!--set this report to using the paper above-->
+        <record id="dev_39_seles_quotation_citi_menu" model="ir.actions.report.xml">
+            <field name="paperformat_id" ref="dev_39_seles_quotation_citi.report_quotation_papperformat"></field>
+        </record>
+
+
+  </data>
+</odoo>

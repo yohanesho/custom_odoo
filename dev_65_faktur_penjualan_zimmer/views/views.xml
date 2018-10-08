@@ -1,0 +1,649 @@
+<odoo>
+  <data>
+    <report
+      id="dev_65_faktur_penjualan_zimmer_menu"
+      model="account.invoice"
+      string="Faktur Penjualan Zimmer"
+      report_type="qweb-pdf"
+      name="dev_65_faktur_penjualan_zimmer.report_faktur"
+      file="dev_65_faktur_penjualan_zimmer.report_faktur"
+      />
+      <report
+      id="dev_65_report_invoice_zimmer_menu"
+      model="account.invoice"
+      string="Invoice Zimmer"
+      report_type="qweb-pdf"
+      name="dev_65_faktur_penjualan_zimmer.report_invoice"
+      file="dev_65_faktur_penjualan_zimmer.report_invoice"
+      />
+       <report
+      id="dev_65_report_quotation_zimmer_menu"
+      model="sale.order"
+      string="Quotation / Order Zimmer"
+      report_type="qweb-pdf"
+      name="dev_65_faktur_penjualan_zimmer.report_order_zimmer"
+      file="dev_65_faktur_penjualan_zimmer.report_order_zimmer"
+      />
+      <!-- Template print all -->
+      <template id="report_faktur">
+        <t t-set="var_count" t-value="1"/>
+        <t t-foreach="docs" t-as="o">
+          <span t-esc="var_count" t-if="var_count == '1'">
+          </span>
+          <t t-call="dev_65_faktur_penjualan_zimmer.report_faktur_document"></t>
+          <t t-set="var_count" t-value="var_count+1"/>
+        </t>
+      </template>
+
+      <template id="report_faktur_document">
+        <t t-set="o" t-value="o.with_context({'lang':o.partner_id.lang})"></t>
+        <div class="page">
+          <link rel="stylesheet" href="/dev_65_faktur_penjualan_zimmer/static/src/css/style.css"></link>
+          <div id="fak_template">
+            <div id="fak_header">
+              <table style="width: 100%;" >
+                        <tr>
+                          <td style="width: 23%; border-left: 0px; border-right: 0px; border-top: 0px">
+                            <img t-if="o.company_id.logo" t-att-src="'data:image/png;base64,%s' % o.company_id.logo" style="width:80%; height:75px;"/></td>
+                          <td style="width: 40%; border-left: 0px; border-right: 0px; border-top: 0px">
+                                  <b><span t-field="o.company_id.name" style="font-size: 16pt;"/></b>
+                                  <br/><span t-field="o.company_id.street"/><span> </span><span t-field="o.company_id.street2"/>
+                                <br/><span t-field="o.company_id.city"/>
+                                <br/><span t-field="o.company_id.zip"/>
+                                      <span> - </span>
+                                      <span t-field="o.company_id.country_id.name"/>
+                                <br/><span t-field="o.company_id.phone"/> <span t-field="o.company_id.fax"/></td>
+                          <td style="width: 28%; border-left: 0px; border-right: 0px; border-top: 0px"><b><font color=" #CD853F">FAKTUR PENJUALAN</font></b>
+                            <br/><t>Pembayaran CP : <span t-field="o.date_invoice" t-field-options="{&quot;format&quot;: &quot;dd-MM-yyyy&quot;}"/> </t>
+                            <br/><t>Jatuh Tempo Pelunasan : <!-- <span t-field="o.payment_term_id.name"/> --></t>
+                            <br/><t>No. PO :</t>
+                            <br/><t>No. Faktur : <span t-field="o.number"/></t></td>
+                          </tr>
+                      </table>
+                    </div>
+            <div id="fak_body">
+                    <br/><br/><br/><br/><br/><br/><br/><br/><table class="table table_bergaris">
+                      <table style="width: 100%; float:left;">
+                        <tr>
+                          <th style="width: 50%; border-left: 1px solid #000; border-right: 1px solid #000; border-top: 1px solid #000; border-bottom: 0px;">Kepada Yth:</th>
+                          <th style="width: 50%; border-left: 1px solid #000; border-right: 1px solid #000; border-top: 1px solid #000; border-bottom: 0px;"><font>Dikirim Kepada</font></th>
+                        </tr>
+                        <tr>
+                          <td style="width: 50%; border-left: 1px solid #000; border-right: 1px solid #000; border-top: 0px; border-bottom: 1px solid #000;"><span t-field="o.partner_id"/><br/><br/><br/></td>
+                          <td style="width: 50%; border-left: 1px solid #000; border-right: 1px solid #000; border-top: 0px; border-bottom: 1px solid #000;">
+                             <t t-set="get_address_fn" t-value="o.get_address_from_so()"/>
+                            <t t-foreach="get_address_fn" t-as="address">
+                              <span t-esc="address['customer_address']"/>
+                            </t>
+                          </td>
+                        </tr>
+                      </table><br/><br/><br/><br/><br/>
+                    
+                    <tr>
+                        <table class="table" style="border-bottom: 1px solid #000; border-right: 1px solid #000; margin-top: -10px;">
+                          <tr>
+                            <th style="border: 1px solid #000; width: 5%;">No</th>
+                            <th style="border: 1px solid #000; width: 14%;">Kode Barang</th>
+                            <th style="border: 1px solid #000; width: 24%;">Deskripsi Barang</th>
+                            <th style="border: 1px solid #000; width: 9%;">QTY</th>
+                            <th style="border: 1px solid #000; width: 16%;">Harga Jual Per Unit</th>
+                            <th style="border: 1px solid #000; width: 16%;">Harga Setelah Discount</th>
+                            <th style="border: 1px solid #000; width: 16%;">Total Harga jual</th>
+                          </tr>
+                          <t t-set="no_increment" t-value="1"/>
+                          <tr t-foreach="o.invoice_line_ids" t-as="sp_detail">
+                            <td style="text-align: center; border-bottom: 0px solid #000;border-left: 1px solid #000; border-right: 1px solid #000;">
+                                <span t-esc="no_increment"/>
+                            </td>
+                            <td style="border-left: 1px solid #000;">
+                              <span t-esc="sp_detail.product_id.default_code"></span>
+                            </td>
+                            <td>
+                              <span t-esc="sp_detail.product_id.name"></span>
+                              <span t-esc="sp_detail.product_id.attribute_value_ids.name"></span>
+                            </td>
+                            <td>
+                              <span t-esc="int(float(sp_detail.quantity))"></span>
+                              <span t-esc="sp_detail.product_id.uom_id.name"></span>
+                            </td>
+                            <td style="text-align: right;">
+                              <span t-esc="sp_detail.product_id.currency_id.symbol">.</span>
+                              <span t-esc="'{:,}'.format(int(float(sp_detail.price_unit)))"></span>
+                            </td>
+                            <td style="text-align: right;">
+                              <span t-esc="sp_detail.product_id.currency_id.symbol">.</span>
+                              <span t-esc="'{:,}'.format(int(float(sp_detail.price_unit - (sp_detail.price_unit * sp_detail.discount /100))))"></span>
+                            </td>
+                            <td style="text-align: right;">
+                              <span t-esc="sp_detail.product_id.currency_id.symbol">.</span>
+                              <span t-esc="'{:,}'.format(int(float(sp_detail.price_subtotal)))"></span>
+                            </td>
+                            <t t-set="no_increment" t-value="no_increment+1"/>
+                          </tr>
+                          <tr>
+                            <td colspan="5" rowspan="8" style="border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; font-size: 8pt;">
+                              <span>Ketentuan
+                                <br/>1. Waktu produksi 30 hari kerja dari tanggal Commitment Payment.
+                                <br/>2. Harga sudah termasuk biaya pengiriman JADETABEK.
+                                <br/>3. Pembayaran Commitment Payment WAJIB dilakukan sebelum produksi, dan pelunasan wajib dilakukan sebelum pengiriman.
+                                <br/><font color="#ffffff">3. </font>- Jika melalui transfer, pastikan hanya ke rekening dibawah ini:
+                                <br/><font color="#ffffff">3. - </font>BCA cabang Ruko Artha Gading ; Atas Nama : Shirley Stephanie ; No Acc: 84000 92835
+                                <br/><font color="#ffffff">3. - </font>Bank Mandiri Cabang Graha Rekso ; Atas Nama : Shirley Stephanie ; No Acc : 1250010878445
+                                <br/><font color="#ffffff">3. </font>- jika pembayaran melalui cash atau yang lannya, wajib menghubungi via WA ke Bp. Evan / Ibu Shirley di nomor telepon 
+                                <br/><font color="#ffffff">3. - </font>083 88888 149 / 0813 833 47343
+                                <br/>4. Jumlah Commitment Payment adalah sebesar 50% dari total pembelian.
+                                <br/>5. Pelunasan Commitment Payment adalah terhitung 7 hari setelah tanggal pemesanan. 
+                                <br/><font color="#ffffff">3. </font>Apabila melewati tanggal jatuh tempo, maka pembelian dianggap BATAL.
+                                <br/>6. Setiap barang pesanan yang sudah diinformasikan selesai produksi wajib dilakukan pelunasan.
+                                <br/><font color="#ffffff">3. </font>Namun jika belum melakukan pelunasan, maka akan dikenakan biaya penyimpanan sebesar 1% perbulan dari total penjualan.
+                                <br/>7. Barang akan dkirim setelah ada bukti transfer dan uang telah dinyatakan telah masuk oleh pihak Bank terkait.</span>
+                            </td>
+                            <td style="border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; text-align: right;">
+                                <span>Subtotal</span>
+                            </td>
+                            <td style="border-bottom: 1px solid #000; border-top: 1px solid #000; text-align:right;">
+                                <span t-esc="o.company_id.currency_id.symbol">.</span>
+                                <span t-esc="'{:,}'.format(int(float(o.amount_untaxed)))"/>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td style="border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; text-align:right;">
+                              <span>PPN 10%</span>
+                            </td>
+                            <td style="border-bottom: 1px solid #000; border-top: 1px solid #000; text-align:right;">
+                              <span t-esc="o.company_id.currency_id.symbol">.</span>
+                              <span t-esc="'{:,}'.format(int(float(o.amount_tax)))"/>  
+                            </td>
+                          </tr>
+                          <tr>
+                            <td style="border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; text-align:right;">
+                              <span>Total</span>
+                            </td>
+                            <td style="border-bottom: 1px solid #000; border-top: 1px solid #000; text-align:right;">
+                              <span t-esc="o.company_id.currency_id.symbol">.</span>
+                              <span t-esc="'{:,}'.format(int(float(o.amount_total)))"/>  
+                            </td>
+                          </tr>
+                          <tr>
+                            <td style="border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; text-align:right;">
+                              <span>CP Setelah PPN 10%</span>
+                            </td>
+                            <td style="border-bottom: 1px solid #000; border-top: 1px solid #000; text-align:right;">
+                              <span t-esc="o.company_id.currency_id.symbol">.</span>
+                                <t t-set="get_dp_fn" t-value="o.get_dp_from_so()"/>
+                                  <t t-foreach="get_dp_fn" t-as="downpay">
+                                    <span t-esc="'{:,}'.format(int(float(o.amount_total * downpay['downpayment'] / 100)))"/> 
+                                  </t>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td colspan="2" rowspan="3" style="border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000;">Terbilang :
+                              <span t-esc="o.amount_to_text(o.amount_total,o.company_id.currency_id)"/>
+                              <br/><br/><br/><br/><span t-field="o.company_id.city"/>, <span t-field="o.date_invoice" t-field-options="{&quot;format&quot;: &quot;dd-MM-yyyy&quot;}"/>
+                            </td>
+                          </tr>
+                        </table>
+                    </tr>
+                        <div style="float: left; margin-left: 700px;">
+                            <br/><b><font color="#ffffff">dddd</font> S.E.O</b>
+                            <br/><br/><br/><br/>
+                            <b><u>EVAN HIUMAWAN</u></b><br/>
+                        </div>
+                </table>
+                </div>
+        </div>
+      </div>
+      </template>
+
+       <template id="report_invoice">
+        <t t-set="var_count" t-value="1"/>
+        <t t-foreach="docs" t-as="o">
+          <span t-esc="var_count" t-if="var_count == '1'">
+          </span>
+          <t t-call="dev_65_faktur_penjualan_zimmer.report_invoice_document"></t>
+          <t t-set="var_count" t-value="var_count+1"/>
+        </t>
+      </template>
+      <template id="report_invoice_document">
+        <t t-set="o" t-value="o.with_context({'lang':o.partner_id.lang})"></t>
+        <div class="page">
+          <link rel="stylesheet" href="/dev_65_faktur_penjualan_zimmer/static/src/css/style.css"></link>
+          <div id="fak_template">
+            <div id="fak_header">
+              <table style="width: 100%;" >
+                        <tr>
+                          <td rowspan="3" style="width: 23%; border-left: 0px; border-right: 0px; border-top: 0px">
+                            <img t-if="o.company_id.logo" t-att-src="'data:image/png;base64,%s' % o.company_id.logo" style="width:80%; height:75px;"/></td>
+                          <td rowspan="3" style="width: 40%; border-left: 0px; border-right: 1px solid #000; border-top: 0px">
+                                  <b><span t-field="o.company_id.name" style="font-size: 16pt;"/></b>
+                                  <br/><span t-field="o.company_id.street"/><span> </span><span t-field="o.company_id.street2"/>
+                                <br/><span t-field="o.company_id.city"/>
+                                <br/><span t-field="o.company_id.zip"/>
+                                      <span> - </span>
+                                      <span t-field="o.company_id.country_id.name"/>
+                                <br/><span t-field="o.company_id.phone"/> <span t-field="o.company_id.fax"/></td>
+                          <td rowspan="1" colspan="2" style="text-align: center;  width: 28%; border-left: 0px; border-right: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000;"><b><font color=" #CD853F">INVOICE</font></b>
+                            <!-- <br/><t>Pembayaran CP : <span t-field="o.date_invoice" t-field-options="{&quot;format&quot;: &quot;dd-MM-yyyy&quot;}"/> </t> -->
+                            <!-- <br/><t>Jatuh Tempo Pelunasan : <span t-field="o.payment_term_id.name"/></t> -->
+                            <!-- <br/><t>No. PO :</t> -->
+                            <!-- <br/><t>No. Faktur : <span t-field="o.number"/></t></td> -->
+                          </td>
+                          </tr>
+                          <tr>
+                            <!-- <td rowspan="1" colspan="2"> -->
+                            <!-- </td> -->
+                            <td rowspan="1" style="text-align: center;  width: 14%; border-left: 1px solid #000; border-right: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000;">
+                            <br/><t>No. Faktur : <br/> <span t-field="o.number"/></t></td>
+                            
+                            <td rowspan="1" style="text-align: center;  width: 14%; border-left: 1px solid #000; border-right: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000;">
+                            <br/><t>Tanggal Faktur : <br/><span t-field="o.date_invoice" t-field-options="{&quot;format&quot;: &quot;dd-MM-yyyy&quot;}"/></t>
+                            </td>
+                          </tr>
+                          <tr>
+                            <!-- <td rowspan="1" colspan="2"> -->
+                            <!-- </td> -->
+                                                        
+                            <td rowspan="1" colspan="2" style="text-align: center;  width: 14%; border-left: 1px solid #000; border-right: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000;">
+                            <t>No. PO :</t> <br/>,
+                            </td>
+                          </tr>
+
+              </table>
+            </div>
+            <div id="fak_body">
+                    <br/><br/><br/><br/><br/><br/><br/><br/><table class="table table_bergaris">
+                      <table style="width: 100%; float:left;">
+                        <tr>
+                          <th style="width: 50%; border-left: 1px solid #000; border-right: 1px solid #000; border-top: 1px solid #000; border-bottom: 0px;">Tagihan kepada:</th>
+                          <th style="width: 50%; border-left: 1px solid #000; border-right: 1px solid #000; border-top: 1px solid #000; border-bottom: 0px;"><font>Deskripsi:</font></th>
+                        </tr>
+                        <tr>
+                          <td style="width: 50%; border-left: 1px solid #000; border-right: 1px solid #000; border-top: 0px; border-bottom: 1px solid #000;"><span t-field="o.partner_id"/><br/><br/><br/></td>
+                          <td style="width: 50%; border-left: 1px solid #000; border-right: 1px solid #000; border-top: 0px; border-bottom: 1px solid #000;">
+                              <span t-field="o.internal_note"/>
+                          </td>
+                        </tr>
+                      </table><br/><br/><br/><br/><br/>
+                    
+                    <tr>
+                        <table class="table" style="border-bottom: 1px solid #000; border-right: 1px solid #000; margin-top: -10px;">
+                          <tr>
+                            <th style="border: 1px solid #000; width: 5%;">NO</th>
+                            <th style="border: 1px solid #000; width: 14%;">GAMBAR BARANG</th>
+                            <th style="border: 1px solid #000; width: 24%;">DESKRIPSI BARANG</th>
+                            <th style="border: 1px solid #000; width: 18%;">MATERIAL</th>
+                            <th style="border: 1px solid #000; width: 8%;">QTY</th>
+                            <th style="border: 1px solid #000; width: 8%;">UNIT</th>
+                            <th style="border: 1px solid #000; width: 16%;">HARGA JUAL PER UNIT</th>                            
+                            <th style="border: 1px solid #000; width: 16%;">TOTAL HARGA JUAL</th>
+                          </tr>
+                          <t t-set="no_increment" t-value="1"/>
+                          <tr t-foreach="o.invoice_line_ids" t-as="sp_detail">
+                            <td style="text-align: center; border-bottom: 0px solid #000;border-left: 1px solid #000; border-right: 1px solid #000;">
+                                <span t-esc="no_increment"/>
+                            </td>
+                            <td style="border-left: 1px solid #000;">
+                              <img width="100" height="80"  t-if="sp_detail.product_id.image_medium" t-att-src="'data:image/png;base64,%s' % sp_detail.product_id.image_medium"/>
+                            </td>
+                            <td>
+                              <span t-esc="sp_detail.product_id.name"></span>
+                              <!-- <span t-esc="sp_detail.product_id.attribute_value_ids.name"></span> -->
+                            </td>
+                            <td style="border-bottom: 1px solid #000; border-top: 1px solid #000; text-align:right;"> 
+                              <span></span>
+                            </td>
+                            <td>
+                              <span t-esc="int(float(sp_detail.quantity))"></span>
+                            </td>
+                            <td>
+                              <span t-esc="sp_detail.uom_id.name"></span>
+                            </td>
+                            <td style="text-align: right;">
+                              <span t-esc="sp_detail.product_id.currency_id.symbol">.</span>
+                              <span t-esc="'{:,}'.format(int(float(sp_detail.price_unit)))"></span>
+                            </td>
+                           
+                            <td style="text-align: right;">
+                              <span t-esc="sp_detail.product_id.currency_id.symbol">.</span>
+                              <span t-esc="'{:,}'.format(int(float(sp_detail.price_subtotal)))"></span>
+                            </td>
+                            <t t-set="no_increment" t-value="no_increment+1"/>
+                          </tr>
+                          <tr>
+                            <td colspan="5" rowspan="4" style="border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000;">Terbilang :
+                              <span t-esc="o.amount_to_text(o.amount_total,o.company_id.currency_id)"/>
+                              <br/><br/><!-- <br/><br/><span t-field="o.company_id.city"/>, <span t-field="o.date_invoice" t-field-options="{&quot;format&quot;: &quot;dd-MM-yyyy&quot;}"/> -->
+                            </td>
+                            <td rowspan="4" style="border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000;">
+                            </td>
+                            <td style="border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; text-align: right;">
+                                <span>Subtotal</span>
+                            </td>
+                            <td style="border-bottom: 1px solid #000; border-top: 1px solid #000; text-align:right;">
+                                <span t-esc="o.company_id.currency_id.symbol">.</span>
+                                <span t-esc="'{:,}'.format(int(float(o.amount_untaxed)))"/>
+                            </td>
+                          </tr>
+                         
+                          <tr>
+                            <td style="border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; text-align:right;">
+                              <span>PPN 10%</span>
+                            </td>
+                            <td style="border-bottom: 1px solid #000; border-top: 1px solid #000; text-align:right;">
+                              <span t-esc="o.company_id.currency_id.symbol">.</span>
+                              <span t-esc="'{:,}'.format(int(float(o.amount_tax)))"/>  
+                            </td>
+                          </tr>
+                          <tr>
+                            <td style="border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; text-align:right;">
+                              <span>Total</span>
+                            </td>
+                            <td style="border-bottom: 1px solid #000; border-top: 1px solid #000; text-align:right;">
+                              <span t-esc="o.company_id.currency_id.symbol">.</span>
+                              <span t-esc="'{:,}'.format(int(float(o.amount_total)))"/>  
+                            </td>
+                          </tr>
+                          <tr>
+                            <td style="border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; text-align:right;">
+                              <span>CP Setelah PPN 10%</span>
+                            </td>
+                            <td style="border-bottom: 1px solid #000; border-top: 1px solid #000; text-align:right;">
+                              <span t-esc="o.company_id.currency_id.symbol">.</span>
+                                <t t-set="get_dp_fn" t-value="o.get_dp_from_so()"/>
+                                  <t t-foreach="get_dp_fn" t-as="downpay">
+                                    <span t-esc="'{:,}'.format(int(float(o.amount_total * downpay['downpayment'] / 100)))"/> 
+                                  </t>
+                            </td>
+                          </tr>
+                          
+                        </table>
+                         
+                    </tr>
+                        <!--<div style="float: left; margin-left: 700px;">
+                            <br/><b><font color="#ffffff"></font> S.E.O</b>
+                            <br/><br/><br/><br/> -->
+                            <!--<b><u>EVAN HIUMAWAN</u></b><br/> -->
+                        <!-- </div> -->
+                </table>
+                <table class="table" style="width: 100%; height:100%;">
+                    <tr>                     
+                      <td colspan="1" rowspan="3" style="height:100%; width: 70%; border-left: 1px solid #000; border-right: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000 !important; font-size: 8pt;">
+                        <strong>Ketentuan</strong>
+                        <p t-field="o.comment"/>
+                        <div class="oe_structure"/> 
+                      </td> 
+                      <td colspan="2" rowspan="1" style="height:70%; width: 30%; border-left: 1px solid #000; !important; border-right: 0px solid !important; border-top: 0px solid #000; border-bottom: 0px solid #000; font-size: 8pt; text-align:center;">
+                          <span t-field="o.company_id.city"/>, <span t-field="o.date_invoice" t-field-options="{&quot;format&quot;: &quot;dd-MM-yyyy&quot;}"/>
+                          <br/><b><font color="#ffffff"></font> S.E.O</b>
+                        </td>
+                      
+                        <!-- <div style="float: left; margin-left: 700px;">
+                          <br/><b><font color="#ffffff"></font> S.E.O</b>
+                          <br/><br/><br/><br/> -->
+                          <!--<b><u>EVAN HIUMAWAN</u></b><br/> -->
+                        <!-- </div> -->
+                    </tr>
+                    <tr> 
+                      <td colspan="2" rowspan="1" style="width: 30%; border-left: 0px solid #000; !important; border-right: 0px solid !important; border-top: 0px solid #000; border-bottom: 0px solid #000; font-size: 8pt; text-align:center; vertical-align: bottom; color:white;">
+                          <!-- <b><u>EVAN HIUMAWAN</u></b> -->
+                        </td>
+                    </tr>
+                    <tr> 
+                      <!-- <td colspan="1" style="width: 5%; border-left: 0px solid #000; !important; border-right: 0px solid !important; border-top: 0px solid #000; border-bottom: 0px solid #000; font-size: 8pt; text-align:center;"> </td> -->
+                      <td colspan="2" rowspan="1" style="height:25%; width: 25%; border-left: 1px solid #000; !important; border-right: 0px solid !important; border-top: 0px solid #000; border-bottom: 0px solid #000; font-size: 8pt; text-align:center; vertical-align: bottom; ">
+
+                          <!-- <hr> -->
+                          <br/>
+                          <b><u>EVAN HIUMAWAN</u></b>
+                        </td>
+                    </tr>
+                  </table>
+                 
+                </div>
+        </div>
+      </div>
+      </template>
+
+     <template id="report_order_zimmer">
+        <t t-set="var_count" t-value="1"/>
+        <t t-foreach="docs" t-as="o">
+          <span t-esc="var_count" t-if="var_count == '1'">
+          </span>
+          <t t-call="dev_65_faktur_penjualan_zimmer.report_order_zimmer_document"></t>
+          <t t-set="var_count" t-value="var_count+1"/>
+        </t>
+      </template>
+    <template id="report_order_zimmer_document">
+    <t t-set="o" t-value="o.with_context({'lang':o.partner_id.lang})"></t>
+        <div class="page">
+          <link rel="stylesheet" href="/dev_65_faktur_penjualan_zimmer/static/src/css/style.css"></link>
+          <div id="fak_template">
+            <div id="fak_header">
+              <table style="width: 100%;" >
+                        <tr>
+                          <td rowspan="3" style="width: 23%; border-left: 0px; border-right: 0px; border-top: 0px">
+                            <img t-if="o.company_id.logo" t-att-src="'data:image/png;base64,%s' % o.company_id.logo" style="width:80%; height:75px;"/></td>
+                          <td rowspan="3" style="width: 40%; border-left: 0px; border-right: 1px solid #000; border-top: 0px">
+                                  <b><span t-field="o.company_id.name" style="font-size: 16pt;"/></b>
+                                  <br/><span t-field="o.company_id.street"/><span> </span><span t-field="o.company_id.street2"/>
+                                <br/><span t-field="o.company_id.city"/>
+                                <br/><span t-field="o.company_id.zip"/>
+                                      <span> - </span>
+                                      <span t-field="o.company_id.country_id.name"/>
+                                <br/><span t-field="o.company_id.phone"/> <span t-field="o.company_id.fax"/></td>
+                          <td t-if="o.state not in ['draft','sent']" rowspan="1" colspan="2" style="text-align: center;  width: 28%; border-left: 0px; border-right: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000;"><b><font color=" #CD853F">ORDER #</font></b>
+                          <!-- <span t-if="doc.state not in ['draft','sent']">Order # </span> -->
+                          <!-- <span t-if="doc.state in ['draft','sent']">Quotation # </span> -->                            
+                          </td>
+                          <td t-if="o.state in ['draft','sent']" rowspan="1" colspan="2" style="text-align: center;  width: 28%; border-left: 0px; border-right: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000;"><b><font color=" #CD853F">QUOTATION #</font></b>
+                          <!-- <span t-if="doc.state not in ['draft','sent']">Order # </span> -->
+                          <!-- <span t-if="doc.state in ['draft','sent']">Quotation # </span> -->                            
+                          </td>
+                          </tr>
+                          <tr>
+                            <!-- <td rowspan="1" colspan="2"> -->
+                            <!-- </td> -->
+                            <td rowspan="1" style="text-align: center;  width: 14%; border-left: 1px solid #000; border-right: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000;">
+                            <br/><t>No. : <br/> <span t-field="o.name"/></t></td>
+                            
+                            <td rowspan="1" style="text-align: center;  width: 14%; border-left: 1px solid #000; border-right: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000;">
+                            <br/><t>Tanggal : <br/><span t-field="o.date_order" t-field-options="{&quot;format&quot;: &quot;dd-MM-yyyy&quot;}"/></t>
+                            </td>
+                          </tr>
+                          <tr>
+                            <!-- <td rowspan="1" colspan="2"> -->
+                            <!-- </td> -->
+                                                        
+                            <td rowspan="1" colspan="2" style="text-align: center;  width: 14%; border-left: 1px solid #000; border-right: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000;">
+                            <t>No. PO :</t> <br/>,
+                            </td>
+                          </tr>
+
+              </table>
+            </div>
+            <div id="fak_body">
+                    <br/><br/><br/><br/><br/><br/><br/><br/><table class="table table_bergaris">
+                      <table style="width: 100%; float:left;">
+                        <tr>
+                          <th style="width: 50%; border-left: 1px solid #000; border-right: 1px solid #000; border-top: 1px solid #000; border-bottom: 0px;">Kepada:</th>
+                          <th style="width: 50%; border-left: 1px solid #000; border-right: 1px solid #000; border-top: 1px solid #000; border-bottom: 0px;"><font>Deskripsi:</font></th>
+                        </tr>
+                        <tr>
+                          <td style="width: 50%; border-left: 1px solid #000; border-right: 1px solid #000; border-top: 0px; border-bottom: 1px solid #000;"><span t-field="o.partner_id"/><br/><br/><br/></td>
+                          <td style="width: 50%; border-left: 1px solid #000; border-right: 1px solid #000; border-top: 0px; border-bottom: 1px solid #000;">
+                              <span t-field="o.internal_note"/>
+                          </td>
+                        </tr>
+                      </table><br/><br/><br/><br/><br/>
+                    
+                    <tr>
+                        <table class="table" style="border-bottom: 1px solid #000; border-right: 1px solid #000; margin-top: -10px;">
+                          <tr>
+                            <th style="border: 1px solid #000; width: 5%;">NO</th>
+                            <th style="border: 1px solid #000; width: 14%;">GAMBAR BARANG</th>
+                            <th style="border: 1px solid #000; width: 24%;">DESKRIPSI BARANG</th>
+                            <th style="border: 1px solid #000; width: 18%;">MATERIAL</th>
+                            <th style="border: 1px solid #000; width: 8%;">QTY</th>
+                            <th style="border: 1px solid #000; width: 8%;">UNIT</th>
+                            <th style="border: 1px solid #000; width: 16%;">HARGA JUAL PER UNIT</th>                            
+                            <th style="border: 1px solid #000; width: 16%;">TOTAL HARGA JUAL</th>
+                          </tr>
+                          <t t-set="no_increment" t-value="1"/>
+                          <tr t-foreach="o.order_line" t-as="sp_detail">
+                            <td style="text-align: center; border-bottom: 0px solid #000;border-left: 1px solid #000; border-right: 1px solid #000;">
+                                <span t-esc="no_increment"/>
+                            </td>
+                            <td style="border-left: 1px solid #000;">
+                              <img width="100" height="80"  t-if="sp_detail.product_id.image_medium" t-att-src="'data:image/png;base64,%s' % sp_detail.product_id.image_medium"/>
+                            </td>
+                            <td>
+                              <span t-esc="sp_detail.product_id.name"></span>
+                              <!-- <span t-esc="sp_detail.product_id.attribute_value_ids.name"></span> -->
+                            </td>
+                            <td style="border-bottom: 1px solid #000; border-top: 1px solid #000; text-align:right;"> 
+                              <span></span>
+                            </td>
+                            <td>
+                              <span t-esc="int(float(sp_detail.product_uom_qty))"></span>
+                            </td>
+                            <td>
+                              <span t-esc="sp_detail.product_uom.name"></span>
+                            </td>
+                            <td style="text-align: right;">
+                              <span t-esc="sp_detail.product_id.currency_id.symbol">.</span>
+                              <span t-esc="'{:,}'.format(int(float(sp_detail.price_unit)))"></span>
+                            </td>
+                           
+                            <td style="text-align: right;">
+                              <span t-esc="sp_detail.product_id.currency_id.symbol">.</span>
+                              <span t-esc="'{:,}'.format(int(float(sp_detail.price_subtotal)))"></span>
+                            </td>
+                            <t t-set="no_increment" t-value="no_increment+1"/>
+                          </tr>
+                          <tr>
+                            <td colspan="5" rowspan="4" style="border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000;">Terbilang :
+                              <span t-esc="o.amount_to_text(o.amount_total,o.company_id.currency_id)"/>
+                              <br/><br/><!-- <br/><br/><span t-field="o.company_id.city"/>, <span t-field="o.date_invoice" t-field-options="{&quot;format&quot;: &quot;dd-MM-yyyy&quot;}"/> -->
+                            </td>
+                            <td rowspan="4" style="border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000;">
+                            </td>
+                            <td style="border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; text-align: right;">
+                                <span>Subtotal</span>
+                            </td>
+                            <td style="border-bottom: 1px solid #000; border-top: 1px solid #000; text-align:right;">
+                                <span t-esc="o.company_id.currency_id.symbol">.</span>
+                                <span t-esc="'{:,}'.format(int(float(o.amount_untaxed)))"/>
+                            </td>
+                          </tr>
+                         
+                          <tr>
+                            <td style="border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; text-align:right;">
+                              <span>PPN 10%</span>
+                            </td>
+                            <td style="border-bottom: 1px solid #000; border-top: 1px solid #000; text-align:right;">
+                              <span t-esc="o.company_id.currency_id.symbol">.</span>
+                              <span t-esc="'{:,}'.format(int(float(o.amount_tax)))"/>  
+                            </td>
+                          </tr>
+                          <tr>
+                            <td style="border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; text-align:right;">
+                              <span>Total</span>
+                            </td>
+                            <td style="border-bottom: 1px solid #000; border-top: 1px solid #000; text-align:right;">
+                              <span t-esc="o.company_id.currency_id.symbol">.</span>
+                              <span t-esc="'{:,}'.format(int(float(o.amount_total)))"/>  
+                            </td>
+                          </tr>
+                          <tr>
+                            <td style="border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; text-align:right;">
+                              <span>CP Setelah PPN 10%</span>
+                            </td>
+                            <td style="border-bottom: 1px solid #000; border-top: 1px solid #000; text-align:right;">
+                              <span t-esc="o.company_id.currency_id.symbol">.</span>
+                              <span t-esc="'{:,}'.format(int(float(o.amount_total * o.downpayment / 100)))"/>  
+                              <!-- <span t-esc="'{:,}'.format(int(float(o.amount_dp)))"/>   -->
+                                <!-- <t t-set="get_dp_fn" t-value="o.get_dp_from_so()"/>
+                                  <t t-foreach="get_dp_fn" t-as="downpay">
+                                    <span t-esc="'{:,}'.format(int(float(o.amount_total * downpay['downpayment'] / 100)))"/> 
+                                  </t> -->
+                            </td>
+                          </tr>
+                          
+                        </table>
+                         
+                    </tr>
+                        <!--<div style="float: left; margin-left: 700px;">
+                            <br/><b><font color="#ffffff"></font> S.E.O</b>
+                            <br/><br/><br/><br/> -->
+                            <!--<b><u>EVAN HIUMAWAN</u></b><br/> -->
+                        <!-- </div> -->
+                </table>
+                <table class="table" style="width: 100%; height:100%;">
+                    <tr>                     
+                      <td colspan="1" rowspan="3" style="height:100%; width: 70%; border-left: 1px solid #000; border-right: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000 !important; font-size: 8pt;">
+                        <strong>Ketentuan</strong>
+                          <p t-field="o.note"/>
+                          <div class="oe_structure"/>                        
+                      </td> 
+                      <td colspan="2" rowspan="1" style="height:70%; width: 30%; border-left: 1px solid #000; !important; border-right: 0px solid !important; border-top: 0px solid #000; border-bottom: 0px solid #000; font-size: 8pt; text-align:center;">
+                          <span t-field="o.company_id.city"/>, <span t-field="o.date_order" t-field-options="{&quot;format&quot;: &quot;dd-MM-yyyy&quot;}"/>
+                          <br/><b><font color="#ffffff"></font> S.E.O</b>
+                        </td>
+                      
+                        <!-- <div style="float: left; margin-left: 700px;">
+                          <br/><b><font color="#ffffff"></font> S.E.O</b>
+                          <br/><br/><br/><br/> -->
+                          <!--<b><u>EVAN HIUMAWAN</u></b><br/> -->
+                        <!-- </div> -->
+                    </tr>
+                    <tr> 
+                      <td colspan="2" rowspan="1" style="width: 30%; border-left: 0px solid #000; !important; border-right: 0px solid !important; border-top: 0px solid #000; border-bottom: 0px solid #000; font-size: 8pt; text-align:center; vertical-align: bottom; color:white;">
+                          <!-- <b><u>EVAN HIUMAWAN</u></b> -->
+                        </td>
+                    </tr>
+                    <tr> 
+                      <!-- <td colspan="1" style="width: 5%; border-left: 0px solid #000; !important; border-right: 0px solid !important; border-top: 0px solid #000; border-bottom: 0px solid #000; font-size: 8pt; text-align:center;"> </td> -->
+                      <td colspan="2" rowspan="1" style="height:25%; width: 25%; border-left: 1px solid #000; !important; border-right: 0px solid !important; border-top: 0px solid #000; border-bottom: 0px solid #000; font-size: 8pt; text-align:center; vertical-align: bottom; ">
+
+                          <!-- <hr> -->
+                          <br/>
+                          <b><u>EVAN HIUMAWAN</u></b>
+                        </td>
+                    </tr>
+                  </table>
+                 
+                </div>
+        </div>
+      </div>
+  </template>
+
+  <!--create new paper format (A5) for this report-->
+  <record id="report_faktur_papperformat" model="report.paperformat">
+    <field name="name">Report Faktur Format</field>
+    <field name="default" eval="False"></field>
+    <field name="format">A4</field>
+    <field name="page_height">0</field>
+    <field name="page_width">0</field>
+    <field name="orientation">Portrait</field>
+    <field name="margin_top">4</field>
+    <field name="margin_bottom">4</field>
+    <field name="margin_left">4</field>
+    <field name="margin_right">4</field>
+    <field name="header_line" eval="False"></field>
+    <field name="header_spacing">35</field>
+    <field name="dpi">90</field>
+  </record>
+
+  <!--set this report to using the paper above-->
+  <record id="dev_65_faktur_penjualan_zimmer_menu" model="ir.actions.report.xml">
+    <field name="paperformat_id" ref="dev_65_faktur_penjualan_zimmer.report_faktur_papperformat"></field>
+  </record>
+  <record id="dev_65_report_invoice_zimmer_menu" model="ir.actions.report.xml">
+    <field name="paperformat_id" ref="dev_65_faktur_penjualan_zimmer.report_faktur_papperformat"></field>
+  </record>
+  <record id="dev_65_report_quotation_zimmer_menu" model="ir.actions.report.xml">
+    <field name="paperformat_id" ref="dev_65_faktur_penjualan_zimmer.report_faktur_papperformat"></field>
+  </record>
+
+</data>
+</odoo>

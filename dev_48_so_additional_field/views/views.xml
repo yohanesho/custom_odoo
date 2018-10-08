@@ -1,0 +1,37 @@
+<odoo>
+  <data>
+    
+    <record id="sale.view_order_form_downpayment" model="ir.ui.view">
+      <field name="name">sale.view_order_form_downpayment</field>
+      <field name="model">sale.order</field>
+      <field name="inherit_id" ref="sale.view_order_form"></field>
+      <field name="type">form</field>
+      <field name="arch" type="xml">
+        <field name="payment_term_id" position="after">
+          <field name="downpayment"></field>            
+        </field>
+        <field name="amount_total" position="after">
+            <field name="amount_dp" readonly="True"/>
+        </field>
+      </field>
+    </record>
+<!-- 
+    <record id="sale.view_order_form_amount_dp" model="ir.ui.view">
+          <field name="name">sale.view_order_form_amount_dp</field>
+          <field name="model">sale.order</field>
+          <field name="inherit_id" ref="sale.view_order_form"/>
+          <field name="type">form</field>
+          <field name="arch" type="xml">
+            <field name="amount_total" position="after"> -->
+              <!-- <field name="amount_dp" readonly="True"/> -->
+
+              <!-- Add field in SO line -->
+              <!-- <xpath expr="/form/sheet/notebook/page/group[@name='sale_total']/field[@name='amount_total']" position="after">
+                <field name="amount_dp" readonly="True"/>
+              </xpath> -->
+          <!-- </field>
+        </field>
+      </record> -->
+    
+  </data>
+</odoo>

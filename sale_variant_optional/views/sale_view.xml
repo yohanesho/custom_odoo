@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="view_order_line_tree" model="ir.ui.view">
+            <field name="name">sale.order.line.tree</field>
+            <field name="model">sale.order.line</field>
+            <field name="inherit_id" ref="sale.view_order_line_tree"/>
+            <field name="arch" type="xml">
+                <field name="product_id" position="after">
+                    <field name="product_varian_tmpl_id"/>
+                    <field name="colour_att_value_id" options="{'no_create': True}" attrs="{'required': [('is_colour', '=', True)]}"/>
+                    <field name="other_att_value_id" options="{'no_create': True}" attrs="{'required': [('is_other', '=', True)]}"/>
+                    <field name="is_colour" options="{'no_create': True}" invisible="1" />
+                    <field name="is_other" options="{'no_create': True}" invisible="1"/>
+                </field>
+            </field>
+        </record>
+    <record id="sale_variant_optional.custom_varian_view_order_form" model="ir.ui.view">
+        <field name="name">sale.order.form</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='order_line']//tree//field[@name='product_id']" position="replace">
+                <field name="product_id"
+                                        attrs="{'readonly': ['|', ('qty_invoiced', '&gt;', 0), ('procurement_ids', '!=', [])]}"
+                                        context="{'partner_id':parent.partner_id, 'quantity':product_uom_qty, 'pricelist':parent.pricelist_id, 'uom':product_uom, 'company_id': parent.company_id}"
+                                        invisible="1"/>
+                <field name="product_varian_tmpl_id"/>
+                <field name="colour_att_value_id" options="{'no_create': True}" attrs="{'required': [('is_colour', '=', True)]}"/>
+                <field name="other_att_value_id" options="{'no_create': True}" attrs="{'required': [('is_other', '=', True)]}"/>
+                <field name="is_colour" options="{'no_create': True}" invisible="1" />
+                <field name="is_other" options="{'no_create': True}" invisible="1"/>
+            </xpath>
+             <xpath expr="//field[@name='order_line']//tree//field[@name='product_uom_qty']" position="after">
+                <field name="qty_varian" options="{'no_create': True}" invisible="0"/>
+             </xpath>            
+        </field>
+    </record>   
+
+    </data>
+</odoo>

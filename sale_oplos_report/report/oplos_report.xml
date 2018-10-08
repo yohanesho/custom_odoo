@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<data>   
+     <!-- <t t-set="o" t-value="o.with_context({'lang':o.partner_id.lang})" /> -->
+ <template id="oplos_report_tax_invoice_document">
+    <t t-set="o" t-value="o.with_context({'lang':o.partner_id.lang})" />
+    <div class="page">  
+        <div class="oplos_report_invoice">
+            <div class="row mb16">          
+                <div class="col-xs-4 col-xs-offset-4">
+                    <h3 class="text-center">
+                        <strong>Faktur Pajak</strong>
+                    </h3>     
+                </div>
+
+            <table class="table table-condensed table-striped table-bordered" style="border-color: black; border: 2px solid black !important;">
+                <thead>
+                    <tr >
+                        <td style="border-color: black; border: 1px solid black !important;" colspan="3" class="text-left">Kode dan Nomor Seri Faktur Pajak <span t-field="o.efaktur_id.name"/>
+                        </td>
+                        
+                    </tr>
+                     <tr>
+                        <td style="border-color: black; border: 1px solid black !important;" colspan="3" class="text-left">Pengusaha Kena Pajak</td>                        
+                    </tr>
+                    <tr>
+                        <td style="border-color: black; border: 1px solid black !important;" colspan="3" class="text-left">
+                            Nama : <span t-field="o.company_id.partner_id.name"/><br/>
+                            Alamat : <span t-field="o.company_id.partner_id.alamat_lengkap"/><br/>
+                            NPWP : <span t-field="o.company_id.partner_id.npwp"/>
+
+                        </td>                        
+                    </tr>
+                    <tr>
+                        <td style="border-color: black; border: 1px solid black !important;" colspan="3" class="text-left">Pembeli Barang  Kena Pajak / Penerima Jasa Kena Pajak</td>                        
+                    </tr>
+                    <tr>
+                        <td style="border-color: black; border: 1px solid black !important;" colspan="3" class="text-left">
+                            Nama : <span t-field="o.partner_id.name"/><br/>
+                            Alamat : <span t-field="o.partner_id.alamat_lengkap"/><br/>
+                            NPWP : <span t-field="o.partner_id.npwp"/>
+
+                        </td>                        
+                    </tr>
+                    <tr>
+                        <td style="border-color: black; border: 1px solid black !important;" class="text-center">No.</td>
+                        <td style="border-color: black; border: 1px solid black !important;" class="text-center">Nama Barang Kena Pajak / Jasa Kena Pajak</td>
+                        <td style="border-color: black; border: 1px solid black !important;" class="text-center">Harga Jual/Penggantian/ <br/> Uang Muka/Termin</td>
+                    </tr>
+                </thead>
+                <tbody class="invoice_tbody">
+                    <t t-set="value" t-value="0"/>
+                    <t t-set="potongan_harga" t-value="0"/>
+                    <t t-set="uang_muka" t-value="0"/>
+                    <t t-set="harga_jual" t-value="0"/>
+                    <tr t-foreach="o.invoice_line_ids" t-as="l">
+                        <t t-set="value" t-value="value + 1"/>
+                        <t t-set="harga_jual_satuan" t-value="0"/>
+                        <td style="border-color: black; border: 1px solid black !important;" >
+                           <t t-esc="value"/>
+                        </td>
+                        <td t-if="l.oplos_template_id" style="border-color: black; border: 1px solid black !important;">
+                            <span t-field="l.oplos_template_id.name"/><br/>
+                             <t t-set="harga_jual" t-value="harga_jual + (l.oplos_template_id.list_price * l.quantity)"/>
+                                <span t-field="l.oplos_template_id.list_price" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/> x  <span t-field="l.quantity"/><br/>
+                            Potongan Harga : <span t-field="l.discount"/> <br/>
+                            <t t-set="potongan_harga" t-value="potongan_harga + l.discount"/>
+                        </td>
+                        <td t-if="not l.oplos_template_id" style="border-color: black; border: 1px solid black !important;">
+                            <t t-set="harga_jual" t-value="harga_jual + (l.price_unit * l.quantity)"/>
+                            <span t-field="l.name"/><br/>
+                           
+                                <span t-field="l.price_unit" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/> x  <span t-field="l.quantity"/><br/>
+                            Potongan Harga : <span t-field="l.discount"/> <br/>
+                            <t t-set="potongan_harga" t-value="potongan_harga + l.discount"/>
+                        </td>
+                        <td t-if="not l.oplos_template_id" style="border-color: black; border: 1px solid black !important;" class="text-right">
+                            <span t-field="l.price_subtotal" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                        </td>
+                        <td t-if="l.oplos_template_id" style="border-color: black; border: 1px solid black !important;" class="text-right">
+                            <span t-esc="l.oplos_template_id.list_price * l.quantity" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td style="border-color: black; border: 1px solid black !important;" colspan="2" class="text-left">Harga Jual / Penggantian
+                        </td> 
+                         <td style="border-color: black; border: 1px solid black !important;" class="text-right"> <!-- harga sebelum diskon -->
+                            <span t-esc="harga_jual" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                        </td>                      
+                    </tr>
+                    <tr>
+                        <td style="border-color: black; border: 1px solid black !important;" colspan="2" class="text-left">Dikurangi Potongan Harga
+                        </td> 
+                         <td style="border-color: black; border: 1px solid black !important;" class="text-right"> <!-- diskon -->
+                            <span t-esc="potongan_harga" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                        </td>                      
+                    </tr>
+                     <tr>
+                        <td style="border-color: black; border: 1px solid black !important;" colspan="2" class="text-left">Dikurangi Uang Muka
+                        </td> 
+                         <td style="border-color: black; border: 1px solid black !important;" class="text-right">
+                            <span t-esc="uang_muka" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                        </td>                      
+                    </tr>
+                    <tr>
+                        <td style="border-color: black; border: 1px solid black !important;" colspan="2" class="text-left">Dasar Pengenaan Pajak
+                        </td> 
+                         <td style="border-color: black; border: 1px solid black !important;" class="text-right">
+                            <span t-esc="harga_jual - potongan_harga" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                        </td>                      
+                    </tr>
+                    <tr>
+                        <td style="border-color: black; border: 1px solid black !important;" colspan="2" class="text-left">PPN = 10 % x Dasar Pengenaan Pajak
+                        </td> 
+                         <td style="border-color: black; border: 1px solid black !important;" class="text-right">
+                            <span t-esc="(harga_jual - potongan_harga) * 0.1" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                        </td>                      
+                    </tr>
+                    <tr>
+                        <td style="border-color: black; border: 1px solid black !important;" colspan="2" class="text-left">Total PPnBM (Pajak Penjualan Barang Mewah)
+                        </td> 
+                         <td style="border-color: black; border: 1px solid black !important;" class="text-right">
+                            <span t-esc="uang_muka" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                        </td>                      
+                    </tr>
+                </tbody>
+              
+            </table>
+            </div>    
+
+            <div class="row">
+                <div class="col-xs-12"> 
+                <span style="font-size:10;"> Sesuai dengan ketentuan yang berlaku, Direktorat Jenderal Pajak mengatur bahwa Faktur Pajak ini telah ditandatangi </span><br/>
+                <span style="font-size:10;"> Secara elektronik sehingga tidak diperlukan tanda tangan basah pada Faktur Pajak ini. </span>
+                </div>
+            </div>
+
+            <div class="row mt32">
+                <!-- <p t-if="o.employee_id.address_id"> -->
+                    <!-- <strong t-field="o.employee_id.address_id"/> -->
+                <!-- </p><br/><br/> -->
+
+                <div class="signature col-xs-6 text-left">
+                    <strong></strong>
+                    <div class="mt92">
+                        <span>INVOICE <span t-field="o.number"/></span>
+                    </div>
+                </div>
+
+                <div t-if="o.date_invoice" class="signature col-xs-6 text-right">
+                    <!-- <strong>Sign/Stand</strong> -->
+                    <span t-field="o.user_id.state_id.name"/>, <span t-esc="datetime.datetime.strptime(o.date_invoice, '%Y-%m-%d').strftime('%d %B %Y') "/>
+                    <!-- <span t-esc="datetime.datetime.strptime(o.date_order, '%Y-%m-%d %H:%M:%S').strftime('%d-%b-%y')"/> -->
+                    <div class="mt92">
+                        <span><span t-field="o.user_id"/></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+
+<template id="report_faktur_pajak">
+    <t t-call="report.html_container">
+        <t t-foreach="docs" t-as="o">
+            <t t-call="sale_oplos_report.oplos_report_tax_invoice_document" t-lang="o.partner_id.lang"/>
+        </t>
+    </t>
+</template>
+</data>
+</odoo>

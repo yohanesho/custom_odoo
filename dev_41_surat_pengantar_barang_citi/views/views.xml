@@ -1,0 +1,204 @@
+<odoo>
+  <data>
+      <report
+        id="dev_41_surat_pengantar_barang_citi_menu"
+        model="stock.picking"
+        string="Surat Pengantar Barang Citi"
+        report_type="qweb-pdf"
+        name="dev_41_surat_pengantar_barang_citi.report_surat_pengantar"
+        file="dev_41_surat_pengantar_barang_citi.report_surat_pengantar"
+      />
+
+    <!-- Template print all -->
+      <template id="report_surat_pengantar">
+          <t t-set="var_count" t-value="1"/>
+          <t t-foreach="docs" t-as="o">
+              <span t-esc="var_count" t-if="var_count == '1'">
+              </span>
+              <t t-call="dev_41_surat_pengantar_barang_citi.report_surat_pengantar_document"></t>
+              <t t-set="var_count" t-value="var_count+1"/>
+          </t>
+      </template>
+
+      <template id="report_surat_pengantar_document">
+          <t t-set="o" t-value="o.with_context({'lang':o.partner_id.lang})"></t>
+          <div class="page">
+            <link rel="stylesheet" href="/dev_41_surat_pengantar_barang_citi/static/src/css/style.css"></link>
+            <div id="fak_template">
+                <div id="fak_header">
+                  <div id="company_desc" style="text-align: left;">
+                    <b><span t-field="o.company_id.name" style="font-size: 16pt;"/></b><br/>
+                    <span t-field="o.company_id.street"/><span t-field="o.company_id.street2"/>
+                    <span t-field="o.company_id.city"/>,<span t-field="o.company_id.phone"/>
+                    <br/>Email : <span t-field="o.company_id.email"/>
+                    <br/>Website : <span t-field="o.company_id.website"/>
+                    <br/>
+                    <br/>
+                  </div>
+                  <div id="logo">
+                       <img t-if="o.company_id.logo" t-att-src="'data:image/png;base64,%s' % o.company_id.logo" style="width:130%; height:90px;"/>
+                  </div>
+                </div>
+
+                <div id="fak_body">
+                    <table class="table table_bergaris">
+                    <tr>
+                      <th style="font-size: 18pt; text-align: center; border: 1px solid #000;" >SURAT PENGANTAR BARANG</th>
+                      <td rowspan="3" style="vertical-align: text-top; border: 1px solid #000;">Kepada Yth,
+                      <br/><span t-field="o.partner_id"/>
+                      <br/><span t-field="o.partner_id.street"/>
+                      <br/><span t-field="o.partner_id.street2"/></td> 
+                    </tr>
+                    <tr>
+                      <td>No. : <span t-field="o.name"/></td>
+                    </tr>
+                    <tr>
+                      <td>Tgl. : <span t-field="o.min_date" t-field-options="{&quot;format&quot;: &quot;dd-MM-yyyy&quot;}"/></td>
+                    </tr>
+                    
+                    <tr>
+                        <table class="table" style="border-right: 1px solid #000; margin-top: -10px;">
+                          <tr>
+                            <th style="border: 1px solid #000; text-align: center;">No.</th>
+                            <th style="border: 1px solid #000; text-align: center;">Nama Barang</th>
+                            <th style="border: 1px solid #000; text-align: center;">Ukuran</th>
+                            <th style="border: 1px solid #000; text-align: center;">Jumlah</th>
+                          </tr>
+                          <t t-set="no_increment" t-value="1"/>
+                          <tr t-foreach="o.citi_stock_picking_line_ids" t-as="sp_detail">
+                            <td style="border-left: 1px solid #000; border-bottom: 1px solid #000; text-align: center;">
+                              <span t-esc="no_increment"/>
+                            </td>
+                            <td t-if="not sp_detail.oplos_template_id" style="border-left: 1px solid #000; border-bottom: 1px solid #000;">
+                              <span t-esc="sp_detail.product_id.name"></span>
+                            </td>
+                             <td t-if="sp_detail.oplos_template_id" style="border-left: 1px solid #000; border-bottom: 1px solid #000;">
+                              <span t-esc="sp_detail.oplos_template_id.name"></span>
+                            </td>
+
+
+                            <td style="border-left: 1px solid #000; border-bottom: 1px solid #000;">
+                              <span></span>
+                            </td>
+
+                            <td t-if="not sp_detail.oplos_template_id" style="border-left: 1px solid #000; border-bottom: 1px solid #000;">
+                              <span t-esc="int(float(sp_detail.product_uom_qty))"></span>
+                              <span t-esc="sp_detail.product_id.uom_id.name"></span>
+                            </td>
+                            <td t-if="sp_detail.oplos_template_id" style="border-left: 1px solid #000; border-bottom: 1px solid #000;">
+                              <span t-esc="int(float(sp_detail.product_uom_qty))"></span>
+                              <span t-esc="sp_detail.oplos_template_id.uom_id.name"></span>
+                            </td>
+                            <t t-set="no_increment" t-value="no_increment+1"/>
+                          </tr>
+                        </table>
+                        <table class="table table_bergaris">
+                          <tr>
+                            <th style="border: 1px solid #000; text-align: center;">Tanda Tangan/Cap<br/>Penerima<br/><br/><br/><br/></th>
+                            <th style="border: 1px solid #000; text-align: center;">Pengirim</th>
+                            <th style="border: 1px solid #000; text-align: center;">Gudang</th>
+                            <th style="border: 1px solid #000; text-align: center;">Hormat Kami</th>
+                          </tr>
+
+                        </table>
+                    </tr>
+                    <!-- <tr style="border: 1px solid #000;">
+                        <td>NOTE : Barang Sudah Diterima Dengan Baik</td>
+                    </tr> -->
+                </table>
+                </div>
+
+                <!-- <div id="fak_body">
+                    <table class="table table_bergaris">
+                    <tr>
+                      <th style="font-size: 18pt; text-align: center; border: 1px solid #000;" >SURAT PENGANTAR BARANG</th>
+                      <td rowspan="4" style="vertical-align: text-top; border: 1px solid #000;">Kepada Yth,
+                      <br/><span t-field="o.partner_id"/>
+                      <br/><span t-field="o.partner_id.street"/></td> 
+                    </tr>
+                    <tr>
+                      <td>No. SPB : <span t-field="o.mannumber"/></td>
+                    </tr>
+                    <tr>
+                      <td>Tgl. SPB : <span t-field="o.min_date" t-field-options="{&quot;format&quot;: &quot;dd-MM-yyyy&quot;}"/></td>
+                    </tr>
+                    <tr>
+                      <td>No Order : 
+                        <t t-foreach="o.get_client_order_ref()" t-as="data_client_order_ref">
+                          <span t-esc="data_client_order_ref['client_order_ref']" />
+                        </t>
+                      </td>
+                    </tr>
+                    <tr>
+                        <table class="table" style="border-right: 1px solid #000; margin-top: -10px;">
+                          <tr>
+                            <th style="border: 1px solid #000;">Kode Barang</th>
+                            <th style="border: 1px solid #000;">Nama Barang</th>
+                            <th style="border: 1px solid #000;">Jumlah</th>
+                            <th style="border: 1px solid #000;">Keterangan</th>
+                          </tr>
+                          <tr t-foreach="o.move_lines" t-as="sp_detail">
+                            <td style="border-left: 1px solid #000;">
+                              <span t-esc="sp_detail.product_id.default_code"></span>
+                            </td>
+                            <td>
+                              <span t-esc="sp_detail.product_id.name"></span>
+                            </td>
+                            <td>
+                              <span t-esc="int(float(sp_detail.product_uom_qty))"></span>
+                              <span t-esc="sp_detail.product_id.uom_id.name"></span>
+                            </td>
+                            <td>
+                              <span></span>
+                            </td>
+                          </tr>
+                        </table>
+                    </tr>
+                    <tr style="border: 1px solid #000;">
+                        <td>NOTE : Barang Sudah Diterima Dengan Baik</td>
+                    </tr>
+                </table>
+                </div> -->
+
+                <!-- <div id="sign">
+                    <div id="sign-left">
+                        Diterima Oleh,
+                        <br/><br/><br/><br/>
+                        (....................................)<br/>
+                        <span t-field="o.partner_id"/>
+                    </div>
+                    <div id="sign-right">
+                        Hormat Kami,
+                        <br/><br/><br/><br/>
+                        (....................................)<br/>
+                    </div>
+                </div> -->
+            </div>
+          </div>
+      </template>
+
+          <!--create new paper format (A5) for this report-->
+        <record id="report_surat_pengantar_papperformat" model="report.paperformat">
+            <field name="name">Report Surat Pengatar Barang Format</field>
+            <field name="default" eval="False"></field>
+            <field name="format">A4</field>
+            <field name="page_height">0</field>
+            <field name="page_width">0</field>
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">4</field>
+            <field name="margin_bottom">4</field>
+            <field name="margin_left">4</field>
+            <field name="margin_right">4</field>
+            <field name="header_line" eval="False"></field>
+            <field name="header_spacing">35</field>
+            <field name="dpi">90</field>
+        </record>
+
+        <!--set this report to using the paper above-->
+        <record id="dev_41_surat_pengantar_barang_citi_menu" model="ir.actions.report.xml">
+            <field name="paperformat_id" ref="dev_41_surat_pengantar_barang_citi.report_surat_pengantar_papperformat"></field>
+        </record>
+
+
+  </data>
+</odoo>

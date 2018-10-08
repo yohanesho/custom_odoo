@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+    	<record id="account_invoice_line_form" model="ir.ui.view">
+            <field name="name">account.invoice.line.form</field>
+            <field name="model">account.invoice.line</field>
+            <field name="inherit_id" ref="account.view_invoice_line_form"/>
+            <field name="arch" type="xml">
+                <data>
+            	<xpath expr="//label[@for='quantity']" position="before">
+                    <!-- <xpath expr="//group/group/field[@name='product_id']" position="after">       -->
+                		<field name="colour_att_value_id"/>
+    	                <field name="other_att_value_id" />
+                	</xpath>
+                </data>
+            </field>
+        </record>
+	 	<record id="sale_varian_optional_invoice_form" model="ir.ui.view">
+            <field name="name">custom.varian.account.invoice.form</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_form"/>
+            <field name="arch" type="xml">
+            	<!-- <xpath expr="//field[@name='invoice_line_ids']//tree//field[@name='product_id']" position="after"> -->
+                <field name="product_id" position="replace">
+                    <field name="product_id" invisible="1"/>
+                    <field name="product_varian_tmpl_id" required="1"/>
+	                <field name="colour_att_value_id" options="{'no_create': True}" attrs="{'required': [('is_colour', '=', True)]}"/>
+	                <field name="other_att_value_id" options="{'no_create': True}" attrs="{'required': [('is_colour', '=', True)]}"/>
+                    <field name="is_colour" options="{'no_create': True}" invisible="1"/>
+                    <field name="is_other" options="{'no_create': True}" invisible="1"/>
+                </field>
+	            <!-- </xpath> -->
+            </field>
+        </record>
+</data>
+</odoo>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<record id="custom_attribute_tree_view" model="ir.ui.view">
+        <field name="name">product.attribute.tree</field>
+        <field name="model">product.attribute</field>
+        <field name="inherit_id" ref="product.attribute_tree_view"/>
+        <field name="arch" type="xml">
+        	<field name="name" position="before">
+                <field name="type_variant" required="1"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="custom_product_attribute_view_form" model="ir.ui.view">
+        <field name="name">product.attribute.form</field>
+        <field name="model">product.attribute</field>
+        <field name="inherit_id" ref="product.product_attribute_view_form"/>
+        <field name="arch" type="xml">
+        	<xpath expr="//group/group[@name='main_fields']" position="inside">
+                <label for="type_variant" string="Type"/>
+                <field name="type_variant" nolabel="1" required="1"/>
+            </xpath>          
+        </field>
+    </record>
+    <record id="custom_product_attribute_line_form" model="ir.ui.view">
+        <field name="name">product.attribute.line.form</field>
+        <field name="model">product.attribute.line</field>
+        <field name="inherit_id" ref="product.product_attribute_line_form"/>
+        <field name="arch" type="xml">
+           	<xpath expr="//group[@name='main_field']" position="inside">
+            	<label for="type_variant" string="Type" required="1"/>
+                <field name="type_variant" nolabel="1" required="1"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

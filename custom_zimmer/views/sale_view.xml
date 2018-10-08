@@ -16,6 +16,12 @@
                 <xpath expr="//button[@name='action_cancel']" position="before">
                     <button name="action_create_task" string="Request Pro-Forma Invoice" type="object" states='sent,sale'/>
                 </xpath>
+                <xpath expr="//button[@name='action_confirm' and @states='sent']" position="attributes">
+                    <attribute name="groups">account.group_account_invoice</attribute>
+                </xpath>
+                <xpath expr="//button[@name='action_confirm' and @states='draft']" position="attributes">
+                    <attribute name="groups">account.group_account_invoice</attribute>
+                </xpath>
                 <field name="user_id" position="before">
                     <field name="send_quotation"/>
                 </field>

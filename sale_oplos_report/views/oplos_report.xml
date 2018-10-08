@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- QWeb Reports -->
+     <record id="paperformat_lowmargin" model="report.paperformat">
+        <field name="name">A4 low margin</field>
+        <field name="default" eval="True"/>
+        <field name="format">A4</field>
+        <field name="page_height">0</field>
+        <field name="page_width">0</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">5</field>
+        <field name="margin_bottom">5</field>
+        <field name="margin_left">5</field>
+        <field name="margin_right">5</field>
+        <field name="header_line" eval="False"/>
+        <field name="header_spacing">0</field>
+        <field name="dpi">80</field>
+    </record>
+    <record id="paperformat_a4_custom" model="report.paperformat">
+        <field name="name">A4 Custom</field>
+        <field name="default" eval="True"/>
+        <field name="format">A4</field>
+        <field name="page_height">0</field>
+        <field name="page_width">0</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">5</field>
+        <field name="margin_bottom">25</field>
+        <field name="margin_left">5</field>
+        <field name="margin_right">5</field>
+        <field name="header_line" eval="False"/>
+        <field name="header_spacing">0</field>
+        <field name="dpi">80</field>
+    </record>
+    <!-- <report 
+        id="oplos_faktur_pajak"
+        model="account.invoice"
+        string="Faktur Pajak"
+        report_type="qweb-pdf"
+        name="sale_oplos_report.report_faktur_pajak"
+        file="sale_oplos_report.report_faktur_pajak"
+        attachment_use="True"
+        attachment="(object.state in ('open','paid')) and ('INV'+(object.number or '').replace('/','')+'.pdf')"
+        paperformat="sale_oplos_report.paperformat_lowmargin"/> -->
+     <report 
+        id="oplos_faktur_pajak"
+        model="account.invoice"
+        string="Faktur Pajak"
+        report_type="qweb-pdf"
+        name="sale_oplos_report.report_faktur_pajak"
+        file="sale_oplos_report.report_faktur_pajak"
+        paperformat="sale_oplos_report.paperformat_lowmargin"/>
+    <report 
+        id="oplos_report_proforma"
+        model="sale.order"
+        string="Proforma Invoice"
+        report_type="qweb-pdf"
+        name="sale_oplos_report.report_proforma"
+        file="sale_oplos_report.report_proforma"
+        paperformat="sale_oplos_report.paperformat_lowmargin"/>
+
+    
+    <report 
+        id="account.account_invoices"
+        model="account.invoice"
+        string="Invoices"
+        report_type="qweb-pdf"
+        name="account.report_invoice"
+        file="account.report_invoice"
+        attachment_use="True"
+        attachment="(object.state in ('open','paid')) and ('INV'+(object.number or '').replace('/','')+'.pdf')"
+        paperformat="sale_oplos_report.paperformat_a4_custom"/>
+
+           
+    </data>
+</odoo>

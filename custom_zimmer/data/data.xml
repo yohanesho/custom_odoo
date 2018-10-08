@@ -1,74 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <data noupdate="1">
-        <record id="sale.mail_template_data_notification_email_sale_order" model="mail.template">
-            <field name="body_html"><![CDATA[<html>
-                <head></head>
-                % set record = ctx.get('record')
-                % set company = record and record.company_id or user.company_id
-                <body style="margin: 0; padding: 0;">
-                <table border="0" width="100%" cellpadding="0" bgcolor="white" style="padding: 20px; background-color: white; border-collapse:separate;" summary="o_mail_notification">
-                    <tbody>
-                      <!-- HEADER -->
-                      <tr>
-                        <td align="center" style="min-width: 590px;">
-                          <table width="590" border="0" cellpadding="0" bgcolor="#bcbbbb" style="min-width: 590px; background-color: #bcbbbb; border-collapse:separate;">
-                            <tr>
-                                <td colspan="2" style="height: 40px; background-color: #0e6031; vertical-align: top"/>
-                            </tr>
-                            <tr>
-                              <td valign="middle" style="padding-top:8px; padding-left:20px; padding-right:20px; padding-bottom:20px">
-                                  <span style="font-size:20px; color:white; font-weight: bold;">
-                                      <span style="color=black;font-size: 18px; font-weight:bold">
-                                        ${record.state in ('draft', 'sent') and 'Quotation' or 'Order'}
-                                        <br/>${record.name}
-                                        <br/>${record.client_order_ref}
-                                    </span>
-                                  </span>
-                              </td>
-                              <td valign="middle" align="right">
-                                  <img src="/logo.png?company=${company.id}" style="padding: 0px; margin: 0px; height: auto; width: 80px;" alt="${company.name}">
-                              </td>
-                            </tr>
-                          </table>
-                        </td>
-                      </tr>
+    <record id="sale.mail_template_data_notification_email_sale_order" model="mail.template">
+        <field name="body_html"><![CDATA[<html>
+            <head></head>
+            % set record = ctx.get('record')
+            % set company = record and record.company_id or user.company_id
+            <body style="margin: 0; padding: 0;">
+            <table border="0" width="100%" cellpadding="0" bgcolor="white" style="padding: 20px; background-color: white; border-collapse:separate;" summary="o_mail_notification">
+                <tbody>
+                  <!-- HEADER -->
+                  <tr>
+                    <td align="center" style="min-width: 590px;">
+                      <table width="590px">
+                        <tr>
+                            <td colspan="2" style="height: 16px; background-color: darkred; vertical-align: top"/>
+                        </tr>
+                        <tr>
+                          <td valign="middle" style="padding-top:8px; padding-left:20px; padding-right:20px; padding-bottom:20px">
+                            <img src="/logo.png?company=${company.id}" style="padding: 0px; margin: 0px; height: auto; width: 120px;" alt="${company.name}">
+                          </td>
+                          <td valign="middle" align="right">
+                            <p style="font-size: 12px">
+                                <span style="font-weight: bold; font-size: 12px;">${company.name}</span><br/>
+                                <span>${company.street}</span><br/>
+                                <span>${company.street2}</span><br/>
+                                <span>${company.city} </span><span>${company.state_id} - </span><span>${company.zip}</span><br/>
+                                <span>${company.country_id}</span><br/>
+                                <span>Phone: </span><span>${company.phone} / </span><span>${company.fax}</span><br/>
+                                <span>Website: </span><span>${company.website}</span>
+                            </p>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                  
 
-                      <!-- CONTENT -->
-                      <tr>
-                        <td align="center" style="min-width: 590px;">
-                          <table width="590" border="0" cellpadding="0" bgcolor="#dbdbda" style="min-width: 590px; background-color: #dbdbda; border-collapse:separate;">
-                            <tbody>
-                              <td valign="top" style="font-family:Arial,Helvetica,sans-serif; font-size: 14px; padding: 20px; ">
-                                ${object.body | safe}
-                              </td>
-                            </tbody>
-                          </table>
-                        </td>
-                      </tr>
+                  <!-- CONTENT -->
+                  <tr>
+                    <td align="center" valign="top" style="font-family:Arial,Helvetica,sans-serif; font-size: 14px; padding-left: 20px; padding-right: 20px; padding-bottom: 20px;">
+                      <div style="padding: 0px; width: 590px;">
+                          <div style="width: 405px;border-bottom: 20px solid darkred;border-left: 0px solid transparent;border-right: 20px solid transparent;position: absolute;"></div>
+                          <div style="float: right !important;width: 200px;border-top: 20px solid darkgreen;border-right: 0px solid transparent;border-left: 20px solid transparent;position: absolute;margin-left: 390px;"></div>
+                          <div style="margin-bottom: 20px; float: right !important;width: 186px;margin-top:15px;border-top: 3px solid #E9F6E9;border-right: 0px solid transparent;border-left: 3px solid transparent;position: absolute;margin-left: 404px;"></div>
+                          <div style="text-align: left; padding-top:20px">
+                            ${object.body | safe}
+                          </div>
+                      </div>
+                    </td>
+                  </tr>
 
-                      <!-- FOOTER -->
-                      <tr>
-                        <td align="center" style="min-width: 590px;">
-                          <table width="590" border="0" cellpadding="0" bgcolor="#0e6031" style="min-width: 590px; background-color: #0e6031; padding: 20px; border-collapse:separate;">
-                            <tr>
-                              <td align="center">
-                                <a href="http://zimmer-rattan.com/" target="_blank">www.Zimmer-Rattan.com</a>.
-                              </td>
-                            </tr>
-                          </table>
-                        </td>
-                      </tr>
-                    </tbody>
-                </table>
-                </body>
-                </html>
-            ]]></field>
-        </record>
+                  <!-- FOOTER -->
+                  <tr>
+                    <td align="center" style="min-width: 590px;">
+                      <div style="width: 590px; text-align: left;">
+                        <div style="width: 58.3333%;border-bottom: 8px solid darkgreen; border-left: 0px solid transparent; border-right: 8px solid transparent;"/>
+                        <div style="width: 83.3333%; margin-top:4px; border-bottom: 10px solid darkgreen; border-left: 0px solid transparent; border-right: 10px solid transparent;"/>
+                        <div style="width: 100%; margin-top:4px; height: 20px; background-image: none; background-color: darkred;"/>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+            </table>
+            </body>
+            </html>
+        ]]></field>
+    </record>
 
-        <record id="sale.email_template_edi_sale" model="mail.template">
-            <field name="partner_to">${object.partner_id.id},${object.company_id.partner_id.id}</field>
-            <field name="body_html"><![CDATA[
+    <record id="sale.email_template_edi_sale" model="mail.template">
+        <field name="partner_to">${object.partner_id.id},${object.company_id.partner_id.id}</field>
+        <field name="body_html"><![CDATA[
 % set company = record and record.company_id or user.company_id
 <p>Dear ${object.partner_id.display_name} <i>${object.partner_id.default_code}</i>,</p>
 <p>Here is your order <b>${object.name} </b>(with reference: ${object.client_order_ref}) amounting in <b>${object.amount_total} </b>from Zimmer Rattan Indonesia.</p>
@@ -76,10 +77,11 @@
 <p>Please remit payment at your earliest convenience.</p>
 <p>Thank you.</p>
 <p><br></p>
-<p><font style="font-size: 11px;">PS: Get a monthly </font><font style="font-size: 11px;" class="text-gamma">Trending Furniture &amp; Decorating Tips</font><font style="font-size: 11px;"> directly from <b>Our Expert Consultant ${object.user_id.display_name}</b>, go to&nbsp;</font><a href="http://zimmer-rattan.com/" target="_blank">Zimmer-Rattan.com</a>&nbsp;for FREE!</p>
+<p><font style="font-size: 11px;">PS: Get a monthly </font><font style="font-size: 11px;" class="text-gamma">Trending Furniture &amp; Decorating Tips</font><font style="font-size: 11px;"> from <b>Our Expert Consultant ${object.user_id.display_name}</b>, go to&nbsp;</font><a href="http://zimmer-rattan.com/" target="_blank">Zimmer-Rattan.com</a>&nbsp;for FREE!</p>
 <p><br></p>
 <p>with ZIMMERing regards,</p><p><b><font style="font-size: 14px;" class="text-delta">${object.user_id.display_name}</font></b></p>
-<p><b><font style="font-size: 12px;" class="text-delta">Business Development Manager</font></b></p>
+<p><b><font style="font-size: 12px;" class="text-delta">Furnising &amp; Consultant Manager</font></b></p>
+<p><img src="'data:image/png;base64,%s' % object.user_id.image" style="padding: 0px; margin: 0px; height: auto; width: 80px;"></p>
 <p><font style="font-size: 12px;" class="text-black">Mobile/Whatsapp: ${object.user_id.partner_id.mobiile}</font></p>
 <p><font style="font-size: 12px;" class="text-black">E-mail: <a href="mailto:${object.user_id.partner_id.email}" target="_blank"></a></font></p>
 <p><font style="font-size: 12px;" class="text-black">Website:&nbsp;</font><a href="http://zimmer-rattan.com/" data-original-title="" title="">www.zimmer-rattan.com</a></p>
@@ -94,8 +96,8 @@
 <p><a href="mailto:sales@zimmer-rattan.com"><br></a><b>ZIMMER RATTAN INDONESIA</b></p><p>Since 2011 becoming Partner of 2,800 Projects, Trusted by 5<span style="color: rgb(34, 34, 34); font-family: arial, sans-serif; font-size: small; font-style: initial; font-variant-ligatures: initial; font-variant-caps: initial; font-weight: initial;">★ Hotels, Apartments, Luxury Houses and Villas.</span><br><br></p>
 <p><a href="http://zimmer-rattan.com/"><font class="text-black">Zimmer-Rattan.com</font></a>&nbsp;is Indonesia's <font class="text-gamma"><b>Leading Manufacturer</b> </font><font class="text-black">for</font><font class="text-gamma"> <b>Outdoor Furniture</b> </font><font class="text-black">and </font><font class="text-gamma"><b>Pioneer of Zimmer Smart Warranty</b> </font><font class="text-black">that is capable giving </font><font class="text-gamma"><b>10-YEAR Warranty</b></font><font class="text-black">, founded by CEO Evan Hiumawan, B.Sc., achieved global exporting to more than 12 countries at the age of 19.</font><br></p>
 ]]></field>
-        </record>
-
+    </record>
+    <data noupdate="1">
         <record id="project_stage_0" model="project.task.type">
             <field name="sequence">1</field>
             <field name="name">To Do</field>

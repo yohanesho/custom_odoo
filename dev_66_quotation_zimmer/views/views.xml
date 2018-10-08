@@ -1,0 +1,192 @@
+<odoo>
+  <data>
+    <report
+      id="dev_66_quotation_zimmer_menu"
+      model="sale.order"
+      string="Quotation Zimmer"
+      report_type="qweb-pdf"
+      name="dev_66_quotation_zimmer.report_quotation"
+      file="dev_66_quotation_zimmer.report_quotation"
+      />
+
+      <!-- Template print all -->
+      <template id="report_quotation">
+        <t t-set="var_count" t-value="1"/>
+        <t t-foreach="docs" t-as="o">
+          <span t-esc="var_count" t-if="var_count == '1'">
+          </span>
+          <t t-call="dev_66_quotation_zimmer.report_quotation_document"></t>
+          <t t-set="var_count" t-value="var_count+1"/>
+        </t>
+      </template>
+
+      <template id="report_quotation_document">
+        <t t-set="o" t-value="o.with_context({'lang':o.partner_id.lang})"></t>
+        <div class="page">
+          <link rel="stylesheet" href="/dev_66_quotation_zimmer/static/src/css/style.css"></link>
+          <div id="fak_template">
+            <div id="fak_header">
+              <table style="width: 100%;" >
+                        <tr>
+                            <td style="width: 32%; border-left: 0px; border-right: 0px; border-top: 0px">
+                              <img t-if="o.company_id.logo" t-att-src="'data:image/png;base64,%s' % o.company_id.logo" style="width:80%; height:75px;"/>
+                            </td>
+                            <td style="width: 43%; border-left: 0px; border-right: 0px; border-top: 0px">
+                                <b><span t-field="o.company_id.name" style="font-size: 15pt;"/></b>
+                                    <br/><span t-field="o.company_id.street"/>
+                                          <span t-field="o.company_id.street2"/>
+                                    <br/><span t-field="o.company_id.city"/>
+                                    <br/><span t-field="o.company_id.zip"/>
+                                        <span> - </span>
+                                        <span t-field="o.company_id.country_id.name"/>
+                                  <br/><i class="fa fa-phone"/> <i class="fa fa-whatsapp"/> <span t-field="o.company_id.phone"/> <span t-field="o.company_id.fax"/></td>
+                            <td style="width: 25%; border-left: 0px; border-right: 0px; border-top: 0px;"><b style=" font-size: 16pt;"><font color=" #CD853F">QUOTATION</font></b>
+                                <br/>Att : <span t-field="o.partner_id.child_ids.title"/> <span t-field="o.partner_id.name"/> 
+                                <br/><t>Date : <span t-field="o.date_order" t-field-options="{&quot;format&quot;: &quot;dd-MM-yyyy&quot;}"/> </t>
+                            </td>
+                          </tr>
+                      </table>
+                    </div>
+            <div id="fak_body">
+                    <br/><br/><br/><br/><br/><br/><table class="table table_bergaris">
+                    
+                    <tr>
+                        <table class="table" style="border-bottom: 1px solid #000; border-right: 1px solid #000; margin-top: -10px;">
+                          <tr>
+                            <th style="border: 1px solid #000; text-align:center; width: 5%;">No</th>
+                            <th style="border: 1px solid #000; text-align:center; width: 28%;">Description</th>
+                            <th style="border: 1px solid #000; text-align:center; width: 10%;">Images</th>
+                            <th style="border: 1px solid #000; text-align:center; width: 9%;">QTY</th>
+                            <th style="border: 1px solid #000; text-align:center; width: 16%;">Price</th>
+                            <th style="border: 1px solid #000; text-align:center; width: 16%;">Price After Discount</th>
+                            <th style="border: 1px solid #000; text-align:center; width: 16%;">Total</th>
+                          </tr>
+                          <t t-set="no_increment" t-value="1"/>
+                          <tr t-foreach="o.order_line" t-as="sp_detail">
+                            <td style="text-align: center; border-bottom: 0px solid #000;border-left: 1px solid #000; border-right: 1px solid #000;">
+                                <span t-esc="no_increment"/>
+                            </td>
+                            <td>
+                              <!-- <span t-esc="sp_detail.product_id.name"></span> -->
+                              <!-- <span t-esc="sp_detail.product_id.attribute_value_ids[0].name"></span> -->
+                              <span t-esc="sp_detail.name"></span>
+                            </td>
+                            <td>
+                              <span t-field="sp_detail.product_id.image_small"
+                        t-field-options='{"widget": "image", "class": "img-rounded"}' style="max-height: 25px" />
+                            </td>   
+                            <td>
+                              <span t-esc="int(float(sp_detail.product_uom_qty))"></span>
+                              <span t-esc="sp_detail.product_id.uom_id.name"></span>
+                            </td>
+                            <td style="text-align: right;">
+                              <span t-esc="sp_detail.product_id.currency_id.symbol">.</span>
+                              <span t-esc="'{:,}'.format(int(float(sp_detail.price_unit)))"></span>
+                            </td>
+                            <td style="text-align: right;">
+                              <span t-esc="sp_detail.product_id.currency_id.symbol">.</span>
+                              <span t-esc="'{:,}'.format(int(float(sp_detail.price_unit - (sp_detail.price_unit * sp_detail.discount /100))))"></span>
+                            </td>
+                            <td style="text-align: right;">
+                              <span t-esc="sp_detail.product_id.currency_id.symbol">.</span>
+                              <span t-esc="'{:,}'.format(int(float(sp_detail.price_subtotal)))"></span>
+                            </td>
+                            <t t-set="no_increment" t-value="no_increment+1"/>
+                          </tr>
+                          <tr>
+                            <td colspan="5" rowspan="8" style="border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; font-size: 8pt;">
+                              <span>Ketentuan
+                                <br/>1. Waktu produksi 30 hari kerja dari tanggal Commitment Payment.
+                                <br/>2. Harga sudah termasuk biaya pengiriman JADETABEK.
+                                <br/>3. Pembayaran Commitment Payment WAJIB dilakukan sebelum produksi, dan pelunasan wajib dilakukan sebelum pengiriman.
+                                <br/><font color="#ffffff">3. </font>- Jika melalui transfer, pastikan hanya ke rekening dibawah ini:
+                                <br/><font color="#ffffff">3. - </font>BCA cabang Ruko Artha Gading ; Atas Nama : Shirley Stephanie ; No Acc: 84000 92835
+                                <br/><font color="#ffffff">3. - </font>Bank Mandiri Cabang Graha Rekso ; Atas Nama : Shirley Stephanie ; No Acc : 1250010878445
+                                <br/><font color="#ffffff">3. </font>- jika pembayaran melalui cash atau yang lannya, wajib menghubungi via WA ke Bp. Evan / Ibu Shirley di nomor telepon 
+                                <br/><font color="#ffffff">3. - </font>083 88888 149 / 0813 833 47343
+                                <br/>4. Jumlah Commitment Payment adalah sebesar 50% dari total pembelian.
+                                <br/>5. Pelunasan Commitment Payment adalah terhitung 7 hari setelah tanggal pemesanan. 
+                                <br/><font color="#ffffff">3. </font>Apabila melewati tanggal jatuh tempo, maka pembelian dianggap BATAL.
+                                <br/>6. Setiap barang pesanan yang sudah diinformasikan selesai produksi wajib dilakukan pelunasan.
+                                <br/><font color="#ffffff">3. </font>Namun jika belum melakukan pelunasan, maka akan dikenakan biaya penyimpanan sebesar 1% perbulan dari total penjualan.
+                                <br/>7. Barang akan dkirim setelah ada bukti transfer dan uang telah dinyatakan telah masuk oleh pihak Bank terkait.</span>
+                            </td>
+                            <td style="border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; text-align: right;">
+                                <span>Subtotal</span>
+                            </td>
+                            <td style="border-bottom: 1px solid #000; border-top: 1px solid #000; text-align:right;">
+                                <span t-esc="o.company_id.currency_id.symbol">.</span>
+                                <span t-esc="'{:,}'.format(int(float(o.amount_untaxed)))"/>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td style="border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; text-align:right;">
+                              <span>PPN 10%</span>
+                            </td>
+                            <td style="border-bottom: 1px solid #000; border-top: 1px solid #000; text-align:right;">
+                              <span t-esc="o.company_id.currency_id.symbol">.</span>
+                              <span t-esc="'{:,}'.format(int(float(o.amount_tax)))"/>  
+                            </td>
+                          </tr>
+                          <tr>
+                            <td style="border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; text-align:right;">
+                              <span>Total</span>
+                            </td>
+                            <td style="border-bottom: 1px solid #000; border-top: 1px solid #000; text-align:right;">
+                              <span t-esc="o.company_id.currency_id.symbol">.</span>
+                              <span t-esc="'{:,}'.format(int(float(o.amount_total)))"/>  
+                            </td>
+                          </tr>
+                          <tr>
+                            <td style="border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; text-align:right;">
+                              <span>CP After PPN 10%</span>
+                            </td>
+                            <td style="border-bottom: 1px solid #000; border-top: 1px solid #000; text-align:right;">
+                              <span t-esc="o.company_id.currency_id.symbol">.</span>
+                              <span t-esc="'{:,}'.format(int(float(o.amount_total * o.downpayment / 100)))"/>  
+                            </td>
+                          </tr>
+                          <tr>
+                            <td colspan="2" rowspan="3" style="border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000;">Amount in text :
+                              <span t-esc="o.amount_to_text(o.amount_total,o.company_id.currency_id)"/>
+                              <br/><br/><span t-field="o.company_id.city"/>, <span t-field="o.date_order" t-field-options="{&quot;format&quot;: &quot;dd-MM-yyyy&quot;}"/>
+                            </td>
+                          </tr>
+                        </table>
+                    </tr>
+                        <div style="float: left; margin-left: 700px;">
+                            <br/><b><font color="#ffffff">dddd</font> S.E.O</b>
+                            <br/><br/><br/><br/>
+                            <b><u>EVAN HIUMAWAN</u></b><br/>
+                        </div>
+                </table>
+                </div>
+        </div>
+      </div>
+  </template>
+
+  <!--create new paper format (A5) for this report-->
+  <record id="report_quotation_papperformat" model="report.paperformat">
+    <field name="name">Report Proforma Format</field>
+    <field name="default" eval="False"></field>
+    <field name="format">A4</field>
+    <field name="page_height">0</field>
+    <field name="page_width">0</field>
+    <field name="orientation">Portrait</field>
+    <field name="margin_top">4</field>
+    <field name="margin_bottom">4</field>
+    <field name="margin_left">4</field>
+    <field name="margin_right">4</field>
+    <field name="header_line" eval="False"></field>
+    <field name="header_spacing">35</field>
+    <field name="dpi">90</field>
+  </record>
+
+  <!--set this report to using the paper above-->
+  <record id="dev_66_quotation_zimmer_menu" model="ir.actions.report.xml">
+    <field name="paperformat_id" ref="dev_66_quotation_zimmer.report_quotation_papperformat"></field>
+  </record>
+
+
+</data>
+</odoo>

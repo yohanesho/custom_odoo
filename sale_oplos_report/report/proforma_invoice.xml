@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<data>
+
+
+ <template id="report_proforma">
+          <t t-set="var_count" t-value="1"/>
+          <t t-foreach="docs" t-as="o">
+              <span t-esc="var_count" t-if="var_count == '1'">
+              </span>
+              <t t-call="sale_oplos_report.report_proforma_document"></t>
+              <t t-set="var_count" t-value="var_count+1"/>
+          </t>
+      </template>
+
+      <template id="report_proforma_document">
+          <t t-set="o" t-value="o.with_context({'lang':o.partner_id.lang})"></t>
+          <div class="page">            
+            <div id="fak_template">
+                <div id="fak_header">                  
+                  <div id="logo" style="text-align: left;">
+                       <img t-if="o.company_id.logo" t-att-src="'data:image/png;base64,%s' % o.company_id.logo" style="width:120px; height:100px;"/>
+                  </div>
+                </div>
+                <div id="fak_body">
+                    
+                <table class="table" style="margin-top: -10px;">
+                    <!-- <th style="font-size: 16pt text-align: center; border: 0px; background-color:#B0E0E6; width: 20px">PROFORMA INVOICE</th> -->
+                    <!-- <th style="border: 0px; background-color:#B0E0E6; width: 20px"></th> -->
+                    <tr >
+	                    <td colspan="2" style="border-color: white; font-size: 16pt text-align: center;"  class="text-center">PROFORMA INVOICE
+	                    </td>
+	                   
+	                </tr>
+                        <tr>
+		                  <td style="border-color: white; border-bottom: 0px;border-left: 0px; border-right: 0px; text-align: left;">Nomor : <span t-field="o.name"/></td>
+		                  <td style="border-color: white; border-bottom: 0px;border-left: 0px; border-right: 0px; text-align: left;">Tanggal : <span t-field="o.date_order" t-field-options="{&quot;format&quot;: &quot;dd-MM-yyyy&quot;}"/></td>
+		                </tr>
+		                <tr>
+		                  <td style="border-color: white; border-bottom: 0px;border-left: 0px; border-right: 0px; text-align: left;">Kepada : <span t-field="o.partner_id.name"/></td>
+		                  <td style="border-color: white; border-bottom: 0px;border-left: 0px; border-right: 0px; text-align: left;">Mata Uang: IDR - (Rupiah)</td>
+		                </tr>
+		                <tr>
+		                  <td style="border-color: white; border-bottom: 0px;border-left: 0px; border-right: 0px; text-align: left;">Alamat : <span t-field="o.partner_id.street"/>, <span t-field="o.partner_id.street2"/>, <span t-field="o.partner_id.city"/>, <span t-field="o.partner_id.zip"/></td>
+		                  <td style="border-color: white; border-bottom: 0px;border-left: 0px; border-right: 0px; text-align: left;"></td>
+		                </tr>
+		                
+		                <tr>
+		                  <td style="border-color: white; border-bottom: 0px;border-left: 0px; border-right: 0px; text-align: left;"></td>
+		                  <td style="border-color: white; border-bottom: 0px;border-left: 0px; border-right: 0px; text-align: left;"></td>
+		                </tr>
+                    
+                </table>
+
+                <table class="table" style="border-right: 1px solid #000; margin-top: -10px;">
+                  <tr>
+                    <th style="text-align: center; border: 1px solid #000; background-color:#B0E0E6; width: 20px">NO.</th>
+                    <th style="text-align: center; border: 1px solid #000; background-color:#B0E0E6; width: 90px">NAMA BARANG</th>
+                    <th style="text-align: center; border: 1px solid #000; background-color:#B0E0E6; width: 60px">QTY</th>
+                    <th style="text-align: center; border: 1px solid #000; background-color:#B0E0E6; width: 150px">HARGA</th>
+                    <th style="text-align: center; border: 1px solid #000; background-color:#B0E0E6; width: 150px">JUMLAH BRUTO</th>
+                    <th style="text-align: center; border: 1px solid #000; background-color:#B0E0E6; width: 50px">DISC</th>
+                    <th style="text-align: center; border: 1px solid #000; background-color:#B0E0E6; width: 150px">JUMLAH NETTO</th>
+                  </tr>
+                    <t t-set="no_increment" t-value="1"/>
+                    <t t-set="total_price" t-value="0"/>
+                    <tr t-foreach="o.order_line" t-as="inv_detail">
+                            <td style="text-align: center; border-bottom: 1px solid #000;border-left: 1px solid #000; border-right: 1px solid #000;">
+                              
+                                <span t-esc="no_increment"/>
+                            </td>
+                            
+                            <td t-if="not inv_detail.oplos_template_id" style="border-bottom: 1px solid #000;border-left: 1px solid #000; border-right: 1px solid #000; text-align: center;">
+                                <span t-esc="inv_detail.product_id.name"></span>
+                            </td>
+                            <td t-if="inv_detail.oplos_template_id" style="border-bottom: 1px solid #000;border-left: 1px solid #000; border-right: 1px solid #000; text-align: center;">
+                                <span t-esc="inv_detail.oplos_template_id.name"></span>
+                            </td>
+
+
+                            <td t-if="not inv_detail.oplos_template_id" style="border-bottom: 1px solid #000;border-left: 1px solid #000; border-right: 1px solid #000; text-align: center;">
+                                  <span t-esc="int(float(inv_detail.product_uom_qty))"></span>
+                                  <span t-esc="inv_detail.product_id.uom_id.name"></span>
+                            </td>
+                            <td t-if="inv_detail.oplos_template_id" style="border-bottom: 1px solid #000;border-left: 1px solid #000; border-right: 1px solid #000; text-align: center;">
+                                  <span t-esc="int(float(inv_detail.product_uom_qty))"></span>
+                                  <span t-esc="inv_detail.oplos_template_id.uom_id.name"></span>
+                            </td>
+
+                            <td t-if="not inv_detail.oplos_template_id" style="border-bottom: 1px solid #000;border-left: 1px solid #000; border-right: 1px solid #000; text-align: right;">
+                                <span t-esc="inv_detail.product_id.currency_id.symbol"></span>
+                                <span t-esc="'{:,}'.format(int(float(inv_detail.price_unit)))"></span>
+                            </td>
+
+                            <td t-if="not inv_detail.oplos_template_id" style="border-bottom: 1px solid #000;border-left: 1px solid #000; border-right: 1px solid #000; text-align: right;">
+                                <span t-esc="inv_detail.product_id.currency_id.symbol"></span>
+                                <span t-esc="'{:,}'.format(int(float(inv_detail.price_unit)))"></span>
+                            </td>
+
+                            <td t-if="inv_detail.oplos_template_id" style="border-bottom: 1px solid #000;border-left: 1px solid #000; border-right: 1px solid #000; text-align: right;">
+                                <span t-esc="inv_detail.product_id.currency_id.symbol"></span>
+                                <span t-esc="'{:,}'.format(int(float(inv_detail.oplos_template_id.list_price)))"></span>
+                            </td>
+
+                            <td t-if="inv_detail.oplos_template_id" style="border-bottom: 1px solid #000;border-left: 1px solid #000; border-right: 1px solid #000; text-align: right;">
+                                <span t-esc="inv_detail.product_id.currency_id.symbol"></span>
+                                <span t-esc="'{:,}'.format(int(float(inv_detail.oplos_template_id.list_price)))"></span>
+                            </td>
+
+                           <td style="border-bottom: 1px solid #000;border-left: 1px solid #000; border-right: 1px solid #000; text-align: center">
+                                <span t-esc="'{:,}'.format(int(float(inv_detail.discount)))"/>
+                                <!-- <span>%</span> -->
+                            </td>
+
+                            <td t-if="not inv_detail.oplos_template_id" style="border-bottom: 1px solid #000;border-left: 1px solid #000; border-right: 1px solid #000; text-align: right;">
+                                <span t-esc="inv_detail.product_id.currency_id.symbol"></span>
+                                <span t-esc="'{:,}'.format(int(float(inv_detail.price_subtotal)))"></span>
+                                 <t t-set="total_price" t-value="total_price + (inv_detail.price_subtotal)" />
+                            </td>
+                            <td t-if="inv_detail.oplos_template_id" style="border-bottom: 1px solid #000;border-left: 1px solid #000; border-right: 1px solid #000; text-align: right;">
+                                <span t-esc="inv_detail.product_id.currency_id.symbol"></span>
+                                <span t-esc="'{:,}'.format(int(float(inv_detail.oplos_template_id.list_price * inv_detail.product_uom_qty - inv_detail.discount)))"></span>
+                                 <t t-set="total_price" t-value="total_price + (inv_detail.oplos_template_id.list_price * inv_detail.product_uom_qty - inv_detail.discount) "/>
+                            </td>
+
+                            <t t-set="no_increment" t-value="no_increment+1"/>
+                      </tr>
+                  <tr>
+                  	<td colspan="2"></td>
+                    <td colspan="4" style="border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; background-color:#B0E0E6; text-align: right;">
+                      <span>Subtotal</span>
+                    </td>
+                      <td style="border-bottom: 1px solid #000; border-top: 1px solid #000; text-align:right;">
+                      <span t-esc="o.company_id.currency_id.symbol"></span>
+                      <!-- <span t-esc="'{:,}'.format(int(float(o.amount_untaxed)))"/> -->
+                      <span t-esc="'{:,}'.format(int(float(total_price)))"/>
+                    </td>
+                  </tr>
+                  <tr>
+                  	<td colspan="2"></td>
+                    <td colspan="4" style="border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; background-color:#B0E0E6; text-align: right;">
+                      <span>Dasar Pengenaan Pajak</span>
+                    </td>
+                      <td style="border-bottom: 1px solid #000; border-top: 1px solid #000; text-align:right;">
+                      <span t-esc="o.company_id.currency_id.symbol"></span>
+                      <!-- <span t-esc="'{:,}'.format(int(float(o.amount_untaxed)))"/> -->
+                      <span t-esc="'{:,}'.format(int(float(total_price)))"/>
+                    </td>
+                  </tr>
+                  <tr>
+                  	<td colspan="2"></td>
+                    <td colspan="4" style="border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; background-color:#B0E0E6; text-align:right;">
+                      <span>PPN 10%</span>
+                    </td>
+                    <td style="border-bottom: 1px solid #000; border-top: 1px solid #000; text-align:right;">
+                      <span t-esc="o.company_id.currency_id.symbol"></span>
+                      <span t-esc="'{:,}'.format(int(float(o.amount_tax)))"/>  
+                    </td>
+                  </tr>
+                  <tr>
+                  	<td colspan="2"></td>
+                    <td colspan="4" style="border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; background-color:#B0E0E6; text-align: right;">
+                      <span>Biaya Pengiriman</span>
+                    </td>
+                      <td style="border-bottom: 1px solid #000; border-top: 1px solid #000; text-align:right;">
+                      <!-- <span t-esc="o.company_id.currency_id.name"></span>
+                      <span t-esc="'{:,}'.format(int(float(o.amount_untaxed)))"/> -->
+                    </td>
+                  </tr>
+                  <tr>
+                  	<td colspan="2"></td>
+                    <td colspan="4" style="border-left: 1px solid #000; border-top: 1px solid #000; border-bottom: 1px solid #000; background-color:#B0E0E6; text-align:right;">
+                      <span>Total Tagihan</span>
+                    </td>
+                    <td style="border-bottom: 1px solid #000; border-top: 1px solid #000; text-align:right;">
+                      <span t-esc="o.company_id.currency_id.symbol"></span>
+                      <!-- <span t-esc="'{:,}'.format(int(float(o.amount_total)))"/>   -->
+                      <span t-esc="'{:,}'.format(int(float(total_price + o.amount_tax)))"/>
+                    </td>
+                  </tr>
+                </table>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                
+                  <!-- <div>
+                    <div>No. Rekening :
+                    </div>
+                  </div>
+                  <div style="float: left; margin-left: 700px;">
+                        <br/>PT. CITI INTERIORINDO
+                        <br/><br/><br/><br/>
+                        ( SANTI TIRTARIANDI )<br/>
+                    </div> -->
+
+            </div>
+          </div>
+        </div>
+      </template>
+
+      </data>
+  </odoo>

@@ -1,0 +1,140 @@
+<odoo>
+  <data>
+      <report
+        id="dev_60_surat_jalan_zimmer_menu"
+        model="stock.picking"
+        string="Surat Jalan Zimmer"
+        report_type="qweb-pdf"
+        name="dev_60_surat_jalan_zimmer.report_delivery"
+        file="dev_60_surat_jalan_zimmer.report_delivery"
+      />
+
+    <!-- Template print all -->
+      <template id="report_delivery">
+          <t t-set="var_count" t-value="1"/>
+          <t t-foreach="docs" t-as="o">
+              <span t-esc="var_count" t-if="var_count == '1'">
+              </span>
+              <t t-call="dev_60_surat_jalan_zimmer.report_delivery_document"></t>
+              <t t-set="var_count" t-value="var_count+1"/>
+          </t>
+      </template>
+
+      <template id="report_delivery_document">
+          <t t-set="o" t-value="o.with_context({'lang':o.partner_id.lang})"></t>
+          <div class="page">
+            <link rel="stylesheet" href="/dev_60_surat_jalan_zimmer/static/src/css/style.css"></link>
+            <div id="fak_template">
+                <div id="fak_header">
+
+                  <table style="width: 100%;" >
+                        <tr>
+                          <td style="width: 23%; border-left: 0px; border-right: 0px; border-top: 0px">
+                            <img t-if="o.company_id.logo" t-att-src="'data:image/png;base64,%s' % o.company_id.logo" style="width:80%; height:75px;"/></td>
+                          <td style="width: 40%; border-left: 0px; border-right: 0px; border-top: 0px">
+                                  <b><span t-field="o.company_id.name" style="font-size: 16pt;"/></b>
+                                  <br/><span t-field="o.company_id.street"/><span> </span><span t-field="o.company_id.street2"/>
+                                <br/><span t-field="o.company_id.city"/>
+                                <br/><span t-field="o.company_id.zip"/>
+                                      <span> - </span>
+                                      <span t-field="o.company_id.country_id.name"/>
+                                <br/><span t-field="o.company_id.phone"/> <span t-field="o.company_id.fax"/></td>
+                          <td style="width: 28%; border-left: 0px; border-right: 0px; border-top: 0px"><b><font color=" #CD853F">SURAT JALAN</font></b>
+                            <br/><t>No. Surat Jalan : <span t-field="o.name"/></t>
+                            <br/><t>Tanggal Pengiriman : <span t-field="o.min_date" t-field-options="{&quot;format&quot;: &quot;dd-MM-yyyy&quot;}"/></t>
+                            <br/><t>No. SPK :</t>
+                            <br/><t>Pengiriman Via : </t></td>
+                          </tr>
+                      </table> 
+                </div>
+
+                <div id="fak_body">
+                    <br/><br/><br/><br/><br/><br/><br/>
+                    <table class="table table_bergaris">
+                      <table style="width: 100%; float:left;">
+                        <tr>
+                          <th style="width: 50%; border-left: 1px solid #000; border-right: 1px solid #000; border-top: 1px solid #000; border-bottom: 0px;">Kepada Yth:</th>
+                          <th style="width: 50%; border-left: 1px solid #000; border-right: 1px solid #000; border-top: 1px solid #000; border-bottom: 0px;"><font>Dikirim Kepada</font></th>
+                        </tr>
+                        <tr>
+                          <td style="width: 50%; border-left: 1px solid #000; border-right: 1px solid #000; border-top: 0px; border-bottom: 1px solid #000;">
+                            <span t-field="o.partner_id"/><br/><br/><br/></td>
+                          <td style="width: 50%; border-left: 1px solid #000; border-right: 1px solid #000; border-top: 0px; border-bottom: 1px solid #000;">
+                            
+                            <t t-set="get_address_fn" t-value="o.get_address_from_so()"/>
+                            <t t-foreach="get_address_fn" t-as="address">
+                              <span t-esc="address['customer_address']"/>
+                            </t>
+
+
+                          </td>
+                        </tr>
+                      </table><br/><br/><br/><br/><br/>
+                    
+                    <tr>
+                        <table class="table" style="border-bottom: 1px solid #000; border-right: 1px solid #000; margin-top: -10px;">
+                          <tr>
+                            <th style="border: 1px solid #000; text-align: center;">No</th>
+                            <th style="border: 1px solid #000; text-align: center;">Deskripsi Barang</th>
+                            <th style="border: 1px solid #000; text-align: center;">Material</th>
+                            <th style="border: 1px solid #000; text-align: center;">QTY</th>
+                          </tr>
+                          <t t-set="no_increment" t-value="1"/>
+                          <tr t-foreach="o.move_lines" t-as="sp_detail">
+                            <td style="text-align: center; border-bottom: 0px solid #000;border-left: 1px solid #000; border-right: 1px solid #000;">
+                                <span t-esc="no_increment"/>
+                            </td>
+                            <td>
+                              <span t-esc="sp_detail.product_id.name"></span>
+                              <span t-esc="sp_detail.product_id.attribute_value_ids.name"></span>
+                            </td>
+                            <td>
+                              <span></span>
+                            </td>
+                            <td>
+                              <span t-esc="int(float(sp_detail.product_uom_qty))"></span>
+                              <span t-esc="sp_detail.product_id.uom_id.name"></span>
+                            </td>
+                            <t t-set="no_increment" t-value="no_increment+1"/>
+                          </tr>
+                        </table>
+                    </tr>
+                </table>
+                </div>
+                  <table class="table table_bergaris">
+                      <tr>
+                        <th style="border: 1px solid #000; text-align: center;">Penerima<br/><br/><br/><br/><br/><br/></th>
+                        <th style="border: 1px solid #000; text-align: center;">Pengirim<br/><br/><br/><br/><br/>No. kendaraan:</th>
+                        <th style="border: 1px solid #000; text-align: center;">Mengeluarkan</th>
+                        <th style="border: 1px solid #000; text-align: center;">Mengetahui</th>
+                      </tr>
+                  </table>
+            </div>
+          </div>
+      </template>
+
+          <!--create new paper format (A5) for this report-->
+        <record id="report_delivery_papperformat" model="report.paperformat">
+            <field name="name">Report Faktur Format</field>
+            <field name="default" eval="False"></field>
+            <field name="format">A4</field>
+            <field name="page_height">0</field>
+            <field name="page_width">0</field>
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">4</field>
+            <field name="margin_bottom">4</field>
+            <field name="margin_left">4</field>
+            <field name="margin_right">4</field>
+            <field name="header_line" eval="False"></field>
+            <field name="header_spacing">35</field>
+            <field name="dpi">90</field>
+        </record>
+
+        <!--set this report to using the paper above-->
+        <record id="dev_60_surat_jalan_zimmer_menu" model="ir.actions.report.xml">
+            <field name="paperformat_id" ref="dev_60_surat_jalan_zimmer.report_delivery_papperformat"></field>
+        </record>
+
+
+  </data>
+</odoo>

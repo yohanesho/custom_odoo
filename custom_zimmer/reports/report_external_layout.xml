@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <template id="external_layout_header_inherit" inherit_id="report.external_layout_header">
+            <xpath expr="div[@class='header']" position="replace">
+                <div class="header">
+                    <div class="row">
+                        <div style="width: 100%; height: 16px; background-image: none; background-color: darkred;"/>
+                        <div class="col-xs-3">
+                            <img t-if="company.logo" t-att-src="'data:image/png;base64,%s' % company.logo" style="max-height: 145px;"/>
+                        </div>
+                        <div class="col-xs-4 pull-right" name="company_address" style="margin-top: 8px;">
+                            <p style="font-size: 12px">
+                                <span t-field="company.name" style="font-weight: bold; font-size: 12px;" /><br/>
+                                <span t-field="company.street"/><br/>
+                                <span t-field="company.street2"/><br/>
+                                <span t-field="company.city"/> <span t-field="company.state_id"/> - <span t-field="company.zip"/><br/>
+                                <span t-field="company.country_id"/><br/>
+                                <span>Phone: </span><span t-field="company.phone"/> / <span t-field="company.fax"/><br/>
+                                <span>Website: </span><span t-field="company.website"/>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+        </template>
+
+        <template id="external_layout_footer_inherit" inherit_id="report.external_layout_footer">
+            <xpath expr="div[@class='footer']" position="replace">
+                <div class="footer">
+                    <ul t-if="False" class="list-inline" name="financial_infos">
+                        <li t-if="company.vat">TIN: <span t-field="company.vat"/></li>
+                    </ul>
+                    <div class="row">
+                        <div class="col-xs-7" style="border-bottom: 8px solid darkgreen; border-left: 0px solid transparent; border-right: 8px solid transparent;"/>
+                        <div class="col-xs-10" style="margin-top:4px; border-bottom: 10px solid darkgreen; border-left: 0px solid transparent; border-right: 10px solid transparent;"/>
+                        <div class="col-xs-12" style="margin-top:4px; height: 16px; background-image: none; background-color: darkred;"/>
+                    </div>
+                </div>
+            </xpath>
+        </template>
+    </data>
+</odoo>

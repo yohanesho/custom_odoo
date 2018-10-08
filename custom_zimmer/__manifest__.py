@@ -19,8 +19,11 @@
     # any module necessary for this one to work correctly
     'depends': [
         'base', 
+        'account',
         'sale',
         'project',
+        'product',
+        'dev_57_so_customer_address',
     ],
 
     # always loaded
@@ -29,5 +32,9 @@
         'data/data.xml',
         'views/company_view.xml',
         'views/sale_view.xml',
+        'views/account_invoice_view.xml',
+        'reports/report_sale_order.xml',
+        'reports/report_invoice.xml',
+        'reports/report_external_layout.xml',
     ],
 }

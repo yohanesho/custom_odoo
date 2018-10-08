@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="custom_invoice_form" model="ir.ui.view">
+            <field name="name">Customize Invoice Form</field>
+            <field name="model">account.invoice</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="account.invoice_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//h1[@class='mt0']" position="replace">
+                    <h1 class="mt0">
+                        <field name="invoice_number" />
+                    </h1>
+                </xpath>
+            </field>
+        </record>
+        
+        <record id="custom_invoice_tree" model="ir.ui.view">
+            <field name="name">Customize Invoice Tree</field>
+            <field name="model">account.invoice</field>
+            <field name="type">tree</field>
+            <field name="inherit_id" ref="account.invoice_tree" />
+            <field name="arch" type="xml">
+                <field name="number" position="before">
+                    <field name="invoice_number" />
+                </field>
+            </field>
+        </record>
+
+        <record id="custom_view_move_tree" model="ir.ui.view">
+            <field name="name">Customize Account Move Tree</field>
+            <field name="model">account.move</field>
+            <field name="type">tree</field>
+            <field name="inherit_id" ref="account.view_move_tree" />
+            <field name="arch" type="xml">
+                <field name="name" position="before">
+                    <field name="invoice_number" />
+                </field>
+            </field>
+        </record>
+    </data>
+</odoo>

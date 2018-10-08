@@ -1,0 +1,44 @@
+  #fak_template{
+    width:100%;
+    height: auto;
+/*    border: 1px solid #000;*/
+  }
+
+  #fak_header{
+    width: 100%;
+    height: 15%;
+/*    border: 1px solid #000; */
+
+  }
+
+ #logo{
+    float: right;
+    width: 15%;
+    margin: 0 100px;
+
+ }
+
+ #company_desc{
+    float: left;
+ }
+
+ #fak_body{
+  float: left;
+ }
+
+th{
+    border: 1px solid #000;
+ }
+
+.table_bergaris td{
+    border: 1px solid #000;
+ }
+
+ table td + td{
+    border-left: 1px solid #000;
+ }
+
+ #sign-left{
+    float: left;
+    margin-right: 450px;
+    margin-left: 20px;
