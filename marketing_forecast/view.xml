@@ -1,0 +1,197 @@
+<odoo>
+    <data>
+        <!-- Action menu marketing Forecast -->
+		<record id="action_marketing_forecast_list" model="ir.actions.act_window">
+			<field name="name">Marketing Forecast</field>
+			<field name="res_model">marketing_forecast.marfor</field>
+			<field name="view_mode">tree,form</field>
+			<field name="help" type="html">
+				<p class="oe_view_nocontent_create">
+					Click to add a Marketing forecast
+				</p>
+			</field>
+		</record>
+
+        <!-- list menu marketing forecast -->
+        <menuitem id="menu_marketing_forecast" name="Marketing Forecast" parent="purchase.menu_procurement_management" action="action_marketing_forecast_list" sequence="-1"/>
+
+        <!-- marketing forecast form -->
+        <record id="marketing_forecast_form" model="ir.ui.view">
+            <field name="name">marketing_forecast.marfor.form</field>
+            <field name="model">marketing_forecast.marfor</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Marketing Forecast Form">
+                    <header>
+                        <field name="state" widget="statusbar"></field> 
+                        <button string="New" type="workflow" name="btn_new" states="validated"></button>
+                        <button string="Validate" type="workflow" name="btn_validate" states="new"></button>
+                        <button string="Finalize" type="workflow" name="btn_finalize" states="validated"></button>
+                    </header>
+                    <sheet>
+                        Document Number
+                        <h2>
+                            <field name="doc_number"></field>
+                        </h2>
+                        <group>
+<!--
+                            <group>
+                                <field name="categ_id"></field>
+                            </group>
+-->
+                            <group>
+                                <field string="From" name="from_date"></field>
+                                <button string="Generate" type="object" name="btn_show_table" class="oe_highlight"/>
+                            </group>
+                            <group>
+                                <field string="To" name="to_date"></field>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Item List">
+                                <field name="product_ids">
+                                    <tree string="Item detail" editable="bottom" create="false">
+<!--
+                                        <field name="product_id"></field>
+-->
+                                        <field name="default_code" readonly="True"/>
+                                        <field name="name" readonly="True"/>
+                                        <field name="categ_id" readonly="True"/>
+                                        <field name="state" invisible="True"></field>
+                                        <field name="qty_forecast" attrs="{'readonly':[('state', 'in',['validated','finalized'])]}"/>
+                                        <field name="qty_produce" attrs="{'readonly':[('state','in',['new','finalized'])]}"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- marketing forecast tree -->
+        <record id="marketing_forecast_tree" model="ir.ui.view">
+            <field name="name">marketing_forecast.marfor.form</field>
+            <field name="model">marketing_forecast.marfor</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Marketing Forecast">
+                    <field name="doc_number"></field>
+                    <field name="from_date"></field>
+                    <field name="to_date"></field>
+                </tree>
+            </field>
+        </record>
+
+
+        <!-- marketing forecast rekap bahan baku print out-->
+        <report
+            id="marketing_forecast_rbb_printout"
+            model="marketing_forecast.marfor"
+            string="Print Rekap Bahan Baku"
+            report_type="qweb-pdf"
+            name="marketing_forecast.report_bahan_baku"
+            file="marketing_forecast.report_bahan_baku"></report>
+
+        <!-- Template print all -->
+        <template id="report_bahan_baku">
+            <t t-set="var_count" t-value="1"/>
+            <t t-foreach="docs" t-as="o">
+                <span t-esc="var_count" t-if="var_count == '1'">
+                </span>
+                <t t-call="marketing_forecast.report_bahan_baku_document"></t>
+                <t t-set="var_count" t-value="var_count+1"/>
+            </t>
+        </template>
+
+         <!-- Template print one by one -->
+        <template id="report_bahan_baku_document">
+            <!--<div class="header">-->
+
+            <!--</div>-->
+            <div class="page">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Product</th>
+                            <th>Total Qty</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <t t-set="urutan" t-value="1"/>
+                        <t t-set="tmp_product_id" t-value="0"/>
+                        <t t-set="masih_loop" t-value="1"/>
+                        <t t-set="tmp_qty" t-value="0"/>
+
+                        <t t-set="get_data_remain" t-value="o.execute_sql('
+                            SELECT
+                                SUM(a.qty) totalQty,
+                                a.product_id,
+                                b.name
+                            FROM marketing_forecast_remain a
+                            INNER JOIN product_template b
+                            ON a.product_id = b.id
+                            GROUP BY a.product_id, b.name
+                            ORDER BY b.name
+                            ;
+                        ')"/>
+                        <tr t-foreach="get_data_remain" t-as="dr">
+                            <td><span t-esc="urutan"/></td>
+                            <td><span t-esc="dr['name']"/></td>
+                            <td><span t-esc="dr['totalqty']"/></td>
+                            <t t-set="urutan" t-value="urutan+1"/>
+                        </tr>
+<!--
+                        <tr t-foreach="o.remain_ids" t-as="forecast_qty">
+                            <t t-if="tmp_product_id == forecast_qty.product_id.id">
+                                <t t-set="masih_loop" t-value="0"/>
+                                <t t-set="sum_qty" t-value="forecast_qty.qty"/>
+                                <t t-set="tmp_qty" t-value="tmp_qty+forecast_qty.qty"/>
+                            </t>
+
+                            <t t-if="masih_loop == 1">
+                                <td><span t-esc="urutan"/></td>
+                                <td><span t-field="forecast_qty.product_id.name"/></td>
+                                <td t-if="tmp_qty == 0"><span t-field="forecast_qty.qty"/></td>
+                                <td t-if="tmp_qty != 0"><span t-esc="tmp_qty"/></td>
+                                <t t-set="urutan" t-value="urutan+1"/>
+                            </t>
+
+                            <t t-set="tmp_product_id" t-value="forecast_qty.product_id.id"/>
+                            <t t-set="masih_loop" t-value="1"/>
+                        </tr>
+-->
+                    </tbody>
+                </table>
+            </div>
+            <div class="footer">
+
+            </div>
+        </template>
+
+
+         <!--create new paper format (A5) for this report-->
+        <record id="marfor_papperformat" model="report.paperformat">
+            <field name="name">Marketing Forecast Rekap Print Format</field>
+            <field name="default" eval="False"></field>
+            <field name="format">A5</field>
+            <field name="page_height">0</field>
+            <field name="page_width">0</field>
+            <field name="orientation">Landscape</field>
+            <field name="margin_top">4</field>
+            <field name="margin_bottom">4</field>
+            <field name="margin_left">4</field>
+            <field name="margin_right">4</field>
+            <field name="header_line" eval="False"></field>
+            <field name="header_spacing">35</field>
+            <field name="dpi">90</field>
+        </record>
+
+        <!--set this report to using the paper above-->
+        <record id="marketing_forecast_rbb_printout" model="ir.actions.report.xml">
+            <field name="paperformat_id" ref="marketing_forecast.marfor_papperformat"></field>
+        </record>
+
+    </data>
+</odoo>

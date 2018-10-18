@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!-- Laba rugi -->
+
+        <record model="account.financial.report" id="id_report_laba_rugi">
+            <field name="name">Laba Rugi</field>
+            <field name="sequence" eval="10"/>
+            <field name="sign" eval="-1"/>
+            <field name="type">sum</field>
+            <field name="style_overwrite" eval="0"/>
+        </record>
+
+        <record model="account.financial.report" id="id_report_pendapatan">
+            <field name="name">Pendapatan</field>
+            <field name="sequence" eval="10"/>
+            <field name="sign" eval="-1"/>
+            <field name="type">account_type</field>
+            <field name="style_overwrite" eval="0"/>
+            <field name="parent_id" ref="id_report_laba_rugi"/>
+            <field name="display_detail">detail_with_hierarchy</field>
+            <field name="account_type_ids" eval="[(4,ref('account.data_account_type_revenue'))]"/>
+        </record>
+
+        <record model="account.financial.report" id="id_report_hpp">
+            <field name="name">Harga Pokok Pembelian</field>
+            <field name="sequence" eval="20"/>
+            <field name="sign" eval="1"/>
+            <field name="type">account_type</field>
+            <field name="style_overwrite" eval="0"/>
+            <field name="parent_id" ref="id_report_laba_rugi"/>
+            <field name="display_detail">detail_with_hierarchy</field>
+            <field name="account_type_ids" eval="[(4,ref('account.data_account_type_direct_costs'))]"/>
+        </record>
+
+        <record model="account.financial.report" id="id_report_gross_profit">
+            <field name="name">Laba (Rugi) Kotor</field>
+            <field name="sequence" eval="30"/>
+            <field name="sign" eval="-1"/>
+            <field name="type">account_type</field>
+            <field name="style_overwrite" eval="0"/>
+            <field name="parent_id" ref="id_report_laba_rugi"/>
+            <field name="display_detail">no_detail</field>
+            <field name="account_type_ids" eval="[(4,ref('account.data_account_type_revenue')),(4,ref('account.data_account_type_direct_costs'))]"/>
+        </record>
+
+        <record model="account.financial.report" id="id_report_beban_umun">
+            <field name="name">Beban Administrasi dan Umum</field>
+            <field name="sequence" eval="40"/>
+            <field name="sign" eval="1"/>
+            <field name="type">account_type</field>
+            <field name="style_overwrite" eval="0"/>
+            <field name="parent_id" ref="id_report_laba_rugi"/>
+            <field name="display_detail">detail_with_hierarchy</field>
+            <field name="account_type_ids" eval="[(4,ref('account.data_account_type_expenses')), (4,ref('account.data_account_type_depreciation'))]"/>
+        </record>
+
+        <record model="account.financial.report" id="id_report_pendapatan_lain">
+            <field name="name">Pendapatan Lain-lain</field>
+            <field name="sequence" eval="50"/>
+            <field name="sign" eval="-1"/>
+            <field name="type">account_type</field>
+            <field name="style_overwrite" eval="0"/>
+            <field name="parent_id" ref="id_report_laba_rugi"/>
+            <field name="display_detail">detail_with_hierarchy</field>
+            <field name="account_type_ids" eval="[(4,ref('account.data_account_type_other_income'))]"/>
+        </record>
+
+        <record model="account.financial.report" id="id_report_beban_lain">
+            <field name="name">Beban Lain-lain</field>
+            <field name="sequence" eval="50"/>
+            <field name="sign" eval="1"/>
+            <field name="type">account_type</field>
+            <field name="style_overwrite" eval="0"/>
+            <field name="parent_id" ref="id_report_laba_rugi"/>
+            <field name="display_detail">detail_with_hierarchy</field>
+            <!--field name="account_type_ids" eval="[(4,ref('account.data_account_type_other_income'))]"/-->
+        </record>
+
+
+        <record model="account.financial.report" id="id_report_nett_profit">
+            <field name="name">Laba (Rugi) Bersih</field>
+            <field name="sequence" eval="60"/>
+            <field name="sign" eval="-1"/>
+            <field name="type">account_type</field>
+            <field name="style_overwrite" eval="0"/>
+            <field name="parent_id" ref="id_report_laba_rugi"/>
+            <field name="display_detail">no_detail</field>
+            <field name="account_type_ids" eval="[(4,ref('account.data_account_type_revenue')),(4,ref('account.data_account_type_direct_costs')),(4,ref('account.data_account_type_expenses')), (4,ref('account.data_account_type_depreciation')), (4,ref('account.data_account_type_other_income'))]"/>
+        </record>
+
+
+        <!-- Neraca -->
+
+        <record model="account.financial.report" id="id_report_neraca">
+            <field name="name">Neraca</field>
+            <field name="sequence" eval="10"/>
+            <field name="sign" eval="1"/>
+            <field name="type">sum</field>
+            <field name="style_overwrite" eval="0"/>
+        </record>
+
+
+        <!-- aktiva -->
+
+        <record model="account.financial.report" id="id_report_aktiva">
+            <field name="name">Aktiva</field>
+            <field name="sequence" eval="10"/>
+            <field name="sign" eval="1"/>
+            <field name="type">sum</field>
+            <field name="style_overwrite" eval="0"/>
+            <field name="parent_id" ref="id_report_neraca"/>
+        </record>
+
+        <record model="account.financial.report" id="id_report_kas_bank">
+            <field name="name">Kas dan Setara Kas</field>
+            <field name="sequence" eval="10"/>
+            <field name="sign" eval="1"/>
+            <field name="type">account_type</field>
+            <field name="style_overwrite" eval="0"/>
+            <field name="parent_id" ref="id_report_aktiva"/>
+            <field name="display_detail">detail_with_hierarchy</field>
+            <field name="account_type_ids" eval="[(4,ref('account.data_account_type_liquidity')), (4,ref('account.data_account_type_credit_card'))]"/>
+        </record>
+
+
+        <record model="account.financial.report" id="id_report_piutang">
+            <field name="name">Piutang Usaha</field>
+            <field name="sequence" eval="20"/>
+            <field name="sign" eval="1"/>
+            <field name="type">account_type</field>
+            <field name="style_overwrite" eval="0"/>
+            <field name="parent_id" ref="id_report_aktiva"/>
+            <field name="display_detail">detail_with_hierarchy</field>
+            <field name="account_type_ids" eval="[(4,ref('account.data_account_type_receivable'))]"/>
+        </record>
+
+
+        <record model="account.financial.report" id="id_report_aktiva_lancar">
+            <field name="name">Aktiva Lancar</field>
+            <field name="sequence" eval="30"/>
+            <field name="sign" eval="1"/>
+            <field name="type">account_type</field>
+            <field name="style_overwrite" eval="0"/>
+            <field name="parent_id" ref="id_report_aktiva"/>
+            <field name="display_detail">detail_with_hierarchy</field>
+            <field name="account_type_ids" eval="[(4,ref('account.data_account_type_current_assets')),(4,ref('account.data_account_type_prepayments'))]"/>
+        </record>
+
+
+        <record model="account.financial.report" id="id_report_aktiva_tidak_lancar">
+            <field name="name">Aktiva Tidak Lancar</field>
+            <field name="sequence" eval="30"/>
+            <field name="sign" eval="1"/>
+            <field name="type">account_type</field>
+            <field name="style_overwrite" eval="0"/>
+            <field name="parent_id" ref="id_report_aktiva"/>
+            <field name="display_detail">detail_with_hierarchy</field>
+            <field name="account_type_ids" eval="[(4,ref('account.data_account_type_non_current_assets'))]"/>
+        </record>
+
+        <record model="account.financial.report" id="id_report_aktiva_tetap">
+            <field name="name">Aktiva Tetap</field>
+            <field name="sequence" eval="30"/>
+            <field name="sign" eval="1"/>
+            <field name="type">account_type</field>
+            <field name="style_overwrite" eval="0"/>
+            <field name="parent_id" ref="id_report_aktiva"/>
+            <field name="display_detail">detail_with_hierarchy</field>
+            <field name="account_type_ids" eval="[(4,ref('account.data_account_type_fixed_assets'))]"/>
+        </record>
+
+
+
+        <!-- hutang dan modal -->
+
+        <record model="account.financial.report" id="id_report_hutang_modal">
+            <field name="name">Hutang dan Modal</field>
+            <field name="sequence" eval="20"/>
+            <field name="sign" eval="-1"/>
+            <field name="type">sum</field>
+            <field name="style_overwrite" eval="0"/>
+            <field name="parent_id" ref="id_report_neraca"/>
+        </record>
+
+        <!-- hutang -->
+
+        <record model="account.financial.report" id="id_report_hutang">
+            <field name="name">Hutang</field>
+            <field name="sequence" eval="10"/>
+            <field name="sign" eval="-1"/>
+            <field name="type">sum</field>
+            <field name="parent_id" ref="id_report_hutang_modal"/>
+            <field name="style_overwrite" eval="0"/>
+        </record>
+
+        <record model="account.financial.report" id="id_report_hutang_lancar">
+            <field name="name">Hutang Lancar</field>
+            <field name="sequence" eval="10"/>
+            <field name="sign" eval="-1"/>
+            <field name="type">account_type</field>
+            <field name="style_overwrite" eval="0"/>
+            <field name="parent_id" ref="id_report_hutang"/>
+            <field name="display_detail">detail_with_hierarchy</field>
+            <field name="account_type_ids" eval="[(4,ref('account.data_account_type_payable')),(4,ref('account.data_account_type_current_liabilities'))]"/>
+        </record>
+
+
+        <record model="account.financial.report" id="id_report_hutang_tidak_lancar">
+            <field name="name">Hutang Jangka Panjang</field>
+            <field name="sequence" eval="20"/>
+            <field name="sign" eval="-1"/>
+            <field name="type">account_type</field>
+            <field name="style_overwrite" eval="0"/>
+            <field name="parent_id" ref="id_report_hutang"/>
+            <field name="display_detail">detail_with_hierarchy</field>
+            <field name="account_type_ids" eval="[(4,ref('account.data_account_type_non_current_liabilities'))]"/>
+        </record>
+
+        <!-- modal -->
+
+        <record model="account.financial.report" id="id_report_modal">
+            <field name="name">Modal</field>
+            <field name="sequence" eval="10"/>
+            <field name="sign" eval="-1"/>
+            <field name="type">account_type</field>
+            <field name="parent_id" ref="id_report_hutang_modal"/>
+            <field name="style_overwrite" eval="0"/>
+            <field name="display_detail">detail_with_hierarchy</field>
+            <field name="account_type_ids" eval="[(4,ref('account.data_account_type_equity')),(4,ref('account.data_unaffected_earnings'))]"/>
+        </record>
+
+
+
+        <record model="account.financial.report" id="id_report_laba_rugi_berjalan">
+            <field name="name">Laba (Rugi) Tahun Berjalan</field>
+            <field name="sequence" eval="60"/>
+            <field name="sign" eval="-1"/>
+            <field name="type">account_type</field>
+            <field name="style_overwrite" eval="0"/>
+            <field name="parent_id" ref="id_report_hutang_modal"/>
+            <field name="display_detail">no_detail</field>
+            <field name="account_type_ids" eval="[(4,ref('account.data_account_type_revenue')),(4,ref('account.data_account_type_direct_costs')),(4,ref('account.data_account_type_expenses')), (4,ref('account.data_account_type_depreciation')), (4,ref('account.data_account_type_other_income'))]"/>
+        </record>
+
+    </data>
+</openerp>

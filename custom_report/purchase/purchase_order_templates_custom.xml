@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <report
+            string="Purchase Order Custom"
+            id="action_report_purchase_order_custom"
+            model="purchase.order"
+            report_type="qweb-pdf"
+            name="custom_report.report_purchaseorder_custom"
+            file="custom_report.report_purchaseorder"
+        />
+
+        <!-- one -->
+        <template id="report_purchaseorder_custom_document">
+            <div class="header">
+            </div>
+            <div class="page">
+                <div style="width: 100%">
+                    <div style="float: left; width: 25%; margin-right: 5%;">
+                      <img t-if="o.company_id.logo" t-att-src="'data:image/png;base64,%s' % o.company_id.logo" style="height:75px; width: 100%;"/>
+                    </div>
+
+                    <div style="float: left; width: 30%;">
+                        <h3 t-if="o.state != 'draft'">Purchase Order Confirmation #<span t-field="o.name"/></h3>
+                        <h3 t-if="o.state == 'draft'">Request for Quotation #<span t-field="o.name"/></h3>
+                    </div>
+
+                    <div style="float: left; width: 40%;">
+                        <div class="row mt32 mb32">
+                            <div t-if="o.name" class="col-xs-6">
+                                <strong>Our Order Reference:</strong>
+                                <p t-field="o.name"/>
+                            </div>
+                            <div t-if="o.partner_ref" class="col-xs-6">
+                                <strong>Your Order Reference</strong>
+                                <p t-field="o.partner_ref"/>
+                            </div>
+                            <div t-if="o.date_order" class="col-xs-6">
+                                <strong>Order Date:</strong>
+                                <p t-field="o.date_order"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="width:100%;">
+                    <div style="float: left; width: 30%;">
+                        <table class="table table-bordered">
+                            <tr>
+                                <th><span t-field="o.company_id.name"/></th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span t-field="o.company_id.street"></span>
+                                    <br/>
+                                    <span t-field="o.company_id.street2"></span>
+                                    <br/><br/>
+                                    <span t-field="o.company_id.country_id"></span>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div style="float: left; width: 69%; margin: 0 0 0 1%;">
+                        <table class="table table-bordered">
+                            <tr>
+                                <th colspan="2"><strong>Shipping address:</strong></th>
+                            </tr>
+                            <tr>
+                                <td style="min-height: 100px;">
+                                    <div t-if="o.dest_address_id">
+                                        <div t-field="o.dest_address_id" t-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;address&quot;, &quot;name&quot;, &quot;phone&quot;, &quot;fax&quot;], &quot;no_marker&quot;: True, &quot;phone_icons&quot;: True}"/>
+                                    </div>
+
+                                    <div t-if="not o.dest_address_id and o.picking_type_id.warehouse_id">
+                                        <span t-field="o.picking_type_id.warehouse_id.name"/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div t-field="o.picking_type_id.warehouse_id.partner_id" t-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;address&quot;, &quot;phone&quot;, &quot;fax&quot;], &quot;no_marker&quot;: True, &quot;phone_icons&quot;: True}"/>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+                <div style="display: block; margin-top: 10px;">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th><strong>Description</strong></th>
+                                <th><strong>Taxes</strong></th>
+                                <th class="text-center"><strong>Date Req.</strong></th>
+                                <th class="text-right"><strong>Qty</strong></th>
+                                <th class="text-right"><strong>Unit Price</strong></th>
+                                <th class="text-right"><strong>Net Price</strong></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr t-foreach="o.order_line" t-as="line">
+                                <td>
+                                    <span t-field="line.name"/>
+                                </td>
+                                <td>
+                                    <span t-esc="', '.join(map(lambda x: x.name, line.taxes_id))"/>
+                                </td>
+                                <td class="text-center">
+                                    <span t-field="line.date_planned"/>
+                                </td>
+                                <td class="text-right">
+                                    <span t-field="line.product_qty"/>
+                                    <span t-field="line.product_uom.name" groups="product.group_uom"/>
+                                </td>
+                                <td class="text-right">
+                                    <span t-field="line.price_unit"/>
+                                </td>
+                                <td class="text-right">
+                                    <span t-field="line.price_subtotal" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: o.currency_id}"/>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="row">
+                    <div class="col-xs-8">
+                        <div id="signature">
+                            <div style="float: left; width: 25%; margin: 1%;">
+                                Dibuat Oleh,
+                            </div>
+                            <div style="float: left; width: 25%; margin: 1%;">
+                                Diperiksa Oleh,
+                            </div>
+                            <div style="float: left; width: 25%; margin: 1%;">
+                                Disetujui Oleh,
+                            </div>
+                        </div>
+                         <div style="float: left; width: 25%; margin: 1%; margin-top: 50px;" >
+                            _______________
+                        </div>
+
+                        <div style="float: left; width: 25%; margin: 1%; margin-top: 50px;" >
+                           _______________
+                        </div>
+
+                        <div style="float: left; width: 25%; margin: 1%; margin-top: 50px;" >
+                           _______________
+                        </div>
+                    </div>
+                    <div class="col-xs-4 pull-right">
+                        <table class="table table-condensed">
+                            <tr>
+                                <td><strong>Total Without Taxes</strong></td>
+                                <td class="text-right">
+                                    <span t-field="o.amount_untaxed" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: o.currency_id}"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Taxes</td>
+                                <td class="text-right">
+                                    <span t-field="o.amount_tax" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: o.currency_id}"/>
+                                </td>
+                            </tr>
+                            <tr class="border-black">
+                                <td><strong>Total</strong></td>
+                                <td class="text-right">
+                                    <span t-field="o.amount_total" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: o.currency_id}"/>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <p t-field="o.notes"/>
+            </div>
+            <div class="footer">
+
+            </div>
+        </template>
+
+        <!-- all -->
+        <template id="report_purchaseorder_custom">
+            <t t-call="report.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="custom_report.report_purchaseorder_custom_document"/>
+                </t>
+            </t>
+        </template>
+
+        <!--create new paper format (A5) for this report-->
+        <record id="po_papperformat" model="report.paperformat">
+            <field name="name">Request For Quotation Format</field>
+            <field name="default" eval="False"></field>
+            <field name="format">A5</field>
+            <field name="page_height">0</field>
+            <field name="page_width">0</field>
+            <field name="orientation">Landscape</field>
+            <field name="margin_top">4</field>
+            <field name="margin_bottom">4</field>
+            <field name="margin_left">4</field>
+            <field name="margin_right">4</field>
+            <field name="header_line" eval="False"></field>
+            <field name="header_spacing">35</field>
+            <field name="dpi">90</field>
+        </record>
+
+        <!--set this report to using the paper above-->
+        <record id="action_report_purchase_order_custom" model="ir.actions.report.xml">
+            <field name="paperformat_id" ref="custom_report.po_papperformat"></field>
+        </record>
+    </data>
+</odoo>

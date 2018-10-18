@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <report
+            id="account_invoice_report_custom"
+            model="account.invoice"
+            string="Invoice Custom"
+            report_type="qweb-pdf"
+            name="custom_report.report_custom"
+            file="account.report_custom"></report>
+
+        <!-- Template print all -->
+        <template id="report_custom">
+            <t t-set="var_count" t-value="1"/>
+            <t t-foreach="docs" t-as="o">
+                <span t-esc="var_count" t-if="var_count == '1'">
+                </span>
+                <t t-call="custom_report.account_invoice_report_custom_document"></t>
+                <t t-set="var_count" t-value="var_count+1"/>
+            </t>
+        </template>
+
+        <!-- Template print one by one -->
+        <template id="account_invoice_report_custom_document">
+            <t t-set="o" t-value="o.with_context({'lang':o.partner_id.lang})"></t>
+            <div class="header">
+
+            </div>
+            <div class="page">
+                <div style="width: 100%;">
+                    <div style="float: left; width: 20%; margin-right: 5%">
+                     <img t-if="o.company_id.logo" t-att-src="'data:image/png;base64,%s' % o.company_id.logo" style="width:100%; height:150px"/>
+                        <!--<img t-att-src="'/account/static/src/img/logo_print.png'" style="width:125px; height:75px;" />-->
+                    </div>
+                    <div style="float: left; width: 30%; margin-right: 5%">
+                        <table class="table table-bordered">
+                            <tr>
+                                <td>
+                                    <span t-field="o.company_id.street"/>
+                                    <br></br>
+                                    <span t-field="o.company_id.phone"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span t-field="o.partner_id.name"></span>
+                                    <br/>
+                                    <span t-field="o.partner_id.street"></span>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div style="float: left; width: 40%;">
+                        <table class="table table-bordered">
+                            <tr>
+                                <td>
+                                    Invoice Date
+                                    <br></br>
+                                    <center><p><span t-field="o.date_invoice"/></p></center>
+                                </td>
+                                <td>
+                                    Invoice No
+                                    <br></br>
+                                    <center><p><span t-field="o.number"/></p></center>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Terms
+                                    <br></br>
+                                    <center><p><span t-field="o.payment_term_id"/></p></center>
+                                </td>
+                                <td>
+                                    Salesman
+                                    <br></br>
+                                    <center><p><span t-field="o.user_id"/></p></center>
+                                </td>
+                            </tr>
+<!--                            <tr>
+                                <td>
+                                    FOB
+                                    <br></br>
+                                    <center><p> </p></center>
+                                </td>
+                                <td>
+                                    Ship Date
+                                    <br></br>
+                                    <center>
+                                        <p>
+&lt;!&ndash;
+                                            <t t-foreach="o.stock_picking_ids" t-as="stock_picking">
+                                                afs
+                                                <span t-field="stock_picking_ids"/>
+                                            </t>
+&ndash;&gt;
+                                        </p>
+                                    </center>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>
+                                    Currency
+                                    <br></br>
+                                    <center><p>IDR</p></center>
+                                </td>
+                            </tr>-->
+                        </table>
+                    </div>
+                </div>
+
+                <div style="margin: 0 0 0 0;">
+                <!-- Is there a discount on at least one line? -->
+<!--                <t t-set="display_discount" t-value="any([l.discount for l in o.invoice_line_ids])"/>-->
+
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Item</th>
+                                <th>Item Description</th>
+                                <th>Qty</th>
+                                <th>Unit Price</th>
+                                <th class="text-right">Disc.(%)</th>
+                                <th>Amount</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <t t-set="totDisc" t-value="0"/>
+                            <t t-set="totAmount" t-value="0"/>
+                            <tr t-foreach="o.invoice_line_ids" t-as="inv_detail">
+                                <td><span t-field="inv_detail.product_id.default_code"></span></td>
+                                <td><span t-field="inv_detail.name"></span></td>
+                                <td class="text-right">
+                                    <span t-field="inv_detail.quantity"/>
+                                    <span t-field="inv_detail.uom_id"  groups="product.group_uom"/>
+                                </td>
+                                <td class="text-right">
+                                    <span t-field="inv_detail.price_unit"/>
+                                </td>
+                                <td class="text-right">
+                                    <span t-field="inv_detail.discount"/>
+                                </td>
+                                <td class="text-right">
+                                   <t t-set="amountCal" t-value="inv_detail.quantity * inv_detail.price_unit - (inv_detail.discount / 100 * (inv_detail.quantity * inv_detail.price_unit))"></t>
+                                   <t t-set="totAmount" t-value="totAmount + amountCal"></t>
+                                    <t t-set="totDisc" t-value="totDisc + (inv_detail.quantity * inv_detail.price_unit - amountCal)"></t>
+
+                                    <span t-esc="amountCal"></span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div style="width: 100%;">
+                    <div id="says" style="float: left; width: 55%;">
+<!--
+                        <table>
+                            <tr>
+                                <td>Say :</td>
+                            </tr>
+                        </table>
+-->
+
+                        <div style="width: 100%; height:90px; border:1px solid #000; padding: 2px;">
+                            <span t-field="o.comment"></span>
+                        </div>
+                    </div>
+
+                    <div id="tableAmount" style="float: left; width: 44%; margin: 0 0 0 1%;">
+                        <table style="width: 100%">
+                            <tr>
+                                <td style="height:30px;border:1px solid #000; border-radius: 5px; padding: 5px;">
+                                    <div style="width: 100%">
+                                        <div style="float: left">
+                                            Sub Total :
+                                        </div>
+                                        <div class="text-right">
+                                            <span t-esc="totAmount"></span>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="height:30px;border:1px solid #000; border-radius: 5px; padding: 5px;">
+                                    <div style="width: 100%">
+                                        <div style="float: left">
+                                            Discount :
+                                        </div>
+                                        <div class="text-right">
+                                            <span t-esc="totDisc"></span>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+<!--
+                            <tr>
+                                <td>
+                                    <div style="width: 365px; height:30px;border:1px solid #000; border-radius: 5px; padding: 5px;">
+                                        <span></span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div style="width: 365px; height:30px;border:1px solid #000; border-radius: 5px; padding: 5px;">
+                                        <span></span>
+                                    </div>
+                                </td>
+                            </tr>
+-->
+                            <tr>
+                                <td style="height:30px;border:1px solid #000; border-radius: 5px; padding: 5px;">
+                                    <div style="width: 100%">
+                                        <div style="float: left">
+                                            <strong>Total Invoice</strong> :
+                                        </div>
+                                        <div class="text-right">
+                                            <t t-set="totInv" t-value="totAmount-totDisc"></t>
+                                            <span t-esc="totInv"></span>
+                                        </div>
+                                    </div>
+                               </td>
+                            </tr>
+                        </table>
+                    </div>
+
+                </div>
+
+                <div style="width: 100%; height:28px; border:1px solid #000; padding: 2px; margin-top: 120px;">
+                    <span t-esc="o.amount_to_text(totInv, 'id')"></span>
+                </div>
+
+                <br></br>
+
+<!--
+                <div>
+                    <td> </td>
+                    <td>
+                        <div style="width: 500px; height:40px; border:1px solid #000; border-radius: 5px; padding: 5px;">
+                            <span>
+                                DESC
+                            </span>
+                        </div>
+                    </td>
+                </div>
+
+                <br/>
+-->
+
+<!--                <div id="information" style="width: 100%;">
+                    <div style="float: left; width: 50%;">
+                        <div style="width: 500px; height:80px; border:1px solid #000; border-radius: 5px; padding: 2px;">
+                            <span t-field="o.comment"></span>
+                        </div>
+                    </div>
+
+                    <div style="float: left; width: 25%; margin: 1%; margin-left: 80px;">
+
+                    </div>
+
+                </div>-->
+
+                <div id="signature">
+                    <div style="float: left; width: 25%; margin: 1%;">
+                        Approve By,
+                    </div>
+                    <div style="float: left; width: 25%; margin: 1%;">
+                        Shipped By,
+                    </div>
+                    <div style="float: left; width: 25%; margin: 1%;">
+                        Received By,
+                    </div>
+                </div>
+
+                <div style="float: left; width: 25%; margin: 1%; margin-top: 50px;" >
+                    _______________
+                </div>
+
+                <div style="float: left; width: 25%; margin: 1%; margin-top: 50px;" >
+                   _______________
+                </div>
+
+                <div style="float: left; width: 25%; margin: 1%; margin-top: 50px;" >
+                   _______________
+                </div>
+                <br></br>
+
+
+            </div>
+            <div class="footer">
+
+            </div>
+        </template>
+
+        <!--create new paper format (A5) for this report-->
+        <record id="accountinv_papperformat" model="report.paperformat">
+            <field name="name">Request For Quotation Format</field>
+            <field name="default" eval="False"></field>
+            <field name="format">A5</field>
+            <field name="page_height">0</field>
+            <field name="page_width">0</field>
+            <field name="orientation">Landscape</field>
+            <field name="margin_top">4</field>
+            <field name="margin_bottom">4</field>
+            <field name="margin_left">4</field>
+            <field name="margin_right">4</field>
+            <field name="header_line" eval="False"></field>
+            <field name="header_spacing">35</field>
+            <field name="dpi">90</field>
+        </record>
+
+        <!--set this report to using the paper above-->
+        <record id="account_invoice_report_custom" model="ir.actions.report.xml">
+            <field name="paperformat_id" ref="custom_report.accountinv_papperformat"></field>
+        </record>
+
+    </data>
+</odoo>

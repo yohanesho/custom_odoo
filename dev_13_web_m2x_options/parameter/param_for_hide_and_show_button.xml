@@ -1,0 +1,8 @@
+<odoo>
+    <data noupdate="0">
+        <record id="create_btn_in_selected" model="ir.config_parameter">
+            <field name="key">web_m2x_options_create</field>
+            <field name="value">false</field>
+        </record>
+    </data>
+</odoo>

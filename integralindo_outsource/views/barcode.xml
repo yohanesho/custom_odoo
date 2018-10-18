@@ -1,0 +1,31 @@
+<odoo>
+    <data>
+        <record model="ir.actions.act_window" id="barcode_action">
+            <field name="name">Barcode</field>
+            <field name="res_model">barcode.barcode</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record model="ir.actions.act_window" id="barcode_generate_action">
+            <field name="name">Generate Barcode</field>
+            <field name="res_model">barcode.generate.wizard</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+        <record model="ir.actions.act_window" id="barcode_print_action">
+            <field name="name">Print Barcode</field>
+            <field name="res_model">barcode.print.wizard</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+        <record model="ir.actions.act_window" id="stock_opname_action">
+            <field name="name">Stock In</field>
+            <field name="res_model">stock.picking</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context" eval="{'search_default_picking_type_id': [ref('stock.picking_type_in')], 'default_picking_type_id': ref('stock.picking_type_in'), 'contact_display': 'partner_address', 'search_default_available': 1}"/>
+        </record>
+    </data>
+</odoo>

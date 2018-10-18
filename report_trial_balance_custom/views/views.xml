@@ -1,0 +1,37 @@
+<odoo>
+  <data>
+    <template id="report_trialbalance_inherit" inherit_id="account.report_trialbalance">
+
+      <!--Declare variable count_debit, count_credit, dan count balance-->
+      <xpath expr="//tr[@t-foreach='Accounts']" position="before">
+        <t t-set="count_debit" t-value="0"></t>
+        <t t-set="count_credit" t-value="0"></t>
+        <t t-set="count_balance" t-value="0"></t>
+      </xpath>
+
+      <!--Membuat total debit, credit, dan balance-->
+      <xpath expr="//tr[@t-foreach='Accounts']" position="inside">
+        <t t-set="count_debit" t-value="count_debit+account['debit']"></t>
+        <t t-set="count_credit" t-value="count_credit+account['credit']"></t>
+        <t t-set="count_balance" t-value="count_balance+account['balance']"></t>
+      </xpath>
+
+      <!--Menambahkan total-->
+      <xpath expr="//tr[@t-foreach='Accounts']" position="after">
+        <tr>
+          <td colspan="2">Total</td>
+          <td class="text-right">
+            <span t-att-style="style" t-esc="count_debit" t-options="{'widget': 'monetary', 'display_currency': res_company.currency_id}"/>
+          </td>
+          <td class="text-right">
+              <span t-att-style="style" t-esc="count_credit" t-options="{'widget': 'monetary', 'display_currency': res_company.currency_id}"/>
+          </td>
+          <td class="text-right">
+              <span t-att-style="style" t-esc="count_balance" t-options="{'widget': 'monetary', 'display_currency': res_company.currency_id}"/>
+          </td>
+        </tr>
+      </xpath>
+
+    </template>
+  </data>
+</odoo>

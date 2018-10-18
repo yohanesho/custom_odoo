@@ -1,0 +1,92 @@
+<?xml version="1.0" ?>
+<odoo>
+	<data>
+		<record id="workflow_marketingforecastworkflow0" model="workflow">
+			<field name="create_uid" ref="base.user_root"/>
+			<field name="create_date">2017-09-23 08:19:13</field>
+			<field name="name">Marketing Forecast Workflow</field>
+			<field name="osv">marketing_forecast.marfor</field>
+			<field name="write_uid" ref="base.user_root"/>
+			<field name="write_date">2017-09-23 08:19:13</field>
+			<field eval="1" name="on_create"/>
+		</record>
+		<record id="workflow_activity_finalize0" model="workflow.activity">
+			<field name="create_uid" ref="base.user_root"/>
+			<field name="kind">function</field>
+			<field name="create_date">2017-09-23 08:22:11</field>
+			<field name="name">Finalize</field>
+			<field name="join_mode">XOR</field>
+			<field eval="1" name="flow_stop"/>
+			<field name="write_uid" ref="base.user_root"/>
+			<field name="split_mode">XOR</field>
+			<field name="write_date">2017-09-23 08:32:10</field>
+			<field name="action">action_state_finalize()</field>
+			<field name="wkf_id" ref="workflow_marketingforecastworkflow0"/>
+			<field eval="0" name="flow_start"/>
+		</record>
+		<record id="workflow_activity_validate0" model="workflow.activity">
+			<field name="create_uid" ref="base.user_root"/>
+			<field name="kind">function</field>
+			<field name="create_date">2017-09-23 08:21:43</field>
+			<field name="name">Validate</field>
+			<field name="join_mode">XOR</field>
+			<field eval="0" name="flow_stop"/>
+			<field name="write_uid" ref="base.user_root"/>
+			<field name="split_mode">XOR</field>
+			<field name="write_date">2017-09-23 08:27:47</field>
+			<field name="action">action_state_validate()</field>
+			<field name="wkf_id" ref="workflow_marketingforecastworkflow0"/>
+			<field eval="0" name="flow_start"/>
+		</record>
+		<record id="workflow_activity_new0" model="workflow.activity">
+			<field name="create_uid" ref="base.user_root"/>
+			<field name="kind">function</field>
+			<field name="create_date">2017-09-23 08:21:43</field>
+			<field name="name">New</field>
+			<field name="join_mode">XOR</field>
+			<field eval="0" name="flow_stop"/>
+			<field name="write_uid" ref="base.user_root"/>
+			<field name="split_mode">XOR</field>
+			<field name="write_date">2017-09-23 08:27:47</field>
+			<field name="action">action_state_new()</field>
+			<field name="wkf_id" ref="workflow_marketingforecastworkflow0"/>
+			<field eval="1" name="flow_start"/>
+		</record>
+	</data>
+
+	<data>
+		<record id="workflow_transition_14" model="workflow.transition">
+			<field name="create_uid" ref="base.user_root"/>
+			<field name="create_date">2017-09-23 08:23:29</field>
+			<field name="signal">btn_finalize</field>
+			<field eval="10" name="sequence"/>
+			<field name="write_uid" ref="base.user_root"/>
+			<field name="act_from" ref="workflow_activity_validate0"/>
+			<field name="act_to" ref="workflow_activity_finalize0"/>
+			<field name="write_date">2017-09-23 08:30:53</field>
+			<field name="condition">True</field>
+		</record>
+		<record id="workflow_transition_15" model="workflow.transition">
+			<field name="create_uid" ref="base.user_root"/>
+			<field name="create_date">2017-09-23 08:23:29</field>
+			<field name="signal">btn_validate</field>
+			<field eval="10" name="sequence"/>
+			<field name="write_uid" ref="base.user_root"/>
+			<field name="act_from" ref="workflow_activity_new0"/>
+			<field name="act_to" ref="workflow_activity_validate0"/>
+			<field name="write_date">2017-09-23 08:30:53</field>
+			<field name="condition">True</field>
+		</record>
+		<record id="workflow_transition_new_16" model="workflow.transition">
+			<field name="create_uid" ref="base.user_root"/>
+			<field name="create_date">2017-09-23 08:23:29</field>
+			<field name="signal">btn_new</field>
+			<field eval="10" name="sequence"/>
+			<field name="write_uid" ref="base.user_root"/>
+			<field name="act_from" ref="workflow_activity_validate0"/>
+			<field name="act_to" ref="workflow_activity_new0"/>
+			<field name="write_date">2017-09-23 08:30:53</field>
+			<field name="condition">True</field>
+		</record>
+	</data>
+</odoo>

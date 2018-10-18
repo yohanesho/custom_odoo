@@ -52,6 +52,7 @@
                         <field name="effective_date"/>
                     </group>
                     <group string="Sales Information" name="sales_person">
+                        <field name="lpp" />
                         <field name="user_id"/>
                         <field name="team_id" options="{'no_create': True}"/>
                         <field name="client_order_ref"/>
@@ -73,10 +74,6 @@
             <field name="inherit_id" ref="sale_stock.view_order_form_inherit_sale_stock" />
             <field name="priority" eval="99"/>
             <field name="arch" type="xml">
-                <xpath expr="//button[@name='action_view_delivery']" position="before">
-                    <field name="lpp" />
-                    <label for='lpp'/>
-                </xpath>
                 <group name="sale_shipping" position="replace">
                 </group>
             </field>

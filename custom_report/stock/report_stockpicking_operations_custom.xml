@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <report
+            id="print_picking_operation_custom"
+            model="stock.picking"
+            string="Picking Operations Custom"
+            report_type="qweb-pdf"
+            name="custom_report.report_picking_custom"
+            file="stock.report_picking_operations_custom"></report>
+
+        <!-- Template print one by one -->
+        <template id="report_picking_operations_custom_document">
+            <t t-set="o" t-value="o.with_context({'lang':o.partner_id.lang})"></t>
+            <div class="header">
+                <!--<img t-att-src="'/account/static/src/img/logo_print.png'" style="width:175px; length:175px" />-->
+            </div>
+            <div class="page"> <!-- style="height: 148.5mm; width: 210mm; margin:0;" Set Page to A5-->
+                <img t-if="o.company_id.logo" t-att-src="'data:image/png;base64,%s' % o.company_id.logo" style="width:175px; length:175px"/>
+
+                <div style="width:100%;">
+                    <div style="float: left; width: 30%;">
+                        <table class="table table-bordered">
+                            <tr>
+                                <th><span t-field="o.company_id.name"/></th>
+                            </tr>
+                            <tr>
+                                <td style="min-height: 100px;">
+                                    <span t-field="o.company_id.street"></span>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div style="float: left; width: 30%; margin: 0 0 0 1%;">
+                        <table class="table table-bordered">
+                            <tr>
+                                <th>Tagihan Ke</th>
+                            </tr>
+                            <tr>
+                                <td style="min-height: 100px;">
+                                    <span t-field="o.partner_id.name"></span>
+                                    <br/>
+                                    <span t-field="o.partner_id.street"></span>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div style="float: left; width: 30%; margin: 0 0 0 4%;">
+                        <table>
+                            <tr>
+                                <td width="100">No</td>
+                                <td>:</td>
+                                <td><span t-field="o.name"/></td>
+                            </tr>
+                            <tr>
+                                <td>Tgl</td>
+                                <td>:</td>
+                                <td><span t-field="o.min_date"/></td>
+                            </tr>
+                            <Tr>
+                                <td>No. PO</td>
+                                <td>:</td>
+                                <td><span t-field="o.origin"/></td>
+                            </Tr>
+                        </table>
+                    </div>
+                </div>
+                <div style="display: block; margin-top: 35px;">
+                    <table class="table table-bordered">
+                        <t t-set="has_serial_number" t-value="o.pack_operation_ids.filtered('pack_lot_ids')" groups="stock.group_production_lot"/>
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>Deskripsi Barang</th>
+                                <th>Kts</th>
+                                <th t-if="has_serial_number">Nomor Seri</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <t t-set="var_no" t-value="1"/>
+                            <tr t-foreach="o.pack_operation_ids" t-as="detail">
+                                <td><span t-esc="var_no"></span></td>
+
+                                <td><span t-field="detail.product_id"/><br/>
+                                <span t-field="detail.product_id.description_picking"/>
+                                <t t-if="not detail.product_id and detail.package_id"><span  t-field="detail.package_id"/></t></td>
+
+                                <td class="text-right"><span t-field="detail.product_qty"/> <span t-field="detail.product_uom_id" groups="product.group_uom"/></td>
+
+
+                                <td t-if="has_serial_number">
+                                    <span t-if="detail.pack_lot_ids">
+                                        <span t-foreach="detail.pack_lot_ids" t-as="packlot">
+                                                <span t-field="packlot.lot_id"/>
+                                                <t t-if="not packlot.lot_id">
+                                                    <span t-field="packlot.lot_name"/>
+                                                </t>
+                                            <span>;</span>
+                                        </span>
+                                    </span>
+                                </td>
+
+
+                                <t t-set="var_no" t-value="var_no+1"/>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div id="signature">
+                    <div style="float: left; width: 25%; margin: 1%;">
+                        Disetujui Oleh,
+                    </div>
+                    <div style="float: left; width: 25%; margin: 1%;">
+                        Diantar Oleh,
+                    </div>
+                    <div style="float: left; width: 25%; margin: 1%;">
+                        Diterima Oleh,
+                    </div>
+                    <div style="margin: 1%;">
+                        Keterangan:
+                    </div>
+                </div>
+
+                <div style="float: left; width: 25%; margin: 1%; margin-top: 50px;" >
+                    _______________
+                </div>
+
+                <div style="float: left; width: 25%; margin: 1%; margin-top: 50px;" >
+                   _______________
+                </div>
+
+                <div style="float: left; width: 25%; margin: 1%; margin-top: 50px;" >
+                   _______________
+                </div>
+
+                <div style="font-size: 8pt;">
+                    <div style="float: right; width: 27%; margin: 0 0 0 0;">
+                        3. Hijau : Untuk Gudang
+                        <br></br>
+                        4. Kuning : Untuk Finance Dan Accounting
+                    </div>
+                    <div style="float: right; width: 25%; margin: 0 1% 0 0;">
+                        1. Putih : Untuk Setelah Lunas
+                        <br></br>
+                        2. Merah : Untuk Setelah Terima Barang
+                    </div>
+                </div>
+
+            </div>
+            <div class="footer">
+
+            </div>
+        </template>
+
+
+        <!-- Template print all -->
+        <template id="report_picking_custom">
+            <t t-call="report.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="custom_report.report_picking_operations_custom_document"></t>
+                </t>
+            </t>
+        </template>
+
+        <!--create new paper format (A5) for this report-->
+        <record id="stockpicking_papperformat" model="report.paperformat">
+            <field name="name">Request For Quotation Format</field>
+            <field name="default" eval="False"></field>
+            <field name="format">A5</field>
+            <field name="page_height">0</field>
+            <field name="page_width">0</field>
+            <field name="orientation">Landscape</field>
+            <field name="margin_top">4</field>
+            <field name="margin_bottom">4</field>
+            <field name="margin_left">4</field>
+            <field name="margin_right">4</field>
+            <field name="header_line" eval="False"></field>
+            <field name="header_spacing">35</field>
+            <field name="dpi">90</field>
+        </record>
+
+        <!--set this report to using the paper above-->
+        <record id="print_picking_operation_custom" model="ir.actions.report.xml">
+            <field name="paperformat_id" ref="custom_report.stockpicking_papperformat"></field>
+        </record>
+
+    </data>
+</odoo>

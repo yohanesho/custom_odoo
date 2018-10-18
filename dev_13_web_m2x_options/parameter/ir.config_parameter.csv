@@ -1,0 +1,5 @@
+"id","key","value"
+"web_m2x_options.create","web_m2x_options.create","false"
+"web_m2x_options.create_edit","web_m2x_options.create_edit","false"
+"web_m2x_options.search_more","web_m2x_options.search_more","true"
+"web_m2x_options.limit","web_m2x_options.limit","10"
